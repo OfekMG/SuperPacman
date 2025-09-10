@@ -1,5 +1,5 @@
 Flow report for Lab1Demo
-Wed Sep 10 21:50:37 2025
+Wed Sep 10 22:05:53 2025
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Wed Sep 10 21:50:37 2025       ;
+; Flow Status                     ; Successful - Wed Sep 10 22:05:53 2025       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; Lab1Demo                                    ;
 ; Top-level Entity Name           ; TOP_VGA_DEMO_KBD                            ;
@@ -68,7 +68,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/10/2025 21:49:58 ;
+; Start date & time ; 09/10/2025 22:05:24 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Lab1Demo            ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ agreement for further details.
 +-------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------+------------------+------------------+
 ; Assignment Name                     ; Value                                                                                                            ; Default Value ; Entity Name      ; Section Id       ;
 +-------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------+------------------+------------------+
-; COMPILER_SIGNATURE_ID               ; 10995770589192.175753019834084                                                                                   ; --            ; --               ; --               ;
+; COMPILER_SIGNATURE_ID               ; 5311877198834.175753112402596                                                                                    ; --            ; --               ; --               ;
 ; ENABLE_SIGNALTAP                    ; On                                                                                                               ; --            ; --               ; --               ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                                                                                               ; --            ; --               ; --               ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                                                                                                ; --            ; --               ; --               ;
@@ -136,8 +136,8 @@ agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:38     ; 1.0                     ; 5113 MB             ; 00:01:04                           ;
-; Total                ; 00:00:38     ; --                      ; --                  ; 00:01:04                           ;
+; Analysis & Synthesis ; 00:00:28     ; 1.0                     ; 5047 MB             ; 00:00:44                           ;
+; Total                ; 00:00:28     ; --                      ; --                  ; 00:00:44                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -146,7 +146,7 @@ agreement for further details.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-SPN16TS  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; DESKTOP-PD5E0CG  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
