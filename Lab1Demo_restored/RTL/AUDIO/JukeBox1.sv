@@ -11,7 +11,7 @@ module JukeBox1
     (
     // Declare wires and regs :
  
- input logic [3:0] melodySelect ,     // selector of one melody  
+ input logic [1:0] melodySelect ,     // selector of one melody  
  input logic [4:0] noteIndex,         // serial number of current note. ( maximum 31 ). noteIndex determines freqIndex and note_length, via JueBox
  
  output logic [3:0] tone,        // index to toneDecoder
