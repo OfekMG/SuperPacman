@@ -1,5 +1,5 @@
 Restore Archived Project report for Lab1Demo
-Wed Sep 10 22:04:03 2025
+Fri Sep 12 21:50:07 2025
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -37,7 +37,7 @@ agreement for further details.
 +-------------------------------------------------------------------------+
 ; Restore Archived Project Summary                                        ;
 +---------------------------------+---------------------------------------+
-; Restore Archived Project Status ; Successful - Wed Sep 10 22:04:03 2025 ;
+; Restore Archived Project Status ; Successful - Fri Sep 12 21:50:07 2025 ;
 ; Revision Name                   ; Lab1Demo                              ;
 ; Top-level Entity Name           ; TOP_VGA_DEMO_KBD                      ;
 ; Family                          ; Cyclone V                             ;
@@ -51,8 +51,8 @@ Info: Successfully restored 'D:/LAB1ULTI/Lab1Demo.qar' into the 'D:/LAB1ULTI/Lab
 Info: Generated report 'Lab1Demo.restore.rpt'
 Info (23030): Evaluation of Tcl script c:/intelfpga_lite/17.0/quartus/common/tcl/apps/qpm/qar.tcl was successful
 Info: Quartus Prime Shell was successful. 0 errors, 59 warnings
-    Info: Peak virtual memory: 4824 megabytes
-    Info: Processing ended: Wed Sep 10 22:04:03 2025
+    Info: Peak virtual memory: 4831 megabytes
+    Info: Processing ended: Fri Sep 12 21:50:07 2025
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

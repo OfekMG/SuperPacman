@@ -10,7 +10,7 @@ module	game_controller	(
 			input	logic	drawing_request_smiley,
 			input	logic	drawing_request_boarders,
 //---------------------#1-end input drawing request of box/number
-			input	logic	drawing_request_number,
+			//input	logic	drawing_request_number,
 
 
 //---------------------#1-add input drawing request of box/number
@@ -46,9 +46,9 @@ module	game_controller	(
 // drawing_request_smiley   -->  smiley
 // drawing_request_boarders -->  brackets
 // drawing_request_number   -->  number/box 
-logic collision_smiley_number;
+logic collision_smiley_number = 0;
 logic flag ; // a semaphore to set the output only once per frame regardless of number of collisions 
-assign collision_smiley_number = drawing_request_smiley && drawing_request_number; // collision between Smiley and number - is not output
+//assign collision_smiley_number = drawing_request_smiley && drawing_request_number; // collision between Smiley and number - is not output
 
 //assign collision = (drawing_request_smiley && drawing_request_boarders);// any collision --> comment after updating with #4 or #5 
 
