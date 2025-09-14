@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Lab1Demo
-Sat Sep 13 16:02:25 2025
+Sun Sep 14 14:13:42 2025
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -79,13 +79,13 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Sep 13 16:02:25 2025       ;
+; Analysis & Synthesis Status     ; Successful - Sun Sep 14 14:13:42 2025       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; Lab1Demo                                    ;
 ; Top-level Entity Name           ; TOP_VGA_DEMO_KBD                            ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 1302                                        ;
+; Total registers                 ; 1301                                        ;
 ; Total pins                      ; 62                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 2,460,672                                   ;
@@ -192,11 +192,11 @@ agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 8           ;
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 8           ;
+; Maximum used               ; 6           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
@@ -205,114 +205,112 @@ agreement for further details.
 ;     Processor 4            ;   0.0%      ;
 ;     Processor 5            ;   0.0%      ;
 ;     Processor 6            ;   0.0%      ;
-;     Processor 7            ;   0.0%      ;
-;     Processor 8            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                                               ;
-+--------------------------------------------------------------------+-----------------+----------------------------------------------+--------------------------------------------------------------------------------------------------+-------------+
-; File Name with User-Entered Path                                   ; Used in Netlist ; File Type                                    ; File Name with Absolute Path                                                                     ; Library     ;
-+--------------------------------------------------------------------+-----------------+----------------------------------------------+--------------------------------------------------------------------------------------------------+-------------+
-; RTL/AUDIO/Mili_sec_counter.sv                                      ; yes             ; User SystemVerilog HDL File                  ; D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/Mili_sec_counter.sv                                      ;             ;
-; RTL/AUDIO/melody_player_1.sv                                       ; yes             ; User SystemVerilog HDL File                  ; D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/melody_player_1.sv                                       ;             ;
-; RTL/AUDIO/JukeBox1.sv                                              ; yes             ; User SystemVerilog HDL File                  ; D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/JukeBox1.sv                                              ;             ;
-; KBDINTF.qxp                                                        ; yes             ; User File                                    ; D:/LAB1ULTI/Lab1Demo_restored/KBDINTF.qxp                                                        ;             ;
-; RTL/VGA/TOP_VGA_DEMO_KBD.bdf                                       ; yes             ; User Block Diagram/Schematic File            ; D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/TOP_VGA_DEMO_KBD.bdf                                       ;             ;
-; RTL/VGA/game_controller.sv                                         ; yes             ; User SystemVerilog HDL File                  ; D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/game_controller.sv                                         ;             ;
-; RTL/VGA/Smiley_Block_T.bdf                                         ; yes             ; User Block Diagram/Schematic File            ; D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/Smiley_Block_T.bdf                                         ;             ;
-; RTL/VGA/smileyBitMap.sv                                            ; yes             ; User SystemVerilog HDL File                  ; D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/smileyBitMap.sv                                            ;             ;
-; RTL/VGA/square_object.sv                                           ; yes             ; User SystemVerilog HDL File                  ; D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/square_object.sv                                           ;             ;
-; RTL/VGA/back_ground_draw.sv                                        ; yes             ; User SystemVerilog HDL File                  ; D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/back_ground_draw.sv                                        ;             ;
-; RTL/VGA/HartsMatrixBitMap.sv                                       ; yes             ; User SystemVerilog HDL File                  ; D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/HartsMatrixBitMap.sv                                       ;             ;
-; RTL/VGA/HART_DISPLAY.bdf                                           ; yes             ; User Block Diagram/Schematic File            ; D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/HART_DISPLAY.bdf                                           ;             ;
-; RTL/VGA/smiley_move.sv                                             ; yes             ; User SystemVerilog HDL File                  ; D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/smiley_move.sv                                             ;             ;
-; RTL/VGA/objects_mux.sv                                             ; yes             ; User SystemVerilog HDL File                  ; D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/objects_mux.sv                                             ;             ;
-; RTL/VGA/VGA_Controller.sv                                          ; yes             ; User SystemVerilog HDL File                  ; D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/VGA_Controller.sv                                          ;             ;
-; RTL/VGA/NumbersBitMap.sv                                           ; yes             ; User SystemVerilog HDL File                  ; D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/NumbersBitMap.sv                                           ;             ;
-; RTL/KEYBOARDX/TOP_KBD.bdf                                          ; yes             ; User Block Diagram/Schematic File            ; D:/LAB1ULTI/Lab1Demo_restored/RTL/KEYBOARDX/TOP_KBD.bdf                                          ;             ;
-; RTL/KEYBOARDX/keyPad_decoder.sv                                    ; yes             ; User SystemVerilog HDL File                  ; D:/LAB1ULTI/Lab1Demo_restored/RTL/KEYBOARDX/keyPad_decoder.sv                                    ;             ;
-; RTL/KEYBOARDX/random.sv                                            ; yes             ; User SystemVerilog HDL File                  ; D:/LAB1ULTI/Lab1Demo_restored/RTL/KEYBOARDX/random.sv                                            ;             ;
-; RTL/Seg7/SEG7.SV                                                   ; yes             ; User SystemVerilog HDL File                  ; D:/LAB1ULTI/Lab1Demo_restored/RTL/Seg7/SEG7.SV                                                   ;             ;
-; RTL/AUDIO/SinTable.sv                                              ; yes             ; User SystemVerilog HDL File                  ; D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/SinTable.sv                                              ;             ;
-; RTL/AUDIO/addr_counter.sv                                          ; yes             ; User SystemVerilog HDL File                  ; D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/addr_counter.sv                                          ;             ;
-; RTL/AUDIO/prescaler.sv                                             ; yes             ; User SystemVerilog HDL File                  ; D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/prescaler.sv                                             ;             ;
-; RTL/AUDIO/ToneDecoder.sv                                           ; yes             ; User SystemVerilog HDL File                  ; D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/ToneDecoder.sv                                           ;             ;
-; RTL/AUDIO/AUDIO.bdf                                                ; yes             ; User Block Diagram/Schematic File            ; D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/AUDIO.bdf                                                ;             ;
-; RTL/AUDIO/audio_codec_controller/i2c.sv                            ; yes             ; User SystemVerilog HDL File                  ; D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/i2c.sv                            ;             ;
-; RTL/AUDIO/audio_codec_controller/DualSerial2parallel.sv            ; yes             ; User SystemVerilog HDL File                  ; D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/DualSerial2parallel.sv            ;             ;
-; RTL/AUDIO/audio_codec_controller/clock_500.sv                      ; yes             ; User SystemVerilog HDL File                  ; D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/clock_500.sv                      ;             ;
-; RTL/AUDIO/audio_codec_controller/audio_codec_controller.sv         ; yes             ; User SystemVerilog HDL File                  ; D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/audio_codec_controller.sv         ;             ;
-; CLK_31P5.v                                                         ; yes             ; User Wizard-Generated File                   ; D:/LAB1ULTI/Lab1Demo_restored/CLK_31P5.v                                                         ; CLK_31P5    ;
-; CLK_31P5/CLK_31P5_0002.v                                           ; yes             ; User Verilog HDL File                        ; D:/LAB1ULTI/Lab1Demo_restored/CLK_31P5/CLK_31P5_0002.v                                           ; CLK_31P5    ;
-; RTL/VGA/MyConstant.sv                                              ; yes             ; User SystemVerilog HDL File                  ; D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/MyConstant.sv                                              ;             ;
-; altera_pll.v                                                       ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altera_pll.v                              ;             ;
-; lpm_rom.tdf                                                        ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_rom.tdf                               ;             ;
-; altrom.inc                                                         ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altrom.inc                                ;             ;
-; aglobal170.inc                                                     ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/aglobal170.inc                            ;             ;
-; altrom.tdf                                                         ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altrom.tdf                                ;             ;
-; memmodes.inc                                                       ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/others/maxplus2/memmodes.inc                            ;             ;
-; lpm_decode.inc                                                     ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_decode.inc                            ;             ;
-; lpm_mux.inc                                                        ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_mux.inc                               ;             ;
-; altsyncram.inc                                                     ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altsyncram.inc                            ;             ;
-; altsyncram.tdf                                                     ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altsyncram.tdf                            ;             ;
-; stratix_ram_block.inc                                              ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/stratix_ram_block.inc                     ;             ;
-; a_rdenreg.inc                                                      ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/a_rdenreg.inc                             ;             ;
-; altram.inc                                                         ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altram.inc                                ;             ;
-; altdpram.inc                                                       ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altdpram.inc                              ;             ;
-; db/altsyncram_bj61.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; D:/LAB1ULTI/Lab1Demo_restored/db/altsyncram_bj61.tdf                                             ;             ;
-; RTL/BG.mif                                                         ; yes             ; Auto-Found Memory Initialization File        ; D:/LAB1ULTI/Lab1Demo_restored/RTL/BG.mif                                                         ;             ;
-; db/decode_s2a.tdf                                                  ; yes             ; Auto-Generated Megafunction                  ; D:/LAB1ULTI/Lab1Demo_restored/db/decode_s2a.tdf                                                  ;             ;
-; db/mux_jhb.tdf                                                     ; yes             ; Auto-Generated Megafunction                  ; D:/LAB1ULTI/Lab1Demo_restored/db/mux_jhb.tdf                                                     ;             ;
-; sld_signaltap.vhd                                                  ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/sld_signaltap.vhd                         ;             ;
-; sld_signaltap_impl.vhd                                             ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/sld_signaltap_impl.vhd                    ;             ;
-; sld_ela_control.vhd                                                ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/sld_ela_control.vhd                       ;             ;
-; lpm_shiftreg.tdf                                                   ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_shiftreg.tdf                          ;             ;
-; lpm_constant.inc                                                   ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_constant.inc                          ;             ;
-; dffeea.inc                                                         ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/dffeea.inc                                ;             ;
-; sld_mbpmg.vhd                                                      ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/sld_mbpmg.vhd                             ;             ;
-; sld_ela_trigger_flow_mgr.vhd                                       ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/sld_ela_trigger_flow_mgr.vhd              ;             ;
-; sld_buffer_manager.vhd                                             ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/sld_buffer_manager.vhd                    ;             ;
-; db/altsyncram_ib84.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; D:/LAB1ULTI/Lab1Demo_restored/db/altsyncram_ib84.tdf                                             ;             ;
-; altdpram.tdf                                                       ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altdpram.tdf                              ;             ;
-; a_hdffe.inc                                                        ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/a_hdffe.inc                               ;             ;
-; alt_le_rden_reg.inc                                                ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/alt_le_rden_reg.inc                       ;             ;
-; lpm_mux.tdf                                                        ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_mux.tdf                               ;             ;
-; muxlut.inc                                                         ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/muxlut.inc                                ;             ;
-; bypassff.inc                                                       ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/bypassff.inc                              ;             ;
-; altshift.inc                                                       ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altshift.inc                              ;             ;
-; db/mux_elc.tdf                                                     ; yes             ; Auto-Generated Megafunction                  ; D:/LAB1ULTI/Lab1Demo_restored/db/mux_elc.tdf                                                     ;             ;
-; lpm_decode.tdf                                                     ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_decode.tdf                            ;             ;
-; declut.inc                                                         ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/declut.inc                                ;             ;
-; lpm_compare.inc                                                    ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_compare.inc                           ;             ;
-; db/decode_vnf.tdf                                                  ; yes             ; Auto-Generated Megafunction                  ; D:/LAB1ULTI/Lab1Demo_restored/db/decode_vnf.tdf                                                  ;             ;
-; lpm_counter.tdf                                                    ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_counter.tdf                           ;             ;
-; lpm_add_sub.inc                                                    ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_add_sub.inc                           ;             ;
-; cmpconst.inc                                                       ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/cmpconst.inc                              ;             ;
-; lpm_counter.inc                                                    ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_counter.inc                           ;             ;
-; alt_counter_stratix.inc                                            ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/alt_counter_stratix.inc                   ;             ;
-; db/cntr_19i.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; D:/LAB1ULTI/Lab1Demo_restored/db/cntr_19i.tdf                                                    ;             ;
-; db/cmpr_d9c.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; D:/LAB1ULTI/Lab1Demo_restored/db/cmpr_d9c.tdf                                                    ;             ;
-; db/cntr_4vi.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; D:/LAB1ULTI/Lab1Demo_restored/db/cntr_4vi.tdf                                                    ;             ;
-; db/cntr_09i.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; D:/LAB1ULTI/Lab1Demo_restored/db/cntr_09i.tdf                                                    ;             ;
-; db/cmpr_c9c.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; D:/LAB1ULTI/Lab1Demo_restored/db/cmpr_c9c.tdf                                                    ;             ;
-; db/cntr_kri.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; D:/LAB1ULTI/Lab1Demo_restored/db/cntr_kri.tdf                                                    ;             ;
-; db/cmpr_99c.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; D:/LAB1ULTI/Lab1Demo_restored/db/cmpr_99c.tdf                                                    ;             ;
-; sld_rom_sr.vhd                                                     ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/sld_rom_sr.vhd                            ;             ;
-; sld_jtag_endpoint_adapter.vhd                                      ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter.vhd             ;             ;
-; sld_jtag_endpoint_adapter_impl.sv                                  ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter_impl.sv         ;             ;
-; sld_hub.vhd                                                        ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/sld_hub.vhd                               ; altera_sld  ;
-; db/ip/sld6dfc5e3d/alt_sld_fab.v                                    ; yes             ; Encrypted Auto-Found Verilog HDL File        ; D:/LAB1ULTI/Lab1Demo_restored/db/ip/sld6dfc5e3d/alt_sld_fab.v                                    ; alt_sld_fab ;
-; db/ip/sld6dfc5e3d/submodules/alt_sld_fab_alt_sld_fab.v             ; yes             ; Encrypted Auto-Found Verilog HDL File        ; D:/LAB1ULTI/Lab1Demo_restored/db/ip/sld6dfc5e3d/submodules/alt_sld_fab_alt_sld_fab.v             ; alt_sld_fab ;
-; db/ip/sld6dfc5e3d/submodules/alt_sld_fab_alt_sld_fab_ident.sv      ; yes             ; Auto-Found SystemVerilog HDL File            ; D:/LAB1ULTI/Lab1Demo_restored/db/ip/sld6dfc5e3d/submodules/alt_sld_fab_alt_sld_fab_ident.sv      ; alt_sld_fab ;
-; db/ip/sld6dfc5e3d/submodules/alt_sld_fab_alt_sld_fab_presplit.sv   ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; D:/LAB1ULTI/Lab1Demo_restored/db/ip/sld6dfc5e3d/submodules/alt_sld_fab_alt_sld_fab_presplit.sv   ; alt_sld_fab ;
-; db/ip/sld6dfc5e3d/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; yes             ; Encrypted Auto-Found VHDL File               ; D:/LAB1ULTI/Lab1Demo_restored/db/ip/sld6dfc5e3d/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; alt_sld_fab ;
-; db/ip/sld6dfc5e3d/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; D:/LAB1ULTI/Lab1Demo_restored/db/ip/sld6dfc5e3d/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; alt_sld_fab ;
-; sld_jtag_hub.vhd                                                   ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/sld_jtag_hub.vhd                          ;             ;
-; db/altsyncram_8071.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; D:/LAB1ULTI/Lab1Demo_restored/db/altsyncram_8071.tdf                                             ;             ;
-; RTL/VGA_BG.mif                                                     ; yes             ; Auto-Found Memory Initialization File        ; D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA_BG.mif                                                     ;             ;
-+--------------------------------------------------------------------+-----------------+----------------------------------------------+--------------------------------------------------------------------------------------------------+-------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                                ;
++--------------------------------------------------------------------+-----------------+----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+-------------+
+; File Name with User-Entered Path                                   ; Used in Netlist ; File Type                                    ; File Name with Absolute Path                                                                                                      ; Library     ;
++--------------------------------------------------------------------+-----------------+----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+-------------+
+; RTL/AUDIO/Mili_sec_counter.sv                                      ; yes             ; User SystemVerilog HDL File                  ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/Mili_sec_counter.sv                                      ;             ;
+; RTL/AUDIO/melody_player_1.sv                                       ; yes             ; User SystemVerilog HDL File                  ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/melody_player_1.sv                                       ;             ;
+; RTL/AUDIO/JukeBox1.sv                                              ; yes             ; User SystemVerilog HDL File                  ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/JukeBox1.sv                                              ;             ;
+; KBDINTF.qxp                                                        ; yes             ; User File                                    ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/KBDINTF.qxp                                                        ;             ;
+; RTL/VGA/TOP_VGA_DEMO_KBD.bdf                                       ; yes             ; User Block Diagram/Schematic File            ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/TOP_VGA_DEMO_KBD.bdf                                       ;             ;
+; RTL/VGA/game_controller.sv                                         ; yes             ; User SystemVerilog HDL File                  ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/game_controller.sv                                         ;             ;
+; RTL/VGA/Smiley_Block_T.bdf                                         ; yes             ; User Block Diagram/Schematic File            ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/Smiley_Block_T.bdf                                         ;             ;
+; RTL/VGA/smileyBitMap.sv                                            ; yes             ; User SystemVerilog HDL File                  ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/smileyBitMap.sv                                            ;             ;
+; RTL/VGA/square_object.sv                                           ; yes             ; User SystemVerilog HDL File                  ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/square_object.sv                                           ;             ;
+; RTL/VGA/back_ground_draw.sv                                        ; yes             ; User SystemVerilog HDL File                  ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/back_ground_draw.sv                                        ;             ;
+; RTL/VGA/HartsMatrixBitMap.sv                                       ; yes             ; User SystemVerilog HDL File                  ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/HartsMatrixBitMap.sv                                       ;             ;
+; RTL/VGA/HART_DISPLAY.bdf                                           ; yes             ; User Block Diagram/Schematic File            ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/HART_DISPLAY.bdf                                           ;             ;
+; RTL/VGA/smiley_move.sv                                             ; yes             ; User SystemVerilog HDL File                  ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/smiley_move.sv                                             ;             ;
+; RTL/VGA/objects_mux.sv                                             ; yes             ; User SystemVerilog HDL File                  ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/objects_mux.sv                                             ;             ;
+; RTL/VGA/VGA_Controller.sv                                          ; yes             ; User SystemVerilog HDL File                  ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/VGA_Controller.sv                                          ;             ;
+; RTL/VGA/NumbersBitMap.sv                                           ; yes             ; User SystemVerilog HDL File                  ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/NumbersBitMap.sv                                           ;             ;
+; RTL/KEYBOARDX/TOP_KBD.bdf                                          ; yes             ; User Block Diagram/Schematic File            ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/KEYBOARDX/TOP_KBD.bdf                                          ;             ;
+; RTL/KEYBOARDX/keyPad_decoder.sv                                    ; yes             ; User SystemVerilog HDL File                  ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/KEYBOARDX/keyPad_decoder.sv                                    ;             ;
+; RTL/KEYBOARDX/random.sv                                            ; yes             ; User SystemVerilog HDL File                  ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/KEYBOARDX/random.sv                                            ;             ;
+; RTL/Seg7/SEG7.SV                                                   ; yes             ; User SystemVerilog HDL File                  ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/Seg7/SEG7.SV                                                   ;             ;
+; RTL/AUDIO/SinTable.sv                                              ; yes             ; User SystemVerilog HDL File                  ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/SinTable.sv                                              ;             ;
+; RTL/AUDIO/addr_counter.sv                                          ; yes             ; User SystemVerilog HDL File                  ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/addr_counter.sv                                          ;             ;
+; RTL/AUDIO/prescaler.sv                                             ; yes             ; User SystemVerilog HDL File                  ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/prescaler.sv                                             ;             ;
+; RTL/AUDIO/ToneDecoder.sv                                           ; yes             ; User SystemVerilog HDL File                  ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/ToneDecoder.sv                                           ;             ;
+; RTL/AUDIO/AUDIO.bdf                                                ; yes             ; User Block Diagram/Schematic File            ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/AUDIO.bdf                                                ;             ;
+; RTL/AUDIO/audio_codec_controller/i2c.sv                            ; yes             ; User SystemVerilog HDL File                  ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/i2c.sv                            ;             ;
+; RTL/AUDIO/audio_codec_controller/DualSerial2parallel.sv            ; yes             ; User SystemVerilog HDL File                  ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/DualSerial2parallel.sv            ;             ;
+; RTL/AUDIO/audio_codec_controller/clock_500.sv                      ; yes             ; User SystemVerilog HDL File                  ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/clock_500.sv                      ;             ;
+; RTL/AUDIO/audio_codec_controller/audio_codec_controller.sv         ; yes             ; User SystemVerilog HDL File                  ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/audio_codec_controller.sv         ;             ;
+; CLK_31P5.v                                                         ; yes             ; User Wizard-Generated File                   ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/CLK_31P5.v                                                         ; CLK_31P5    ;
+; CLK_31P5/CLK_31P5_0002.v                                           ; yes             ; User Verilog HDL File                        ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/CLK_31P5/CLK_31P5_0002.v                                           ; CLK_31P5    ;
+; RTL/VGA/MyConstant.sv                                              ; yes             ; User SystemVerilog HDL File                  ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/MyConstant.sv                                              ;             ;
+; altera_pll.v                                                       ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altera_pll.v                                                               ;             ;
+; lpm_rom.tdf                                                        ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_rom.tdf                                                                ;             ;
+; altrom.inc                                                         ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altrom.inc                                                                 ;             ;
+; aglobal170.inc                                                     ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/aglobal170.inc                                                             ;             ;
+; altrom.tdf                                                         ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altrom.tdf                                                                 ;             ;
+; memmodes.inc                                                       ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/others/maxplus2/memmodes.inc                                                             ;             ;
+; lpm_decode.inc                                                     ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_decode.inc                                                             ;             ;
+; lpm_mux.inc                                                        ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_mux.inc                                                                ;             ;
+; altsyncram.inc                                                     ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altsyncram.inc                                                             ;             ;
+; altsyncram.tdf                                                     ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altsyncram.tdf                                                             ;             ;
+; stratix_ram_block.inc                                              ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/stratix_ram_block.inc                                                      ;             ;
+; a_rdenreg.inc                                                      ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/a_rdenreg.inc                                                              ;             ;
+; altram.inc                                                         ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altram.inc                                                                 ;             ;
+; altdpram.inc                                                       ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altdpram.inc                                                               ;             ;
+; db/altsyncram_bj61.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/db/altsyncram_bj61.tdf                                             ;             ;
+; RTL/BG.mif                                                         ; yes             ; Auto-Found Memory Initialization File        ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/BG.mif                                                         ;             ;
+; db/decode_s2a.tdf                                                  ; yes             ; Auto-Generated Megafunction                  ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/db/decode_s2a.tdf                                                  ;             ;
+; db/mux_jhb.tdf                                                     ; yes             ; Auto-Generated Megafunction                  ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/db/mux_jhb.tdf                                                     ;             ;
+; sld_signaltap.vhd                                                  ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/sld_signaltap.vhd                                                          ;             ;
+; sld_signaltap_impl.vhd                                             ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/sld_signaltap_impl.vhd                                                     ;             ;
+; sld_ela_control.vhd                                                ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/sld_ela_control.vhd                                                        ;             ;
+; lpm_shiftreg.tdf                                                   ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_shiftreg.tdf                                                           ;             ;
+; lpm_constant.inc                                                   ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_constant.inc                                                           ;             ;
+; dffeea.inc                                                         ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/dffeea.inc                                                                 ;             ;
+; sld_mbpmg.vhd                                                      ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/sld_mbpmg.vhd                                                              ;             ;
+; sld_ela_trigger_flow_mgr.vhd                                       ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/sld_ela_trigger_flow_mgr.vhd                                               ;             ;
+; sld_buffer_manager.vhd                                             ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/sld_buffer_manager.vhd                                                     ;             ;
+; db/altsyncram_ib84.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/db/altsyncram_ib84.tdf                                             ;             ;
+; altdpram.tdf                                                       ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altdpram.tdf                                                               ;             ;
+; a_hdffe.inc                                                        ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/a_hdffe.inc                                                                ;             ;
+; alt_le_rden_reg.inc                                                ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/alt_le_rden_reg.inc                                                        ;             ;
+; lpm_mux.tdf                                                        ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_mux.tdf                                                                ;             ;
+; muxlut.inc                                                         ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/muxlut.inc                                                                 ;             ;
+; bypassff.inc                                                       ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/bypassff.inc                                                               ;             ;
+; altshift.inc                                                       ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altshift.inc                                                               ;             ;
+; db/mux_elc.tdf                                                     ; yes             ; Auto-Generated Megafunction                  ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/db/mux_elc.tdf                                                     ;             ;
+; lpm_decode.tdf                                                     ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_decode.tdf                                                             ;             ;
+; declut.inc                                                         ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/declut.inc                                                                 ;             ;
+; lpm_compare.inc                                                    ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_compare.inc                                                            ;             ;
+; db/decode_vnf.tdf                                                  ; yes             ; Auto-Generated Megafunction                  ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/db/decode_vnf.tdf                                                  ;             ;
+; lpm_counter.tdf                                                    ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_counter.tdf                                                            ;             ;
+; lpm_add_sub.inc                                                    ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_add_sub.inc                                                            ;             ;
+; cmpconst.inc                                                       ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/cmpconst.inc                                                               ;             ;
+; lpm_counter.inc                                                    ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_counter.inc                                                            ;             ;
+; alt_counter_stratix.inc                                            ; yes             ; Megafunction                                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/alt_counter_stratix.inc                                                    ;             ;
+; db/cntr_19i.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/db/cntr_19i.tdf                                                    ;             ;
+; db/cmpr_d9c.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/db/cmpr_d9c.tdf                                                    ;             ;
+; db/cntr_4vi.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/db/cntr_4vi.tdf                                                    ;             ;
+; db/cntr_09i.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/db/cntr_09i.tdf                                                    ;             ;
+; db/cmpr_c9c.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/db/cmpr_c9c.tdf                                                    ;             ;
+; db/cntr_kri.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/db/cntr_kri.tdf                                                    ;             ;
+; db/cmpr_99c.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/db/cmpr_99c.tdf                                                    ;             ;
+; sld_rom_sr.vhd                                                     ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/sld_rom_sr.vhd                                                             ;             ;
+; sld_jtag_endpoint_adapter.vhd                                      ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter.vhd                                              ;             ;
+; sld_jtag_endpoint_adapter_impl.sv                                  ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter_impl.sv                                          ;             ;
+; sld_hub.vhd                                                        ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/sld_hub.vhd                                                                ; altera_sld  ;
+; db/ip/sld6dfc5e3d/alt_sld_fab.v                                    ; yes             ; Encrypted Auto-Found Verilog HDL File        ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/db/ip/sld6dfc5e3d/alt_sld_fab.v                                    ; alt_sld_fab ;
+; db/ip/sld6dfc5e3d/submodules/alt_sld_fab_alt_sld_fab.v             ; yes             ; Encrypted Auto-Found Verilog HDL File        ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/db/ip/sld6dfc5e3d/submodules/alt_sld_fab_alt_sld_fab.v             ; alt_sld_fab ;
+; db/ip/sld6dfc5e3d/submodules/alt_sld_fab_alt_sld_fab_ident.sv      ; yes             ; Auto-Found SystemVerilog HDL File            ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/db/ip/sld6dfc5e3d/submodules/alt_sld_fab_alt_sld_fab_ident.sv      ; alt_sld_fab ;
+; db/ip/sld6dfc5e3d/submodules/alt_sld_fab_alt_sld_fab_presplit.sv   ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/db/ip/sld6dfc5e3d/submodules/alt_sld_fab_alt_sld_fab_presplit.sv   ; alt_sld_fab ;
+; db/ip/sld6dfc5e3d/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; yes             ; Encrypted Auto-Found VHDL File               ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/db/ip/sld6dfc5e3d/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; alt_sld_fab ;
+; db/ip/sld6dfc5e3d/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/db/ip/sld6dfc5e3d/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; alt_sld_fab ;
+; sld_jtag_hub.vhd                                                   ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/sld_jtag_hub.vhd                                                           ;             ;
+; db/altsyncram_8071.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/db/altsyncram_8071.tdf                                             ;             ;
+; RTL/VGA_BG.mif                                                     ; yes             ; Auto-Found Memory Initialization File        ; C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA_BG.mif                                                     ;             ;
++--------------------------------------------------------------------+-----------------+----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+-------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------+
@@ -320,16 +318,16 @@ agreement for further details.
 +---------------------------------------------+-----------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                             ;
 +---------------------------------------------+-----------------------------------------------------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 1719                                                                              ;
+; Estimate of Logic utilization (ALMs needed) ; 1713                                                                              ;
 ;                                             ;                                                                                   ;
-; Combinational ALUT usage for logic          ; 2479                                                                              ;
-;     -- 7 input functions                    ; 75                                                                                ;
-;     -- 6 input functions                    ; 749                                                                               ;
+; Combinational ALUT usage for logic          ; 2466                                                                              ;
+;     -- 7 input functions                    ; 79                                                                                ;
+;     -- 6 input functions                    ; 746                                                                               ;
 ;     -- 5 input functions                    ; 410                                                                               ;
-;     -- 4 input functions                    ; 271                                                                               ;
-;     -- <=3 input functions                  ; 974                                                                               ;
+;     -- 4 input functions                    ; 294                                                                               ;
+;     -- <=3 input functions                  ; 937                                                                               ;
 ;                                             ;                                                                                   ;
-; Dedicated logic registers                   ; 1302                                                                              ;
+; Dedicated logic registers                   ; 1301                                                                              ;
 ;                                             ;                                                                                   ;
 ; I/O pins                                    ; 62                                                                                ;
 ; Total MLAB memory bits                      ; 0                                                                                 ;
@@ -341,8 +339,8 @@ agreement for further details.
 ;     -- PLLs                                 ; 1                                                                                 ;
 ;                                             ;                                                                                   ;
 ; Maximum fan-out node                        ; CLK_31P5:inst7|CLK_31P5_0002:clk_31p5_inst|altera_pll:altera_pll_i|outclk_wire[0] ;
-; Maximum fan-out                             ; 1290                                                                              ;
-; Total fan-out                               ; 19828                                                                             ;
+; Maximum fan-out                             ; 1289                                                                              ;
+; Total fan-out                               ; 19764                                                                             ;
 ; Average fan-out                             ; 4.66                                                                              ;
 +---------------------------------------------+-----------------------------------------------------------------------------------+
 
@@ -352,7 +350,7 @@ agreement for further details.
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                          ; Entity Name                       ; Library Name ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
-; |TOP_VGA_DEMO_KBD                                                                                                                       ; 2479 (1)            ; 1302 (0)                  ; 2460672           ; 0          ; 62   ; 0            ; |TOP_VGA_DEMO_KBD                                                                                                                                                                                                                                                                                                                                            ; TOP_VGA_DEMO_KBD                  ; work         ;
+; |TOP_VGA_DEMO_KBD                                                                                                                       ; 2466 (1)            ; 1301 (0)                  ; 2460672           ; 0          ; 62   ; 0            ; |TOP_VGA_DEMO_KBD                                                                                                                                                                                                                                                                                                                                            ; TOP_VGA_DEMO_KBD                  ; work         ;
 ;    |AUDIO:inst18|                                                                                                                       ; 224 (0)             ; 142 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|AUDIO:inst18                                                                                                                                                                                                                                                                                                                               ; AUDIO                             ; work         ;
 ;       |ToneDecoder:inst4|                                                                                                               ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|AUDIO:inst18|ToneDecoder:inst4                                                                                                                                                                                                                                                                                                             ; ToneDecoder                       ; work         ;
 ;       |addr_counter:inst9|                                                                                                              ; 10 (10)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|AUDIO:inst18|addr_counter:inst9                                                                                                                                                                                                                                                                                                            ; addr_counter                      ; work         ;
@@ -365,20 +363,20 @@ agreement for further details.
 ;    |CLK_31P5:inst7|                                                                                                                     ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|CLK_31P5:inst7                                                                                                                                                                                                                                                                                                                             ; CLK_31P5                          ; CLK_31P5     ;
 ;       |CLK_31P5_0002:clk_31p5_inst|                                                                                                     ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|CLK_31P5:inst7|CLK_31P5_0002:clk_31p5_inst                                                                                                                                                                                                                                                                                                 ; CLK_31P5_0002                     ; CLK_31P5     ;
 ;          |altera_pll:altera_pll_i|                                                                                                      ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|CLK_31P5:inst7|CLK_31P5_0002:clk_31p5_inst|altera_pll:altera_pll_i                                                                                                                                                                                                                                                                         ; altera_pll                        ; work         ;
-;    |HART_DISPLAY:inst12|                                                                                                                ; 948 (0)             ; 154 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|HART_DISPLAY:inst12                                                                                                                                                                                                                                                                                                                        ; HART_DISPLAY                      ; work         ;
-;       |HartsMatrixBitMap:inst6|                                                                                                         ; 938 (938)           ; 136 (136)                 ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|HART_DISPLAY:inst12|HartsMatrixBitMap:inst6                                                                                                                                                                                                                                                                                                ; HartsMatrixBitMap                 ; work         ;
+;    |HART_DISPLAY:inst12|                                                                                                                ; 947 (0)             ; 154 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|HART_DISPLAY:inst12                                                                                                                                                                                                                                                                                                                        ; HART_DISPLAY                      ; work         ;
+;       |HartsMatrixBitMap:inst6|                                                                                                         ; 937 (937)           ; 136 (136)                 ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|HART_DISPLAY:inst12|HartsMatrixBitMap:inst6                                                                                                                                                                                                                                                                                                ; HartsMatrixBitMap                 ; work         ;
 ;       |square_object:inst11|                                                                                                            ; 10 (10)             ; 18 (18)                   ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|HART_DISPLAY:inst12|square_object:inst11                                                                                                                                                                                                                                                                                                   ; square_object                     ; work         ;
 ;    |SEG7:inst10|                                                                                                                        ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|SEG7:inst10                                                                                                                                                                                                                                                                                                                                ; SEG7                              ; work         ;
-;    |Smiley_Block_T:inst1|                                                                                                               ; 405 (0)             ; 153 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|Smiley_Block_T:inst1                                                                                                                                                                                                                                                                                                                       ; Smiley_Block_T                    ; work         ;
+;    |Smiley_Block_T:inst1|                                                                                                               ; 402 (0)             ; 152 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|Smiley_Block_T:inst1                                                                                                                                                                                                                                                                                                                       ; Smiley_Block_T                    ; work         ;
 ;       |smileyBitMap:inst1|                                                                                                              ; 53 (53)             ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|Smiley_Block_T:inst1|smileyBitMap:inst1                                                                                                                                                                                                                                                                                                    ; smileyBitMap                      ; work         ;
-;       |smiley_move:inst|                                                                                                                ; 299 (299)           ; 139 (139)                 ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|Smiley_Block_T:inst1|smiley_move:inst                                                                                                                                                                                                                                                                                                      ; smiley_move                       ; work         ;
+;       |smiley_move:inst|                                                                                                                ; 296 (296)           ; 138 (138)                 ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|Smiley_Block_T:inst1|smiley_move:inst                                                                                                                                                                                                                                                                                                      ; smiley_move                       ; work         ;
 ;       |square_object:inst6|                                                                                                             ; 53 (53)             ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|Smiley_Block_T:inst1|square_object:inst6                                                                                                                                                                                                                                                                                                   ; square_object                     ; work         ;
-;    |TOP_KBD:inst16|                                                                                                                     ; 69 (0)              ; 59 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|TOP_KBD:inst16                                                                                                                                                                                                                                                                                                                             ; TOP_KBD                           ; work         ;
+;    |TOP_KBD:inst16|                                                                                                                     ; 62 (0)              ; 59 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|TOP_KBD:inst16                                                                                                                                                                                                                                                                                                                             ; TOP_KBD                           ; work         ;
 ;       |KBDINTF:inst|                                                                                                                    ; 40 (0)              ; 52 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|TOP_KBD:inst16|KBDINTF:inst                                                                                                                                                                                                                                                                                                                ; KBDINTF                           ; work         ;
 ;          |bitrec:inst4|                                                                                                                 ; 16 (16)             ; 28 (28)                   ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|TOP_KBD:inst16|KBDINTF:inst|bitrec:inst4                                                                                                                                                                                                                                                                                                   ; bitrec                            ; work         ;
 ;          |byterec:inst3|                                                                                                                ; 19 (19)             ; 19 (19)                   ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|TOP_KBD:inst16|KBDINTF:inst|byterec:inst3                                                                                                                                                                                                                                                                                                  ; byterec                           ; work         ;
 ;          |lpf:inst5|                                                                                                                    ; 5 (5)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|TOP_KBD:inst16|KBDINTF:inst|lpf:inst5                                                                                                                                                                                                                                                                                                      ; lpf                               ; work         ;
-;       |keyPad_decoder:inst2|                                                                                                            ; 29 (29)             ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|TOP_KBD:inst16|keyPad_decoder:inst2                                                                                                                                                                                                                                                                                                        ; keyPad_decoder                    ; work         ;
+;       |keyPad_decoder:inst2|                                                                                                            ; 22 (22)             ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|TOP_KBD:inst16|keyPad_decoder:inst2                                                                                                                                                                                                                                                                                                        ; keyPad_decoder                    ; work         ;
 ;    |VGA_Controller:inst|                                                                                                                ; 95 (95)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|VGA_Controller:inst                                                                                                                                                                                                                                                                                                                        ; VGA_Controller                    ; work         ;
 ;    |back_ground_draw:inst4|                                                                                                             ; 47 (47)             ; 25 (25)                   ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|back_ground_draw:inst4                                                                                                                                                                                                                                                                                                                     ; back_ground_draw                  ; work         ;
 ;    |game_controller:inst11|                                                                                                             ; 3 (3)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|game_controller:inst11                                                                                                                                                                                                                                                                                                                     ; game_controller                   ; work         ;
@@ -388,7 +386,7 @@ agreement for further details.
 ;             |altsyncram_bj61:auto_generated|                                                                                            ; 64 (0)              ; 6 (6)                     ; 2457600           ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|lpm_rom:inst5|altrom:srom|altsyncram:rom_block|altsyncram_bj61:auto_generated                                                                                                                                                                                                                                                              ; altsyncram_bj61                   ; work         ;
 ;                |decode_s2a:rden_decode|                                                                                                 ; 38 (38)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|lpm_rom:inst5|altrom:srom|altsyncram:rom_block|altsyncram_bj61:auto_generated|decode_s2a:rden_decode                                                                                                                                                                                                                                       ; decode_s2a                        ; work         ;
 ;                |mux_jhb:mux2|                                                                                                           ; 26 (26)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|lpm_rom:inst5|altrom:srom|altsyncram:rom_block|altsyncram_bj61:auto_generated|mux_jhb:mux2                                                                                                                                                                                                                                                 ; mux_jhb                           ; work         ;
-;    |melody_player_1:inst13|                                                                                                             ; 158 (73)            ; 53 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|melody_player_1:inst13                                                                                                                                                                                                                                                                                                                     ; melody_player_1                   ; work         ;
+;    |melody_player_1:inst13|                                                                                                             ; 156 (71)            ; 53 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|melody_player_1:inst13                                                                                                                                                                                                                                                                                                                     ; melody_player_1                   ; work         ;
 ;       |JukeBox1:JukeBox1|                                                                                                               ; 46 (46)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|melody_player_1:inst13|JukeBox1:JukeBox1                                                                                                                                                                                                                                                                                                   ; JukeBox1                          ; work         ;
 ;       |Mili_sec_counter:mili_sec_counter_inst|                                                                                          ; 39 (39)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|melody_player_1:inst13|Mili_sec_counter:mili_sec_counter_inst                                                                                                                                                                                                                                                                              ; Mili_sec_counter                  ; work         ;
 ;    |objects_mux:inst9|                                                                                                                  ; 98 (98)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|objects_mux:inst9                                                                                                                                                                                                                                                                                                                          ; objects_mux                       ; work         ;
@@ -1137,12 +1135,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1302  ;
-; Number of registers using Synchronous Clear  ; 274   ;
-; Number of registers using Synchronous Load   ; 259   ;
-; Number of registers using Asynchronous Clear ; 798   ;
+; Total registers                              ; 1301  ;
+; Number of registers using Synchronous Clear  ; 272   ;
+; Number of registers using Synchronous Load   ; 227   ;
+; Number of registers using Asynchronous Clear ; 797   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 631   ;
+; Number of registers using Clock Enable       ; 629   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -1152,7 +1150,7 @@ Encoding Type:  One-Hot
 +----------------------------------------------------------------------+---------+
 ; Inverted Register                                                    ; Fan out ;
 +----------------------------------------------------------------------+---------+
-; VGA_Controller:inst|oVGA_VS                                          ; 4       ;
+; VGA_Controller:inst|oVGA_VS                                          ; 7       ;
 ; VGA_Controller:inst|oVGA_HS                                          ; 4       ;
 ; random:inst19|dout[0]                                                ; 1       ;
 ; random:inst19|dout[1]                                                ; 1       ;
@@ -1262,23 +1260,24 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |TOP_VGA_DEMO_KBD|TOP_KBD:inst16|keyPad_decoder:inst2|keyIsPressed[8]                                                             ;
 ; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |TOP_VGA_DEMO_KBD|AUDIO:inst18|audio_codec_controller:inst|i2c:i2c_inst|SD_COUNTER[0]                                             ;
 ; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |TOP_VGA_DEMO_KBD|AUDIO:inst18|audio_codec_controller:inst|DualSerial2parallel:DualSerial2parallel_inst|DACdata_fifo[14]          ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |TOP_VGA_DEMO_KBD|AUDIO:inst18|audio_codec_controller:inst|DualSerial2parallel:DualSerial2parallel_inst|serial_cnt[8]             ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |TOP_VGA_DEMO_KBD|AUDIO:inst18|audio_codec_controller:inst|DualSerial2parallel:DualSerial2parallel_inst|serial_cnt[7]             ;
 ; 6:1                ; 7 bits    ; 28 LEs        ; 21 LEs               ; 7 LEs                  ; Yes        ; |TOP_VGA_DEMO_KBD|AUDIO:inst18|audio_codec_controller:inst|DualSerial2parallel:DualSerial2parallel_inst|DACdata_fifo[12]          ;
-; 6:1                ; 32 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; Yes        ; |TOP_VGA_DEMO_KBD|Smiley_Block_T:inst1|smiley_move:inst|Xposition[10]                                                             ;
-; 6:1                ; 32 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; Yes        ; |TOP_VGA_DEMO_KBD|Smiley_Block_T:inst1|smiley_move:inst|Yposition[26]                                                             ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; Yes        ; |TOP_VGA_DEMO_KBD|Smiley_Block_T:inst1|smiley_move:inst|Xposition[11]                                                             ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; Yes        ; |TOP_VGA_DEMO_KBD|Smiley_Block_T:inst1|smiley_move:inst|Yposition[25]                                                             ;
 ; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |TOP_VGA_DEMO_KBD|melody_player_1:inst13|noteTimeCounter[8]                                                                       ;
 ; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; Yes        ; |TOP_VGA_DEMO_KBD|melody_player_1:inst13|noteTimeCounter[0]                                                                       ;
-; 21:1               ; 31 bits   ; 434 LEs       ; 31 LEs               ; 403 LEs                ; Yes        ; |TOP_VGA_DEMO_KBD|Smiley_Block_T:inst1|smiley_move:inst|Xspeed[10]                                                                ;
 ; 21:1               ; 2 bits    ; 28 LEs        ; 24 LEs               ; 4 LEs                  ; Yes        ; |TOP_VGA_DEMO_KBD|Smiley_Block_T:inst1|smileyBitMap:inst1|HitEdgeCode[0]                                                          ;
-; 23:1               ; 30 bits   ; 450 LEs       ; 60 LEs               ; 390 LEs                ; Yes        ; |TOP_VGA_DEMO_KBD|Smiley_Block_T:inst1|smiley_move:inst|Yspeed[9]                                                                 ;
+; 22:1               ; 31 bits   ; 434 LEs       ; 62 LEs               ; 372 LEs                ; Yes        ; |TOP_VGA_DEMO_KBD|Smiley_Block_T:inst1|smiley_move:inst|Xspeed[10]                                                                ;
+; 24:1               ; 30 bits   ; 480 LEs       ; 90 LEs               ; 390 LEs                ; Yes        ; |TOP_VGA_DEMO_KBD|Smiley_Block_T:inst1|smiley_move:inst|Yspeed[9]                                                                 ;
 ; 36:1               ; 8 bits    ; 192 LEs       ; 192 LEs              ; 0 LEs                  ; Yes        ; |TOP_VGA_DEMO_KBD|objects_mux:inst9|RGBOut[5]                                                                                     ;
-; 10:1               ; 3 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |TOP_VGA_DEMO_KBD|TOP_KBD:inst16|keyPad_decoder:inst2|key[3]                                                                      ;
-; 8:1                ; 5 bits    ; 25 LEs        ; 10 LEs               ; 15 LEs                 ; Yes        ; |TOP_VGA_DEMO_KBD|melody_player_1:inst13|noteTimeCounter[6]                                                                       ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |TOP_VGA_DEMO_KBD|lpm_rom:inst5|altrom:srom|altsyncram:rom_block|altsyncram_bj61:auto_generated|mux_jhb:mux2|l3_w1_n4_mux_dataout ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |TOP_VGA_DEMO_KBD|melody_player_1:inst13|Selector18                                                                               ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; No         ; |TOP_VGA_DEMO_KBD|melody_player_1:inst13|Selector17                                                                               ;
+; 10:1               ; 3 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |TOP_VGA_DEMO_KBD|TOP_KBD:inst16|keyPad_decoder:inst2|key[0]                                                                      ;
+; 8:1                ; 5 bits    ; 25 LEs        ; 10 LEs               ; 15 LEs                 ; Yes        ; |TOP_VGA_DEMO_KBD|melody_player_1:inst13|noteTimeCounter[3]                                                                       ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |TOP_VGA_DEMO_KBD|lpm_rom:inst5|altrom:srom|altsyncram:rom_block|altsyncram_bj61:auto_generated|mux_jhb:mux2|l3_w4_n4_mux_dataout ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |TOP_VGA_DEMO_KBD|melody_player_1:inst13|Selector15                                                                               ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; No         ; |TOP_VGA_DEMO_KBD|melody_player_1:inst13|Selector16                                                                               ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -2175,35 +2174,33 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 599                         ;
+; arriav_ff             ; 598                         ;
 ;     CLR               ; 242                         ;
 ;     CLR SCLR          ; 88                          ;
-;     CLR SLD           ; 1                           ;
 ;     ENA               ; 42                          ;
-;     ENA CLR           ; 16                          ;
+;     ENA CLR           ; 46                          ;
 ;     ENA CLR SCLR      ; 51                          ;
-;     ENA CLR SLD       ; 125                         ;
-;     ENA SCLR          ; 26                          ;
-;     ENA SCLR SLD      ; 1                           ;
-;     plain             ; 7                           ;
+;     ENA CLR SLD       ; 95                          ;
+;     ENA SCLR          ; 25                          ;
+;     plain             ; 9                           ;
 ; arriav_io_obuf        ; 8                           ;
-; arriav_lcell_comb     ; 2114                        ;
+; arriav_lcell_comb     ; 2101                        ;
 ;     arith             ; 407                         ;
 ;         0 data inputs ; 4                           ;
 ;         1 data inputs ; 295                         ;
 ;         2 data inputs ; 67                          ;
 ;         4 data inputs ; 18                          ;
 ;         5 data inputs ; 23                          ;
-;     extend            ; 75                          ;
-;         7 data inputs ; 75                          ;
-;     normal            ; 1632                        ;
+;     extend            ; 79                          ;
+;         7 data inputs ; 79                          ;
+;     normal            ; 1615                        ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 34                          ;
-;         2 data inputs ; 64                          ;
-;         3 data inputs ; 364                         ;
-;         4 data inputs ; 202                         ;
+;         2 data inputs ; 58                          ;
+;         3 data inputs ; 333                         ;
+;         4 data inputs ; 225                         ;
 ;         5 data inputs ; 301                         ;
-;         6 data inputs ; 665                         ;
+;         6 data inputs ; 662                         ;
 ; blackbox              ; 1                           ;
 ;         BDINTF:inst   ; 1                           ;
 ; boundary_port         ; 87                          ;
@@ -2211,7 +2208,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; stratixv_ram_block    ; 304                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 9.00                        ;
-; Average LUT depth     ; 4.50                        ;
+; Average LUT depth     ; 4.51                        ;
 +-----------------------+-----------------------------+
 
 
@@ -2220,7 +2217,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:07     ;
+; Top            ; 00:00:08     ;
 +----------------+--------------+
 
 
@@ -2319,82 +2316,82 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Sat Sep 13 16:01:55 2025
+    Info: Processing started: Sun Sep 14 14:13:05 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab1Demo -c Lab1Demo
-Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/audio/mili_sec_counter.sv
-    Info (12023): Found entity 1: Mili_sec_counter File: D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/Mili_sec_counter.sv Line: 8
+    Info (12023): Found entity 1: Mili_sec_counter File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/Mili_sec_counter.sv Line: 8
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/audio/melody_player_1.sv
-    Info (12023): Found entity 1: melody_player_1 File: D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/melody_player_1.sv Line: 7
+    Info (12023): Found entity 1: melody_player_1 File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/melody_player_1.sv Line: 7
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/audio/jukebox1.sv
-    Info (12023): Found entity 1: JukeBox1 File: D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/JukeBox1.sv Line: 9
+    Info (12023): Found entity 1: JukeBox1 File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/JukeBox1.sv Line: 9
 Info (12021): Found 1 design units, including 1 entities, in source file kbdintf.qxp
-    Info (12023): Found entity 1: KBDINTF File: D:/LAB1ULTI/Lab1Demo_restored/KBDINTF.qxp Line: -1
+    Info (12023): Found entity 1: KBDINTF File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/KBDINTF.qxp Line: -1
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/vga/top_vga_demo_kbd.bdf
     Info (12023): Found entity 1: TOP_VGA_DEMO_KBD
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/vga/game_controller.sv
-    Info (12023): Found entity 1: game_controller File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/game_controller.sv Line: 6
+    Info (12023): Found entity 1: game_controller File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/game_controller.sv Line: 6
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/vga/smiley_block_t.bdf
     Info (12023): Found entity 1: Smiley_Block_T
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/vga/smileybitmap.sv
-    Info (12023): Found entity 1: smileyBitMap File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/smileyBitMap.sv Line: 5
+    Info (12023): Found entity 1: smileyBitMap File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/smileyBitMap.sv Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/vga/square_object.sv
-    Info (12023): Found entity 1: square_object File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/square_object.sv Line: 8
+    Info (12023): Found entity 1: square_object File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/square_object.sv Line: 8
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/vga/back_ground_draw.sv
-    Info (12023): Found entity 1: back_ground_draw File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/back_ground_draw.sv Line: 5
+    Info (12023): Found entity 1: back_ground_draw File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/back_ground_draw.sv Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/vga/square_hart_object.sv
-    Info (12023): Found entity 1: square_Hart_object File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/square_Hart_object.sv Line: 8
+    Info (12023): Found entity 1: square_Hart_object File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/square_Hart_object.sv Line: 8
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/vga/hartsmatrixbitmap.sv
-    Info (12023): Found entity 1: HartsMatrixBitMap File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/HartsMatrixBitMap.sv Line: 7
+    Info (12023): Found entity 1: HartsMatrixBitMap File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/HartsMatrixBitMap.sv Line: 7
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/vga/hart_display.bdf
     Info (12023): Found entity 1: HART_DISPLAY
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/vga/smiley_move.sv
-    Info (12023): Found entity 1: smiley_move File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/smiley_move.sv Line: 11
+    Info (12023): Found entity 1: smiley_move File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/smiley_move.sv Line: 11
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/vga/objects_mux.sv
-    Info (12023): Found entity 1: objects_mux File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/objects_mux.sv Line: 10
+    Info (12023): Found entity 1: objects_mux File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/objects_mux.sv Line: 10
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/vga/vga_controller.sv
-    Info (12023): Found entity 1: VGA_Controller File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/VGA_Controller.sv Line: 11
+    Info (12023): Found entity 1: VGA_Controller File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/VGA_Controller.sv Line: 11
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/vga/numbersbitmap.sv
-    Info (12023): Found entity 1: NumbersBitMap File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/NumbersBitMap.sv Line: 7
+    Info (12023): Found entity 1: NumbersBitMap File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/NumbersBitMap.sv Line: 7
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/vga/valx.v
-    Info (12023): Found entity 1: valX File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/valX.v Line: 40
+    Info (12023): Found entity 1: valX File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/valX.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/keyboardx/top_kbd.bdf
     Info (12023): Found entity 1: TOP_KBD
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/keyboardx/keypad_decoder.sv
-    Info (12023): Found entity 1: keyPad_decoder File: D:/LAB1ULTI/Lab1Demo_restored/RTL/KEYBOARDX/keyPad_decoder.sv Line: 5
+    Info (12023): Found entity 1: keyPad_decoder File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/KEYBOARDX/keyPad_decoder.sv Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/keyboardx/simple_up_counter.sv
-    Info (12023): Found entity 1: simple_up_counter File: D:/LAB1ULTI/Lab1Demo_restored/RTL/KEYBOARDX/simple_up_counter.sv Line: 6
+    Info (12023): Found entity 1: simple_up_counter File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/KEYBOARDX/simple_up_counter.sv Line: 6
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/keyboardx/random.sv
-    Info (12023): Found entity 1: random File: D:/LAB1ULTI/Lab1Demo_restored/RTL/KEYBOARDX/random.sv Line: 2
+    Info (12023): Found entity 1: random File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/KEYBOARDX/random.sv Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/seg7/seg7.sv
-    Info (12023): Found entity 1: SEG7 File: D:/LAB1ULTI/Lab1Demo_restored/RTL/Seg7/SEG7.SV Line: 4
+    Info (12023): Found entity 1: SEG7 File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/Seg7/SEG7.SV Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/audio/sintable.sv
-    Info (12023): Found entity 1: sintable File: D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/SinTable.sv Line: 9
+    Info (12023): Found entity 1: sintable File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/SinTable.sv Line: 9
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/audio/addr_counter.sv
-    Info (12023): Found entity 1: addr_counter File: D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/addr_counter.sv Line: 4
+    Info (12023): Found entity 1: addr_counter File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/addr_counter.sv Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/audio/prescaler.sv
-    Info (12023): Found entity 1: prescaler File: D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/prescaler.sv Line: 12
+    Info (12023): Found entity 1: prescaler File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/prescaler.sv Line: 12
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/audio/tonedecoder.sv
-    Info (12023): Found entity 1: ToneDecoder File: D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/ToneDecoder.sv Line: 7
+    Info (12023): Found entity 1: ToneDecoder File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/ToneDecoder.sv Line: 7
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/audio/audio.bdf
     Info (12023): Found entity 1: AUDIO
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/audio/audio_codec_controller/i2c.sv
-    Info (12023): Found entity 1: i2c File: D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/i2c.sv Line: 44
+    Info (12023): Found entity 1: i2c File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/i2c.sv Line: 44
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/audio/audio_codec_controller/dualserial2parallel.sv
-    Info (12023): Found entity 1: DualSerial2parallel File: D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/DualSerial2parallel.sv Line: 1
+    Info (12023): Found entity 1: DualSerial2parallel File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/DualSerial2parallel.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/audio/audio_codec_controller/clock_500.sv
-    Info (12023): Found entity 1: CLOCK_500 File: D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/clock_500.sv Line: 49
+    Info (12023): Found entity 1: CLOCK_500 File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/clock_500.sv Line: 49
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/audio/audio_codec_controller/audio_codec_controller.sv
-    Info (12023): Found entity 1: audio_codec_controller File: D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/audio_codec_controller.sv Line: 11
+    Info (12023): Found entity 1: audio_codec_controller File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/audio_codec_controller.sv Line: 11
 Info (12021): Found 1 design units, including 1 entities, in source file clk_31p5.v
-    Info (12023): Found entity 1: CLK_31P5 File: D:/LAB1ULTI/Lab1Demo_restored/CLK_31P5.v Line: 8
+    Info (12023): Found entity 1: CLK_31P5 File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/CLK_31P5.v Line: 8
 Info (12021): Found 1 design units, including 1 entities, in source file clk_31p5/clk_31p5_0002.v
-    Info (12023): Found entity 1: CLK_31P5_0002 File: D:/LAB1ULTI/Lab1Demo_restored/CLK_31P5/CLK_31P5_0002.v Line: 2
+    Info (12023): Found entity 1: CLK_31P5_0002 File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/CLK_31P5/CLK_31P5_0002.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/vga/myconstant.sv
-    Info (12023): Found entity 1: MyConstant File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/MyConstant.sv Line: 6
-Warning (10236): Verilog HDL Implicit Net warning at game_controller.sv(58): created implicit net for "collision_before" File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/game_controller.sv Line: 58
-Warning (10236): Verilog HDL Implicit Net warning at audio_codec_controller.sv(61): created implicit net for "CLOCK_500_ena" File: D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/audio_codec_controller.sv Line: 61
-Warning (10236): Verilog HDL Implicit Net warning at audio_codec_controller.sv(63): created implicit net for "CLOCK_SDAT_ena" File: D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/audio_codec_controller.sv Line: 63
+    Info (12023): Found entity 1: MyConstant File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/MyConstant.sv Line: 6
+Warning (10236): Verilog HDL Implicit Net warning at game_controller.sv(58): created implicit net for "collision_before" File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/game_controller.sv Line: 58
+Warning (10236): Verilog HDL Implicit Net warning at audio_codec_controller.sv(61): created implicit net for "CLOCK_500_ena" File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/audio_codec_controller.sv Line: 61
+Warning (10236): Verilog HDL Implicit Net warning at audio_codec_controller.sv(63): created implicit net for "CLOCK_SDAT_ena" File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/audio_codec_controller.sv Line: 63
 Info (12127): Elaborating entity "TOP_VGA_DEMO_KBD" for the top level hierarchy
 Warning (275006): Can't find a definition for parameter LPM_FILE -- assuming RTL/BG.mif was intended to be a quoted string
 Warning (275004): Undeclared parameter ON
@@ -2406,16 +2403,16 @@ Warning (275006): Can't find a definition for parameter IGNORE_CARRY_BUFFERS -- 
 Warning (275004): Undeclared parameter OFF
 Warning (275006): Can't find a definition for parameter IGNORE_CASCADE_BUFFERS -- assuming OFF was intended to be a quoted string
 Info (12128): Elaborating entity "back_ground_draw" for hierarchy "back_ground_draw:inst4"
-Warning (10036): Verilog HDL or VHDL warning at back_ground_draw.sv(19): object "COLOR_MARTIX_SIZE" assigned a value but never read File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/back_ground_draw.sv Line: 19
-Warning (10230): Verilog HDL assignment warning at back_ground_draw.sv(56): truncated value with size 3 to match size of target (2) File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/back_ground_draw.sv Line: 56
-Warning (10230): Verilog HDL assignment warning at back_ground_draw.sv(77): truncated value with size 3 to match size of target (2) File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/back_ground_draw.sv Line: 77
-Warning (10230): Verilog HDL assignment warning at back_ground_draw.sv(88): truncated value with size 32 to match size of target (11) File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/back_ground_draw.sv Line: 88
+Warning (10036): Verilog HDL or VHDL warning at back_ground_draw.sv(19): object "COLOR_MARTIX_SIZE" assigned a value but never read File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/back_ground_draw.sv Line: 19
+Warning (10230): Verilog HDL assignment warning at back_ground_draw.sv(56): truncated value with size 3 to match size of target (2) File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/back_ground_draw.sv Line: 56
+Warning (10230): Verilog HDL assignment warning at back_ground_draw.sv(77): truncated value with size 3 to match size of target (2) File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/back_ground_draw.sv Line: 77
+Warning (10230): Verilog HDL assignment warning at back_ground_draw.sv(88): truncated value with size 32 to match size of target (11) File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/back_ground_draw.sv Line: 88
 Info (12128): Elaborating entity "CLK_31P5" for hierarchy "CLK_31P5:inst7"
-Info (12128): Elaborating entity "CLK_31P5_0002" for hierarchy "CLK_31P5:inst7|CLK_31P5_0002:clk_31p5_inst" File: D:/LAB1ULTI/Lab1Demo_restored/CLK_31P5.v Line: 20
-Info (12128): Elaborating entity "altera_pll" for hierarchy "CLK_31P5:inst7|CLK_31P5_0002:clk_31p5_inst|altera_pll:altera_pll_i" File: D:/LAB1ULTI/Lab1Demo_restored/CLK_31P5/CLK_31P5_0002.v Line: 85
+Info (12128): Elaborating entity "CLK_31P5_0002" for hierarchy "CLK_31P5:inst7|CLK_31P5_0002:clk_31p5_inst" File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/CLK_31P5.v Line: 20
+Info (12128): Elaborating entity "altera_pll" for hierarchy "CLK_31P5:inst7|CLK_31P5_0002:clk_31p5_inst|altera_pll:altera_pll_i" File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/CLK_31P5/CLK_31P5_0002.v Line: 85
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "wire_to_nowhere_64" into its bus
-Info (12130): Elaborated megafunction instantiation "CLK_31P5:inst7|CLK_31P5_0002:clk_31p5_inst|altera_pll:altera_pll_i" File: D:/LAB1ULTI/Lab1Demo_restored/CLK_31P5/CLK_31P5_0002.v Line: 85
-Info (12133): Instantiated megafunction "CLK_31P5:inst7|CLK_31P5_0002:clk_31p5_inst|altera_pll:altera_pll_i" with the following parameter: File: D:/LAB1ULTI/Lab1Demo_restored/CLK_31P5/CLK_31P5_0002.v Line: 85
+Info (12130): Elaborated megafunction instantiation "CLK_31P5:inst7|CLK_31P5_0002:clk_31p5_inst|altera_pll:altera_pll_i" File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/CLK_31P5/CLK_31P5_0002.v Line: 85
+Info (12133): Instantiated megafunction "CLK_31P5:inst7|CLK_31P5_0002:clk_31p5_inst|altera_pll:altera_pll_i" with the following parameter: File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/CLK_31P5/CLK_31P5_0002.v Line: 85
     Info (12134): Parameter "fractional_vco_multiplier" = "false"
     Info (12134): Parameter "reference_clock_frequency" = "50.0 MHz"
     Info (12134): Parameter "operation_mode" = "direct"
@@ -2477,46 +2474,47 @@ Info (12133): Instantiated megafunction "CLK_31P5:inst7|CLK_31P5_0002:clk_31p5_i
     Info (12134): Parameter "pll_type" = "General"
     Info (12134): Parameter "pll_subtype" = "General"
 Info (12128): Elaborating entity "VGA_Controller" for hierarchy "VGA_Controller:inst"
-Warning (10230): Verilog HDL assignment warning at VGA_Controller.sv(61): truncated value with size 32 to match size of target (11) File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/VGA_Controller.sv Line: 61
-Warning (10230): Verilog HDL assignment warning at VGA_Controller.sv(62): truncated value with size 32 to match size of target (11) File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/VGA_Controller.sv Line: 62
-Warning (10230): Verilog HDL assignment warning at VGA_Controller.sv(64): truncated value with size 32 to match size of target (19) File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/VGA_Controller.sv Line: 64
-Warning (10230): Verilog HDL assignment warning at VGA_Controller.sv(74): truncated value with size 11 to match size of target (1) File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/VGA_Controller.sv Line: 74
+Warning (10230): Verilog HDL assignment warning at VGA_Controller.sv(61): truncated value with size 32 to match size of target (11) File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/VGA_Controller.sv Line: 61
+Warning (10230): Verilog HDL assignment warning at VGA_Controller.sv(62): truncated value with size 32 to match size of target (11) File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/VGA_Controller.sv Line: 62
+Warning (10230): Verilog HDL assignment warning at VGA_Controller.sv(64): truncated value with size 32 to match size of target (19) File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/VGA_Controller.sv Line: 64
+Warning (10230): Verilog HDL assignment warning at VGA_Controller.sv(74): truncated value with size 11 to match size of target (1) File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/VGA_Controller.sv Line: 74
 Info (12128): Elaborating entity "objects_mux" for hierarchy "objects_mux:inst9"
 Info (12128): Elaborating entity "Smiley_Block_T" for hierarchy "Smiley_Block_T:inst1"
 Info (12128): Elaborating entity "smileyBitMap" for hierarchy "Smiley_Block_T:inst1|smileyBitMap:inst1"
-Warning (10230): Verilog HDL assignment warning at smileyBitMap.sv(26): truncated value with size 5 to match size of target (4) File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/smileyBitMap.sv Line: 26
-Warning (10230): Verilog HDL assignment warning at smileyBitMap.sv(27): truncated value with size 5 to match size of target (4) File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/smileyBitMap.sv Line: 27
+Warning (10230): Verilog HDL assignment warning at smileyBitMap.sv(26): truncated value with size 5 to match size of target (4) File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/smileyBitMap.sv Line: 26
+Warning (10230): Verilog HDL assignment warning at smileyBitMap.sv(27): truncated value with size 5 to match size of target (4) File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/smileyBitMap.sv Line: 27
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "object_colors" into its bus
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "hit_colors" into its bus
 Info (12128): Elaborating entity "square_object" for hierarchy "Smiley_Block_T:inst1|square_object:inst6"
 Info (12128): Elaborating entity "smiley_move" for hierarchy "Smiley_Block_T:inst1|smiley_move:inst"
-Warning (10230): Verilog HDL assignment warning at smiley_move.sv(237): truncated value with size 32 to match size of target (11) File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/smiley_move.sv Line: 237
-Warning (10230): Verilog HDL assignment warning at smiley_move.sv(238): truncated value with size 32 to match size of target (11) File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/smiley_move.sv Line: 238
+Warning (10036): Verilog HDL or VHDL warning at smiley_move.sv(77): object "toggle_x_key_D" assigned a value but never read File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/smiley_move.sv Line: 77
+Warning (10230): Verilog HDL assignment warning at smiley_move.sv(241): truncated value with size 32 to match size of target (11) File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/smiley_move.sv Line: 241
+Warning (10230): Verilog HDL assignment warning at smiley_move.sv(242): truncated value with size 32 to match size of target (11) File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/smiley_move.sv Line: 242
 Info (12128): Elaborating entity "TOP_KBD" for hierarchy "TOP_KBD:inst16"
 Info (12128): Elaborating entity "keyPad_decoder" for hierarchy "TOP_KBD:inst16|keyPad_decoder:inst2"
-Warning (10230): Verilog HDL assignment warning at keyPad_decoder.sv(47): truncated value with size 32 to match size of target (4) File: D:/LAB1ULTI/Lab1Demo_restored/RTL/KEYBOARDX/keyPad_decoder.sv Line: 47
+Warning (10230): Verilog HDL assignment warning at keyPad_decoder.sv(47): truncated value with size 32 to match size of target (4) File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/KEYBOARDX/keyPad_decoder.sv Line: 47
 Info (12128): Elaborating entity "KBDINTF" for hierarchy "TOP_KBD:inst16|KBDINTF:inst"
 Info (12128): Elaborating entity "game_controller" for hierarchy "game_controller:inst11"
 Info (12128): Elaborating entity "square_object" for hierarchy "square_object:inst17"
 Info (12128): Elaborating entity "MyConstant" for hierarchy "MyConstant:inst2"
-Warning (10230): Verilog HDL assignment warning at MyConstant.sv(14): truncated value with size 32 to match size of target (11) File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/MyConstant.sv Line: 14
+Warning (10230): Verilog HDL assignment warning at MyConstant.sv(14): truncated value with size 32 to match size of target (11) File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/MyConstant.sv Line: 14
 Info (12128): Elaborating entity "random" for hierarchy "random:inst19"
-Warning (10230): Verilog HDL assignment warning at random.sv(22): truncated value with size 32 to match size of target (11) File: D:/LAB1ULTI/Lab1Demo_restored/RTL/KEYBOARDX/random.sv Line: 22
-Warning (10230): Verilog HDL assignment warning at random.sv(23): truncated value with size 32 to match size of target (11) File: D:/LAB1ULTI/Lab1Demo_restored/RTL/KEYBOARDX/random.sv Line: 23
-Warning (10230): Verilog HDL assignment warning at random.sv(28): truncated value with size 32 to match size of target (11) File: D:/LAB1ULTI/Lab1Demo_restored/RTL/KEYBOARDX/random.sv Line: 28
-Warning (10230): Verilog HDL assignment warning at random.sv(30): truncated value with size 32 to match size of target (11) File: D:/LAB1ULTI/Lab1Demo_restored/RTL/KEYBOARDX/random.sv Line: 30
+Warning (10230): Verilog HDL assignment warning at random.sv(22): truncated value with size 32 to match size of target (11) File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/KEYBOARDX/random.sv Line: 22
+Warning (10230): Verilog HDL assignment warning at random.sv(23): truncated value with size 32 to match size of target (11) File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/KEYBOARDX/random.sv Line: 23
+Warning (10230): Verilog HDL assignment warning at random.sv(28): truncated value with size 32 to match size of target (11) File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/KEYBOARDX/random.sv Line: 28
+Warning (10230): Verilog HDL assignment warning at random.sv(30): truncated value with size 32 to match size of target (11) File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/KEYBOARDX/random.sv Line: 30
 Info (12128): Elaborating entity "HART_DISPLAY" for hierarchy "HART_DISPLAY:inst12"
 Info (12128): Elaborating entity "HartsMatrixBitMap" for hierarchy "HART_DISPLAY:inst12|HartsMatrixBitMap:inst6"
-Warning (10230): Verilog HDL assignment warning at HartsMatrixBitMap.sv(242): truncated value with size 1024 to match size of target (512) File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/HartsMatrixBitMap.sv Line: 242
-Warning (10027): Verilog HDL or VHDL warning at the HartsMatrixBitMap.sv(253): index expression is not wide enough to address all of the elements in the array File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/HartsMatrixBitMap.sv Line: 253
+Warning (10230): Verilog HDL assignment warning at HartsMatrixBitMap.sv(242): truncated value with size 1024 to match size of target (512) File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/HartsMatrixBitMap.sv Line: 242
+Warning (10027): Verilog HDL or VHDL warning at the HartsMatrixBitMap.sv(253): index expression is not wide enough to address all of the elements in the array File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/HartsMatrixBitMap.sv Line: 253
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "MazeBitMapMask" into its bus
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "MazeDefaultBitMapMask" into its bus
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "object_colors" into its bus
 Info (12128): Elaborating entity "square_object" for hierarchy "HART_DISPLAY:inst12|square_object:inst11"
 Info (12128): Elaborating entity "MyConstant" for hierarchy "MyConstant:inst20"
-Warning (10230): Verilog HDL assignment warning at MyConstant.sv(14): truncated value with size 32 to match size of target (11) File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/MyConstant.sv Line: 14
+Warning (10230): Verilog HDL assignment warning at MyConstant.sv(14): truncated value with size 32 to match size of target (11) File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/MyConstant.sv Line: 14
 Info (12128): Elaborating entity "NumbersBitMap" for hierarchy "NumbersBitMap:inst15"
-Warning (10036): Verilog HDL or VHDL warning at NumbersBitMap.sv(554): object "number_bitmap" assigned a value but never read File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/NumbersBitMap.sv Line: 554
+Warning (10036): Verilog HDL or VHDL warning at NumbersBitMap.sv(554): object "number_bitmap" assigned a value but never read File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/VGA/NumbersBitMap.sv Line: 554
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "number_bitmap" into its bus
 Info (12128): Elaborating entity "LPM_ROM" for hierarchy "LPM_ROM:inst5"
 Info (12130): Elaborated megafunction instantiation "LPM_ROM:inst5"
@@ -2536,68 +2534,68 @@ Info (12131): Elaborated megafunction instantiation "LPM_ROM:inst5|altrom:srom",
 Info (12128): Elaborating entity "altsyncram" for hierarchy "LPM_ROM:inst5|altrom:srom|altsyncram:rom_block" File: c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altrom.tdf Line: 89
 Info (12131): Elaborated megafunction instantiation "LPM_ROM:inst5|altrom:srom|altsyncram:rom_block", which is child of megafunction instantiation "LPM_ROM:inst5" File: c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altrom.tdf Line: 89
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_bj61.tdf
-    Info (12023): Found entity 1: altsyncram_bj61 File: D:/LAB1ULTI/Lab1Demo_restored/db/altsyncram_bj61.tdf Line: 32
+    Info (12023): Found entity 1: altsyncram_bj61 File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/db/altsyncram_bj61.tdf Line: 32
 Info (12128): Elaborating entity "altsyncram_bj61" for hierarchy "LPM_ROM:inst5|altrom:srom|altsyncram:rom_block|altsyncram_bj61:auto_generated" File: c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Critical Warning (127005): Memory depth (307200) in the design file differs from memory depth (512) in the Memory Initialization File "D:/LAB1ULTI/Lab1Demo_restored/RTL/BG.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (307200) in the design file differs from memory depth (512) in the Memory Initialization File "C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/BG.mif" -- setting initial value for remaining addresses to 0
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_s2a.tdf
-    Info (12023): Found entity 1: decode_s2a File: D:/LAB1ULTI/Lab1Demo_restored/db/decode_s2a.tdf Line: 23
-Info (12128): Elaborating entity "decode_s2a" for hierarchy "LPM_ROM:inst5|altrom:srom|altsyncram:rom_block|altsyncram_bj61:auto_generated|decode_s2a:rden_decode" File: D:/LAB1ULTI/Lab1Demo_restored/db/altsyncram_bj61.tdf Line: 40
+    Info (12023): Found entity 1: decode_s2a File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/db/decode_s2a.tdf Line: 23
+Info (12128): Elaborating entity "decode_s2a" for hierarchy "LPM_ROM:inst5|altrom:srom|altsyncram:rom_block|altsyncram_bj61:auto_generated|decode_s2a:rden_decode" File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/db/altsyncram_bj61.tdf Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_jhb.tdf
-    Info (12023): Found entity 1: mux_jhb File: D:/LAB1ULTI/Lab1Demo_restored/db/mux_jhb.tdf Line: 23
-Info (12128): Elaborating entity "mux_jhb" for hierarchy "LPM_ROM:inst5|altrom:srom|altsyncram:rom_block|altsyncram_bj61:auto_generated|mux_jhb:mux2" File: D:/LAB1ULTI/Lab1Demo_restored/db/altsyncram_bj61.tdf Line: 41
+    Info (12023): Found entity 1: mux_jhb File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/db/mux_jhb.tdf Line: 23
+Info (12128): Elaborating entity "mux_jhb" for hierarchy "LPM_ROM:inst5|altrom:srom|altsyncram:rom_block|altsyncram_bj61:auto_generated|mux_jhb:mux2" File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/db/altsyncram_bj61.tdf Line: 41
 Info (12128): Elaborating entity "AUDIO" for hierarchy "AUDIO:inst18"
 Info (12128): Elaborating entity "audio_codec_controller" for hierarchy "AUDIO:inst18|audio_codec_controller:inst"
-Warning (10230): Verilog HDL assignment warning at audio_codec_controller.sv(68): truncated value with size 32 to match size of target (1) File: D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/audio_codec_controller.sv Line: 68
-Info (12128): Elaborating entity "CLOCK_500" for hierarchy "AUDIO:inst18|audio_codec_controller:inst|CLOCK_500:CLOCK_500_inst" File: D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/audio_codec_controller.sv Line: 66
-Warning (10230): Verilog HDL assignment warning at clock_500.sv(94): truncated value with size 32 to match size of target (11) File: D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/clock_500.sv Line: 94
-Warning (10230): Verilog HDL assignment warning at clock_500.sv(97): truncated value with size 32 to match size of target (1) File: D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/clock_500.sv Line: 97
-Warning (10230): Verilog HDL assignment warning at clock_500.sv(98): truncated value with size 32 to match size of target (1) File: D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/clock_500.sv Line: 98
-Warning (10230): Verilog HDL assignment warning at clock_500.sv(132): truncated value with size 32 to match size of target (6) File: D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/clock_500.sv Line: 132
-Warning (10030): Net "ROM[11]" at clock_500.sv(67) has no driver or initial value, using a default initial value '0' File: D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/clock_500.sv Line: 67
-Info (12128): Elaborating entity "i2c" for hierarchy "AUDIO:inst18|audio_codec_controller:inst|i2c:i2c_inst" File: D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/audio_codec_controller.sv Line: 87
-Warning (10036): Verilog HDL or VHDL warning at i2c.sv(71): object "ACK" assigned a value but never read File: D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/i2c.sv Line: 71
-Warning (10036): Verilog HDL or VHDL warning at i2c.sv(73): object "i" assigned a value but never read File: D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/i2c.sv Line: 73
-Warning (10858): Verilog HDL warning at i2c.sv(85): object I2C_clk_1 used but never assigned File: D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/i2c.sv Line: 85
-Warning (10858): Verilog HDL warning at i2c.sv(86): object I2C_clk_0_clk used but never assigned File: D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/i2c.sv Line: 86
-Warning (10036): Verilog HDL or VHDL warning at i2c.sv(87): object "FPGA_I2C_SCLK_clk" assigned a value but never read File: D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/i2c.sv Line: 87
-Warning (10230): Verilog HDL assignment warning at i2c.sv(119): truncated value with size 32 to match size of target (6) File: D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/i2c.sv Line: 119
-Warning (10034): Output port "I2C_SCLK" at i2c.sv(52) has no driver File: D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/i2c.sv Line: 52
-Info (12128): Elaborating entity "DualSerial2parallel" for hierarchy "AUDIO:inst18|audio_codec_controller:inst|DualSerial2parallel:DualSerial2parallel_inst" File: D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/audio_codec_controller.sv Line: 108
+Warning (10230): Verilog HDL assignment warning at audio_codec_controller.sv(68): truncated value with size 32 to match size of target (1) File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/audio_codec_controller.sv Line: 68
+Info (12128): Elaborating entity "CLOCK_500" for hierarchy "AUDIO:inst18|audio_codec_controller:inst|CLOCK_500:CLOCK_500_inst" File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/audio_codec_controller.sv Line: 66
+Warning (10230): Verilog HDL assignment warning at clock_500.sv(94): truncated value with size 32 to match size of target (11) File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/clock_500.sv Line: 94
+Warning (10230): Verilog HDL assignment warning at clock_500.sv(97): truncated value with size 32 to match size of target (1) File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/clock_500.sv Line: 97
+Warning (10230): Verilog HDL assignment warning at clock_500.sv(98): truncated value with size 32 to match size of target (1) File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/clock_500.sv Line: 98
+Warning (10230): Verilog HDL assignment warning at clock_500.sv(132): truncated value with size 32 to match size of target (6) File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/clock_500.sv Line: 132
+Warning (10030): Net "ROM[11]" at clock_500.sv(67) has no driver or initial value, using a default initial value '0' File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/clock_500.sv Line: 67
+Info (12128): Elaborating entity "i2c" for hierarchy "AUDIO:inst18|audio_codec_controller:inst|i2c:i2c_inst" File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/audio_codec_controller.sv Line: 87
+Warning (10036): Verilog HDL or VHDL warning at i2c.sv(71): object "ACK" assigned a value but never read File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/i2c.sv Line: 71
+Warning (10036): Verilog HDL or VHDL warning at i2c.sv(73): object "i" assigned a value but never read File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/i2c.sv Line: 73
+Warning (10858): Verilog HDL warning at i2c.sv(85): object I2C_clk_1 used but never assigned File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/i2c.sv Line: 85
+Warning (10858): Verilog HDL warning at i2c.sv(86): object I2C_clk_0_clk used but never assigned File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/i2c.sv Line: 86
+Warning (10036): Verilog HDL or VHDL warning at i2c.sv(87): object "FPGA_I2C_SCLK_clk" assigned a value but never read File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/i2c.sv Line: 87
+Warning (10230): Verilog HDL assignment warning at i2c.sv(119): truncated value with size 32 to match size of target (6) File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/i2c.sv Line: 119
+Warning (10034): Output port "I2C_SCLK" at i2c.sv(52) has no driver File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/i2c.sv Line: 52
+Info (12128): Elaborating entity "DualSerial2parallel" for hierarchy "AUDIO:inst18|audio_codec_controller:inst|DualSerial2parallel:DualSerial2parallel_inst" File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/audio_codec_controller.sv Line: 108
 Info (12128): Elaborating entity "sintable" for hierarchy "AUDIO:inst18|sintable:inst1"
-Warning (10230): Verilog HDL assignment warning at SinTable.sv(27): truncated value with size 2048 to match size of target (2040) File: D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/SinTable.sv Line: 27
+Warning (10230): Verilog HDL assignment warning at SinTable.sv(27): truncated value with size 2048 to match size of target (2040) File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/SinTable.sv Line: 27
 Info (12128): Elaborating entity "addr_counter" for hierarchy "AUDIO:inst18|addr_counter:inst9"
-Warning (10230): Verilog HDL assignment warning at addr_counter.sv(32): truncated value with size 32 to match size of target (8) File: D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/addr_counter.sv Line: 32
+Warning (10230): Verilog HDL assignment warning at addr_counter.sv(32): truncated value with size 32 to match size of target (8) File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/addr_counter.sv Line: 32
 Info (12128): Elaborating entity "prescaler" for hierarchy "AUDIO:inst18|prescaler:inst3"
 Info (12128): Elaborating entity "ToneDecoder" for hierarchy "AUDIO:inst18|ToneDecoder:inst4"
 Info (12128): Elaborating entity "melody_player_1" for hierarchy "melody_player_1:inst13"
-Info (12128): Elaborating entity "Mili_sec_counter" for hierarchy "melody_player_1:inst13|Mili_sec_counter:mili_sec_counter_inst" File: D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/melody_player_1.sv Line: 48
-Info (12128): Elaborating entity "JukeBox1" for hierarchy "melody_player_1:inst13|JukeBox1:JukeBox1" File: D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/melody_player_1.sv Line: 54
-Warning (10027): Verilog HDL or VHDL warning at the JukeBox1.sv(287): index expression is not wide enough to address all of the elements in the array File: D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/JukeBox1.sv Line: 287
-Warning (10027): Verilog HDL or VHDL warning at the JukeBox1.sv(288): index expression is not wide enough to address all of the elements in the array File: D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/JukeBox1.sv Line: 288
+Info (12128): Elaborating entity "Mili_sec_counter" for hierarchy "melody_player_1:inst13|Mili_sec_counter:mili_sec_counter_inst" File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/melody_player_1.sv Line: 48
+Info (12128): Elaborating entity "JukeBox1" for hierarchy "melody_player_1:inst13|JukeBox1:JukeBox1" File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/melody_player_1.sv Line: 54
+Warning (10027): Verilog HDL or VHDL warning at the JukeBox1.sv(287): index expression is not wide enough to address all of the elements in the array File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/JukeBox1.sv Line: 287
+Warning (10027): Verilog HDL or VHDL warning at the JukeBox1.sv(288): index expression is not wide enough to address all of the elements in the array File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/JukeBox1.sv Line: 288
 Info (12128): Elaborating entity "SEG7" for hierarchy "SEG7:inst10"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_ib84.tdf
-    Info (12023): Found entity 1: altsyncram_ib84 File: D:/LAB1ULTI/Lab1Demo_restored/db/altsyncram_ib84.tdf Line: 28
+    Info (12023): Found entity 1: altsyncram_ib84 File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/db/altsyncram_ib84.tdf Line: 28
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_elc.tdf
-    Info (12023): Found entity 1: mux_elc File: D:/LAB1ULTI/Lab1Demo_restored/db/mux_elc.tdf Line: 23
+    Info (12023): Found entity 1: mux_elc File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/db/mux_elc.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_vnf.tdf
-    Info (12023): Found entity 1: decode_vnf File: D:/LAB1ULTI/Lab1Demo_restored/db/decode_vnf.tdf Line: 23
+    Info (12023): Found entity 1: decode_vnf File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/db/decode_vnf.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_19i.tdf
-    Info (12023): Found entity 1: cntr_19i File: D:/LAB1ULTI/Lab1Demo_restored/db/cntr_19i.tdf Line: 28
+    Info (12023): Found entity 1: cntr_19i File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/db/cntr_19i.tdf Line: 28
 Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_d9c.tdf
-    Info (12023): Found entity 1: cmpr_d9c File: D:/LAB1ULTI/Lab1Demo_restored/db/cmpr_d9c.tdf Line: 23
+    Info (12023): Found entity 1: cmpr_d9c File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/db/cmpr_d9c.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_4vi.tdf
-    Info (12023): Found entity 1: cntr_4vi File: D:/LAB1ULTI/Lab1Demo_restored/db/cntr_4vi.tdf Line: 26
+    Info (12023): Found entity 1: cntr_4vi File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/db/cntr_4vi.tdf Line: 26
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_09i.tdf
-    Info (12023): Found entity 1: cntr_09i File: D:/LAB1ULTI/Lab1Demo_restored/db/cntr_09i.tdf Line: 28
+    Info (12023): Found entity 1: cntr_09i File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/db/cntr_09i.tdf Line: 28
 Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_c9c.tdf
-    Info (12023): Found entity 1: cmpr_c9c File: D:/LAB1ULTI/Lab1Demo_restored/db/cmpr_c9c.tdf Line: 23
+    Info (12023): Found entity 1: cmpr_c9c File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/db/cmpr_c9c.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_kri.tdf
-    Info (12023): Found entity 1: cntr_kri File: D:/LAB1ULTI/Lab1Demo_restored/db/cntr_kri.tdf Line: 28
+    Info (12023): Found entity 1: cntr_kri File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/db/cntr_kri.tdf Line: 28
 Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_99c.tdf
-    Info (12023): Found entity 1: cmpr_99c File: D:/LAB1ULTI/Lab1Demo_restored/db/cmpr_99c.tdf Line: 23
+    Info (12023): Found entity 1: cmpr_99c File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/db/cmpr_99c.tdf Line: 23
 Info (12033): Analysis and Synthesis generated SignalTap II or debug node instance "auto_signaltap_0"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2025.09.13.16:02:08 Progress: Loading sld6dfc5e3d/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2025.09.14.14:13:26 Progress: Loading sld6dfc5e3d/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -2608,18 +2606,18 @@ Info (11172): Ident: "alt_sld_fab" instantiated altera_connection_identification
 Info (11172): Alt_sld_fab: Done "alt_sld_fab" with 6 modules, 6 files
 Info (11171): Finished IP generation for the debug fabric: alt_sld_fab.
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld6dfc5e3d/alt_sld_fab.v
-    Info (12023): Found entity 1: alt_sld_fab File: D:/LAB1ULTI/Lab1Demo_restored/db/ip/sld6dfc5e3d/alt_sld_fab.v Line: 9
+    Info (12023): Found entity 1: alt_sld_fab File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/db/ip/sld6dfc5e3d/alt_sld_fab.v Line: 9
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld6dfc5e3d/submodules/alt_sld_fab_alt_sld_fab.v
-    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab File: D:/LAB1ULTI/Lab1Demo_restored/db/ip/sld6dfc5e3d/submodules/alt_sld_fab_alt_sld_fab.v Line: 9
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/db/ip/sld6dfc5e3d/submodules/alt_sld_fab_alt_sld_fab.v Line: 9
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld6dfc5e3d/submodules/alt_sld_fab_alt_sld_fab_ident.sv
-    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_ident File: D:/LAB1ULTI/Lab1Demo_restored/db/ip/sld6dfc5e3d/submodules/alt_sld_fab_alt_sld_fab_ident.sv Line: 33
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_ident File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/db/ip/sld6dfc5e3d/submodules/alt_sld_fab_alt_sld_fab_ident.sv Line: 33
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld6dfc5e3d/submodules/alt_sld_fab_alt_sld_fab_presplit.sv
-    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_presplit File: D:/LAB1ULTI/Lab1Demo_restored/db/ip/sld6dfc5e3d/submodules/alt_sld_fab_alt_sld_fab_presplit.sv Line: 3
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_presplit File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/db/ip/sld6dfc5e3d/submodules/alt_sld_fab_alt_sld_fab_presplit.sv Line: 3
 Info (12021): Found 2 design units, including 1 entities, in source file db/ip/sld6dfc5e3d/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd
-    Info (12022): Found design unit 1: alt_sld_fab_alt_sld_fab_sldfabric-rtl File: D:/LAB1ULTI/Lab1Demo_restored/db/ip/sld6dfc5e3d/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 102
-    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_sldfabric File: D:/LAB1ULTI/Lab1Demo_restored/db/ip/sld6dfc5e3d/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 11
+    Info (12022): Found design unit 1: alt_sld_fab_alt_sld_fab_sldfabric-rtl File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/db/ip/sld6dfc5e3d/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 102
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_sldfabric File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/db/ip/sld6dfc5e3d/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 11
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld6dfc5e3d/submodules/alt_sld_fab_alt_sld_fab_splitter.sv
-    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_splitter File: D:/LAB1ULTI/Lab1Demo_restored/db/ip/sld6dfc5e3d/submodules/alt_sld_fab_alt_sld_fab_splitter.sv Line: 3
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_splitter File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/db/ip/sld6dfc5e3d/submodules/alt_sld_fab_alt_sld_fab_splitter.sv Line: 3
 Warning (12240): Synthesis found one or more imported partitions that will be treated as black boxes for timing analysis during synthesis
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
     Warning (13049): Converted tri-state buffer "lpm_rom:inst5|otri[7]" feeding internal logic into a wire File: c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_rom.tdf Line: 68
@@ -2641,11 +2639,11 @@ Warning (13039): The following bidirectional pins have no drivers
     Warning (13040): bidirectional pin "AUDOUT" has no driver
     Warning (13040): bidirectional pin "AUDOUT" has no driver
 Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
-    Warning (13310): Register "melody_player_1:inst13|noteTimeCounter[6]" is converted into an equivalent circuit using register "melody_player_1:inst13|noteTimeCounter[6]~_emulated" and latch "melody_player_1:inst13|noteTimeCounter[6]~1" File: D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/melody_player_1.sv Line: 75
-    Warning (13310): Register "melody_player_1:inst13|noteTimeCounter[5]" is converted into an equivalent circuit using register "melody_player_1:inst13|noteTimeCounter[5]~_emulated" and latch "melody_player_1:inst13|noteTimeCounter[5]~5" File: D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/melody_player_1.sv Line: 75
-    Warning (13310): Register "melody_player_1:inst13|noteTimeCounter[4]" is converted into an equivalent circuit using register "melody_player_1:inst13|noteTimeCounter[4]~_emulated" and latch "melody_player_1:inst13|noteTimeCounter[4]~9" File: D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/melody_player_1.sv Line: 75
-    Warning (13310): Register "melody_player_1:inst13|noteTimeCounter[3]" is converted into an equivalent circuit using register "melody_player_1:inst13|noteTimeCounter[3]~_emulated" and latch "melody_player_1:inst13|noteTimeCounter[3]~13" File: D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/melody_player_1.sv Line: 75
-    Warning (13310): Register "melody_player_1:inst13|noteTimeCounter[2]" is converted into an equivalent circuit using register "melody_player_1:inst13|noteTimeCounter[2]~_emulated" and latch "melody_player_1:inst13|noteTimeCounter[2]~17" File: D:/LAB1ULTI/Lab1Demo_restored/RTL/AUDIO/melody_player_1.sv Line: 75
+    Warning (13310): Register "melody_player_1:inst13|noteTimeCounter[6]" is converted into an equivalent circuit using register "melody_player_1:inst13|noteTimeCounter[6]~_emulated" and latch "melody_player_1:inst13|noteTimeCounter[6]~1" File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/melody_player_1.sv Line: 75
+    Warning (13310): Register "melody_player_1:inst13|noteTimeCounter[5]" is converted into an equivalent circuit using register "melody_player_1:inst13|noteTimeCounter[5]~_emulated" and latch "melody_player_1:inst13|noteTimeCounter[5]~5" File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/melody_player_1.sv Line: 75
+    Warning (13310): Register "melody_player_1:inst13|noteTimeCounter[4]" is converted into an equivalent circuit using register "melody_player_1:inst13|noteTimeCounter[4]~_emulated" and latch "melody_player_1:inst13|noteTimeCounter[4]~9" File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/melody_player_1.sv Line: 75
+    Warning (13310): Register "melody_player_1:inst13|noteTimeCounter[3]" is converted into an equivalent circuit using register "melody_player_1:inst13|noteTimeCounter[3]~_emulated" and latch "melody_player_1:inst13|noteTimeCounter[3]~13" File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/melody_player_1.sv Line: 75
+    Warning (13310): Register "melody_player_1:inst13|noteTimeCounter[2]" is converted into an equivalent circuit using register "melody_player_1:inst13|noteTimeCounter[2]~_emulated" and latch "melody_player_1:inst13|noteTimeCounter[2]~17" File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/RTL/AUDIO/melody_player_1.sv Line: 75
 Warning (13009): TRI or OPNDRN buffers permanently enabled
     Warning (13010): Node "AUDOUT~synth"
     Warning (13010): Node "AUDOUT~synth"
@@ -2689,17 +2687,17 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 17 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "AUD_ADCDAT"
-Info (21057): Implemented 3407 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3392 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 9 input pins
     Info (21059): Implemented 49 output pins
     Info (21060): Implemented 8 bidirectional pins
-    Info (21061): Implemented 3011 logic cells
+    Info (21061): Implemented 2996 logic cells
     Info (21064): Implemented 328 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 89 warnings
-    Info: Peak virtual memory: 4980 megabytes
-    Info: Processing ended: Sat Sep 13 16:02:25 2025
-    Info: Elapsed time: 00:00:30
-    Info: Total CPU time (on all processors): 00:00:42
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 90 warnings
+    Info: Peak virtual memory: 4978 megabytes
+    Info: Processing ended: Sun Sep 14 14:13:42 2025
+    Info: Elapsed time: 00:00:37
+    Info: Total CPU time (on all processors): 00:00:46
 
 

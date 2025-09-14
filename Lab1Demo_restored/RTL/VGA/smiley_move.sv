@@ -13,12 +13,14 @@ module	smiley_move	(
 					input	 logic clk,
 					input	 logic resetN,
 					input	 logic startOfFrame,      //short pulse every start of frame 30Hz 
-					input	 logic Y_direction_key,   //move Y Up   
+					input	 logic Y_direction_key,   //move Y down  
 					input	 logic toggle_x_key,      //toggle X   
 					input  logic collision,         //collision if smiley hits an object
 					input  logic [2:0] HitEdgeCode, 
 					output logic signed 	[10:0] topLeftX, // output the top left corner 
-					output logic signed	[10:0] topLeftY  // can be negative , if the object is partliy outside 
+					output logic signed	[10:0] topLeftY,  // can be negative , if the object is partliy outside 
+					input	 logic Y_direction_key_up,   //move Y Up   
+					input	 logic toggle_x_key_left     //toggle X   
 					
 );
 
@@ -29,7 +31,7 @@ parameter int INITIAL_X = 280;
 parameter int INITIAL_Y = 185;
 parameter int INITIAL_X_SPEED = 40;
 parameter int INITIAL_Y_SPEED = 20;
-parameter int Y_ACCEL = -10;
+parameter int Y_ACCEL = 0;
 
 const int MAX_Y_SPEED = 500;
 const int	FIXED_POINT_MULTIPLIER = 64; // note it must be 2^n 
@@ -119,11 +121,15 @@ begin : fsm_sync_proc
 			MOVE_ST:  begin     // moving collecting colisions 
 		//------------
 		// keys direction change 
-				if (Y_direction_key && (Yspeed > 0 ) )//  while moving down
-					Yspeed <= -Yspeed;//+1 ; 
-					
-				if (toggle_x_key & !toggle_x_key_D) //rizing edge 
-					Xspeed <= -Xspeed ; // toggle direction 
+				if (Y_direction_key) begin
+					  Xspeed <= 0;
+					  Yspeed <= 60;
+				 end
+
+				 if (toggle_x_key) begin // rising edge 
+					  Yspeed <= 0;
+					  Xspeed <= 60; // toggle direction
+				 end
 	
        // collcting collisions 	
 				if (collision) begin
