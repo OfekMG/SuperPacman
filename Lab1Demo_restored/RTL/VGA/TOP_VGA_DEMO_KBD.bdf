@@ -1689,11 +1689,6 @@ agreement for further details.
 	(pt 560 224)
 )
 (connector
-	(text "keyIsPressed[8]" (rect 468 224 543 241)(font "Intel Clear" ))
-	(pt 560 240)
-	(pt 456 240)
-)
-(connector
 	(pt -104 208)
 	(pt -152 208)
 )
@@ -2157,6 +2152,26 @@ agreement for further details.
 	(pt 824 176)
 	(pt 928 176)
 	(bus)
+)
+(connector
+	(text "keyIsPressed[2]" (rect 468 224 543 241)(font "Intel Clear" ))
+	(pt 560 240)
+	(pt 456 240)
+)
+(connector
+	(text "collision" (rect 522 288 560 305)(font "Intel Clear" ))
+	(pt 560 304)
+	(pt 496 304)
+)
+(connector
+	(text "keyIsPressed[4]" (rect 524 272 599 289)(font "Intel Clear" ))
+	(pt 560 288)
+	(pt 496 288)
+)
+(connector
+	(text "keyIsPressed[8]" (rect 500 256 575 273)(font "Intel Clear" ))
+	(pt 560 272)
+	(pt 488 272)
 )
 (junction (pt 1296 1232))
 (junction (pt 1296 1248))

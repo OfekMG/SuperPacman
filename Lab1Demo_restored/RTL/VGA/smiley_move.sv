@@ -130,6 +130,16 @@ begin : fsm_sync_proc
 					  Yspeed <= 0;
 					  Xspeed <= 60; // toggle direction
 				 end
+				 
+				 if (Y_direction_key_up) begin
+					  Xspeed <= 0;
+					  Yspeed <= -60;
+				 end
+
+				 if (toggle_x_key_left) begin // rising edge 
+					  Yspeed <= 0;
+					  Xspeed <= -60; // toggle direction
+				 end
 	
        // collcting collisions 	
 				if (collision) begin
@@ -154,39 +164,37 @@ begin : fsm_sync_proc
 					begin
 //							Yspeed <= 0-Xspeed ;
 //							Xspeed <= 0-Yspeed ;
-              Yspeed <= 0-Yspeed ;
-				  Xspeed <= 0-Xspeed ;
 					end
 			else begin 
 				case (hit_reg[3:0] )  // test sides 
 	
 					TOP+RIGHT, LEFT+BOTTOM, TOP+LEFT, BOTTOM+RIGHT :  // two sides - corner 
 					begin
-							 Yspeed <= 0-Yspeed ;
-				          Xspeed <= 0-Xspeed ;
+							 Yspeed <= 0;
+				          Xspeed <= 0;
 					end
 					LEFT, TOP+RIGHT+BOTTOM : // left side or cavity  
 					begin
 						if (Xspeed < 0) // left 
-							  Xspeed <= 0-Xspeed ;
+							  Xspeed <= 0 ;
 					end
 	
 					RIGHT, LEFT+BOTTOM +TOP :   // right side or cavity  
 					begin
 						if (Xspeed > 0) // right 
-							  Xspeed <= 0-Xspeed ;
+							  Xspeed <= 0 ;
 					end
 					
 					TOP, RIGHT+LEFT+BOTTOM :  // top side or cavity  
 					begin
 						if (Yspeed < 0) // up 
-							  Yspeed <= 0-Yspeed ;
+							  Yspeed <= 0 ;
 					end
 				
 				BOTTOM, TOP+LEFT+RIGHT :  // bottom side or cavity  
 					begin
-						if (Yspeed > 0) // doun 
-							  Yspeed <= -Yspeed ;
+						//if (Yspeed > 0) // doun 
+							  //Yspeed <= -Yspeed ;
 					end
 					
 					default: ; 
@@ -207,8 +215,8 @@ begin : fsm_sync_proc
 			 
 				// accelerate 
 			
-				if (Yspeed < MAX_Y_SPEED ) //  limit the speed while going down 
-   				Yspeed <= Yspeed - Y_ACCEL ; // deAccelerate : slow the speed down every clock tick 
+				//if (Yspeed < MAX_Y_SPEED ) //  limit the speed while going down 
+   				//Yspeed <= Yspeed - Y_ACCEL ; // deAccelerate : slow the speed down every clock tick 
 	
 				
 				SM_Motion <= POSITION_LIMITS_ST ; 

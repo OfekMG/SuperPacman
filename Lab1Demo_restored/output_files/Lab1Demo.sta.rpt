@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for Lab1Demo
-Sun Sep 14 14:16:05 2025
+Mon Sep 15 14:27:09 2025
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -100,19 +100,21 @@ agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 6           ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 8           ;
 ;                            ;             ;
-; Average used               ; 1.99        ;
-; Maximum used               ; 6           ;
+; Average used               ; 2.12        ;
+; Maximum used               ; 8           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  20.8%      ;
-;     Processor 3            ;  20.2%      ;
-;     Processor 4            ;  19.8%      ;
-;     Processor 5            ;  19.0%      ;
-;     Processor 6            ;  19.0%      ;
+;     Processor 2            ;  17.0%      ;
+;     Processor 3            ;  16.5%      ;
+;     Processor 4            ;  16.5%      ;
+;     Processor 5            ;  15.6%      ;
+;     Processor 6            ;  15.6%      ;
+;     Processor 7            ;  15.6%      ;
+;     Processor 8            ;  15.6%      ;
 +----------------------------+-------------+
 
 
@@ -121,7 +123,7 @@ agreement for further details.
 +-------------------------+--------+--------------------------+
 ; SDC File Path           ; Status ; Read at                  ;
 +-------------------------+--------+--------------------------+
-; DE10_Standard_Audio.sdc ; OK     ; Sun Sep 14 14:15:57 2025 ;
+; DE10_Standard_Audio.sdc ; OK     ; Mon Sep 15 14:27:02 2025 ;
 +-------------------------+--------+--------------------------+
 
 
@@ -143,7 +145,7 @@ agreement for further details.
 ; Fmax      ; Restricted Fmax ; Clock Name                                                                 ; Note ;
 +-----------+-----------------+----------------------------------------------------------------------------+------+
 ; 51.55 MHz ; 51.55 MHz       ; altera_reserved_tck                                                        ;      ;
-; 77.97 MHz ; 77.97 MHz       ; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
+; 64.16 MHz ; 64.16 MHz       ; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
 +-----------+-----------------+----------------------------------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -160,7 +162,7 @@ HTML report is unavailable in plain text report export.
 ; Clock                                                                      ; Slack  ; End Point TNS ;
 +----------------------------------------------------------------------------+--------+---------------+
 ; altera_reserved_tck                                                        ; 10.300 ; 0.000         ;
-; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 18.921 ; 0.000         ;
+; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 16.160 ; 0.000         ;
 +----------------------------------------------------------------------------+--------+---------------+
 
 
@@ -169,7 +171,7 @@ HTML report is unavailable in plain text report export.
 +----------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                      ; Slack ; End Point TNS ;
 +----------------------------------------------------------------------------+-------+---------------+
-; altera_reserved_tck                                                        ; 0.161 ; 0.000         ;
+; altera_reserved_tck                                                        ; 0.152 ; 0.000         ;
 ; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.235 ; 0.000         ;
 +----------------------------------------------------------------------------+-------+---------------+
 
@@ -179,7 +181,7 @@ HTML report is unavailable in plain text report export.
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 36.903 ; 0.000         ;
+; altera_reserved_tck ; 36.521 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -188,7 +190,7 @@ HTML report is unavailable in plain text report export.
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.864 ; 0.000         ;
+; altera_reserved_tck ; 0.817 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -200,7 +202,7 @@ HTML report is unavailable in plain text report export.
 ; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 0.793  ; 0.000         ;
 ; CLOCK_50                                                                   ; 9.670  ; 0.000         ;
 ; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 14.637 ; 0.000         ;
-; altera_reserved_tck                                                        ; 18.641 ; 0.000         ;
+; altera_reserved_tck                                                        ; 18.603 ; 0.000         ;
 +----------------------------------------------------------------------------+--------+---------------+
 
 
@@ -211,19 +213,19 @@ The design MTBF is not calculated because there are no specified synchronizers i
 Number of Synchronizer Chains Found: 14
 Shortest Synchronizer Chain: 2 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-Worst Case Available Settling Time: 53.247 ns
+Worst Case Available Settling Time: 53.753 ns
 
 
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Slow 1100mV 0C Model Fmax Summary                                                                              ;
-+----------+-----------------+----------------------------------------------------------------------------+------+
-; Fmax     ; Restricted Fmax ; Clock Name                                                                 ; Note ;
-+----------+-----------------+----------------------------------------------------------------------------+------+
-; 52.3 MHz ; 52.3 MHz        ; altera_reserved_tck                                                        ;      ;
-; 81.5 MHz ; 81.5 MHz        ; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
-+----------+-----------------+----------------------------------------------------------------------------+------+
++-----------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 0C Model Fmax Summary                                                                               ;
++-----------+-----------------+----------------------------------------------------------------------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name                                                                 ; Note ;
++-----------+-----------------+----------------------------------------------------------------------------+------+
+; 52.3 MHz  ; 52.3 MHz        ; altera_reserved_tck                                                        ;      ;
+; 66.25 MHz ; 66.25 MHz       ; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
++-----------+-----------------+----------------------------------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -233,7 +235,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; Clock                                                                      ; Slack  ; End Point TNS ;
 +----------------------------------------------------------------------------+--------+---------------+
 ; altera_reserved_tck                                                        ; 10.440 ; 0.000         ;
-; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 19.476 ; 0.000         ;
+; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 16.651 ; 0.000         ;
 +----------------------------------------------------------------------------+--------+---------------+
 
 
@@ -242,8 +244,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                      ; Slack ; End Point TNS ;
 +----------------------------------------------------------------------------+-------+---------------+
-; altera_reserved_tck                                                        ; 0.146 ; 0.000         ;
-; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.222 ; 0.000         ;
+; altera_reserved_tck                                                        ; 0.140 ; 0.000         ;
+; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.223 ; 0.000         ;
 +----------------------------------------------------------------------------+-------+---------------+
 
 
@@ -252,7 +254,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 36.991 ; 0.000         ;
+; altera_reserved_tck ; 36.644 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -261,7 +263,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.814 ; 0.000         ;
+; altera_reserved_tck ; 0.798 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -273,7 +275,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 0.793  ; 0.000         ;
 ; CLOCK_50                                                                   ; 9.673  ; 0.000         ;
 ; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 14.612 ; 0.000         ;
-; altera_reserved_tck                                                        ; 18.632 ; 0.000         ;
+; altera_reserved_tck                                                        ; 18.607 ; 0.000         ;
 +----------------------------------------------------------------------------+--------+---------------+
 
 
@@ -284,7 +286,7 @@ The design MTBF is not calculated because there are no specified synchronizers i
 Number of Synchronizer Chains Found: 14
 Shortest Synchronizer Chain: 2 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-Worst Case Available Settling Time: 53.336 ns
+Worst Case Available Settling Time: 53.900 ns
 
 
 
@@ -295,7 +297,7 @@ Worst Case Available Settling Time: 53.336 ns
 ; Clock                                                                      ; Slack  ; End Point TNS ;
 +----------------------------------------------------------------------------+--------+---------------+
 ; altera_reserved_tck                                                        ; 12.357 ; 0.000         ;
-; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 22.565 ; 0.000         ;
+; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 20.993 ; 0.000         ;
 +----------------------------------------------------------------------------+--------+---------------+
 
 
@@ -304,8 +306,8 @@ Worst Case Available Settling Time: 53.336 ns
 +----------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                      ; Slack ; End Point TNS ;
 +----------------------------------------------------------------------------+-------+---------------+
-; altera_reserved_tck                                                        ; 0.044 ; 0.000         ;
-; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.140 ; 0.000         ;
+; altera_reserved_tck                                                        ; 0.039 ; 0.000         ;
+; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.142 ; 0.000         ;
 +----------------------------------------------------------------------------+-------+---------------+
 
 
@@ -314,7 +316,7 @@ Worst Case Available Settling Time: 53.336 ns
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 37.896 ; 0.000         ;
+; altera_reserved_tck ; 37.565 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -323,7 +325,7 @@ Worst Case Available Settling Time: 53.336 ns
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.449 ; 0.000         ;
+; altera_reserved_tck ; 0.410 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -335,7 +337,7 @@ Worst Case Available Settling Time: 53.336 ns
 ; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 0.793  ; 0.000         ;
 ; CLOCK_50                                                                   ; 9.336  ; 0.000         ;
 ; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 14.753 ; 0.000         ;
-; altera_reserved_tck                                                        ; 18.285 ; 0.000         ;
+; altera_reserved_tck                                                        ; 18.261 ; 0.000         ;
 +----------------------------------------------------------------------------+--------+---------------+
 
 
@@ -346,7 +348,7 @@ The design MTBF is not calculated because there are no specified synchronizers i
 Number of Synchronizer Chains Found: 14
 Shortest Synchronizer Chain: 2 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-Worst Case Available Settling Time: 56.174 ns
+Worst Case Available Settling Time: 56.410 ns
 
 
 
@@ -357,7 +359,7 @@ Worst Case Available Settling Time: 56.174 ns
 ; Clock                                                                      ; Slack  ; End Point TNS ;
 +----------------------------------------------------------------------------+--------+---------------+
 ; altera_reserved_tck                                                        ; 12.535 ; 0.000         ;
-; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 23.767 ; 0.000         ;
+; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 22.341 ; 0.000         ;
 +----------------------------------------------------------------------------+--------+---------------+
 
 
@@ -366,8 +368,8 @@ Worst Case Available Settling Time: 56.174 ns
 +----------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                      ; Slack ; End Point TNS ;
 +----------------------------------------------------------------------------+-------+---------------+
-; altera_reserved_tck                                                        ; 0.031 ; 0.000         ;
-; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.127 ; 0.000         ;
+; altera_reserved_tck                                                        ; 0.029 ; 0.000         ;
+; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.130 ; 0.000         ;
 +----------------------------------------------------------------------------+-------+---------------+
 
 
@@ -376,7 +378,7 @@ Worst Case Available Settling Time: 56.174 ns
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 38.099 ; 0.000         ;
+; altera_reserved_tck ; 37.826 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -385,7 +387,7 @@ Worst Case Available Settling Time: 56.174 ns
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.399 ; 0.000         ;
+; altera_reserved_tck ; 0.370 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -397,7 +399,7 @@ Worst Case Available Settling Time: 56.174 ns
 ; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 0.793  ; 0.000         ;
 ; CLOCK_50                                                                   ; 9.286  ; 0.000         ;
 ; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 14.753 ; 0.000         ;
-; altera_reserved_tck                                                        ; 18.245 ; 0.000         ;
+; altera_reserved_tck                                                        ; 18.233 ; 0.000         ;
 +----------------------------------------------------------------------------+--------+---------------+
 
 
@@ -408,7 +410,7 @@ The design MTBF is not calculated because there are no specified synchronizers i
 Number of Synchronizer Chains Found: 14
 Shortest Synchronizer Chain: 2 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-Worst Case Available Settling Time: 56.575 ns
+Worst Case Available Settling Time: 56.808 ns
 
 
 
@@ -418,11 +420,11 @@ Worst Case Available Settling Time: 56.575 ns
 +-----------------------------------------------------------------------------+--------+-------+----------+---------+---------------------+
 ; Clock                                                                       ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +-----------------------------------------------------------------------------+--------+-------+----------+---------+---------------------+
-; Worst-case Slack                                                            ; 10.300 ; 0.031 ; 36.903   ; 0.399   ; 0.793               ;
+; Worst-case Slack                                                            ; 10.300 ; 0.029 ; 36.521   ; 0.370   ; 0.793               ;
 ;  CLOCK_50                                                                   ; N/A    ; N/A   ; N/A      ; N/A     ; 9.286               ;
-;  altera_reserved_tck                                                        ; 10.300 ; 0.031 ; 36.903   ; 0.399   ; 18.245              ;
+;  altera_reserved_tck                                                        ; 10.300 ; 0.029 ; 36.521   ; 0.370   ; 18.233              ;
 ;  inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; N/A    ; N/A   ; N/A      ; N/A     ; 0.793               ;
-;  inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 18.921 ; 0.127 ; N/A      ; N/A     ; 14.612              ;
+;  inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 16.160 ; 0.130 ; N/A      ; N/A     ; 14.612              ;
 ; Design-wide TNS                                                             ; 0.0    ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
 ;  CLOCK_50                                                                   ; N/A    ; N/A   ; N/A      ; N/A     ; 0.000               ;
 ;  altera_reserved_tck                                                        ; 0.000  ; 0.000 ; 0.000    ; 0.000   ; 0.000               ;
@@ -526,15 +528,15 @@ Worst Case Available Settling Time: 56.575 ns
 +---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 ; Pin                 ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
 +---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
-; boardersDrawReq     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.62e-07 V                   ; 3.1 V               ; -0.153 V            ; 0.035 V                              ; 0.31 V                               ; 4.23e-10 s                  ; 1.59e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 2.62e-07 V                  ; 3.1 V              ; -0.153 V           ; 0.035 V                             ; 0.31 V                              ; 4.23e-10 s                 ; 1.59e-10 s                 ; Yes                       ; No                        ;
-; BG_RGB[7]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.62e-07 V                   ; 3.1 V               ; -0.153 V            ; 0.035 V                              ; 0.31 V                               ; 4.23e-10 s                  ; 1.59e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 2.62e-07 V                  ; 3.1 V              ; -0.153 V           ; 0.035 V                             ; 0.31 V                              ; 4.23e-10 s                 ; 1.59e-10 s                 ; Yes                       ; No                        ;
-; BG_RGB[6]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.5e-07 V                    ; 3.14 V              ; -0.195 V            ; 0.158 V                              ; 0.394 V                              ; 4.46e-10 s                  ; 1.64e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 3.5e-07 V                   ; 3.14 V             ; -0.195 V           ; 0.158 V                             ; 0.394 V                             ; 4.46e-10 s                 ; 1.64e-10 s                 ; Yes                       ; No                        ;
+; boardersDrawReq     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.35e-07 V                   ; 3.14 V              ; -0.257 V            ; 0.13 V                               ; 0.399 V                              ; 4.27e-10 s                  ; 1.5e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 3.35e-07 V                  ; 3.14 V             ; -0.257 V           ; 0.13 V                              ; 0.399 V                             ; 4.27e-10 s                 ; 1.5e-10 s                  ; Yes                       ; No                        ;
+; BG_RGB[7]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.5e-07 V                    ; 3.14 V              ; -0.195 V            ; 0.158 V                              ; 0.394 V                              ; 4.46e-10 s                  ; 1.64e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 3.5e-07 V                   ; 3.14 V             ; -0.195 V           ; 0.158 V                             ; 0.394 V                             ; 4.46e-10 s                 ; 1.64e-10 s                 ; Yes                       ; No                        ;
+; BG_RGB[6]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.62e-07 V                   ; 3.1 V               ; -0.153 V            ; 0.035 V                              ; 0.31 V                               ; 4.23e-10 s                  ; 1.59e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 2.62e-07 V                  ; 3.1 V              ; -0.153 V           ; 0.035 V                             ; 0.31 V                              ; 4.23e-10 s                 ; 1.59e-10 s                 ; Yes                       ; No                        ;
 ; BG_RGB[5]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.5e-07 V                    ; 3.14 V              ; -0.195 V            ; 0.158 V                              ; 0.394 V                              ; 4.46e-10 s                  ; 1.64e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 3.5e-07 V                   ; 3.14 V             ; -0.195 V           ; 0.158 V                             ; 0.394 V                             ; 4.46e-10 s                 ; 1.64e-10 s                 ; Yes                       ; No                        ;
 ; BG_RGB[4]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.35e-07 V                   ; 3.14 V              ; -0.258 V            ; 0.13 V                               ; 0.399 V                              ; 4.27e-10 s                  ; 1.5e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 3.35e-07 V                  ; 3.14 V             ; -0.258 V           ; 0.13 V                              ; 0.399 V                             ; 4.27e-10 s                 ; 1.5e-10 s                  ; Yes                       ; No                        ;
-; BG_RGB[3]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.5e-07 V                    ; 3.14 V              ; -0.195 V            ; 0.158 V                              ; 0.394 V                              ; 4.46e-10 s                  ; 1.64e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 3.5e-07 V                   ; 3.14 V             ; -0.195 V           ; 0.158 V                             ; 0.394 V                             ; 4.46e-10 s                 ; 1.64e-10 s                 ; Yes                       ; No                        ;
-; BG_RGB[2]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.35e-07 V                   ; 3.14 V              ; -0.257 V            ; 0.13 V                               ; 0.399 V                              ; 4.27e-10 s                  ; 1.5e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 3.35e-07 V                  ; 3.14 V             ; -0.257 V           ; 0.13 V                              ; 0.399 V                             ; 4.27e-10 s                 ; 1.5e-10 s                  ; Yes                       ; No                        ;
+; BG_RGB[3]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.35e-07 V                   ; 3.14 V              ; -0.258 V            ; 0.13 V                               ; 0.399 V                              ; 4.27e-10 s                  ; 1.5e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 3.35e-07 V                  ; 3.14 V             ; -0.258 V           ; 0.13 V                              ; 0.399 V                             ; 4.27e-10 s                 ; 1.5e-10 s                  ; Yes                       ; No                        ;
+; BG_RGB[2]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.62e-07 V                   ; 3.1 V               ; -0.153 V            ; 0.035 V                              ; 0.31 V                               ; 4.23e-10 s                  ; 1.59e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 2.62e-07 V                  ; 3.1 V              ; -0.153 V           ; 0.035 V                             ; 0.31 V                              ; 4.23e-10 s                 ; 1.59e-10 s                 ; Yes                       ; No                        ;
 ; BG_RGB[1]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.62e-07 V                   ; 3.1 V               ; -0.153 V            ; 0.035 V                              ; 0.31 V                               ; 4.23e-10 s                  ; 1.59e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 2.62e-07 V                  ; 3.1 V              ; -0.153 V           ; 0.035 V                             ; 0.31 V                              ; 4.23e-10 s                 ; 1.59e-10 s                 ; Yes                       ; No                        ;
-; BG_RGB[0]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.35e-07 V                   ; 3.14 V              ; -0.258 V            ; 0.13 V                               ; 0.399 V                              ; 4.27e-10 s                  ; 1.5e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 3.35e-07 V                  ; 3.14 V             ; -0.258 V           ; 0.13 V                              ; 0.399 V                             ; 4.27e-10 s                 ; 1.5e-10 s                  ; Yes                       ; No                        ;
+; BG_RGB[0]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.35e-07 V                   ; 3.14 V              ; -0.257 V            ; 0.13 V                               ; 0.399 V                              ; 4.27e-10 s                  ; 1.5e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 3.35e-07 V                  ; 3.14 V             ; -0.257 V           ; 0.13 V                              ; 0.399 V                             ; 4.27e-10 s                 ; 1.5e-10 s                  ; Yes                       ; No                        ;
 ; redLight            ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.35e-07 V                   ; 3.14 V              ; -0.258 V            ; 0.13 V                               ; 0.399 V                              ; 4.27e-10 s                  ; 1.5e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 3.35e-07 V                  ; 3.14 V             ; -0.258 V           ; 0.13 V                              ; 0.399 V                             ; 4.27e-10 s                 ; 1.5e-10 s                  ; Yes                       ; No                        ;
 ; yellowLight         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.62e-07 V                   ; 3.1 V               ; -0.153 V            ; 0.035 V                              ; 0.31 V                               ; 4.23e-10 s                  ; 1.59e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 2.62e-07 V                  ; 3.1 V              ; -0.153 V           ; 0.035 V                             ; 0.31 V                              ; 4.23e-10 s                 ; 1.59e-10 s                 ; Yes                       ; No                        ;
 ; greenLight          ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.35e-07 V                   ; 3.14 V              ; -0.258 V            ; 0.13 V                               ; 0.399 V                              ; 4.27e-10 s                  ; 1.5e-10 s                   ; Yes                        ; No                         ; 3.08 V                      ; 3.35e-07 V                  ; 3.14 V             ; -0.258 V           ; 0.13 V                              ; 0.399 V                             ; 4.27e-10 s                 ; 1.5e-10 s                  ; Yes                       ; No                        ;
@@ -591,15 +593,15 @@ Worst Case Available Settling Time: 56.575 ns
 +---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 ; Pin                 ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
 +---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
-; boardersDrawReq     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.61e-05 V                   ; 3.09 V              ; -0.0638 V           ; 0.034 V                              ; 0.099 V                              ; 5.12e-10 s                  ; 2.97e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 2.61e-05 V                  ; 3.09 V             ; -0.0638 V          ; 0.034 V                             ; 0.099 V                             ; 5.12e-10 s                 ; 2.97e-10 s                 ; Yes                       ; Yes                       ;
-; BG_RGB[7]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.61e-05 V                   ; 3.09 V              ; -0.0638 V           ; 0.034 V                              ; 0.099 V                              ; 5.12e-10 s                  ; 2.97e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 2.61e-05 V                  ; 3.09 V             ; -0.0638 V          ; 0.034 V                             ; 0.099 V                             ; 5.12e-10 s                 ; 2.97e-10 s                 ; Yes                       ; Yes                       ;
-; BG_RGB[6]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.32e-05 V                   ; 3.09 V              ; -0.11 V             ; 0.031 V                              ; 0.155 V                              ; 5.43e-10 s                  ; 3.14e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.32e-05 V                  ; 3.09 V             ; -0.11 V            ; 0.031 V                             ; 0.155 V                             ; 5.43e-10 s                 ; 3.14e-10 s                 ; Yes                       ; Yes                       ;
+; boardersDrawReq     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.19e-05 V                   ; 3.1 V               ; -0.136 V            ; 0.025 V                              ; 0.167 V                              ; 4.92e-10 s                  ; 3.12e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 3.19e-05 V                  ; 3.1 V              ; -0.136 V           ; 0.025 V                             ; 0.167 V                             ; 4.92e-10 s                 ; 3.12e-10 s                 ; Yes                       ; No                        ;
+; BG_RGB[7]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.32e-05 V                   ; 3.09 V              ; -0.11 V             ; 0.031 V                              ; 0.155 V                              ; 5.43e-10 s                  ; 3.14e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.32e-05 V                  ; 3.09 V             ; -0.11 V            ; 0.031 V                             ; 0.155 V                             ; 5.43e-10 s                 ; 3.14e-10 s                 ; Yes                       ; Yes                       ;
+; BG_RGB[6]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.61e-05 V                   ; 3.09 V              ; -0.0638 V           ; 0.034 V                              ; 0.099 V                              ; 5.12e-10 s                  ; 2.97e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 2.61e-05 V                  ; 3.09 V             ; -0.0638 V          ; 0.034 V                             ; 0.099 V                             ; 5.12e-10 s                 ; 2.97e-10 s                 ; Yes                       ; Yes                       ;
 ; BG_RGB[5]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.32e-05 V                   ; 3.09 V              ; -0.11 V             ; 0.031 V                              ; 0.155 V                              ; 5.43e-10 s                  ; 3.14e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.32e-05 V                  ; 3.09 V             ; -0.11 V            ; 0.031 V                             ; 0.155 V                             ; 5.43e-10 s                 ; 3.14e-10 s                 ; Yes                       ; Yes                       ;
 ; BG_RGB[4]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.19e-05 V                   ; 3.1 V               ; -0.133 V            ; 0.025 V                              ; 0.169 V                              ; 4.92e-10 s                  ; 3.13e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 3.19e-05 V                  ; 3.1 V              ; -0.133 V           ; 0.025 V                             ; 0.169 V                             ; 4.92e-10 s                 ; 3.13e-10 s                 ; Yes                       ; No                        ;
-; BG_RGB[3]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.32e-05 V                   ; 3.09 V              ; -0.11 V             ; 0.031 V                              ; 0.155 V                              ; 5.43e-10 s                  ; 3.14e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.32e-05 V                  ; 3.09 V             ; -0.11 V            ; 0.031 V                             ; 0.155 V                             ; 5.43e-10 s                 ; 3.14e-10 s                 ; Yes                       ; Yes                       ;
-; BG_RGB[2]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.19e-05 V                   ; 3.1 V               ; -0.136 V            ; 0.025 V                              ; 0.167 V                              ; 4.92e-10 s                  ; 3.12e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 3.19e-05 V                  ; 3.1 V              ; -0.136 V           ; 0.025 V                             ; 0.167 V                             ; 4.92e-10 s                 ; 3.12e-10 s                 ; Yes                       ; No                        ;
+; BG_RGB[3]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.19e-05 V                   ; 3.1 V               ; -0.133 V            ; 0.025 V                              ; 0.169 V                              ; 4.92e-10 s                  ; 3.13e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 3.19e-05 V                  ; 3.1 V              ; -0.133 V           ; 0.025 V                             ; 0.169 V                             ; 4.92e-10 s                 ; 3.13e-10 s                 ; Yes                       ; No                        ;
+; BG_RGB[2]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.61e-05 V                   ; 3.09 V              ; -0.0638 V           ; 0.034 V                              ; 0.099 V                              ; 5.12e-10 s                  ; 2.97e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 2.61e-05 V                  ; 3.09 V             ; -0.0638 V          ; 0.034 V                             ; 0.099 V                             ; 5.12e-10 s                 ; 2.97e-10 s                 ; Yes                       ; Yes                       ;
 ; BG_RGB[1]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.61e-05 V                   ; 3.09 V              ; -0.0638 V           ; 0.034 V                              ; 0.099 V                              ; 5.12e-10 s                  ; 2.97e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 2.61e-05 V                  ; 3.09 V             ; -0.0638 V          ; 0.034 V                             ; 0.099 V                             ; 5.12e-10 s                 ; 2.97e-10 s                 ; Yes                       ; Yes                       ;
-; BG_RGB[0]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.19e-05 V                   ; 3.1 V               ; -0.133 V            ; 0.025 V                              ; 0.169 V                              ; 4.92e-10 s                  ; 3.13e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 3.19e-05 V                  ; 3.1 V              ; -0.133 V           ; 0.025 V                             ; 0.169 V                             ; 4.92e-10 s                 ; 3.13e-10 s                 ; Yes                       ; No                        ;
+; BG_RGB[0]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.19e-05 V                   ; 3.1 V               ; -0.136 V            ; 0.025 V                              ; 0.167 V                              ; 4.92e-10 s                  ; 3.12e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 3.19e-05 V                  ; 3.1 V              ; -0.136 V           ; 0.025 V                             ; 0.167 V                             ; 4.92e-10 s                 ; 3.12e-10 s                 ; Yes                       ; No                        ;
 ; redLight            ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.19e-05 V                   ; 3.1 V               ; -0.133 V            ; 0.025 V                              ; 0.169 V                              ; 4.92e-10 s                  ; 3.13e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 3.19e-05 V                  ; 3.1 V              ; -0.133 V           ; 0.025 V                             ; 0.169 V                             ; 4.92e-10 s                 ; 3.13e-10 s                 ; Yes                       ; No                        ;
 ; yellowLight         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.61e-05 V                   ; 3.09 V              ; -0.0638 V           ; 0.034 V                              ; 0.099 V                              ; 5.12e-10 s                  ; 2.97e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 2.61e-05 V                  ; 3.09 V             ; -0.0638 V          ; 0.034 V                             ; 0.099 V                             ; 5.12e-10 s                 ; 2.97e-10 s                 ; Yes                       ; Yes                       ;
 ; greenLight          ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.19e-05 V                   ; 3.1 V               ; -0.133 V            ; 0.025 V                              ; 0.169 V                              ; 4.92e-10 s                  ; 3.13e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 3.19e-05 V                  ; 3.1 V              ; -0.133 V           ; 0.025 V                             ; 0.169 V                             ; 4.92e-10 s                 ; 3.13e-10 s                 ; Yes                       ; No                        ;
@@ -656,15 +658,15 @@ Worst Case Available Settling Time: 56.575 ns
 +---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 ; Pin                 ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
 +---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
-; boardersDrawReq     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 3.63e-06 V                   ; 3.64 V              ; -0.326 V            ; 0.091 V                              ; 0.479 V                              ; 3.83e-10 s                  ; 1.5e-10 s                   ; Yes                        ; No                         ; 3.63 V                      ; 3.63e-06 V                  ; 3.64 V             ; -0.326 V           ; 0.091 V                             ; 0.479 V                             ; 3.83e-10 s                 ; 1.5e-10 s                  ; Yes                       ; No                        ;
-; BG_RGB[7]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 3.63e-06 V                   ; 3.64 V              ; -0.326 V            ; 0.091 V                              ; 0.479 V                              ; 3.83e-10 s                  ; 1.5e-10 s                   ; Yes                        ; No                         ; 3.63 V                      ; 3.63e-06 V                  ; 3.64 V             ; -0.326 V           ; 0.091 V                             ; 0.479 V                             ; 3.83e-10 s                 ; 1.5e-10 s                  ; Yes                       ; No                        ;
-; BG_RGB[6]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.94e-06 V                   ; 3.69 V              ; -0.414 V            ; 0.134 V                              ; 0.585 V                              ; 4.19e-10 s                  ; 1.53e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 4.94e-06 V                  ; 3.69 V             ; -0.414 V           ; 0.134 V                             ; 0.585 V                             ; 4.19e-10 s                 ; 1.53e-10 s                 ; Yes                       ; No                        ;
+; boardersDrawReq     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.72e-06 V                   ; 3.7 V               ; -0.49 V             ; 0.117 V                              ; 0.621 V                              ; 3.84e-10 s                  ; 1.48e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 4.72e-06 V                  ; 3.7 V              ; -0.49 V            ; 0.117 V                             ; 0.621 V                             ; 3.84e-10 s                 ; 1.48e-10 s                 ; Yes                       ; No                        ;
+; BG_RGB[7]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.94e-06 V                   ; 3.69 V              ; -0.414 V            ; 0.134 V                              ; 0.585 V                              ; 4.19e-10 s                  ; 1.53e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 4.94e-06 V                  ; 3.69 V             ; -0.414 V           ; 0.134 V                             ; 0.585 V                             ; 4.19e-10 s                 ; 1.53e-10 s                 ; Yes                       ; No                        ;
+; BG_RGB[6]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 3.63e-06 V                   ; 3.64 V              ; -0.326 V            ; 0.091 V                              ; 0.479 V                              ; 3.83e-10 s                  ; 1.5e-10 s                   ; Yes                        ; No                         ; 3.63 V                      ; 3.63e-06 V                  ; 3.64 V             ; -0.326 V           ; 0.091 V                             ; 0.479 V                             ; 3.83e-10 s                 ; 1.5e-10 s                  ; Yes                       ; No                        ;
 ; BG_RGB[5]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.94e-06 V                   ; 3.69 V              ; -0.414 V            ; 0.134 V                              ; 0.585 V                              ; 4.19e-10 s                  ; 1.53e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 4.94e-06 V                  ; 3.69 V             ; -0.414 V           ; 0.134 V                             ; 0.585 V                             ; 4.19e-10 s                 ; 1.53e-10 s                 ; Yes                       ; No                        ;
 ; BG_RGB[4]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.72e-06 V                   ; 3.7 V               ; -0.49 V             ; 0.117 V                              ; 0.622 V                              ; 3.84e-10 s                  ; 1.48e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 4.72e-06 V                  ; 3.7 V              ; -0.49 V            ; 0.117 V                             ; 0.622 V                             ; 3.84e-10 s                 ; 1.48e-10 s                 ; Yes                       ; No                        ;
-; BG_RGB[3]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.94e-06 V                   ; 3.69 V              ; -0.414 V            ; 0.134 V                              ; 0.585 V                              ; 4.19e-10 s                  ; 1.53e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 4.94e-06 V                  ; 3.69 V             ; -0.414 V           ; 0.134 V                             ; 0.585 V                             ; 4.19e-10 s                 ; 1.53e-10 s                 ; Yes                       ; No                        ;
-; BG_RGB[2]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.72e-06 V                   ; 3.7 V               ; -0.49 V             ; 0.117 V                              ; 0.621 V                              ; 3.84e-10 s                  ; 1.48e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 4.72e-06 V                  ; 3.7 V              ; -0.49 V            ; 0.117 V                             ; 0.621 V                             ; 3.84e-10 s                 ; 1.48e-10 s                 ; Yes                       ; No                        ;
+; BG_RGB[3]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.72e-06 V                   ; 3.7 V               ; -0.49 V             ; 0.117 V                              ; 0.622 V                              ; 3.84e-10 s                  ; 1.48e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 4.72e-06 V                  ; 3.7 V              ; -0.49 V            ; 0.117 V                             ; 0.622 V                             ; 3.84e-10 s                 ; 1.48e-10 s                 ; Yes                       ; No                        ;
+; BG_RGB[2]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 3.63e-06 V                   ; 3.64 V              ; -0.326 V            ; 0.091 V                              ; 0.479 V                              ; 3.83e-10 s                  ; 1.5e-10 s                   ; Yes                        ; No                         ; 3.63 V                      ; 3.63e-06 V                  ; 3.64 V             ; -0.326 V           ; 0.091 V                             ; 0.479 V                             ; 3.83e-10 s                 ; 1.5e-10 s                  ; Yes                       ; No                        ;
 ; BG_RGB[1]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 3.63e-06 V                   ; 3.64 V              ; -0.326 V            ; 0.091 V                              ; 0.479 V                              ; 3.83e-10 s                  ; 1.5e-10 s                   ; Yes                        ; No                         ; 3.63 V                      ; 3.63e-06 V                  ; 3.64 V             ; -0.326 V           ; 0.091 V                             ; 0.479 V                             ; 3.83e-10 s                 ; 1.5e-10 s                  ; Yes                       ; No                        ;
-; BG_RGB[0]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.72e-06 V                   ; 3.7 V               ; -0.49 V             ; 0.117 V                              ; 0.622 V                              ; 3.84e-10 s                  ; 1.48e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 4.72e-06 V                  ; 3.7 V              ; -0.49 V            ; 0.117 V                             ; 0.622 V                             ; 3.84e-10 s                 ; 1.48e-10 s                 ; Yes                       ; No                        ;
+; BG_RGB[0]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.72e-06 V                   ; 3.7 V               ; -0.49 V             ; 0.117 V                              ; 0.621 V                              ; 3.84e-10 s                  ; 1.48e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 4.72e-06 V                  ; 3.7 V              ; -0.49 V            ; 0.117 V                             ; 0.621 V                             ; 3.84e-10 s                 ; 1.48e-10 s                 ; Yes                       ; No                        ;
 ; redLight            ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.72e-06 V                   ; 3.7 V               ; -0.49 V             ; 0.117 V                              ; 0.622 V                              ; 3.84e-10 s                  ; 1.48e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 4.72e-06 V                  ; 3.7 V              ; -0.49 V            ; 0.117 V                             ; 0.622 V                             ; 3.84e-10 s                 ; 1.48e-10 s                 ; Yes                       ; No                        ;
 ; yellowLight         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 3.63e-06 V                   ; 3.64 V              ; -0.326 V            ; 0.091 V                              ; 0.479 V                              ; 3.83e-10 s                  ; 1.5e-10 s                   ; Yes                        ; No                         ; 3.63 V                      ; 3.63e-06 V                  ; 3.64 V             ; -0.326 V           ; 0.091 V                             ; 0.479 V                             ; 3.83e-10 s                 ; 1.5e-10 s                  ; Yes                       ; No                        ;
 ; greenLight          ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.72e-06 V                   ; 3.7 V               ; -0.49 V             ; 0.117 V                              ; 0.622 V                              ; 3.84e-10 s                  ; 1.48e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 4.72e-06 V                  ; 3.7 V              ; -0.49 V            ; 0.117 V                             ; 0.622 V                             ; 3.84e-10 s                 ; 1.48e-10 s                 ; Yes                       ; No                        ;
@@ -721,15 +723,15 @@ Worst Case Available Settling Time: 56.575 ns
 +---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 ; Pin                 ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
 +---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
-; boardersDrawReq     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000184 V                   ; 3.64 V              ; -0.19 V             ; 0.019 V                              ; 0.425 V                              ; 4.44e-10 s                  ; 1.91e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000184 V                  ; 3.64 V             ; -0.19 V            ; 0.019 V                             ; 0.425 V                             ; 4.44e-10 s                 ; 1.91e-10 s                 ; Yes                       ; No                        ;
-; BG_RGB[7]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000184 V                   ; 3.64 V              ; -0.19 V             ; 0.019 V                              ; 0.425 V                              ; 4.44e-10 s                  ; 1.91e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000184 V                  ; 3.64 V             ; -0.19 V            ; 0.019 V                             ; 0.425 V                             ; 4.44e-10 s                 ; 1.91e-10 s                 ; Yes                       ; No                        ;
-; BG_RGB[6]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000238 V                   ; 3.64 V              ; -0.254 V            ; 0.052 V                              ; 0.543 V                              ; 4.59e-10 s                  ; 1.96e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000238 V                  ; 3.64 V             ; -0.254 V           ; 0.052 V                             ; 0.543 V                             ; 4.59e-10 s                 ; 1.96e-10 s                 ; Yes                       ; No                        ;
+; boardersDrawReq     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000229 V                   ; 3.65 V              ; -0.319 V            ; 0.041 V                              ; 0.528 V                              ; 4.29e-10 s                  ; 1.87e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000229 V                  ; 3.65 V             ; -0.319 V           ; 0.041 V                             ; 0.528 V                             ; 4.29e-10 s                 ; 1.87e-10 s                 ; Yes                       ; No                        ;
+; BG_RGB[7]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000238 V                   ; 3.64 V              ; -0.254 V            ; 0.052 V                              ; 0.543 V                              ; 4.59e-10 s                  ; 1.96e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000238 V                  ; 3.64 V             ; -0.254 V           ; 0.052 V                             ; 0.543 V                             ; 4.59e-10 s                 ; 1.96e-10 s                 ; Yes                       ; No                        ;
+; BG_RGB[6]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000184 V                   ; 3.64 V              ; -0.19 V             ; 0.019 V                              ; 0.425 V                              ; 4.44e-10 s                  ; 1.91e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000184 V                  ; 3.64 V             ; -0.19 V            ; 0.019 V                             ; 0.425 V                             ; 4.44e-10 s                 ; 1.91e-10 s                 ; Yes                       ; No                        ;
 ; BG_RGB[5]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000238 V                   ; 3.64 V              ; -0.254 V            ; 0.052 V                              ; 0.543 V                              ; 4.59e-10 s                  ; 1.96e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000238 V                  ; 3.64 V             ; -0.254 V           ; 0.052 V                             ; 0.543 V                             ; 4.59e-10 s                 ; 1.96e-10 s                 ; Yes                       ; No                        ;
 ; BG_RGB[4]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000229 V                   ; 3.65 V              ; -0.316 V            ; 0.041 V                              ; 0.53 V                               ; 4.29e-10 s                  ; 1.87e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000229 V                  ; 3.65 V             ; -0.316 V           ; 0.041 V                             ; 0.53 V                              ; 4.29e-10 s                 ; 1.87e-10 s                 ; Yes                       ; No                        ;
-; BG_RGB[3]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000238 V                   ; 3.64 V              ; -0.254 V            ; 0.052 V                              ; 0.543 V                              ; 4.59e-10 s                  ; 1.96e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000238 V                  ; 3.64 V             ; -0.254 V           ; 0.052 V                             ; 0.543 V                             ; 4.59e-10 s                 ; 1.96e-10 s                 ; Yes                       ; No                        ;
-; BG_RGB[2]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000229 V                   ; 3.65 V              ; -0.319 V            ; 0.041 V                              ; 0.528 V                              ; 4.29e-10 s                  ; 1.87e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000229 V                  ; 3.65 V             ; -0.319 V           ; 0.041 V                             ; 0.528 V                             ; 4.29e-10 s                 ; 1.87e-10 s                 ; Yes                       ; No                        ;
+; BG_RGB[3]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000229 V                   ; 3.65 V              ; -0.316 V            ; 0.041 V                              ; 0.53 V                               ; 4.29e-10 s                  ; 1.87e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000229 V                  ; 3.65 V             ; -0.316 V           ; 0.041 V                             ; 0.53 V                              ; 4.29e-10 s                 ; 1.87e-10 s                 ; Yes                       ; No                        ;
+; BG_RGB[2]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000184 V                   ; 3.64 V              ; -0.19 V             ; 0.019 V                              ; 0.425 V                              ; 4.44e-10 s                  ; 1.91e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000184 V                  ; 3.64 V             ; -0.19 V            ; 0.019 V                             ; 0.425 V                             ; 4.44e-10 s                 ; 1.91e-10 s                 ; Yes                       ; No                        ;
 ; BG_RGB[1]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000184 V                   ; 3.64 V              ; -0.19 V             ; 0.019 V                              ; 0.425 V                              ; 4.44e-10 s                  ; 1.91e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000184 V                  ; 3.64 V             ; -0.19 V            ; 0.019 V                             ; 0.425 V                             ; 4.44e-10 s                 ; 1.91e-10 s                 ; Yes                       ; No                        ;
-; BG_RGB[0]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000229 V                   ; 3.65 V              ; -0.316 V            ; 0.041 V                              ; 0.53 V                               ; 4.29e-10 s                  ; 1.87e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000229 V                  ; 3.65 V             ; -0.316 V           ; 0.041 V                             ; 0.53 V                              ; 4.29e-10 s                 ; 1.87e-10 s                 ; Yes                       ; No                        ;
+; BG_RGB[0]           ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000229 V                   ; 3.65 V              ; -0.319 V            ; 0.041 V                              ; 0.528 V                              ; 4.29e-10 s                  ; 1.87e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000229 V                  ; 3.65 V             ; -0.319 V           ; 0.041 V                             ; 0.528 V                             ; 4.29e-10 s                 ; 1.87e-10 s                 ; Yes                       ; No                        ;
 ; redLight            ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000229 V                   ; 3.65 V              ; -0.316 V            ; 0.041 V                              ; 0.53 V                               ; 4.29e-10 s                  ; 1.87e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000229 V                  ; 3.65 V             ; -0.316 V           ; 0.041 V                             ; 0.53 V                              ; 4.29e-10 s                 ; 1.87e-10 s                 ; Yes                       ; No                        ;
 ; yellowLight         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000184 V                   ; 3.64 V              ; -0.19 V             ; 0.019 V                              ; 0.425 V                              ; 4.44e-10 s                  ; 1.91e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000184 V                  ; 3.64 V             ; -0.19 V            ; 0.019 V                             ; 0.425 V                             ; 4.44e-10 s                 ; 1.91e-10 s                 ; Yes                       ; No                        ;
 ; greenLight          ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000229 V                   ; 3.65 V              ; -0.316 V            ; 0.041 V                              ; 0.53 V                               ; 4.29e-10 s                  ; 1.87e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000229 V                  ; 3.65 V             ; -0.316 V           ; 0.041 V                             ; 0.53 V                              ; 4.29e-10 s                 ; 1.87e-10 s                 ; Yes                       ; No                        ;
@@ -786,10 +788,10 @@ Worst Case Available Settling Time: 56.575 ns
 +----------------------------------------------------------------------------+----------------------------------------------------------------------------+------------+----------+----------+----------+
 ; From Clock                                                                 ; To Clock                                                                   ; RR Paths   ; FR Paths ; RF Paths ; FF Paths ;
 +----------------------------------------------------------------------------+----------------------------------------------------------------------------+------------+----------+----------+----------+
-; altera_reserved_tck                                                        ; altera_reserved_tck                                                        ; 5085       ; 58       ; 56       ; 0        ;
+; altera_reserved_tck                                                        ; altera_reserved_tck                                                        ; 5167       ; 59       ; 56       ; 0        ;
 ; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; altera_reserved_tck                                                        ; false path ; 0        ; 0        ; 0        ;
 ; altera_reserved_tck                                                        ; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; false path ; 0        ; 0        ; 0        ;
-; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 1466920    ; 0        ; 0        ; 0        ;
+; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 1457927    ; 0        ; 0        ; 0        ;
 +----------------------------------------------------------------------------+----------------------------------------------------------------------------+------------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -799,10 +801,10 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +----------------------------------------------------------------------------+----------------------------------------------------------------------------+------------+----------+----------+----------+
 ; From Clock                                                                 ; To Clock                                                                   ; RR Paths   ; FR Paths ; RF Paths ; FF Paths ;
 +----------------------------------------------------------------------------+----------------------------------------------------------------------------+------------+----------+----------+----------+
-; altera_reserved_tck                                                        ; altera_reserved_tck                                                        ; 5085       ; 58       ; 56       ; 0        ;
+; altera_reserved_tck                                                        ; altera_reserved_tck                                                        ; 5167       ; 59       ; 56       ; 0        ;
 ; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; altera_reserved_tck                                                        ; false path ; 0        ; 0        ; 0        ;
 ; altera_reserved_tck                                                        ; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; false path ; 0        ; 0        ; 0        ;
-; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 1466920    ; 0        ; 0        ; 0        ;
+; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 1457927    ; 0        ; 0        ; 0        ;
 +----------------------------------------------------------------------------+----------------------------------------------------------------------------+------------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -812,7 +814,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +---------------------+----------------------------------------------------------------------------+------------+----------+----------+----------+
 ; From Clock          ; To Clock                                                                   ; RR Paths   ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------+----------------------------------------------------------------------------+------------+----------+----------+----------+
-; altera_reserved_tck ; altera_reserved_tck                                                        ; 189        ; 0        ; 0        ; 0        ;
+; altera_reserved_tck ; altera_reserved_tck                                                        ; 195        ; 0        ; 0        ; 0        ;
 ; altera_reserved_tck ; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; false path ; 0        ; 0        ; 0        ;
 +---------------------+----------------------------------------------------------------------------+------------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
@@ -823,7 +825,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +---------------------+----------------------------------------------------------------------------+------------+----------+----------+----------+
 ; From Clock          ; To Clock                                                                   ; RR Paths   ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------+----------------------------------------------------------------------------+------------+----------+----------+----------+
-; altera_reserved_tck ; altera_reserved_tck                                                        ; 189        ; 0        ; 0        ; 0        ;
+; altera_reserved_tck ; altera_reserved_tck                                                        ; 195        ; 0        ; 0        ; 0        ;
 ; altera_reserved_tck ; inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; false path ; 0        ; 0        ; 0        ;
 +---------------------+----------------------------------------------------------------------------+------------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
@@ -1011,10 +1013,10 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Sun Sep 14 14:15:55 2025
+    Info: Processing started: Mon Sep 15 14:27:00 2025
 Info: Command: quartus_sta Lab1Demo -c Lab1Demo
 Info: qsta_default_script.tcl version: #1
-Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
 Warning (335093): TimeQuest Timing Analyzer is analyzing 5 combinational loops as latches. For more details, run the Check Timing command in the TimeQuest Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
@@ -1024,73 +1026,73 @@ Info (332164): Evaluating HDL-embedded SDC commands
         Info (332166): if { [string equal quartus_fit $::TimeQuestInfo(nameofexecutable)] } { set_max_delay -to [get_ports { altera_reserved_tdo } ] 0 }
         Info (332166): set_clock_groups -asynchronous -group {altera_reserved_tck}
 Info (332104): Reading SDC File: 'DE10_Standard_Audio.sdc'
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(9): CLOCK2_50 could not be matched with a port File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 9
-Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(9): Argument <targets> is an empty collection File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 9
-    Info (332050): create_clock -period "50.000000 MHz" [get_ports CLOCK2_50] File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 9
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(10): CLOCK3_50 could not be matched with a port File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 10
-Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(10): Argument <targets> is an empty collection File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 10
-    Info (332050): create_clock -period "50.000000 MHz" [get_ports CLOCK3_50] File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 10
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(11): CLOCK4_50 could not be matched with a port File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 11
-Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(11): Argument <targets> is an empty collection File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 11
-    Info (332050): create_clock -period "50.000000 MHz" [get_ports CLOCK4_50] File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 11
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(14): CLOCK_27 could not be matched with a port File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 14
-Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(14): Argument <targets> is an empty collection File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 14
-    Info (332050): create_clock -period "27.000000 MHz" [get_ports CLOCK_27] File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 14
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(17): AUD_XCK could not be matched with a port File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 17
-Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(17): Argument <targets> is an empty collection File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 17
-    Info (332050): create_clock -period "18.432 MHz" -name clk_audxck [get_ports AUD_XCK] File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 17
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(18): AUD_BCLK could not be matched with a port File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 18
-Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(18): Argument <targets> is an empty collection File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 18
-    Info (332050): create_clock -period "3.536 MHz" -name clk_audbck [get_ports AUD_BCLK] File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 18
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(20): VGA_CLK could not be matched with a port File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 20
-Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(20): Argument <targets> is an empty collection File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 20
-    Info (332050): create_clock -period "25.18 MHz" -name clk_vga [get_ports VGA_CLK] File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 20
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(9): CLOCK2_50 could not be matched with a port File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 9
+Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(9): Argument <targets> is an empty collection File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 9
+    Info (332050): create_clock -period "50.000000 MHz" [get_ports CLOCK2_50] File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 9
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(10): CLOCK3_50 could not be matched with a port File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 10
+Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(10): Argument <targets> is an empty collection File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 10
+    Info (332050): create_clock -period "50.000000 MHz" [get_ports CLOCK3_50] File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 10
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(11): CLOCK4_50 could not be matched with a port File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 11
+Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(11): Argument <targets> is an empty collection File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 11
+    Info (332050): create_clock -period "50.000000 MHz" [get_ports CLOCK4_50] File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 11
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(14): CLOCK_27 could not be matched with a port File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 14
+Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(14): Argument <targets> is an empty collection File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 14
+    Info (332050): create_clock -period "27.000000 MHz" [get_ports CLOCK_27] File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 14
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(17): AUD_XCK could not be matched with a port File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 17
+Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(17): Argument <targets> is an empty collection File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 17
+    Info (332050): create_clock -period "18.432 MHz" -name clk_audxck [get_ports AUD_XCK] File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 17
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(18): AUD_BCLK could not be matched with a port File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 18
+Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(18): Argument <targets> is an empty collection File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 18
+    Info (332050): create_clock -period "3.536 MHz" -name clk_audbck [get_ports AUD_BCLK] File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 18
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(20): VGA_CLK could not be matched with a port File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 20
+Warning (332049): Ignored create_clock at DE10_Standard_Audio.sdc(20): Argument <targets> is an empty collection File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 20
+    Info (332050): create_clock -period "25.18 MHz" -name clk_vga [get_ports VGA_CLK] File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 20
 Warning (332043): Overwriting existing clock: altera_reserved_tck
 Info (332110): Deriving PLL clocks
     Info (332110): create_generated_clock -source {inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|refclkin} -divide_by 5 -multiply_by 63 -duty_cycle 50.00 -name {inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]} {inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]}
     Info (332110): create_generated_clock -source {inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|vco0ph[0]} -divide_by 20 -duty_cycle 50.00 -name {inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk} {inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk}
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(38): u0|pll|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk could not be matched with a pin File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 38
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(39): DRAM_CLK could not be matched with a port File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 39
-Critical Warning (332049): Ignored create_generated_clock at DE10_Standard_Audio.sdc(38): Argument <targets> is an empty collection File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 38
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(38): u0|pll|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk could not be matched with a pin File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 38
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(39): DRAM_CLK could not be matched with a port File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 39
+Critical Warning (332049): Ignored create_generated_clock at DE10_Standard_Audio.sdc(38): Argument <targets> is an empty collection File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 38
     Info (332050): create_generated_clock -source [get_pins {u0|pll|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk}] \
-                      -name clk_dram_ext [get_ports {DRAM_CLK}] File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 38
-Warning (332049): Ignored create_generated_clock at DE10_Standard_Audio.sdc(38): Argument -source is an empty collection File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 38
+                      -name clk_dram_ext [get_ports {DRAM_CLK}] File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 38
+Warning (332049): Ignored create_generated_clock at DE10_Standard_Audio.sdc(38): Argument -source is an empty collection File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 38
 Info (332151): Clock uncertainty is not calculated until you update the timing netlist.
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(62): DRAM_DQ* could not be matched with a port File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 62
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(62): clk_dram_ext could not be matched with a clock File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 62
-Warning (332049): Ignored set_input_delay at DE10_Standard_Audio.sdc(62): Argument <targets> is an empty collection File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 62
-    Info (332050): set_input_delay -max -clock clk_dram_ext 5.9 [get_ports DRAM_DQ*] File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 62
-Warning (332049): Ignored set_input_delay at DE10_Standard_Audio.sdc(62): Argument -clock is not an object ID File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 62
-Warning (332049): Ignored set_input_delay at DE10_Standard_Audio.sdc(63): Argument <targets> is an empty collection File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 63
-    Info (332050): set_input_delay -min -clock clk_dram_ext 3.0 [get_ports DRAM_DQ*] File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 63
-Warning (332049): Ignored set_input_delay at DE10_Standard_Audio.sdc(63): Argument -clock is not an object ID File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 63
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(67): u0|pll|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk could not be matched with a clock File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 67
-Warning (332049): Ignored set_multicycle_path at DE10_Standard_Audio.sdc(66): Argument <from> is an empty collection File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 66
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(62): DRAM_DQ* could not be matched with a port File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 62
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(62): clk_dram_ext could not be matched with a clock File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 62
+Warning (332049): Ignored set_input_delay at DE10_Standard_Audio.sdc(62): Argument <targets> is an empty collection File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 62
+    Info (332050): set_input_delay -max -clock clk_dram_ext 5.9 [get_ports DRAM_DQ*] File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 62
+Warning (332049): Ignored set_input_delay at DE10_Standard_Audio.sdc(62): Argument -clock is not an object ID File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 62
+Warning (332049): Ignored set_input_delay at DE10_Standard_Audio.sdc(63): Argument <targets> is an empty collection File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 63
+    Info (332050): set_input_delay -min -clock clk_dram_ext 3.0 [get_ports DRAM_DQ*] File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 63
+Warning (332049): Ignored set_input_delay at DE10_Standard_Audio.sdc(63): Argument -clock is not an object ID File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 63
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(67): u0|pll|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk could not be matched with a clock File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 67
+Warning (332049): Ignored set_multicycle_path at DE10_Standard_Audio.sdc(66): Argument <from> is an empty collection File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 66
     Info (332050): set_multicycle_path -from [get_clocks {clk_dram_ext}] \
                     -to [get_clocks {u0|pll|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk}] \
-                                                  -setup 2 File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 66
-Warning (332049): Ignored set_multicycle_path at DE10_Standard_Audio.sdc(66): Argument <to> is an empty collection File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 66
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(80): DRAM_*DQM could not be matched with a port File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 80
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(80): DRAM_DQ* could not be matched with a port File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 80
-Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(80): Argument <targets> is an empty collection File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 80
-    Info (332050): set_output_delay -max -clock clk_dram_ext 1.6  [get_ports {DRAM_DQ* DRAM_*DQM}] File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 80
-Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(80): Argument -clock is not an object ID File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 80
-Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(81): Argument <targets> is an empty collection File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 81
-    Info (332050): set_output_delay -min -clock clk_dram_ext -0.9 [get_ports {DRAM_DQ* DRAM_*DQM}] File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 81
-Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(81): Argument -clock is not an object ID File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 81
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_ADDR* could not be matched with a port File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 82
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_BA* could not be matched with a port File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 82
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_CAS_N could not be matched with a port File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 82
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_CKE could not be matched with a port File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 82
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_CS_N could not be matched with a port File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 82
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_RAS_N could not be matched with a port File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 82
-Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_WE_N could not be matched with a port File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 82
-Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(82): Argument <targets> is an empty collection File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 82
-    Info (332050): set_output_delay -max -clock clk_dram_ext 1.6  [get_ports {DRAM_ADDR* DRAM_BA* DRAM_RAS_N DRAM_CAS_N DRAM_WE_N DRAM_CKE DRAM_CS_N}] File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 82
-Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(82): Argument -clock is not an object ID File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 82
-Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(83): Argument <targets> is an empty collection File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 83
-    Info (332050): set_output_delay -min -clock clk_dram_ext -0.9 [get_ports {DRAM_ADDR* DRAM_BA* DRAM_RAS_N DRAM_CAS_N DRAM_WE_N DRAM_CKE DRAM_CS_N}] File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 83
-Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(83): Argument -clock is not an object ID File: C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 83
+                                                  -setup 2 File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 66
+Warning (332049): Ignored set_multicycle_path at DE10_Standard_Audio.sdc(66): Argument <to> is an empty collection File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 66
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(80): DRAM_*DQM could not be matched with a port File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 80
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(80): DRAM_DQ* could not be matched with a port File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 80
+Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(80): Argument <targets> is an empty collection File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 80
+    Info (332050): set_output_delay -max -clock clk_dram_ext 1.6  [get_ports {DRAM_DQ* DRAM_*DQM}] File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 80
+Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(80): Argument -clock is not an object ID File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 80
+Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(81): Argument <targets> is an empty collection File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 81
+    Info (332050): set_output_delay -min -clock clk_dram_ext -0.9 [get_ports {DRAM_DQ* DRAM_*DQM}] File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 81
+Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(81): Argument -clock is not an object ID File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 81
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_ADDR* could not be matched with a port File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 82
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_BA* could not be matched with a port File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 82
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_CAS_N could not be matched with a port File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 82
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_CKE could not be matched with a port File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 82
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_CS_N could not be matched with a port File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 82
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_RAS_N could not be matched with a port File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 82
+Warning (332174): Ignored filter at DE10_Standard_Audio.sdc(82): DRAM_WE_N could not be matched with a port File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 82
+Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(82): Argument <targets> is an empty collection File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 82
+    Info (332050): set_output_delay -max -clock clk_dram_ext 1.6  [get_ports {DRAM_ADDR* DRAM_BA* DRAM_RAS_N DRAM_CAS_N DRAM_WE_N DRAM_CKE DRAM_CS_N}] File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 82
+Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(82): Argument -clock is not an object ID File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 82
+Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(83): Argument <targets> is an empty collection File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 83
+    Info (332050): set_output_delay -min -clock clk_dram_ext -0.9 [get_ports {DRAM_ADDR* DRAM_BA* DRAM_RAS_N DRAM_CAS_N DRAM_WE_N DRAM_CKE DRAM_CS_N}] File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 83
+Warning (332049): Ignored set_output_delay at DE10_Standard_Audio.sdc(83): Argument -clock is not an object ID File: D:/LAB1ULTI/Lab1Demo_restored/DE10_Standard_Audio.sdc Line: 83
 Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
     Info (332098): Cell: inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL  from: refclkin  to: fbclk
     Info (332098): Cell: inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
@@ -1102,33 +1104,33 @@ Info (332146): Worst-case setup slack is 10.300
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):    10.300               0.000 altera_reserved_tck 
-    Info (332119):    18.921               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-Info (332146): Worst-case hold slack is 0.161
+    Info (332119):    16.160               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case hold slack is 0.152
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.161               0.000 altera_reserved_tck 
+    Info (332119):     0.152               0.000 altera_reserved_tck 
     Info (332119):     0.235               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-Info (332146): Worst-case recovery slack is 36.903
+Info (332146): Worst-case recovery slack is 36.521
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    36.903               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 0.864
+    Info (332119):    36.521               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.817
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.864               0.000 altera_reserved_tck 
+    Info (332119):     0.817               0.000 altera_reserved_tck 
 Info (332146): Worst-case minimum pulse width slack is 0.793
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     0.793               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
     Info (332119):     9.670               0.000 CLOCK_50 
     Info (332119):    14.637               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):    18.641               0.000 altera_reserved_tck 
+    Info (332119):    18.603               0.000 altera_reserved_tck 
 Info (332114): Report Metastability: Found 14 synchronizer chains.
     Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
     Info (332114): Number of Synchronizer Chains Found: 14
     Info (332114): Shortest Synchronizer Chain: 2 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-    Info (332114): Worst Case Available Settling Time: 53.247 ns
+    Info (332114): Worst Case Available Settling Time: 53.753 ns
     Info (332114): 
 Info: Analyzing Slow 1100mV 0C Model
 Info (334003): Started post-fitting delay annotation
@@ -1142,33 +1144,33 @@ Info (332146): Worst-case setup slack is 10.440
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):    10.440               0.000 altera_reserved_tck 
-    Info (332119):    19.476               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-Info (332146): Worst-case hold slack is 0.146
+    Info (332119):    16.651               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case hold slack is 0.140
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.146               0.000 altera_reserved_tck 
-    Info (332119):     0.222               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-Info (332146): Worst-case recovery slack is 36.991
+    Info (332119):     0.140               0.000 altera_reserved_tck 
+    Info (332119):     0.223               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case recovery slack is 36.644
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    36.991               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 0.814
+    Info (332119):    36.644               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.798
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.814               0.000 altera_reserved_tck 
+    Info (332119):     0.798               0.000 altera_reserved_tck 
 Info (332146): Worst-case minimum pulse width slack is 0.793
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     0.793               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
     Info (332119):     9.673               0.000 CLOCK_50 
     Info (332119):    14.612               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):    18.632               0.000 altera_reserved_tck 
+    Info (332119):    18.607               0.000 altera_reserved_tck 
 Info (332114): Report Metastability: Found 14 synchronizer chains.
     Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
     Info (332114): Number of Synchronizer Chains Found: 14
     Info (332114): Shortest Synchronizer Chain: 2 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-    Info (332114): Worst Case Available Settling Time: 53.336 ns
+    Info (332114): Worst Case Available Settling Time: 53.900 ns
     Info (332114): 
 Info: Analyzing Fast 1100mV 85C Model
 Info (334003): Started post-fitting delay annotation
@@ -1182,33 +1184,33 @@ Info (332146): Worst-case setup slack is 12.357
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):    12.357               0.000 altera_reserved_tck 
-    Info (332119):    22.565               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-Info (332146): Worst-case hold slack is 0.044
+    Info (332119):    20.993               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case hold slack is 0.039
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.044               0.000 altera_reserved_tck 
-    Info (332119):     0.140               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-Info (332146): Worst-case recovery slack is 37.896
+    Info (332119):     0.039               0.000 altera_reserved_tck 
+    Info (332119):     0.142               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case recovery slack is 37.565
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    37.896               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 0.449
+    Info (332119):    37.565               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.410
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.449               0.000 altera_reserved_tck 
+    Info (332119):     0.410               0.000 altera_reserved_tck 
 Info (332146): Worst-case minimum pulse width slack is 0.793
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     0.793               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
     Info (332119):     9.336               0.000 CLOCK_50 
     Info (332119):    14.753               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):    18.285               0.000 altera_reserved_tck 
+    Info (332119):    18.261               0.000 altera_reserved_tck 
 Info (332114): Report Metastability: Found 14 synchronizer chains.
     Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
     Info (332114): Number of Synchronizer Chains Found: 14
     Info (332114): Shortest Synchronizer Chain: 2 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-    Info (332114): Worst Case Available Settling Time: 56.174 ns
+    Info (332114): Worst Case Available Settling Time: 56.410 ns
     Info (332114): 
 Info: Analyzing Fast 1100mV 0C Model
 Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
@@ -1220,40 +1222,40 @@ Info (332146): Worst-case setup slack is 12.535
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):    12.535               0.000 altera_reserved_tck 
-    Info (332119):    23.767               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-Info (332146): Worst-case hold slack is 0.031
+    Info (332119):    22.341               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case hold slack is 0.029
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.031               0.000 altera_reserved_tck 
-    Info (332119):     0.127               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-Info (332146): Worst-case recovery slack is 38.099
+    Info (332119):     0.029               0.000 altera_reserved_tck 
+    Info (332119):     0.130               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case recovery slack is 37.826
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    38.099               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 0.399
+    Info (332119):    37.826               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.370
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.399               0.000 altera_reserved_tck 
+    Info (332119):     0.370               0.000 altera_reserved_tck 
 Info (332146): Worst-case minimum pulse width slack is 0.793
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     0.793               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
     Info (332119):     9.286               0.000 CLOCK_50 
     Info (332119):    14.753               0.000 inst7|clk_31p5_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):    18.245               0.000 altera_reserved_tck 
+    Info (332119):    18.233               0.000 altera_reserved_tck 
 Info (332114): Report Metastability: Found 14 synchronizer chains.
     Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
     Info (332114): Number of Synchronizer Chains Found: 14
     Info (332114): Shortest Synchronizer Chain: 2 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-    Info (332114): Worst Case Available Settling Time: 56.575 ns
+    Info (332114): Worst Case Available Settling Time: 56.808 ns
     Info (332114): 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 46 warnings
-    Info: Peak virtual memory: 5285 megabytes
-    Info: Processing ended: Sun Sep 14 14:16:05 2025
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:19
+    Info: Peak virtual memory: 5304 megabytes
+    Info: Processing ended: Mon Sep 15 14:27:09 2025
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:16
 
 
