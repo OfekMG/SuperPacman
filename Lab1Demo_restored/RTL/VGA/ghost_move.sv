@@ -1,108 +1,124 @@
-// (c) Technion IIT, Department of Electrical Engineering 2025 
+// (c) Technion IIT, Department of Electrical Engineering 2025
 
 module ghost_move (
     input  logic clk,
     input  logic resetN,
-    input  logic startOfFrame,      // short pulse every start of frame 30Hz 
+    input  logic startOfFrame,      // short pulse every start of frame 30Hz
     input  logic collision,         // collision if ghost hits a wall
-    input  logic [2:0] HitEdgeCode, // which side we hit (0:TOP,1:BOTTOM,2:LEFT,3:RIGHT,4:CORNER)
+    input  logic [2:0] HitEdgeCode, // optional, could bias random direction
+    input  logic [1:0] rnd_dir,     // random direction input
     output logic signed [10:0] topLeftX,
-    output logic signed [10:0] topLeftY,
-    input  logic [1:0] rnd_dir      // random direction input (optional if no free path)
+    output logic signed [10:0] topLeftY
 );
 
-// Parameters
-parameter int INITIAL_X = 280;
-parameter int INITIAL_Y = 185;
-parameter int SPEED     = 60;
+    // Parameters
+    parameter int INITIAL_X = 280;
+    parameter int INITIAL_Y = 185;
+    parameter int SPEED     = 60;
 
-const int FIXED_POINT_MULTIPLIER = 64; 
-const int OBJECT_WIDTH_X = 32;
-const int OBJECT_HIGHT_Y = 32;
-const int SafetyMargin   = 2;
+    const int FIXED_POINT_MULTIPLIER = 64;  
+    const int OBJECT_WIDTH_X = 32;
+    const int OBJECT_HIGHT_Y = 32;
+    const int SafetyMargin   = 2;
 
-const int x_FRAME_LEFT   = (SafetyMargin)* FIXED_POINT_MULTIPLIER; 
-const int x_FRAME_RIGHT  = (639 - SafetyMargin - OBJECT_WIDTH_X)* FIXED_POINT_MULTIPLIER; 
-const int y_FRAME_TOP    = (SafetyMargin)* FIXED_POINT_MULTIPLIER;
-const int y_FRAME_BOTTOM = (479 - SafetyMargin - OBJECT_HIGHT_Y)* FIXED_POINT_MULTIPLIER; 
+    const int x_FRAME_LEFT   = (SafetyMargin) * FIXED_POINT_MULTIPLIER; 
+    const int x_FRAME_RIGHT  = (639 - SafetyMargin - OBJECT_WIDTH_X) * FIXED_POINT_MULTIPLIER; 
+    const int y_FRAME_TOP    = (SafetyMargin) * FIXED_POINT_MULTIPLIER;
+    const int y_FRAME_BOTTOM = (479 - SafetyMargin - OBJECT_HIGHT_Y) * FIXED_POINT_MULTIPLIER; 
 
-// Direction encoding
-typedef enum logic [1:0] {DIR_UP=2'b00, DIR_DOWN=2'b01, DIR_LEFT=2'b10, DIR_RIGHT=2'b11} direction_t;
-direction_t dir;
+    // FSM states
+    enum logic [2:0] {IDLE_ST, MOVE_ST, START_OF_FRAME_ST, POSITION_CHANGE_ST, POSITION_LIMITS_ST} SM;
 
-// FSM states
-enum logic [1:0] {IDLE_ST, MOVE_ST, COLLISION_PROCESS_ST} SM;
+    // Fixed-point positions
+    int Xposition;
+    int Yposition;
 
-// Fixed-point positions
-int Xposition;
-int Yposition;
+    // Current velocity
+    int Xspeed;
+    int Yspeed;
 
-// Collision hit register
-logic [4:0] hit_reg; // track edges: TOP/BOTTOM/LEFT/RIGHT/CORNER
+    // Cooldown for collision blocking
+    int cooldown_frames;
+    logic collision_blocked;
 
-// ----------------------------
-always_ff @(posedge clk or negedge resetN) begin
-    if (!resetN) begin
-        SM        <= IDLE_ST;
-        dir       <= DIR_LEFT;
-        Xposition <= INITIAL_X * FIXED_POINT_MULTIPLIER;
-        Yposition <= INITIAL_Y * FIXED_POINT_MULTIPLIER;
-        hit_reg   <= 5'b0;
-    end else begin
-        case (SM)
-            // ----------------
-            IDLE_ST: begin
-                if (startOfFrame)
-                    SM <= MOVE_ST;
+    // ----------------------------
+    always_ff @(posedge clk or negedge resetN) begin
+        if (!resetN) begin
+            SM <= IDLE_ST;
+            Xposition <= INITIAL_X * FIXED_POINT_MULTIPLIER;
+            Yposition <= INITIAL_Y * FIXED_POINT_MULTIPLIER;
+            Xspeed <= SPEED;
+            Yspeed <= 0;
+            cooldown_frames <= 0;
+            collision_blocked <= 0;
+        end else begin
+            // Update collision block cooldown
+            if (startOfFrame && collision_blocked) begin
+                if (cooldown_frames > 0)
+                    cooldown_frames <= cooldown_frames - 1;
+                else
+                    collision_blocked <= 0;
             end
 
-            // ----------------
-            MOVE_ST: begin
-                if (startOfFrame) begin
-                    // Move ghost according to current direction
-                    case (dir)
-                        DIR_UP:    Yposition <= Yposition - SPEED;
-                        DIR_DOWN:  Yposition <= Yposition + SPEED;
-                        DIR_LEFT:  Xposition <= Xposition - SPEED;
-                        DIR_RIGHT: Xposition <= Xposition + SPEED;
-                    endcase
-
-                    // register collisions
-                    if (collision)
-                        hit_reg[HitEdgeCode] <= 1'b1;
-
-                    // if any collision detected, process next frame
-                    if (hit_reg != 0)
-                        SM <= COLLISION_PROCESS_ST;
+            case (SM)
+                IDLE_ST: begin
+                    Xspeed <= SPEED;
+                    Yspeed <= 0;
+                    Xposition <= INITIAL_X * FIXED_POINT_MULTIPLIER;
+                    Yposition <= INITIAL_Y * FIXED_POINT_MULTIPLIER;
+                    if (startOfFrame)
+                        SM <= MOVE_ST;
                 end
-            end
 
-            // ----------------
-            COLLISION_PROCESS_ST: begin
-                // Edge-by-edge bounce logic
-                if (hit_reg[0] && dir == DIR_UP)      dir <= DIR_DOWN;  // TOP
-                if (hit_reg[1] && dir == DIR_DOWN)    dir <= DIR_UP;    // BOTTOM
-                if (hit_reg[2] && dir == DIR_LEFT)    dir <= DIR_RIGHT; // LEFT
-                if (hit_reg[3] && dir == DIR_RIGHT)   dir <= DIR_LEFT;  // RIGHT
-                if (hit_reg[4])                        dir <= direction_t'(rnd_dir); // CORNER: pick random
+                MOVE_ST: begin
+                    // Process collision only if not blocked
+                    if (collision && !collision_blocked) begin
+                        // 1. REVERT the last move to push the ghost out of the wall
+                        Xposition <= Xposition - Xspeed;
+                        Yposition <= Yposition - Yspeed;
 
-                // clear hits
-                hit_reg <= 5'b0;
+                        // 2. Force a 90-degree turn
+                        if (Xspeed != 0) begin 
+                            Xspeed <= 0;
+                            Yspeed <= (rnd_dir[0]) ? SPEED : -SPEED; 
+                        end else begin 
+                            Yspeed <= 0;
+                            Xspeed <= (rnd_dir[0]) ? SPEED : -SPEED;
+                        end
 
-                SM <= MOVE_ST;
-            end
-        endcase
+                        // 3. Block further collision checks
+                        collision_blocked <= 1;
+                        cooldown_frames   <= 15; 
+							
+                    end
 
-        // keep inside frame
-        if (Xposition < x_FRAME_LEFT)   Xposition <= x_FRAME_LEFT;
-        if (Xposition > x_FRAME_RIGHT)  Xposition <= x_FRAME_RIGHT;
-        if (Yposition < y_FRAME_TOP)    Yposition <= y_FRAME_TOP;
-        if (Yposition > y_FRAME_BOTTOM) Yposition <= y_FRAME_BOTTOM;
+                    if (startOfFrame)
+                        SM <= START_OF_FRAME_ST;
+                end
+
+                START_OF_FRAME_ST: begin
+                    SM <= POSITION_CHANGE_ST;
+                end
+
+                POSITION_CHANGE_ST: begin
+                    Xposition <= Xposition + Xspeed;
+                    Yposition <= Yposition + Yspeed;
+                    SM <= POSITION_LIMITS_ST;
+                end
+
+                POSITION_LIMITS_ST: begin
+                    if (Xposition < x_FRAME_LEFT)   Xposition <= x_FRAME_LEFT;
+                    if (Xposition > x_FRAME_RIGHT)  Xposition <= x_FRAME_RIGHT;
+                    if (Yposition < y_FRAME_TOP)    Yposition <= y_FRAME_TOP;
+                    if (Yposition > y_FRAME_BOTTOM) Yposition <= y_FRAME_BOTTOM;
+                    SM <= MOVE_ST;
+                end
+            endcase
+        end
     end
-end
 
-// Output (convert from fixed-point)
-assign topLeftX = Xposition / FIXED_POINT_MULTIPLIER;
-assign topLeftY = Yposition / FIXED_POINT_MULTIPLIER;
+    // Output (convert from fixed-point)
+    assign topLeftX = Xposition / FIXED_POINT_MULTIPLIER;
+    assign topLeftY = Yposition / FIXED_POINT_MULTIPLIER;
 
 endmodule

@@ -90,11 +90,6 @@ agreement for further details.
 		"185"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"SPEED"
-		"60"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
 		(rectangle (rect 16 16 216 128)(line_width 1))
 	)

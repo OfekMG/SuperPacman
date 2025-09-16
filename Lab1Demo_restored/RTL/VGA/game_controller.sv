@@ -31,8 +31,8 @@ logic flag;
 assign collision_smiley_number = (drawing_request_smiley && drawing_request_box);
 
 // collisions that always matter (smiley vs borders, smiley vs number, smiley vs hart, ghost vs hart)
-assign collision_Smiley_Hart  = (drawing_request_smiley && drawing_request_hart);
-assign collision_ghost_Hart   = (drawing_request_ghost  && drawing_request_hart);
+assign collision_Smiley_Hart  = (drawing_request_smiley && drawing_request_hart || drawing_request_smiley && drawing_request_boarders);
+assign collision_ghost_Hart   = (drawing_request_ghost  && drawing_request_hart || drawing_request_ghost && drawing_request_boarders);
 
 logic collision_before;
 assign collision_before = (drawing_request_smiley && drawing_request_boarders) 
