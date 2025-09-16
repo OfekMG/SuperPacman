@@ -1,210 +1,84 @@
-<session jtag_chain="DE-SoC [USB-1]" jtag_device="@2: 5CSEBA6(.|ES)/5CSEMA6/.. (0x02D020DD)" sof_file="output_files/Lab1Demo.sof">
+<session jtag_chain="DE-SoC [USB-1]" jtag_device="@1: SOCVHPS (0x4BA00477)" sof_file="output_files/Lab1Demo.sof">
   <display_tree gui_logging_enabled="0">
     <display_branch instance="auto_signaltap_0" log="USE_GLOBAL_TEMP" signal_set="USE_GLOBAL_TEMP" trigger="USE_GLOBAL_TEMP"/>
   </display_tree>
   <instance enabled="true" entity_name="sld_signaltap" is_auto_node="yes" is_expanded="true" name="auto_signaltap_0" source_file="sld_signaltap.vhd">
     <node_ip_info instance_id="0" mfg_id="110" node_id="0" version="6"/>
     <position_info>
-      <single attribute="active tab" value="0"/>
+      <single attribute="active tab" value="1"/>
+      <single attribute="data horizontal scroll position" value="14"/>
+      <single attribute="data vertical scroll position" value="0"/>
       <single attribute="setup horizontal scroll position" value="0"/>
       <single attribute="setup vertical scroll position" value="0"/>
-      <single attribute="data vertical scroll position" value="0"/>
-      <single attribute="data horizontal scroll position" value="14"/>
-      <single attribute="zoom level numerator" value="4"/>
       <single attribute="zoom level denominator" value="1"/>
-      <single attribute="zoom offset numerator" value="32736"/>
+      <single attribute="zoom level numerator" value="4"/>
       <single attribute="zoom offset denominator" value="1"/>
+      <single attribute="zoom offset numerator" value="32736"/>
     </position_info>
-    <signal_set global_temp="1" name="signal_set: 2025/09/10 10:48:33  #0">
+    <signal_set global_temp="1" name="signal_set: 2025/09/16 14:20:38  #0">
       <clock name="clk" polarity="posedge" tap_mode="classic"/>
       <config pipeline_level="0" ram_type="AUTO" reserved_data_nodes="0" reserved_storage_qualifier_nodes="0" reserved_trigger_nodes="0" sample_depth="128" trigger_in_enable="no" trigger_out_enable="no"/>
       <top_entity/>
       <signal_vec>
         <trigger_input_vec>
-          <wire name="TOP_KBD:inst16|keyPadValid" tap_mode="classic"/>
-          <wire name="random:inst19|counter[0]" tap_mode="classic"/>
-          <wire name="random:inst19|counter[10]" tap_mode="classic"/>
-          <wire name="random:inst19|counter[1]" tap_mode="classic"/>
-          <wire name="random:inst19|counter[2]" tap_mode="classic"/>
-          <wire name="random:inst19|counter[3]" tap_mode="classic"/>
-          <wire name="random:inst19|counter[4]" tap_mode="classic"/>
-          <wire name="random:inst19|counter[5]" tap_mode="classic"/>
-          <wire name="random:inst19|counter[6]" tap_mode="classic"/>
-          <wire name="random:inst19|counter[7]" tap_mode="classic"/>
-          <wire name="random:inst19|counter[8]" tap_mode="classic"/>
-          <wire name="random:inst19|counter[9]" tap_mode="classic"/>
-          <wire name="random:inst19|dout[0]" tap_mode="classic"/>
-          <wire name="random:inst19|dout[10]" tap_mode="classic"/>
-          <wire name="random:inst19|dout[1]" tap_mode="classic"/>
-          <wire name="random:inst19|dout[2]" tap_mode="classic"/>
-          <wire name="random:inst19|dout[3]" tap_mode="classic"/>
-          <wire name="random:inst19|dout[4]" tap_mode="classic"/>
-          <wire name="random:inst19|dout[5]" tap_mode="classic"/>
-          <wire name="random:inst19|dout[6]" tap_mode="classic"/>
-          <wire name="random:inst19|dout[7]" tap_mode="classic"/>
-          <wire name="random:inst19|dout[8]" tap_mode="classic"/>
-          <wire name="random:inst19|dout[9]" tap_mode="classic"/>
+          <wire name="collision" tap_mode="classic"/>
+          <wire name="game_controller:inst11|collision_ghost_Hart" tap_mode="classic"/>
+          <wire name="game_controller:inst11|drawing_request_ghost" tap_mode="classic"/>
+          <wire name="ghostDR" tap_mode="classic"/>
           <wire name="random:inst19|resetN" tap_mode="classic"/>
         </trigger_input_vec>
         <data_input_vec>
-          <wire name="TOP_KBD:inst16|keyPadValid" tap_mode="classic"/>
-          <wire name="random:inst19|counter[0]" tap_mode="classic"/>
-          <wire name="random:inst19|counter[10]" tap_mode="classic"/>
-          <wire name="random:inst19|counter[1]" tap_mode="classic"/>
-          <wire name="random:inst19|counter[2]" tap_mode="classic"/>
-          <wire name="random:inst19|counter[3]" tap_mode="classic"/>
-          <wire name="random:inst19|counter[4]" tap_mode="classic"/>
-          <wire name="random:inst19|counter[5]" tap_mode="classic"/>
-          <wire name="random:inst19|counter[6]" tap_mode="classic"/>
-          <wire name="random:inst19|counter[7]" tap_mode="classic"/>
-          <wire name="random:inst19|counter[8]" tap_mode="classic"/>
-          <wire name="random:inst19|counter[9]" tap_mode="classic"/>
-          <wire name="random:inst19|dout[0]" tap_mode="classic"/>
-          <wire name="random:inst19|dout[10]" tap_mode="classic"/>
-          <wire name="random:inst19|dout[1]" tap_mode="classic"/>
-          <wire name="random:inst19|dout[2]" tap_mode="classic"/>
-          <wire name="random:inst19|dout[3]" tap_mode="classic"/>
-          <wire name="random:inst19|dout[4]" tap_mode="classic"/>
-          <wire name="random:inst19|dout[5]" tap_mode="classic"/>
-          <wire name="random:inst19|dout[6]" tap_mode="classic"/>
-          <wire name="random:inst19|dout[7]" tap_mode="classic"/>
-          <wire name="random:inst19|dout[8]" tap_mode="classic"/>
-          <wire name="random:inst19|dout[9]" tap_mode="classic"/>
+          <wire name="collision" tap_mode="classic"/>
+          <wire name="game_controller:inst11|collision_ghost_Hart" tap_mode="classic"/>
+          <wire name="game_controller:inst11|drawing_request_ghost" tap_mode="classic"/>
+          <wire name="ghostDR" tap_mode="classic"/>
           <wire name="random:inst19|resetN" tap_mode="classic"/>
         </data_input_vec>
         <storage_qualifier_input_vec>
-          <wire name="TOP_KBD:inst16|keyPadValid" tap_mode="classic"/>
-          <wire name="random:inst19|counter[0]" tap_mode="classic"/>
-          <wire name="random:inst19|counter[10]" tap_mode="classic"/>
-          <wire name="random:inst19|counter[1]" tap_mode="classic"/>
-          <wire name="random:inst19|counter[2]" tap_mode="classic"/>
-          <wire name="random:inst19|counter[3]" tap_mode="classic"/>
-          <wire name="random:inst19|counter[4]" tap_mode="classic"/>
-          <wire name="random:inst19|counter[5]" tap_mode="classic"/>
-          <wire name="random:inst19|counter[6]" tap_mode="classic"/>
-          <wire name="random:inst19|counter[7]" tap_mode="classic"/>
-          <wire name="random:inst19|counter[8]" tap_mode="classic"/>
-          <wire name="random:inst19|counter[9]" tap_mode="classic"/>
-          <wire name="random:inst19|dout[0]" tap_mode="classic"/>
-          <wire name="random:inst19|dout[10]" tap_mode="classic"/>
-          <wire name="random:inst19|dout[1]" tap_mode="classic"/>
-          <wire name="random:inst19|dout[2]" tap_mode="classic"/>
-          <wire name="random:inst19|dout[3]" tap_mode="classic"/>
-          <wire name="random:inst19|dout[4]" tap_mode="classic"/>
-          <wire name="random:inst19|dout[5]" tap_mode="classic"/>
-          <wire name="random:inst19|dout[6]" tap_mode="classic"/>
-          <wire name="random:inst19|dout[7]" tap_mode="classic"/>
-          <wire name="random:inst19|dout[8]" tap_mode="classic"/>
-          <wire name="random:inst19|dout[9]" tap_mode="classic"/>
+          <wire name="collision" tap_mode="classic"/>
+          <wire name="game_controller:inst11|collision_ghost_Hart" tap_mode="classic"/>
+          <wire name="game_controller:inst11|drawing_request_ghost" tap_mode="classic"/>
+          <wire name="ghostDR" tap_mode="classic"/>
           <wire name="random:inst19|resetN" tap_mode="classic"/>
         </storage_qualifier_input_vec>
       </signal_vec>
       <presentation>
         <unified_setup_data_view>
-          <node is_selected="false" level-0="alt_or" name="random:inst19|counter[10..0]" order="msb_to_lsb" radix="unsigned_dec" type="register">
-            <node data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|counter[10]" storage_index="2" tap_mode="classic" trigger_index="2" type="unknown"/>
-            <node data_index="11" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|counter[9]" storage_index="11" tap_mode="classic" trigger_index="11" type="unknown"/>
-            <node data_index="10" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|counter[8]" storage_index="10" tap_mode="classic" trigger_index="10" type="unknown"/>
-            <node data_index="9" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|counter[7]" storage_index="9" tap_mode="classic" trigger_index="9" type="unknown"/>
-            <node data_index="8" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|counter[6]" storage_index="8" tap_mode="classic" trigger_index="8" type="unknown"/>
-            <node data_index="7" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|counter[5]" storage_index="7" tap_mode="classic" trigger_index="7" type="unknown"/>
-            <node data_index="6" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|counter[4]" storage_index="6" tap_mode="classic" trigger_index="6" type="unknown"/>
-            <node data_index="5" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|counter[3]" storage_index="5" tap_mode="classic" trigger_index="5" type="unknown"/>
-            <node data_index="4" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|counter[2]" storage_index="4" tap_mode="classic" trigger_index="4" type="unknown"/>
-            <node data_index="3" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|counter[1]" storage_index="3" tap_mode="classic" trigger_index="3" type="unknown"/>
-            <node data_index="1" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|counter[0]" storage_index="1" tap_mode="classic" trigger_index="1" type="unknown"/>
-          </node>
-          <node is_selected="false" level-0="alt_or" name="random:inst19|dout[10..0]" order="msb_to_lsb" radix="unsigned_dec" type="combinatorial">
-            <node data_index="13" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|dout[10]" storage_index="13" tap_mode="classic" trigger_index="13" type="unknown"/>
-            <node data_index="22" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|dout[9]" storage_index="22" tap_mode="classic" trigger_index="22" type="unknown"/>
-            <node data_index="21" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|dout[8]" storage_index="21" tap_mode="classic" trigger_index="21" type="unknown"/>
-            <node data_index="20" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|dout[7]" storage_index="20" tap_mode="classic" trigger_index="20" type="unknown"/>
-            <node data_index="19" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|dout[6]" storage_index="19" tap_mode="classic" trigger_index="19" type="unknown"/>
-            <node data_index="18" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|dout[5]" storage_index="18" tap_mode="classic" trigger_index="18" type="unknown"/>
-            <node data_index="17" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|dout[4]" storage_index="17" tap_mode="classic" trigger_index="17" type="unknown"/>
-            <node data_index="16" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|dout[3]" storage_index="16" tap_mode="classic" trigger_index="16" type="unknown"/>
-            <node data_index="15" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|dout[2]" storage_index="15" tap_mode="classic" trigger_index="15" type="unknown"/>
-            <node data_index="14" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|dout[1]" storage_index="14" tap_mode="classic" trigger_index="14" type="unknown"/>
-            <node data_index="12" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|dout[0]" storage_index="12" tap_mode="classic" trigger_index="12" type="unknown"/>
-          </node>
-          <node data_index="0" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="rising edge" name="TOP_KBD:inst16|keyPadValid" storage_index="0" tap_mode="classic" trigger_index="0" type="unknown"/>
-          <node data_index="23" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|resetN" storage_index="23" tap_mode="classic" trigger_index="23" type="unknown"/>
+          <node data_index="4" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="random:inst19|resetN" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="4" tap_mode="classic" trigger_index="4" type="unknown"/>
+          <node data_index="3" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_storage_input="true" is_trigger_input="true" name="ghostDR" storage_index="3" tap_mode="classic" trigger_index="3" type="unknown"/>
+          <node data_index="0" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_storage_input="true" is_trigger_input="true" name="collision" storage_index="0" tap_mode="classic" trigger_index="0" type="unknown"/>
+          <node data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_storage_input="true" is_trigger_input="true" name="game_controller:inst11|drawing_request_ghost" storage_index="2" tap_mode="classic" trigger_index="2" type="unknown"/>
+          <node data_index="1" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_storage_input="true" is_trigger_input="true" name="game_controller:inst11|collision_ghost_Hart" storage_index="1" tap_mode="classic" trigger_index="1" type="unknown"/>
         </unified_setup_data_view>
         <data_view>
-          <bus is_selected="false" level-0="alt_or" name="random:inst19|counter[10..0]" order="msb_to_lsb" radix="unsigned_dec" type="register">
-            <net data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|counter[10]" storage_index="2" tap_mode="classic" trigger_index="2" type="unknown"/>
-            <net data_index="11" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|counter[9]" storage_index="11" tap_mode="classic" trigger_index="11" type="unknown"/>
-            <net data_index="10" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|counter[8]" storage_index="10" tap_mode="classic" trigger_index="10" type="unknown"/>
-            <net data_index="9" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|counter[7]" storage_index="9" tap_mode="classic" trigger_index="9" type="unknown"/>
-            <net data_index="8" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|counter[6]" storage_index="8" tap_mode="classic" trigger_index="8" type="unknown"/>
-            <net data_index="7" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|counter[5]" storage_index="7" tap_mode="classic" trigger_index="7" type="unknown"/>
-            <net data_index="6" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|counter[4]" storage_index="6" tap_mode="classic" trigger_index="6" type="unknown"/>
-            <net data_index="5" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|counter[3]" storage_index="5" tap_mode="classic" trigger_index="5" type="unknown"/>
-            <net data_index="4" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|counter[2]" storage_index="4" tap_mode="classic" trigger_index="4" type="unknown"/>
-            <net data_index="3" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|counter[1]" storage_index="3" tap_mode="classic" trigger_index="3" type="unknown"/>
-            <net data_index="1" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|counter[0]" storage_index="1" tap_mode="classic" trigger_index="1" type="unknown"/>
-          </bus>
-          <bus is_selected="false" level-0="alt_or" name="random:inst19|dout[10..0]" order="msb_to_lsb" radix="unsigned_dec" type="combinatorial">
-            <net data_index="13" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|dout[10]" storage_index="13" tap_mode="classic" trigger_index="13" type="unknown"/>
-            <net data_index="22" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|dout[9]" storage_index="22" tap_mode="classic" trigger_index="22" type="unknown"/>
-            <net data_index="21" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|dout[8]" storage_index="21" tap_mode="classic" trigger_index="21" type="unknown"/>
-            <net data_index="20" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|dout[7]" storage_index="20" tap_mode="classic" trigger_index="20" type="unknown"/>
-            <net data_index="19" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|dout[6]" storage_index="19" tap_mode="classic" trigger_index="19" type="unknown"/>
-            <net data_index="18" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|dout[5]" storage_index="18" tap_mode="classic" trigger_index="18" type="unknown"/>
-            <net data_index="17" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|dout[4]" storage_index="17" tap_mode="classic" trigger_index="17" type="unknown"/>
-            <net data_index="16" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|dout[3]" storage_index="16" tap_mode="classic" trigger_index="16" type="unknown"/>
-            <net data_index="15" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|dout[2]" storage_index="15" tap_mode="classic" trigger_index="15" type="unknown"/>
-            <net data_index="14" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|dout[1]" storage_index="14" tap_mode="classic" trigger_index="14" type="unknown"/>
-            <net data_index="12" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|dout[0]" storage_index="12" tap_mode="classic" trigger_index="12" type="unknown"/>
-          </bus>
-          <net data_index="0" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="rising edge" name="TOP_KBD:inst16|keyPadValid" storage_index="0" tap_mode="classic" trigger_index="0" type="unknown"/>
-          <net data_index="23" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|resetN" storage_index="23" tap_mode="classic" trigger_index="23" type="unknown"/>
+          <net data_index="4" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="random:inst19|resetN" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="4" tap_mode="classic" trigger_index="4" type="unknown"/>
+          <net data_index="3" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_storage_input="true" is_trigger_input="true" name="ghostDR" storage_index="3" tap_mode="classic" trigger_index="3" type="unknown"/>
+          <net data_index="0" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_storage_input="true" is_trigger_input="true" name="collision" storage_index="0" tap_mode="classic" trigger_index="0" type="unknown"/>
+          <net data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_storage_input="true" is_trigger_input="true" name="game_controller:inst11|drawing_request_ghost" storage_index="2" tap_mode="classic" trigger_index="2" type="unknown"/>
+          <net data_index="1" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_storage_input="true" is_trigger_input="true" name="game_controller:inst11|collision_ghost_Hart" storage_index="1" tap_mode="classic" trigger_index="1" type="unknown"/>
         </data_view>
         <setup_view>
-          <bus is_selected="false" level-0="alt_or" name="random:inst19|counter[10..0]" order="msb_to_lsb" radix="unsigned_dec" type="register">
-            <net data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|counter[10]" storage_index="2" tap_mode="classic" trigger_index="2" type="unknown"/>
-            <net data_index="11" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|counter[9]" storage_index="11" tap_mode="classic" trigger_index="11" type="unknown"/>
-            <net data_index="10" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|counter[8]" storage_index="10" tap_mode="classic" trigger_index="10" type="unknown"/>
-            <net data_index="9" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|counter[7]" storage_index="9" tap_mode="classic" trigger_index="9" type="unknown"/>
-            <net data_index="8" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|counter[6]" storage_index="8" tap_mode="classic" trigger_index="8" type="unknown"/>
-            <net data_index="7" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|counter[5]" storage_index="7" tap_mode="classic" trigger_index="7" type="unknown"/>
-            <net data_index="6" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|counter[4]" storage_index="6" tap_mode="classic" trigger_index="6" type="unknown"/>
-            <net data_index="5" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|counter[3]" storage_index="5" tap_mode="classic" trigger_index="5" type="unknown"/>
-            <net data_index="4" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|counter[2]" storage_index="4" tap_mode="classic" trigger_index="4" type="unknown"/>
-            <net data_index="3" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|counter[1]" storage_index="3" tap_mode="classic" trigger_index="3" type="unknown"/>
-            <net data_index="1" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|counter[0]" storage_index="1" tap_mode="classic" trigger_index="1" type="unknown"/>
-          </bus>
-          <bus is_selected="false" level-0="alt_or" name="random:inst19|dout[10..0]" order="msb_to_lsb" radix="unsigned_dec" type="combinatorial">
-            <net data_index="13" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|dout[10]" storage_index="13" tap_mode="classic" trigger_index="13" type="unknown"/>
-            <net data_index="22" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|dout[9]" storage_index="22" tap_mode="classic" trigger_index="22" type="unknown"/>
-            <net data_index="21" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|dout[8]" storage_index="21" tap_mode="classic" trigger_index="21" type="unknown"/>
-            <net data_index="20" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|dout[7]" storage_index="20" tap_mode="classic" trigger_index="20" type="unknown"/>
-            <net data_index="19" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|dout[6]" storage_index="19" tap_mode="classic" trigger_index="19" type="unknown"/>
-            <net data_index="18" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|dout[5]" storage_index="18" tap_mode="classic" trigger_index="18" type="unknown"/>
-            <net data_index="17" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|dout[4]" storage_index="17" tap_mode="classic" trigger_index="17" type="unknown"/>
-            <net data_index="16" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|dout[3]" storage_index="16" tap_mode="classic" trigger_index="16" type="unknown"/>
-            <net data_index="15" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|dout[2]" storage_index="15" tap_mode="classic" trigger_index="15" type="unknown"/>
-            <net data_index="14" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|dout[1]" storage_index="14" tap_mode="classic" trigger_index="14" type="unknown"/>
-            <net data_index="12" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|dout[0]" storage_index="12" tap_mode="classic" trigger_index="12" type="unknown"/>
-          </bus>
-          <net data_index="0" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="rising edge" name="TOP_KBD:inst16|keyPadValid" storage_index="0" tap_mode="classic" trigger_index="0" type="unknown"/>
-          <net data_index="23" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" name="random:inst19|resetN" storage_index="23" tap_mode="classic" trigger_index="23" type="unknown"/>
+          <net data_index="4" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_selected="false" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="random:inst19|resetN" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="4" tap_mode="classic" trigger_index="4" type="unknown"/>
+          <net data_index="3" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_storage_input="true" is_trigger_input="true" name="ghostDR" storage_index="3" tap_mode="classic" trigger_index="3" type="unknown"/>
+          <net data_index="0" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_storage_input="true" is_trigger_input="true" name="collision" storage_index="0" tap_mode="classic" trigger_index="0" type="unknown"/>
+          <net data_index="2" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_storage_input="true" is_trigger_input="true" name="game_controller:inst11|drawing_request_ghost" storage_index="2" tap_mode="classic" trigger_index="2" type="unknown"/>
+          <net data_index="1" duplicate_name_allowed="false" is_data_input="true" is_node_valid="true" is_storage_input="true" is_trigger_input="true" name="game_controller:inst11|collision_ghost_Hart" storage_index="1" tap_mode="classic" trigger_index="1" type="unknown"/>
         </setup_view>
         <trigger_in_editor/>
         <trigger_out_editor/>
       </presentation>
-      <trigger CRC="3C766D2F" attribute_mem_mode="false" gap_record="true" global_temp="1" name="trigger: 2025/09/10 10:52:14  #0" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="1" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="true" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_type="circular">
+      <trigger attribute_mem_mode="false" gap_record="true" global_temp="1" name="trigger: 2025/09/16 14:20:38  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="1" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="false" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_type="circular">
         <power_up_trigger position="pre" storage_qualifier_disabled="no"/>
         <events use_custom_flow_control="no">
-          <level enabled="yes" name="condition1" type="basic">'TOP_KBD:inst16|keyPadValid' == rising edge
+          <level enabled="yes" name="condition1" type="basic">
             <power_up enabled="yes">
             </power_up>
             <op_node/>
           </level>
         </events>
         <storage_qualifier_events>
-          <transitional>111111111111111111111111
-            <pwr_up_transitional>111111111111111111111111</pwr_up_transitional>
+          <transitional>11111
+            <pwr_up_transitional>11111</pwr_up_transitional>
           </transitional>
           <storage_qualifier_level type="basic">
             <power_up>
@@ -223,13 +97,14 @@
           </storage_qualifier_level>
         </storage_qualifier_events>
         <log>
-          <data global_temp="1" name="log: Trig @ 2025/09/10 11:13:03 (0:15:35.2 elapsed)" power_up_mode="false" sample_depth="127" trigger_position="-1">010000000000101001001001000100000000101001001001010100000000101001001001000010000000101001001001010010000000101001001001000110000000101001001001010110000000101001001001000001000000101001001001010001000000101001001001000101000000101001001001010101000000101001001001000011000000101001001001010011000000101001001001000111000000101001001001010111000000101001001001000000100000101001001001010000100000101001001001000100100000101001001001010100100000101001001001000010100000101001001001010010100000101001001001000110100000101001001001010110100000101001001001000001100000101001001001010001100000101001001001000101100000101001001001010101100000101001001001000011100000101001001001010011100000101001001001000111100000101001001001010111100000101001001001000000010000101001001001010000010000101001001001000100010000101001001001010100010000101001001001000010010000101001001001010010010000101001001001000110010000101001001001010110010000101001001001000001010000101001001001010001010000101001001001000101010000101001001001010101010000101001001001000011010000101001001001010011010000101001001001000111010000101001001001010111010000101001001001000000110000101001001001010000110000101001001001000100110000101001001001010100110000101001001001000010110000101001001001010010110000101001001001000110110000101001001001010110110000101001001001000001110000101001001001010001110000101001001001000101110000101001001001010101110000101001001001000011110000101001001001010011110000101001001001000111110000101001001001010111110000101001001001000000001000101001001001010000001000101001001001000100001000101001001001010100001000101001001001000010001000101001001001010010001000101001001001000110001000101001001001010110001000101001001001000001001000101001001001010001001000101001001001000101001000101001001001010101001000101001001001000011001000101001001001010011001000101001001001000111001000101001001001010111001000101001001001000000101000101001001001010000101000101001001001000100101000101001001001010100101000101001001001000010101000101001001001010010101000101001001001000110101000101001001001010110101000101001001001000001101000101001001001010001101000101001001001000101101000101001001001010101101000101001001001000011101000101001001001010011101000101001001001000111101000101001001001010111101000101001001001000000011000101001001001010000011000101001001001000100011000101001001001010100011000101001001001000010011000101001001001010010011000101001001001000110011000101001001001010110011000101001001001000001011000101001001001010001011000101001001001000101011000101001001001010101011000101001001001000011011000101001001001010011011000101001001001000111011000101001001001010111011000101001001001000000111000101001001001010000111000101001001001000100111000101001001001010100111000101001001001000010111000101001001001010010111000101001001001000110111000101001001001010110111000101001001001000001111000101001001001010001111000101001001001000101111000101001001001010101111000101001001001000011111000101001001001010011111000101001001001000111111000101001001001010111111000101001001001100100000000101001001001</data>
-          <extradata>11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</extradata>
+          <data global_temp="1" name="log: 2025/09/16 14:20:38  #2"/>
+          <extradata/>
         </log>
       </trigger>
     </signal_set>
   </instance>
   <mnemonics/>
+  <static_plugin_mnemonics/>
   <global_info>
     <single attribute="active instance" value="0"/>
     <single attribute="config widget visible" value="1"/>
@@ -238,9 +113,8 @@
     <single attribute="instance widget visible" value="1"/>
     <single attribute="jtag widget visible" value="1"/>
     <single attribute="lock mode" value="0"/>
+    <single attribute="sof manager visible" value="0"/>
     <multi attribute="frame size" size="2" value="1920,1009"/>
     <multi attribute="jtag widget size" size="2" value="348,135"/>
-    <single attribute="sof manager visible" value="0"/>
   </global_info>
-  <static_plugin_mnemonics/>
 </session>

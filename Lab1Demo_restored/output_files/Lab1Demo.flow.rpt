@@ -1,5 +1,5 @@
 Flow report for Lab1Demo
-Mon Sep 15 14:27:09 2025
+Tue Sep 16 14:22:47 2025
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -41,18 +41,18 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Mon Sep 15 14:26:59 2025       ;
+; Flow Status                     ; Successful - Tue Sep 16 14:22:37 2025       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; Lab1Demo                                    ;
 ; Top-level Entity Name           ; TOP_VGA_DEMO_KBD                            ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSXFC6D6F31C6                              ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 1,592 / 41,910 ( 4 % )                      ;
-; Total registers                 ; 1321                                        ;
+; Logic utilization (in ALMs)     ; 1,373 / 41,910 ( 3 % )                      ;
+; Total registers                 ; 1394                                        ;
 ; Total pins                      ; 62 / 499 ( 12 % )                           ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 2,460,672 / 5,662,720 ( 43 % )              ;
+; Total block memory bits         ; 2,458,240 / 5,662,720 ( 43 % )              ;
 ; Total DSP Blocks                ; 0 / 112 ( 0 % )                             ;
 ; Total HSSI RX PCSs              ; 0 / 9 ( 0 % )                               ;
 ; Total HSSI PMA RX Deserializers ; 0 / 9 ( 0 % )                               ;
@@ -68,67 +68,67 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/15/2025 14:25:05 ;
+; Start date & time ; 09/16/2025 14:20:42 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Lab1Demo            ;
 +-------------------+---------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                                                                                             ;
-+-------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------+------------------+------------------+
-; Assignment Name                     ; Value                                                                                                            ; Default Value ; Entity Name      ; Section Id       ;
-+-------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------+------------------+------------------+
-; COMPILER_SIGNATURE_ID               ; 5311877198834.175793550506772                                                                                    ; --            ; --               ; --               ;
-; ENABLE_SIGNALTAP                    ; On                                                                                                               ; --            ; --               ; --               ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                                                                                               ; --            ; --               ; --               ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                                                                                                ; --            ; --               ; --               ;
-; MISC_FILE                           ; RTL/VGA/valX.bsf                                                                                                 ; --            ; --               ; --               ;
-; MISC_FILE                           ; RTL/VGA/valX_inst.v                                                                                              ; --            ; --               ; --               ;
-; MISC_FILE                           ; RTL/VGA/valX_bb.v                                                                                                ; --            ; --               ; --               ;
-; MISC_FILE                           ; CLK_31P5.cmp                                                                                                     ; --            ; --               ; --               ;
-; MISC_FILE                           ; CLK_31P5_sim/CLK_31P5.vo                                                                                         ; --            ; --               ; --               ;
-; NUM_PARALLEL_PROCESSORS             ; All                                                                                                              ; --            ; --               ; --               ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family)                                                                           ; --            ; TOP_VGA_DEMO_KBD ; Top              ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family)                                                                           ; --            ; TOP_VGA_DEMO_KBD ; Top              ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family)                                                                           ; --            ; TOP_VGA_DEMO_KBD ; Top              ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                                                                              ; --            ; --               ; --               ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                                                                            ; --            ; --               ; --               ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                                                                     ; --            ; --               ; --               ;
-; SLD_FILE                            ; db/stp1_auto_stripped.stp                                                                                        ; --            ; --               ; --               ;
-; SLD_NODE_CREATOR_ID                 ; 110                                                                                                              ; --            ; --               ; auto_signaltap_0 ;
-; SLD_NODE_ENTITY_NAME                ; sld_signaltap                                                                                                    ; --            ; --               ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_RAM_BLOCK_TYPE=AUTO                                                                                          ; --            ; --               ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_NODE_INFO=805334528                                                                                          ; --            ; --               ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_POWER_UP_TRIGGER=0                                                                                           ; --            ; --               ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0                                                                    ; --            ; --               ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SEGMENT_SIZE=128                                                                                             ; --            ; --               ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ATTRIBUTE_MEM_MODE=OFF                                                                                       ; --            ; --               ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_FLOW_USE_GENERATED=0                                                                                   ; --            ; --               ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_BITS=11                                                                                                ; --            ; --               ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_BUFFER_FULL_STOP=1                                                                                           ; --            ; --               ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_CURRENT_RESOURCE_WIDTH=1                                                                                     ; --            ; --               ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INCREMENTAL_ROUTING=1                                                                                        ; --            ; --               ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL=1                                                                                              ; --            ; --               ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SAMPLE_DEPTH=128                                                                                             ; --            ; --               ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_IN_ENABLED=0                                                                                         ; --            ; --               ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_PIPELINE=0                                                                                           ; --            ; --               ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_RAM_PIPELINE=0                                                                                               ; --            ; --               ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_COUNTER_PIPELINE=0                                                                                           ; --            ; --               ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ADVANCED_TRIGGER_ENTITY=basic,1,                                                                             ; --            ; --               ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL_PIPELINE=1                                                                                     ; --            ; --               ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ENABLE_ADVANCED_TRIGGER=0                                                                                    ; --            ; --               ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_DATA_BITS=24                                                                                                 ; --            ; --               ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_BITS=24                                                                                              ; --            ; --               ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STORAGE_QUALIFIER_BITS=24                                                                                    ; --            ; --               ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK=000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 ; --            ; --               ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK_LENGTH=93                                                                                     ; --            ; --               ; auto_signaltap_0 ;
-; SMART_RECOMPILE                     ; On                                                                                                               ; Off           ; --               ; --               ;
-; SPD_FILE                            ; CLK_31P5.spd                                                                                                     ; --            ; --               ; --               ;
-; SYNTHESIS_ONLY_QIP                  ; On                                                                                                               ; --            ; --               ; --               ;
-; TOP_LEVEL_ENTITY                    ; TOP_VGA_DEMO_KBD                                                                                                 ; Lab1Demo      ; --               ; --               ;
-; USE_SIGNALTAP_FILE                  ; stp1.stp                                                                                                         ; --            ; --               ; --               ;
-+-------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------+------------------+------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                    ;
++-------------------------------------+---------------------------------------------------------+---------------+------------------+------------------+
+; Assignment Name                     ; Value                                                   ; Default Value ; Entity Name      ; Section Id       ;
++-------------------------------------+---------------------------------------------------------+---------------+------------------+------------------+
+; COMPILER_SIGNATURE_ID               ; 5311877198834.175802164234592                           ; --            ; --               ; --               ;
+; ENABLE_SIGNALTAP                    ; On                                                      ; --            ; --               ; --               ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                                      ; --            ; --               ; --               ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                                       ; --            ; --               ; --               ;
+; MISC_FILE                           ; RTL/VGA/valX.bsf                                        ; --            ; --               ; --               ;
+; MISC_FILE                           ; RTL/VGA/valX_inst.v                                     ; --            ; --               ; --               ;
+; MISC_FILE                           ; RTL/VGA/valX_bb.v                                       ; --            ; --               ; --               ;
+; MISC_FILE                           ; CLK_31P5.cmp                                            ; --            ; --               ; --               ;
+; MISC_FILE                           ; CLK_31P5_sim/CLK_31P5.vo                                ; --            ; --               ; --               ;
+; NUM_PARALLEL_PROCESSORS             ; All                                                     ; --            ; --               ; --               ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family)                  ; --            ; TOP_VGA_DEMO_KBD ; Top              ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family)                  ; --            ; TOP_VGA_DEMO_KBD ; Top              ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family)                  ; --            ; TOP_VGA_DEMO_KBD ; Top              ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                     ; --            ; --               ; --               ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                   ; --            ; --               ; --               ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                                            ; --            ; --               ; --               ;
+; SLD_FILE                            ; db/stp1_auto_stripped.stp                               ; --            ; --               ; --               ;
+; SLD_NODE_CREATOR_ID                 ; 110                                                     ; --            ; --               ; auto_signaltap_0 ;
+; SLD_NODE_ENTITY_NAME                ; sld_signaltap                                           ; --            ; --               ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_RAM_BLOCK_TYPE=AUTO                                 ; --            ; --               ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_NODE_INFO=805334528                                 ; --            ; --               ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_POWER_UP_TRIGGER=0                                  ; --            ; --               ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0           ; --            ; --               ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SEGMENT_SIZE=128                                    ; --            ; --               ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ATTRIBUTE_MEM_MODE=OFF                              ; --            ; --               ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_FLOW_USE_GENERATED=0                          ; --            ; --               ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_BITS=11                                       ; --            ; --               ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_BUFFER_FULL_STOP=1                                  ; --            ; --               ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_CURRENT_RESOURCE_WIDTH=1                            ; --            ; --               ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INCREMENTAL_ROUTING=1                               ; --            ; --               ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL=1                                     ; --            ; --               ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SAMPLE_DEPTH=128                                    ; --            ; --               ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_IN_ENABLED=0                                ; --            ; --               ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_PIPELINE=0                                  ; --            ; --               ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_RAM_PIPELINE=0                                      ; --            ; --               ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_COUNTER_PIPELINE=0                                  ; --            ; --               ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ADVANCED_TRIGGER_ENTITY=basic,1,                    ; --            ; --               ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL_PIPELINE=1                            ; --            ; --               ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ENABLE_ADVANCED_TRIGGER=0                           ; --            ; --               ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_DATA_BITS=5                                         ; --            ; --               ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_BITS=5                                      ; --            ; --               ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STORAGE_QUALIFIER_BITS=5                            ; --            ; --               ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK=000000000000000000000000000000000000 ; --            ; --               ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK_LENGTH=36                            ; --            ; --               ; auto_signaltap_0 ;
+; SMART_RECOMPILE                     ; On                                                      ; Off           ; --               ; --               ;
+; SPD_FILE                            ; CLK_31P5.spd                                            ; --            ; --               ; --               ;
+; SYNTHESIS_ONLY_QIP                  ; On                                                      ; --            ; --               ; --               ;
+; TOP_LEVEL_ENTITY                    ; TOP_VGA_DEMO_KBD                                        ; Lab1Demo      ; --               ; --               ;
+; USE_SIGNALTAP_FILE                  ; stp1.stp                                                ; --            ; --               ; --               ;
++-------------------------------------+---------------------------------------------------------+---------------+------------------+------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -136,11 +136,11 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:28     ; 1.0                     ; 4990 MB             ; 00:00:39                           ;
-; Fitter                    ; 00:01:16     ; 1.2                     ; 7156 MB             ; 00:04:13                           ;
-; Assembler                 ; 00:00:07     ; 1.0                     ; 4885 MB             ; 00:00:07                           ;
-; TimeQuest Timing Analyzer ; 00:00:09     ; 2.1                     ; 5304 MB             ; 00:00:16                           ;
-; Total                     ; 00:02:00     ; --                      ; --                  ; 00:05:15                           ;
+; Analysis & Synthesis      ; 00:00:28     ; 1.0                     ; 4989 MB             ; 00:00:40                           ;
+; Fitter                    ; 00:01:15     ; 1.2                     ; 7164 MB             ; 00:04:06                           ;
+; Assembler                 ; 00:00:08     ; 1.0                     ; 4883 MB             ; 00:00:08                           ;
+; TimeQuest Timing Analyzer ; 00:00:09     ; 2.5                     ; 5300 MB             ; 00:00:16                           ;
+; Total                     ; 00:02:00     ; --                      ; --                  ; 00:05:10                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

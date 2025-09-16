@@ -1,5 +1,5 @@
 Restore Archived Project report for Lab1Demo
-Mon Sep 15 14:09:15 2025
+Tue Sep 16 13:03:31 2025
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -37,7 +37,7 @@ agreement for further details.
 +-------------------------------------------------------------------------+
 ; Restore Archived Project Summary                                        ;
 +---------------------------------+---------------------------------------+
-; Restore Archived Project Status ; Successful - Mon Sep 15 14:09:15 2025 ;
+; Restore Archived Project Status ; Successful - Tue Sep 16 13:03:31 2025 ;
 ; Revision Name                   ; Lab1Demo                              ;
 ; Top-level Entity Name           ; TOP_VGA_DEMO_KBD                      ;
 ; Family                          ; Cyclone V                             ;
@@ -50,20 +50,18 @@ agreement for further details.
 Info: Successfully restored 'D:/LAB1ULTI/Lab1Demo.qar' into the 'D:/LAB1ULTI/Lab1Demo_restored/' directory
 Info: Generated report 'Lab1Demo.restore.rpt'
 Info (23030): Evaluation of Tcl script c:/intelfpga_lite/17.0/quartus/common/tcl/apps/qpm/qar.tcl was successful
-Info: Quartus Prime Shell was successful. 0 errors, 58 warnings
-    Info: Peak virtual memory: 4828 megabytes
-    Info: Processing ended: Mon Sep 15 14:09:15 2025
+Info: Quartus Prime Shell was successful. 0 errors, 59 warnings
+    Info: Peak virtual memory: 4821 megabytes
+    Info: Processing ended: Tue Sep 16 13:03:31 2025
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 
-+---------------------------+
-; Files Restored            ;
-+---------------------------+
-; File Name                 ;
-+---------------------------+
-; db/stp1_auto_stripped.stp ;
-+---------------------------+
++----------------+
+; Files Restored ;
++----------------+
+; File Name      ;
++----------------+
 
 
 +------------------------------------------------------------+
@@ -125,6 +123,7 @@ Info: Quartus Prime Shell was successful. 0 errors, 58 warnings
 ; assignment_defaults.qdf                                    ;
 ; constraints/DE10_Standard_Audio.sdc                        ;
 ; constraints/pin.tcl                                        ;
+; db/stp1_auto_stripped.stp                                  ;
 ; output_files/Chain1.cdf                                    ;
 ; output_files/Chain2.cdf                                    ;
 ; stp1.stp                                                   ;

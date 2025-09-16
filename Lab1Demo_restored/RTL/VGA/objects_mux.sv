@@ -30,7 +30,12 @@ module	objects_mux	(
 					
 					// add the box here 
 					input		logic	BoxDrwaingRequest, // two set of inputs per unit
-					input		logic	[7:0] BoxRGB
+					input		logic	[7:0] BoxRGB,
+					
+		//
+		// ghost
+					input		logic	ghostDrawingRequest, // two set of inputs per unit
+					input		logic	[7:0] ghostRGB
 );
 
 always_ff@(posedge clk or negedge resetN)
@@ -42,6 +47,8 @@ begin
 	else begin
 		if (smileyDrawingRequest == 1'b1 )   
 			RGBOut <= smileyRGB;  //first priority 
+		else if(ghostDrawingRequest == 1'b1)
+			RGBOut <= ghostRGB;
 //--- add logic for box here ------------------------------------------------------		
 		else if (BoxDrwaingRequest == 1'b1 )   
 			RGBOut <= BoxRGB;  //2nd priority 
