@@ -1,237 +1,129 @@
-// (c) Technion IIT, Department of Electrical Engineering 2025 
-//-- Alex Grinshpun Apr 2017
-//-- Dudy Nov 13 2017
-// SystemVerilog version Alex Grinshpun May 2018
-// coding convention dudy December 2018
-// updated Eyal Lev April 2023
-// updated to state machine Dudy March 2023 
-// update the hit and collision algoritm - Eyal MAR 2024
-// good practice code - Dudy MAR 2025
-
-module	smiley_move	(	
- 
-					input	 logic clk,
-					input	 logic resetN,
-					input	 logic startOfFrame,      //short pulse every start of frame 30Hz 
-					input	 logic Y_direction_key,   //move Y down  
-					input	 logic toggle_x_key,      //toggle X   
-					input  logic collision,         //collision if smiley hits an object
-					input	 logic Y_direction_key_up,   //move Y Up   
-					input	 logic toggle_x_key_left,    //toggle X   
-					input  logic collision_ghost_smiley,
-					input  logic [2:0] HitEdgeCode, 
-					output logic signed 	[10:0] topLeftX, // output the top left corner 
-					output logic signed	[10:0] topLeftY  // can be negative , if the object is partliy outside 
-				
+module smiley_move(    
+    input  logic clk,
+    input  logic resetN,
+    input  logic startOfFrame,
+    input  logic Y_direction_key,
+    input  logic toggle_x_key,
+    input  logic collision,
+    input  logic Y_direction_key_up,
+    input  logic toggle_x_key_left,
+    input  logic collision_ghost_smiley,
+    input  logic [2:0] HitEdgeCode,
+    output logic signed [10:0] topLeftX,
+    output logic signed [10:0] topLeftY
 );
 
-
-// a module used to generate the  ball trajectory.  
-
 parameter int INITIAL_X = 280;
-parameter int INITIAL_Y = 185;
+parameter int INITIAL_Y = 160;
 parameter int INITIAL_X_SPEED = 40;
 parameter int INITIAL_Y_SPEED = 20;
-parameter int Y_ACCEL = 0;
+parameter int PAUSE_DURATION_FRAMES = 90; // 3 sec @ 30Hz
 
-const int MAX_Y_SPEED = 500;
-const int	FIXED_POINT_MULTIPLIER = 64; // note it must be 2^n 
-// FIXED_POINT_MULTIPLIER is used to enable working with integers in high resolution so that 
-// we do all calculations with topLeftX_FixedPoint to get a resolution of 1/64 pixel in calcuatuions,
-// we devide at the end by FIXED_POINT_MULTIPLIER which must be 2^n, to return to the initial proportions
+const int FIXED_POINT_MULTIPLIER = 64;
+const int OBJECT_WIDTH_X  = 64;
+const int OBJECT_HIGHT_Y  = 64;
+const int SafetyMargin    = 2;
 
+const int x_FRAME_LEFT   = SafetyMargin * FIXED_POINT_MULTIPLIER;
+const int x_FRAME_RIGHT  = (639 - SafetyMargin - OBJECT_WIDTH_X) * FIXED_POINT_MULTIPLIER;
+const int y_FRAME_TOP    = SafetyMargin * FIXED_POINT_MULTIPLIER;
+const int y_FRAME_BOTTOM = (479 - SafetyMargin - OBJECT_HIGHT_Y) * FIXED_POINT_MULTIPLIER;
 
-// movement limits 
-const int   OBJECT_WIDTH_X = 64;
-const int   OBJECT_HIGHT_Y = 64;
-const int	SafetyMargin   =	2;
+const logic [4:0] CORNER = 5'b10000;
+const logic [3:0] TOP    = 4'b1000;
+const logic [3:0] RIGHT  = 4'b0100;
+const logic [3:0] LEFT   = 4'b0010;
+const logic [3:0] BOTTOM = 4'b0001;
 
-const int	x_FRAME_LEFT	=	(SafetyMargin)* FIXED_POINT_MULTIPLIER; 
-const int	x_FRAME_RIGHT	=	(639 - SafetyMargin - OBJECT_WIDTH_X)* FIXED_POINT_MULTIPLIER; 
-const int	y_FRAME_TOP		=	(SafetyMargin) * FIXED_POINT_MULTIPLIER;
-const int	y_FRAME_BOTTOM	=	(479 -SafetyMargin - OBJECT_HIGHT_Y ) * FIXED_POINT_MULTIPLIER; //- OBJECT_HIGHT_Y
+enum logic [2:0] {IDLE_ST, MOVE_ST, START_OF_FRAME_ST, POSITION_CHANGE_ST, POSITION_LIMITS_ST, PAUSE_ST} SM_Motion;
 
-//edges 
-	//------------
-	//			 434
-	//			 1x2
-	//			 404
-	//
+int Xspeed;
+int Yspeed;
+int Xposition;
+int Yposition;
+logic toggle_x_key_D;
+logic [6:0] pause_counter;
+logic [4:0] hit_reg = 5'b00000;
 
-const logic [4:0] CORNER =	5'b10000; 
-const logic [3:0] TOP =		 4'b1000; 
-const logic [3:0] RIGHT =   4'b0100; 
-const logic [3:0] LEFT =	 4'b0010; 
-const logic [3:0] BOTTOM =  4'b0001; 
+always_ff @(posedge clk or negedge resetN) begin
+    if (!resetN) begin
+        SM_Motion <= IDLE_ST;
+        Xspeed <= 0;
+        Yspeed <= 0;
+        Xposition <= 0;
+        Yposition <= 0;
+        toggle_x_key_D <= 0;
+        hit_reg <= 5'b0;
+        pause_counter <= 0;
+    end else begin
+        toggle_x_key_D <= toggle_x_key;
 
+        case(SM_Motion)
+            IDLE_ST: begin
+                Xspeed <= INITIAL_X_SPEED;
+                Yspeed <= INITIAL_Y_SPEED;
+                Xposition <= INITIAL_X * FIXED_POINT_MULTIPLIER;
+                Yposition <= INITIAL_Y * FIXED_POINT_MULTIPLIER;
+                pause_counter <= 0;
+                if (startOfFrame)
+                    SM_Motion <= MOVE_ST;
+            end
 
-enum  logic [2:0] {IDLE_ST,         	// initial state
-						 MOVE_ST, 				// moving no colision 
-						 START_OF_FRAME_ST, 	          // startOfFrame activity-after all data collected 
-						 POSITION_CHANGE_ST, // position interpolate 
-						 POSITION_LIMITS_ST  // check if inside the frame  
-						}  SM_Motion ;
+            MOVE_ST: begin
+                if (Y_direction_key) begin Xspeed <= 0; Yspeed <= 60; end
+                if (toggle_x_key) begin Yspeed <= 0; Xspeed <= 60; end
+                if (Y_direction_key_up) begin Xspeed <= 0; Yspeed <= -60; end
+                if (toggle_x_key_left) begin Yspeed <= 0; Xspeed <= -60; end
 
-int Xspeed  ; // speed    
-int Yspeed  ; 
-int Xposition ; //position   
-int Yposition ;  
+                if (collision) hit_reg[HitEdgeCode] <= 1'b1;
 
-logic toggle_x_key_D ;
- 
+                if (collision_ghost_smiley) begin
+                    Xspeed <= 0;
+                    Yspeed <= 0;
+                    pause_counter <= 0;
+                    SM_Motion <= PAUSE_ST;
+                end else if (startOfFrame) begin
+                    SM_Motion <= START_OF_FRAME_ST;
+                end
+            end
 
-  logic [4:0] hit_reg = 5'b00000;
- //---------
- 
-always_ff @(posedge clk or negedge resetN)
-begin : fsm_sync_proc
+            PAUSE_ST: begin
+                if (startOfFrame) begin
+                    if (pause_counter < PAUSE_DURATION_FRAMES - 1)
+                        pause_counter <= pause_counter + 1;
+                    else
+                        SM_Motion <= IDLE_ST;
+                end
+            end
 
-	if (resetN == 1'b0) begin 
-		SM_Motion <= IDLE_ST ; 
-		Xspeed <= 0   ; 
-		Yspeed <= 0  ; 
-		Xposition <= 0  ; 
-		Yposition <= 0   ; 
-		toggle_x_key_D <= 0 ;
-		hit_reg <= 5'b0 ;	
-	
-	end 	
-	
-	else begin
-	
-		toggle_x_key_D <= toggle_x_key ;  //shift register to detect edge 
+            START_OF_FRAME_ST: begin
+                if (hit_reg[3:0] & TOP && Yspeed < 0) Yspeed <= 0;
+                if (hit_reg[3:0] & BOTTOM && Yspeed > 0) Yspeed <= 0;
+                if (hit_reg[3:0] & LEFT && Xspeed < 0) Xspeed <= 0;
+                if (hit_reg[3:0] & RIGHT && Xspeed > 0) Xspeed <= 0;
 
-	
-		case(SM_Motion)
-		
-		//------------
-			IDLE_ST: begin
-		//------------
-		
-				Xspeed  <= INITIAL_X_SPEED ; 
-				Yspeed  <= INITIAL_Y_SPEED  ; 
-				Xposition <= INITIAL_X*FIXED_POINT_MULTIPLIER; 
-				Yposition <= INITIAL_Y*FIXED_POINT_MULTIPLIER; 
+                hit_reg <= 5'b00000;
+                SM_Motion <= POSITION_CHANGE_ST;
+            end
 
-				if (startOfFrame) 
-					SM_Motion <= MOVE_ST ;
- 	
-			end
-	
-		//------------
-			MOVE_ST:  begin     // moving collecting colisions 
-		//------------
-		// keys direction change 
-				if (Y_direction_key) begin
-					  Xspeed <= 0;
-					  Yspeed <= 60;
-				 end
+            POSITION_CHANGE_ST: begin
+                Xposition <= Xposition + Xspeed;
+                Yposition <= Yposition + Yspeed;
+                SM_Motion <= POSITION_LIMITS_ST;
+            end
 
-				 if (toggle_x_key) begin // rising edge 
-					  Yspeed <= 0;
-					  Xspeed <= 60; // toggle direction
-				 end
-				 
-				 if (Y_direction_key_up) begin
-					  Xspeed <= 0;
-					  Yspeed <= -60;
-				 end
+            POSITION_LIMITS_ST: begin
+                if (Xposition < x_FRAME_LEFT) Xposition <= x_FRAME_LEFT;
+                if (Xposition > x_FRAME_RIGHT) Xposition <= x_FRAME_RIGHT;
+                if (Yposition < y_FRAME_TOP) Yposition <= y_FRAME_TOP;
+                if (Yposition > y_FRAME_BOTTOM) Yposition <= y_FRAME_BOTTOM;
+                SM_Motion <= MOVE_ST;
+            end
+        endcase
+    end
+end
 
-				 if (toggle_x_key_left) begin // rising edge 
-					  Yspeed <= 0;
-					  Xspeed <= -60; // toggle direction
-				 end
-	
-       // collcting collisions 	
-				if (collision) begin
-					hit_reg[HitEdgeCode]<=1'b1;
+assign topLeftX = Xposition / FIXED_POINT_MULTIPLIER;
+assign topLeftY = Yposition / FIXED_POINT_MULTIPLIER;
 
-				end
-				if (collision_ghost_smiley)
-					SM_Motion <= IDLE_ST;
-
-				if (startOfFrame )
-					SM_Motion <= START_OF_FRAME_ST ; 
-					
-					
-				
-		end 
-		
-		//------------
-		START_OF_FRAME_ST: begin //check if any colisin was detected
-		//------------
-
-	
-			if (hit_reg[3:0] & TOP) begin // TOP collision detected
-				if (Yspeed < 0) // if moving up, stop vertical movement
-					Yspeed <= 0;
-			end
-			
-			if (hit_reg[3:0] & BOTTOM) begin // BOTTOM collision detected
-				if (Yspeed > 0) // if moving down, stop vertical movement
-					Yspeed <= 0;
-			end
-			
-			if (hit_reg[3:0] & LEFT) begin // LEFT collision detected
-				if (Xspeed < 0) // if moving left, stop horizontal movement
-					Xspeed <= 0;
-			end
-			
-			if (hit_reg[3:0] & RIGHT) begin // RIGHT collision detected
-				if (Xspeed > 0) // if moving right, stop horizontal movement
-					Xspeed <= 0;
-			end
-
-			hit_reg <= 5'b00000;						
-			SM_Motion <= POSITION_CHANGE_ST;
-		end
-
-		//------------------------
-			POSITION_CHANGE_ST : begin  // position interpolate 
-		//------------------------
-	
-				Xposition <= Xposition + Xspeed ; 
-				Yposition <= Yposition + Yspeed ;
-			 
-				// accelerate 
-			
-				//if (Yspeed < MAX_Y_SPEED ) //  limit the speed while going down 
-   				//Yspeed <= Yspeed - Y_ACCEL ; // deAccelerate : slow the speed down every clock tick 
-	
-				
-				SM_Motion <= POSITION_LIMITS_ST ; 
-			end
-		
-		//------------------------
-			POSITION_LIMITS_ST : begin  //check if still inside the frame 
-		//------------------------
-		if (Xposition < x_FRAME_LEFT) 
-						Xposition <= x_FRAME_LEFT ; 
-		if (Xposition > x_FRAME_RIGHT)
-						Xposition <= x_FRAME_RIGHT ; 
-		if (Yposition < y_FRAME_TOP) 
-						Yposition <= y_FRAME_TOP ; 
-		if (Yposition > y_FRAME_BOTTOM) 
-						Yposition <= y_FRAME_BOTTOM ; 
-
-				SM_Motion <= MOVE_ST ; 
-			
-			end
-		
-		endcase  // case 
-
-		
-	end 
-
-end // end fsm_sync
-
-
-//return from FIXED point trunc back to prame size parameters 
-  
-assign 	topLeftX = Xposition / FIXED_POINT_MULTIPLIER ;   // note it must be 2^n 
-assign 	topLeftY = Yposition / FIXED_POINT_MULTIPLIER ;    
-	
-
-endmodule	
-//---------------
- 
+endmodule

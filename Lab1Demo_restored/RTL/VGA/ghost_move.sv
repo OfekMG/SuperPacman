@@ -4,9 +4,9 @@ module ghost_move (
     input  logic clk,
     input  logic resetN,
     input  logic startOfFrame,      // short pulse every start of frame 30Hz
-    input  logic collision,         // collision if ghost hits a wall
-    input  logic [2:0] HitEdgeCode, // optional, could bias random direction
-    input  logic [1:0] rnd_dir,     // random direction input
+    input  logic collision,         // collision if ghost hits a wall (pulse)
+    input  logic [2:0] HitEdgeCode, // optional, could bias random direction (0..4)
+    input  logic [1:0] rnd_dir,     // optional seed bits (used at reset)
     output logic signed [10:0] topLeftX,
     output logic signed [10:0] topLeftY
 );
@@ -29,41 +29,32 @@ module ghost_move (
     // FSM states
     enum logic [2:0] {IDLE_ST, MOVE_ST, START_OF_FRAME_ST, POSITION_CHANGE_ST, POSITION_LIMITS_ST} SM;
 
-    // Fixed-point positions
     int Xposition;
     int Yposition;
 
-    // Current velocity
     int Xspeed;
     int Yspeed;
 
-    // Cooldown for collision blocking
-    int cooldown_frames;
-    logic collision_blocked;
+    logic [4:0] hit_reg;
+
+    logic [6:0] lfsr;            
+    logic [1:0] go_direction;   
 
     // ----------------------------
     always_ff @(posedge clk or negedge resetN) begin
         if (!resetN) begin
-            SM <= IDLE_ST;
+            // Reset to initial state
+            SM        <= IDLE_ST;
             Xposition <= INITIAL_X * FIXED_POINT_MULTIPLIER;
             Yposition <= INITIAL_Y * FIXED_POINT_MULTIPLIER;
-            Xspeed <= SPEED;
-            Yspeed <= 0;
-            cooldown_frames <= 0;
-            collision_blocked <= 0;
+            Xspeed    <= SPEED;
+            Yspeed    <= 0;
+            hit_reg   <= 5'b00000;
+            lfsr      <= {rnd_dir, 5'b10101}; 
+            go_direction <= {rnd_dir[1], rnd_dir[0]};
         end else begin
-            // Update collision block cooldown
-            if (startOfFrame && collision_blocked) begin
-                if (cooldown_frames > 0)
-                    cooldown_frames <= cooldown_frames - 1;
-                else
-                    collision_blocked <= 0;
-            end
-
             case (SM)
                 IDLE_ST: begin
-                    Xspeed <= SPEED;
-                    Yspeed <= 0;
                     Xposition <= INITIAL_X * FIXED_POINT_MULTIPLIER;
                     Yposition <= INITIAL_Y * FIXED_POINT_MULTIPLIER;
                     if (startOfFrame)
@@ -71,36 +62,76 @@ module ghost_move (
                 end
 
                 MOVE_ST: begin
-                    // Process collision only if not blocked
-                    if (collision && !collision_blocked) begin
-                        // 1. REVERT the last move to push the ghost out of the wall
-                        Xposition <= Xposition - Xspeed;
-                        Yposition <= Yposition - Yspeed;
-
-                        // 2. Force a 90-degree turn
-                        if (Xspeed != 0) begin 
-                            Xspeed <= 0;
-                            Yspeed <= (rnd_dir[0]) ? SPEED : -SPEED; 
-                        end else begin 
-                            Yspeed <= 0;
-                            Xspeed <= (rnd_dir[0]) ? SPEED : -SPEED;
-                        end
-
-                        // 3. Block further collision checks
-                        collision_blocked <= 1;
-                        cooldown_frames   <= 15; 
-							
+                    if (collision) begin
+                        hit_reg[HitEdgeCode] <= 1'b1;
                     end
-
                     if (startOfFrame)
                         SM <= START_OF_FRAME_ST;
                 end
-
+                
                 START_OF_FRAME_ST: begin
+                    if (hit_reg != 5'b00000) begin
+                        lfsr <= {lfsr[5:0], (lfsr[6] ^ lfsr[5])};
+                        go_direction <= {lfsr[1], lfsr[0]};
+                    end
+
+                    if (hit_reg == 5'b00000) begin
+                        // no change
+                        Xspeed <= Xspeed;
+                        Yspeed <= Yspeed;
+                    end else begin
+                        if (hit_reg[3]) begin // top
+                            if (Yspeed < 0) begin
+                                case (go_direction)
+                                    2'b01: begin Yspeed <=  SPEED; Xspeed <= 0; end // down
+                                    2'b10: begin Yspeed <=  0;    Xspeed <= -SPEED; end // left
+                                    2'b11: begin Yspeed <=  0;    Xspeed <=  SPEED; end // right
+                                    default: begin Yspeed <=  SPEED; Xspeed <= 0; end
+                                endcase
+                            end
+                        end
+
+                        if (hit_reg[0]) begin // bottom
+                            if (Yspeed > 0) begin
+                                case (go_direction)
+                                    2'b01: begin Yspeed <= -SPEED; Xspeed <= 0; end // up
+                                    2'b10: begin Yspeed <=  0;    Xspeed <= -SPEED; end // left
+                                    2'b11: begin Yspeed <=  0;    Xspeed <=  SPEED; end // right
+                                    default: begin Yspeed <= -SPEED; Xspeed <= 0; end
+                                endcase
+                            end
+                        end
+
+                        if (hit_reg[1]) begin // left
+                            if (Xspeed < 0) begin
+                                case (go_direction)
+                                    2'b01: begin Yspeed <=  SPEED; Xspeed <= 0; end // down
+                                    2'b10: begin Yspeed <=  0;    Xspeed <=  SPEED; end // right
+                                    2'b11: begin Yspeed <=  0;    Xspeed <=  SPEED; end // right (same)
+                                    default: begin Yspeed <= -SPEED; Xspeed <= 0; end // up
+                                endcase
+                            end
+                        end
+
+                        if (hit_reg[2]) begin // right
+                            if (Xspeed > 0) begin
+                                case (go_direction)
+                                    2'b01: begin Yspeed <=  SPEED; Xspeed <= 0; end // down
+                                    2'b10: begin Yspeed <=  0;    Xspeed <= -SPEED; end // left
+                                    2'b11: begin Yspeed <=  0;    Xspeed <= -SPEED; end // left (same)
+                                    default: begin Yspeed <= -SPEED; Xspeed <= 0; end // up
+                                endcase
+                            end
+                        end
+                    end
+
+                    // clear hits and continue
+                    hit_reg <= 5'b00000;
                     SM <= POSITION_CHANGE_ST;
                 end
 
                 POSITION_CHANGE_ST: begin
+                    // Normal movement update per frame
                     Xposition <= Xposition + Xspeed;
                     Yposition <= Yposition + Yspeed;
                     SM <= POSITION_LIMITS_ST;
