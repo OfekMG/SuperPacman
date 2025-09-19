@@ -16,12 +16,13 @@ module	smiley_move	(
 					input	 logic Y_direction_key,   //move Y down  
 					input	 logic toggle_x_key,      //toggle X   
 					input  logic collision,         //collision if smiley hits an object
+					input	 logic Y_direction_key_up,   //move Y Up   
+					input	 logic toggle_x_key_left,    //toggle X   
+					input  logic collision_ghost_smiley,
 					input  logic [2:0] HitEdgeCode, 
 					output logic signed 	[10:0] topLeftX, // output the top left corner 
-					output logic signed	[10:0] topLeftY,  // can be negative , if the object is partliy outside 
-					input	 logic Y_direction_key_up,   //move Y Up   
-					input	 logic toggle_x_key_left     //toggle X   
-					
+					output logic signed	[10:0] topLeftY  // can be negative , if the object is partliy outside 
+				
 );
 
 
@@ -146,7 +147,8 @@ begin : fsm_sync_proc
 					hit_reg[HitEdgeCode]<=1'b1;
 
 				end
-				
+				if (collision_ghost_smiley)
+					SM_Motion <= IDLE_ST;
 
 				if (startOfFrame )
 					SM_Motion <= START_OF_FRAME_ST ; 

@@ -21,7 +21,7 @@ agreement for further details.
 */
 (header "symbol" (version "1.2"))
 (symbol
-	(rect 16 16 280 240)
+	(rect 16 16 296 240)
 	(text "Smiley_Block_T" (rect 5 0 100 19)(font "Intel Clear" (font_size 8)))
 	(text "inst" (rect 8 203 24 220)(font "Intel Clear" ))
 	(port
@@ -95,18 +95,25 @@ agreement for further details.
 		(line (pt 0 176)(pt 16 176))
 	)
 	(port
-		(pt 264 32)
-		(output)
-		(text "smileyDR" (rect 0 0 56 19)(font "Intel Clear" (font_size 8)))
-		(text "smileyDR" (rect 187 27 243 46)(font "Intel Clear" (font_size 8)))
-		(line (pt 264 32)(pt 248 32))
+		(pt 0 192)
+		(input)
+		(text "collision_ghost_smiley" (rect 0 0 132 19)(font "Intel Clear" (font_size 8)))
+		(text "collision_ghost_smiley" (rect 21 187 153 206)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 192)(pt 16 192))
 	)
 	(port
-		(pt 264 48)
+		(pt 280 32)
+		(output)
+		(text "smileyDR" (rect 0 0 56 19)(font "Intel Clear" (font_size 8)))
+		(text "smileyDR" (rect 203 27 259 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 280 32)(pt 264 32))
+	)
+	(port
+		(pt 280 48)
 		(output)
 		(text "smileyRGB[7..0]" (rect 0 0 95 19)(font "Intel Clear" (font_size 8)))
-		(text "smileyRGB[7..0]" (rect 148 43 243 62)(font "Intel Clear" (font_size 8)))
-		(line (pt 264 48)(pt 248 48)(line_width 3))
+		(text "smileyRGB[7..0]" (rect 164 43 259 62)(font "Intel Clear" (font_size 8)))
+		(line (pt 280 48)(pt 264 48)(line_width 3))
 	)
 	(parameter
 		"initial_x"
@@ -129,7 +136,7 @@ agreement for further details.
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
-		(rectangle (rect 16 16 248 208))
+		(rectangle (rect 16 16 264 208))
 	)
-	(annotation_block (parameter)(rect 280 -64 380 16))
+	(annotation_block (parameter)(rect 296 -64 396 16))
 )

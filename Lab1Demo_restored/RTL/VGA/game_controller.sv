@@ -14,7 +14,7 @@ module game_controller (
 
     output logic collision,             // active in case of collision between two objects
     output logic SingleHitPulse,        // critical code, generating a single pulse in a frame 
-
+    output logic strike,
     output logic collision_Smiley_Hart, // active in case of collision between Smiley and hart
     output logic collision_ghost_Hart   // active in case of collision between Ghost and hart
 );
@@ -30,15 +30,15 @@ logic flag;
 //----------------------------------------------
 assign collision_smiley_number = (drawing_request_smiley && drawing_request_box);
 
-// collisions that always matter (smiley vs borders, smiley vs number, smiley vs hart, ghost vs hart)
+// collisions that always matter (smiley vs borders, smiley vs number, smiley vs hart, ghost vs hart, smiley vs ghost)
 assign collision_Smiley_Hart  = (drawing_request_smiley && drawing_request_hart || drawing_request_smiley && drawing_request_boarders);
 assign collision_ghost_Hart   = (drawing_request_ghost  && drawing_request_hart || drawing_request_ghost && drawing_request_boarders);
-
+assign strike = (drawing_request_ghost  && drawing_request_smiley);
 logic collision_before;
 assign collision_before = (drawing_request_smiley && drawing_request_boarders) 
                         || collision_smiley_number;
 
-// final collision signal (now includes ghost-hart!)
+// final collision signal (now includes ghost-hart and ghost_smiley!)
 assign collision = collision_before 
                  || collision_Smiley_Hart 
                  || collision_ghost_Hart;
@@ -55,9 +55,9 @@ always_ff @(posedge clk or negedge resetN) begin
 
         if (startOfFrame) 
             flag <= 1'b0; // reset once per frame 
-
         // trigger pulse on first new collision in a frame
-        if ((collision_smiley_number || collision_Smiley_Hart || collision_ghost_Hart) && !flag) begin 
+				
+        if ((collision_smiley_number || collision_Smiley_Hart || collision_ghost_Hart || strike) && !flag) begin 
             flag           <= 1'b1; 
             SingleHitPulse <= 1'b1; 
         end

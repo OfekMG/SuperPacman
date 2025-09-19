@@ -16,14 +16,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "BG_RGB[7]",
-					"strict" : false
-				},
-				{
-					"name" : "BG_RGB[6]",
-					"strict" : false
-				},
-				{
 					"name" : "BG_RGB[5]",
 					"strict" : false
 				},
@@ -33,18 +25,6 @@
 				},
 				{
 					"name" : "BG_RGB[3]",
-					"strict" : false
-				},
-				{
-					"name" : "BG_RGB[2]",
-					"strict" : false
-				},
-				{
-					"name" : "BG_RGB[1]",
-					"strict" : false
-				},
-				{
-					"name" : "BG_RGB[0]",
 					"strict" : false
 				},
 				{

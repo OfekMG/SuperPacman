@@ -85,12 +85,9 @@ begin
    // ---------------------------------------------------------------------------------------
 		if (( pixelY > 4 ) && (pixelY < 20 ) && (pixelX >30 )&& (pixelX <542 ))
 		 begin
-		        shift_pixelX<= pixelX-29;
+					   //  counter = 
+		              //display("Counter value: %0d", counter);
 
-             blueBits <= shift_pixelX[8:7] ; 
-				 greenBits <= shift_pixelX[3:1] ; 
-				 redBits <= shift_pixelX[6:4];       
-				 boardersDrawReq <= 	1'b1;
 	
 				
 		 end 

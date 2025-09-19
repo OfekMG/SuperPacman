@@ -97,16 +97,23 @@ agreement for further details.
 	(port
 		(pt 296 64)
 		(output)
-		(text "collision_Smiley_Hart" (rect 0 0 84 12)(font "Arial" ))
-		(text "collision_Smiley_Hart" (rect 191 59 275 71)(font "Arial" ))
+		(text "strike" (rect 0 0 21 12)(font "Arial" ))
+		(text "strike" (rect 254 59 275 71)(font "Arial" ))
 		(line (pt 296 64)(pt 280 64)(line_width 1))
 	)
 	(port
 		(pt 296 80)
 		(output)
-		(text "collision_ghost_Hart" (rect 0 0 79 12)(font "Arial" ))
-		(text "collision_ghost_Hart" (rect 196 75 275 87)(font "Arial" ))
+		(text "collision_Smiley_Hart" (rect 0 0 84 12)(font "Arial" ))
+		(text "collision_Smiley_Hart" (rect 191 75 275 87)(font "Arial" ))
 		(line (pt 296 80)(pt 280 80)(line_width 1))
+	)
+	(port
+		(pt 296 96)
+		(output)
+		(text "collision_ghost_Hart" (rect 0 0 79 12)(font "Arial" ))
+		(text "collision_ghost_Hart" (rect 196 91 275 103)(font "Arial" ))
+		(line (pt 296 96)(pt 280 96)(line_width 1))
 	)
 	(drawing
 		(rectangle (rect 16 16 280 160)(line_width 1))

@@ -1,1 +1,1 @@
-Warning (10268): Verilog HDL information at smileyBitMap.sv(100): always construct contains both blocking and non-blocking assignments File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/smileyBitMap.sv Line: 100
+Warning (10268): Verilog HDL information at counter_module.sv(25): always construct contains both blocking and non-blocking assignments File: C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/counter_module.sv Line: 25
