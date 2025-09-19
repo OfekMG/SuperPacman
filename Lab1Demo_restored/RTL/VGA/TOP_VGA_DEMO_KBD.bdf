@@ -3105,5 +3105,5 @@ agreement for further details.
 (rectangle (rect -896 400 280 888)(color 0 0 0)(line_width 3))
 (rectangle (rect -688 992 960 1432)(color 0 0 0)(line_width 3))
 (rectangle (rect -896 -8 -408 376)(color 0 0 0)(line_width 3))
-(rectangle (rect -1520 1208 -704 1400)(color 0 0 0)(line_width 3))
+(rectangle (rect -1520 1232 -704 1424)(color 0 0 0)(line_width 3))
 (rectangle (rect -1872 360 -928 920)(color 0 0 0)(line_width 3))

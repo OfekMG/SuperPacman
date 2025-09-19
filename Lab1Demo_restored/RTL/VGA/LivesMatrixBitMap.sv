@@ -97,9 +97,9 @@ module LivesMatrixBitMap (
             
             if (strike && lives != 2'd0) begin
                 case (lives)
-                    2'b11 : MazeBitMapMask[2] <= 1'h0;
-                    2'b10 : MazeBitMapMask[1] <= 1'h0;
-                    2'b01 : MazeBitMapMask[0] <= 1'h0;
+                    2'b11 : MazeBitMapMask[3] <= 1'h0;
+                    2'b10 : MazeBitMapMask[2] <= 1'h0;
+                    2'b01 : MazeBitMapMask[1] <= 1'h0;
                 endcase
                 lives <= lives - 2'b01;
                 if (lives == 2'b01) oneLeft <= 1'b1;

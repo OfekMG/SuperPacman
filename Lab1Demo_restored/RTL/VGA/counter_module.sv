@@ -2,7 +2,6 @@ module counter_module (
 
     input  logic        clk,
     input  logic        resetN,         
-    input  logic        resetDefault,   
     input  logic        increment,      // one‐clk pulse: +1
     input  logic        decrement,      // one‐clk pulse: –1
 
@@ -16,7 +15,6 @@ module counter_module (
     parameter logic [3:0] INIT_HUNDREDS = 4'd9;
 	 
     logic enable;
- 
     logic prev_zero;
 
     logic [3:0] o_next, t_next, h_next;
@@ -25,14 +23,6 @@ module counter_module (
     always_ff @(posedge clk or negedge resetN) begin
         if (!resetN) begin
             // Asynchronous reset → load INIT values, clear prev_zero & pulse
-            units           <= INIT_ONES;
-            tens            <= INIT_TENS;
-            hundreds        <= INIT_HUNDREDS;
-            prev_zero       <= 1'b0;
-            timeEndedPulse  <= 1'b0;
-        end
-        else if (resetDefault) begin
-            // Synchronous “reload INIT”: override any counting, clear prev_zero & pulse
             units           <= INIT_ONES;
             tens            <= INIT_TENS;
             hundreds        <= INIT_HUNDREDS;
