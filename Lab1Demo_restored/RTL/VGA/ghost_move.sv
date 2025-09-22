@@ -5,6 +5,7 @@ module ghost_move (
     input  logic resetN,
     input  logic startOfFrame,      // short pulse every start of frame 30Hz
     input  logic collision,         // collision if ghost hits a wall (pulse)
+	 input  logic collision_ghost_smiley,
     input  logic [2:0] HitEdgeCode, // optional, could bias random direction (0..4)
     input  logic [1:0] rnd_dir,     // optional seed bits (used at reset)
     output logic signed [10:0] topLeftX,
@@ -15,6 +16,8 @@ module ghost_move (
     parameter int INITIAL_X = 280;
     parameter int INITIAL_Y = 185;
     parameter int SPEED     = 60;
+	 parameter int PAUSE_DURATION_FRAMES = 90; // 3 sec @ 30Hz
+
 
     const int FIXED_POINT_MULTIPLIER = 64;  
     const int OBJECT_WIDTH_X = 32;
@@ -27,7 +30,7 @@ module ghost_move (
     const int y_FRAME_BOTTOM = (479 - SafetyMargin - OBJECT_HIGHT_Y) * FIXED_POINT_MULTIPLIER; 
 
     // FSM states
-    enum logic [2:0] {IDLE_ST, MOVE_ST, START_OF_FRAME_ST, POSITION_CHANGE_ST, POSITION_LIMITS_ST} SM;
+    enum logic [2:0] {IDLE_ST, MOVE_ST, START_OF_FRAME_ST, POSITION_CHANGE_ST, POSITION_LIMITS_ST,  PAUSE_ST} SM;
 
     int Xposition;
     int Yposition;
@@ -37,6 +40,8 @@ module ghost_move (
 
     logic [4:0] hit_reg;
 
+	 logic [6:0] pause_counter;
+ 
     logic [6:0] lfsr;            
     logic [1:0] go_direction;   
 
@@ -50,6 +55,7 @@ module ghost_move (
             Xspeed    <= SPEED;
             Yspeed    <= 0;
             hit_reg   <= 5'b00000;
+				pause_counter <= 0;
             lfsr      <= {rnd_dir, 5'b10101}; 
             go_direction <= {rnd_dir[1], rnd_dir[0]};
         end else begin
@@ -65,9 +71,23 @@ module ghost_move (
                     if (collision) begin
                         hit_reg[HitEdgeCode] <= 1'b1;
                     end
-                    if (startOfFrame)
+						  if (collision_ghost_smiley) begin
+								Xspeed <= 0;
+								Yspeed <= 0;
+								pause_counter <= 0;
+								SM <= PAUSE_ST;
+                    end else if (startOfFrame)
                         SM <= START_OF_FRAME_ST;
                 end
+					 
+					  PAUSE_ST: begin
+                if (startOfFrame) begin
+                    if (pause_counter < PAUSE_DURATION_FRAMES - 1)
+                        pause_counter <= pause_counter + 1;
+                    else
+                        SM <= IDLE_ST;
+                end
+            end
                 
                 START_OF_FRAME_ST: begin
                     if (hit_reg != 5'b00000) begin

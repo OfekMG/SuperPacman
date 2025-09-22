@@ -34,7 +34,11 @@ module	objects_mux	(
 			 ////////////////////////
 		  // Scoreboard
 					input 	logic pointsDrawingRequest,
-					input 	logic [7:0] pointsRGB,		
+					input 	logic [7:0] pointsRGB,	
+			 ////////////////////////
+		  // Dots
+					input    logic DotsDrawingRequest, 
+					input		logic	[7:0] DotsRGB,	
 							
 					
 					// add the box here 
@@ -61,6 +65,8 @@ begin
 //--- add logic for box here ------------------------------------------------------		
 		else if (BoxDrwaingRequest == 1'b1 )   
 			RGBOut <= BoxRGB;  //2nd priority 
+		else if (DotsDrawingRequest == 1'b1)
+				RGBOut <= DotsRGB;
 		else if (pointsDrawingRequest == 1'b1)
 			RGBOut <= pointsRGB;
 		else if (livesDrawingRequest == 1'b1)

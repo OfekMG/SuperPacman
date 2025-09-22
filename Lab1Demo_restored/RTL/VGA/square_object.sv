@@ -40,28 +40,23 @@ assign	insideBracket  = 	 ( (pixelX  >= topLeftX) &&  (pixelX < rightX) // math 
 //////////--------------------------------------------------------------------------------------------------------------=
 always_ff@(posedge clk or negedge resetN)
 begin
-	if(!resetN) begin
-		RGBout			<=	8'b0;
-		drawingRequest	<=	1'b0;
-	end
-	else begin 
-		// DEFUALT outputs
-	      RGBout <= TRANSPARENT_ENCODING ; // so it will not be displayed 
-			drawingRequest <= 1'b0 ;// transparent color 
-			offsetX	<= 0; //no offset
-			offsetY	<= 0; //no offset
-	
- 
-		if (insideBracket) // test if it is inside the rectangle 
-		begin 
-			RGBout  <= OBJECT_COLOR ;	// colors table 
-			drawingRequest <= 1'b1 ;
-			offsetX	<= (pixelX - topLeftX); //calculate relative offsets from top left corner allways a positive number 
-			offsetY	<= (pixelY - topLeftY);
-		end 
-		
-
-		
-	end
-end 
+    if(!resetN) begin
+        RGBout          <= TRANSPARENT_ENCODING;
+        drawingRequest  <= 1'b0;
+        offsetX         <= 0;
+        offsetY         <= 0;
+    end
+    else begin
+        RGBout          <= TRANSPARENT_ENCODING; // default transparent
+        drawingRequest  <= 1'b0;
+        offsetX         <= 0;
+        offsetY         <= 0;
+        if (insideBracket) begin
+            drawingRequest <= 1'b1;
+            offsetX        <= (pixelX - topLeftX);
+            offsetY        <= (pixelY - topLeftY);
+            // RGBout is left at TRANSPARENT_ENCODING, the outside module decides color
+        end
+    end
+end
 endmodule 

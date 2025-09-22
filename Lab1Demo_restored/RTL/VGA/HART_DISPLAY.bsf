@@ -101,6 +101,27 @@ agreement for further details.
 		(text "hartRGB[7..0]" (rect 203 43 283 62)(font "Intel Clear" (font_size 8)))
 		(line (pt 304 48)(pt 288 48)(line_width 3))
 	)
+	(port
+		(pt 304 64)
+		(output)
+		(text "DotDR" (rect 0 0 38 19)(font "Intel Clear" (font_size 8)))
+		(text "DotDR" (rect 245 59 283 78)(font "Intel Clear" (font_size 8)))
+		(line (pt 304 64)(pt 288 64))
+	)
+	(port
+		(pt 304 80)
+		(output)
+		(text "DotRGB[7..0]" (rect 0 0 77 19)(font "Intel Clear" (font_size 8)))
+		(text "DotRGB[7..0]" (rect 206 75 283 94)(font "Intel Clear" (font_size 8)))
+		(line (pt 304 80)(pt 288 80)(line_width 3))
+	)
+	(port
+		(pt 304 96)
+		(output)
+		(text "score" (rect 0 0 30 19)(font "Intel Clear" (font_size 8)))
+		(text "score" (rect 253 91 283 110)(font "Intel Clear" (font_size 8)))
+		(line (pt 304 96)(pt 288 96))
+	)
 	(drawing
 		(rectangle (rect 16 16 288 176))
 	)

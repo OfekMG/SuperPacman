@@ -1,9 +1,3 @@
-// HartsMatrixBitMap File 
-// A two level bitmap. displaying harts on the screen Feb 2025 
-//(c) Technion IIT, Department of Electrical Engineering 2025 
-
-
-
 module LivesMatrixBitMap (
     input  logic        clk,
     input  logic        resetN,
@@ -36,8 +30,7 @@ module LivesMatrixBitMap (
     assign offsetY_LSB = offsetY[TILE_NUMBER_OF_Y_BITS-1:0];
     assign offsetX_MSB = offsetX[TILE_NUMBER_OF_X_BITS+MAZE_NUMBER_OF__X_BITS-1:
                                  TILE_NUMBER_OF_X_BITS];
-	 logic [1:0] lives;
-	 logic oneLeft;	
+     logic [1:0] lives;
 
 
     logic [0:MAZE_WIDTH_X-1] MazeBitMapMask ;
@@ -66,12 +59,7 @@ module LivesMatrixBitMap (
 {8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hD1, 8'hC8, 8'hC0, 8'hC0, 8'hC0, 8'h88, 8'h88, 8'hC0, 8'hC0, 8'h89, 8'h33, 8'h2E, 8'h45, 8'h61, 8'hA0, 8'hC0, 8'hC2, 8'hEE, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF },
 {8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hAC, 8'hC4, 8'hC0, 8'hC0, 8'h8C, 8'h70, 8'hC0, 8'hC0, 8'h89, 8'h69, 8'h65, 8'hA0, 8'h81, 8'h66, 8'hA1, 8'hC6, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF },
 {8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hAD, 8'h90, 8'hC0, 8'hC0, 8'h6C, 8'h1D, 8'h6D, 8'hA4, 8'h6D, 8'hA4, 8'hC0, 8'hC0, 8'h80, 8'h47, 8'h83, 8'hCA, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF },
-{8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'h94, 8'h74, 8'h88, 8'h54, 8'h1D, 8'h1E, 8'h3E, 8'h3A, 8'h85, 8'hC0, 8'hC0, 8'h81, 8'h47, 8'h82, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF },
-{8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hD1, 8'h7C, 8'h5C, 8'h1C, 8'h1D, 8'h3D, 8'h69, 8'h6D, 8'h4E, 8'hA0, 8'hC0, 8'h61, 8'h43, 8'hAA, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF },
-{8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'h94, 8'h5C, 8'h3C, 8'h1D, 8'h39, 8'hC0, 8'h89, 8'h37, 8'h84, 8'hC0, 8'h46, 8'h66, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF },
-{8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hD1, 8'h58, 8'h3C, 8'h1D, 8'h3D, 8'hA4, 8'h6D, 8'h1B, 8'h52, 8'h85, 8'h27, 8'hAA, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF },
-{8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'h90, 8'h3C, 8'h1D, 8'h1D, 8'h3A, 8'h3A, 8'h1B, 8'h13, 8'h0F, 8'h66, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF },
-{8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'h54, 8'h1C, 8'h3D, 8'h1E, 8'h1E, 8'h3B, 8'h17, 8'h2A, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF },
+{8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'h94, 8'h74, 8'h88, 8'h54, 8'h1D, 8'h1E, 8'h3E, 8'h3E, 8'h1F, 8'h6E, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF },
 {8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hB1, 8'h3C, 8'h1D, 8'h1E, 8'h1E, 8'h1B, 8'h17, 8'h8D, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF },
 {8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'h70, 8'h1D, 8'h3E, 8'h3E, 8'h1F, 8'h6E, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF },
 {8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'h55, 8'h1E, 8'h1E, 8'h56, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF },
@@ -79,35 +67,47 @@ module LivesMatrixBitMap (
 {8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hAD, 8'hAD, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF, 8'hFF }};
 //
 
-	 // ==============================================================
+     // ==============================================================
     //  MazeBitMapMask CONTROLLER
     // ==============================================================
+    // Implement oneHitPulse: a single-cycle pulse generated on the rising
+    // edge of `strike`. This guarantees only one life is removed per collision
+    // event even if `strike` stays asserted for multiple clock cycles.
+    logic strike_d;
+    logic oneHitPulse;
+
     always_ff @(posedge clk or negedge resetN) begin
         if (!resetN) begin
-		  		MazeBitMapMask <= MazeDefaultBitMapMask;
+              MazeBitMapMask <= MazeDefaultBitMapMask;
             lives        <= 2'b11;
-            oneLeft  <= 1'b0;
             gameOver <= 1'b0;
+            strike_d <= 1'b0;
+            oneHitPulse <= 1'b0;
         end
-		  		  
+                  
         else begin
-            
+            // default clear of one-cycle signals
             gameOver <= 1'b0;
 
-            
-            if (strike && lives != 2'd0) begin
+            // detect rising edge: oneHitPulse is asserted for exactly one clock
+            // cycle when strike goes from 0->1
+            oneHitPulse <= (strike && !strike_d);
+            // register previous strike value for next-edge detection
+            strike_d <= strike;
+
+            // if a single-cycle hit is seen, decrement lives once
+            if (oneHitPulse && lives != 2'd0) begin
                 case (lives)
-                    2'b11 : MazeBitMapMask[3] <= 1'h0;
-                    2'b10 : MazeBitMapMask[2] <= 1'h0;
-                    2'b01 : MazeBitMapMask[1] <= 1'h0;
+                    2'b11 : MazeBitMapMask[2] <= 1'h0;
+                    2'b10 : MazeBitMapMask[1] <= 1'h0;
+                    2'b01 : MazeBitMapMask[0] <= 1'h0;
                 endcase
                 lives <= lives - 2'b01;
-                if (lives == 2'b01) oneLeft <= 1'b1;
             end
 
-            if (oneLeft && (lives == 2'b00)) begin
+            // keep original gameOver behavior (will be high when lives == 0)
+            if (lives == 2'b00) begin
                 gameOver <= 1'b1;
-                oneLeft  <= 1'b0;
             end
         end
     end
@@ -115,23 +115,22 @@ module LivesMatrixBitMap (
 
 always_ff@(posedge clk or negedge resetN)
 begin
-	if(!resetN) begin
-			RGBout       <= 8'h00;
-	end
-	else begin
-	
-			RGBout <= TRANSPARENT_ENCODING;
+    if(!resetN) begin
+            RGBout       <= 8'h00;
+    end
+    else begin
+    
+            RGBout <= TRANSPARENT_ENCODING;
 
-			if (InsideRectangle) begin
+            if (InsideRectangle) begin
             case (MazeBitMapMask[offsetX_MSB])
                 1'b1 : RGBout <= object_colors[0]
                                           [offsetY_LSB][offsetX_LSB];
                 default;
             endcase
         end
-	end
+    end
 end
 
 assign drawingRequest = (RGBout != TRANSPARENT_ENCODING ) ? 1'b1 : 1'b0 ; // get optional transparent command from the bitmpap   
 endmodule
-

@@ -21,9 +21,9 @@ agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 232 160)
+	(rect 16 16 216 128)
 	(text "counter_module" (rect 5 0 68 12)(font "Arial" ))
-	(text "inst" (rect 8 128 20 140)(font "Arial" ))
+	(text "inst" (rect 8 96 20 108)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -41,51 +41,30 @@ agreement for further details.
 	(port
 		(pt 0 64)
 		(input)
-		(text "resetDefault" (rect 0 0 48 12)(font "Arial" ))
-		(text "resetDefault" (rect 21 59 69 71)(font "Arial" ))
+		(text "increment" (rect 0 0 38 12)(font "Arial" ))
+		(text "increment" (rect 21 59 59 71)(font "Arial" ))
 		(line (pt 0 64)(pt 16 64)(line_width 1))
 	)
 	(port
-		(pt 0 80)
-		(input)
-		(text "increment" (rect 0 0 38 12)(font "Arial" ))
-		(text "increment" (rect 21 75 59 87)(font "Arial" ))
-		(line (pt 0 80)(pt 16 80)(line_width 1))
-	)
-	(port
-		(pt 0 96)
-		(input)
-		(text "decrement" (rect 0 0 42 12)(font "Arial" ))
-		(text "decrement" (rect 21 91 63 103)(font "Arial" ))
-		(line (pt 0 96)(pt 16 96)(line_width 1))
-	)
-	(port
-		(pt 216 32)
+		(pt 200 32)
 		(output)
 		(text "units[3..0]" (rect 0 0 37 12)(font "Arial" ))
-		(text "units[3..0]" (rect 158 27 195 39)(font "Arial" ))
-		(line (pt 216 32)(pt 200 32)(line_width 3))
+		(text "units[3..0]" (rect 142 27 179 39)(font "Arial" ))
+		(line (pt 200 32)(pt 184 32)(line_width 3))
 	)
 	(port
-		(pt 216 48)
+		(pt 200 48)
 		(output)
 		(text "tens[3..0]" (rect 0 0 36 12)(font "Arial" ))
-		(text "tens[3..0]" (rect 159 43 195 55)(font "Arial" ))
-		(line (pt 216 48)(pt 200 48)(line_width 3))
+		(text "tens[3..0]" (rect 143 43 179 55)(font "Arial" ))
+		(line (pt 200 48)(pt 184 48)(line_width 3))
 	)
 	(port
-		(pt 216 64)
+		(pt 200 64)
 		(output)
 		(text "hundreds[3..0]" (rect 0 0 56 12)(font "Arial" ))
-		(text "hundreds[3..0]" (rect 139 59 195 71)(font "Arial" ))
-		(line (pt 216 64)(pt 200 64)(line_width 3))
-	)
-	(port
-		(pt 216 80)
-		(output)
-		(text "timeEndedPulse" (rect 0 0 63 12)(font "Arial" ))
-		(text "timeEndedPulse" (rect 132 75 195 87)(font "Arial" ))
-		(line (pt 216 80)(pt 200 80)(line_width 1))
+		(text "hundreds[3..0]" (rect 123 59 179 71)(font "Arial" ))
+		(line (pt 200 64)(pt 184 64)(line_width 3))
 	)
 	(parameter
 		"INIT_ONES"
@@ -103,7 +82,7 @@ agreement for further details.
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(drawing
-		(rectangle (rect 16 16 200 128)(line_width 1))
+		(rectangle (rect 16 16 184 96)(line_width 1))
 	)
-	(annotation_block (parameter)(rect 232 -64 332 16))
+	(annotation_block (parameter)(rect 216 -64 316 16))
 )

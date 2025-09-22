@@ -327,7 +327,7 @@ agreement for further details.
 	)
 	(parameter
 		"OBJECT_WIDTH_X"
-		"128"
+		"64"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
@@ -343,7 +343,7 @@ agreement for further details.
 	(drawing
 		(rectangle (rect 16 16 208 128))
 	)
-	(annotation_block (parameter)(rect 1648 464 1903 540))
+	(annotation_block (parameter)(rect 1648 440 1903 516))
 )
 (connector
 	(text "BoxHartTopLeftX[10..0]" (rect 1920 600 2030 617)(font "Intel Clear" ))
