@@ -11,12 +11,15 @@ module game_controller (
     input  logic drawing_request_box,
     input  logic drawing_request_hart,
     input  logic drawing_request_ghost,
+	 input  logic drawing_request_dot,
+	 
 
     output logic collision,             // active in case of collision between two objects
     output logic SingleHitPulse,        // critical code, generating a single pulse in a frame 
-    output logic strike,
+    output logic strike,					 // active in case of collision between smiley and ghost
     output logic collision_Smiley_Hart, // active in case of collision between Smiley and hart
-    output logic collision_ghost_Hart   // active in case of collision between Ghost and hart
+    output logic collision_ghost_Hart,  // active in case of collision between Ghost and hart
+	 output logic collision_smiley_Dot	 // active in case of collision between smiley and Dot
 );
 
 //----------------------------------------------
@@ -37,7 +40,7 @@ assign strike = (drawing_request_ghost  && drawing_request_smiley);
 logic collision_before;
 assign collision_before = (drawing_request_smiley && drawing_request_boarders) 
                         || collision_smiley_number;
-
+assign collision_smiley_Dot = (drawing_request_dot && drawing_request_smiley);
 // final collision signal (now includes ghost-hart and ghost_smiley!)
 assign collision = collision_before 
                  || collision_Smiley_Hart 

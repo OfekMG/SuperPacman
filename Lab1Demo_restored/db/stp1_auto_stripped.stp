@@ -1,4 +1,4 @@
-<session jtag_chain="DE-SoC [USB-1]" jtag_device="@1: SOCVHPS (0x4BA00477)" sof_file="../output_files/Lab1Demo.sof">
+<session jtag_chain="DE-SoC [USB-1]" jtag_device="@2: 5CSEBA6(.|ES)/5CSEMA6/.. (0x02D020DD)" sof_file="../output_files/Lab1Demo.sof">
   <display_tree gui_logging_enabled="0">
     <display_branch instance="auto_signaltap_0" log="USE_GLOBAL_TEMP" signal_set="USE_GLOBAL_TEMP" trigger="USE_GLOBAL_TEMP"/>
   </display_tree>
@@ -88,16 +88,15 @@
       </trigger>
     </signal_set>
     <position_info>
-      <single attribute="active tab" value="1"/>
-      <single attribute="data horizontal scroll position" value="0"/>
+      <single attribute="active tab" value="0"/>
+      <single attribute="data horizontal scroll position" value="14"/>
       <single attribute="data vertical scroll position" value="0"/>
       <single attribute="setup horizontal scroll position" value="0"/>
       <single attribute="setup vertical scroll position" value="0"/>
       <single attribute="zoom level denominator" value="1"/>
-      <single attribute="zoom level numerator" value="1"/>
+      <single attribute="zoom level numerator" value="4"/>
       <single attribute="zoom offset denominator" value="1"/>
-      <single attribute="zoom offset numerator" value="130944"/>
-      <multi attribute="timebars" size="1" value="63"/>
+      <single attribute="zoom offset numerator" value="32736"/>
     </position_info>
   </instance>
   <mnemonics/>
@@ -111,7 +110,6 @@
     <single attribute="jtag widget visible" value="1"/>
     <single attribute="lock mode" value="0"/>
     <single attribute="sof manager visible" value="0"/>
-    <multi attribute="column width" size="23" value="34,34,220,74,68,78,95,96,98,98,88,88,110,101,101,101,101,101,101,101,101,107,43"/>
     <multi attribute="frame size" size="2" value="2560,1377"/>
     <multi attribute="jtag widget size" size="2" value="348,135"/>
   </global_info>

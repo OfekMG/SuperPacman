@@ -22,7 +22,7 @@ agreement for further details.
 (header "graphic" (version "1.4"))
 (pin
 	(input)
-	(rect 456 368 624 384)
+	(rect 392 280 560 296)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
 	(text "resetN" (rect 5 0 35 17)(font "Intel Clear" ))
 	(pt 168 8)
@@ -38,7 +38,7 @@ agreement for further details.
 )
 (pin
 	(input)
-	(rect 456 384 624 400)
+	(rect 392 296 560 312)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
 	(text "pixelX[10..0]" (rect 5 0 64 17)(font "Intel Clear" ))
 	(pt 168 8)
@@ -54,7 +54,7 @@ agreement for further details.
 )
 (pin
 	(input)
-	(rect 456 400 624 416)
+	(rect 392 312 560 328)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
 	(text "pixelY[10..0]" (rect 5 0 64 17)(font "Intel Clear" ))
 	(pt 168 8)
@@ -70,7 +70,7 @@ agreement for further details.
 )
 (pin
 	(input)
-	(rect 1016 456 1192 472)
+	(rect 1008 408 1184 424)
 	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
 	(text "HART_SELECT" (rect 5 0 81 12)(font "Arial" ))
 	(pt 176 8)
@@ -86,7 +86,7 @@ agreement for further details.
 )
 (pin
 	(input)
-	(rect 456 352 624 368)
+	(rect 392 264 560 280)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
 	(text "clk" (rect 5 0 19 12)(font "Arial" ))
 	(pt 168 8)
@@ -102,7 +102,7 @@ agreement for further details.
 )
 (pin
 	(input)
-	(rect 448 416 624 432)
+	(rect 384 328 560 344)
 	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
 	(text "topLeftX[10..0]" (rect 5 0 78 12)(font "Arial" ))
 	(pt 176 8)
@@ -118,7 +118,7 @@ agreement for further details.
 )
 (pin
 	(input)
-	(rect 456 432 624 448)
+	(rect 392 344 560 360)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
 	(text "topLeftY[10..0]" (rect 5 0 75 17)(font "Intel Clear" ))
 	(pt 168 8)
@@ -134,7 +134,7 @@ agreement for further details.
 )
 (pin
 	(input)
-	(rect 984 520 1192 536)
+	(rect 1000 432 1208 448)
 	(text "INPUT" (rect 165 0 193 10)(font "Arial" (font_size 6)))
 	(text "collision_Smiley_Hart" (rect 5 0 111 12)(font "Arial" ))
 	(pt 208 8)
@@ -150,9 +150,25 @@ agreement for further details.
 )
 (pin
 	(input)
-	(rect 1000 544 1200 560)
+	(rect 1000 464 1200 480)
 	(text "INPUT" (rect 157 0 185 10)(font "Arial" (font_size 6)))
 	(text "collision_ghost_Hart" (rect 5 0 101 17)(font "Intel Clear" ))
+	(pt 200 8)
+	(drawing
+		(line (pt 116 12)(pt 141 12))
+		(line (pt 116 4)(pt 141 4))
+		(line (pt 145 8)(pt 200 8))
+		(line (pt 116 12)(pt 116 4))
+		(line (pt 141 4)(pt 145 8))
+		(line (pt 141 12)(pt 145 8))
+	)
+	(text "VCC" (rect 160 7 180 17)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect 1000 496 1200 512)
+	(text "INPUT" (rect 157 0 185 10)(font "Arial" (font_size 6)))
+	(text "collision_smiley_Dot" (rect 5 0 107 12)(font "Arial" ))
 	(pt 200 8)
 	(drawing
 		(line (pt 116 12)(pt 141 12))
@@ -339,9 +355,9 @@ agreement for further details.
 	(annotation_block (parameter)(rect 744 208 999 284))
 )
 (symbol
-	(rect 1304 272 1568 448)
+	(rect 1304 272 1568 480)
 	(text "HartsMatrixBitMap" (rect 5 0 94 12)(font "Arial" ))
-	(text "inst6" (rect 8 160 31 172)(font "Arial" ))
+	(text "inst6" (rect 8 192 31 204)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -399,6 +415,13 @@ agreement for further details.
 		(line (pt 0 144)(pt 16 144))
 	)
 	(port
+		(pt 0 160)
+		(input)
+		(text "collision_smiley_Dot" (rect 0 0 101 12)(font "Arial" ))
+		(text "collision_smiley_Dot" (rect 21 155 122 167)(font "Arial" ))
+		(line (pt 0 160)(pt 16 160))
+	)
+	(port
 		(pt 264 32)
 		(output)
 		(text "drawingRequest" (rect 0 0 77 12)(font "Arial" ))
@@ -434,49 +457,8 @@ agreement for further details.
 		(line (pt 264 96)(pt 248 96))
 	)
 	(drawing
-		(rectangle (rect 16 16 248 160))
+		(rectangle (rect 16 16 248 192))
 	)
-)
-(connector
-	(text "resetN" (rect 634 360 664 377)(font "Intel Clear" ))
-	(pt 624 376)
-	(pt 776 376)
-)
-(connector
-	(text "pixelX[10..0]" (rect 634 376 693 393)(font "Intel Clear" ))
-	(pt 624 392)
-	(pt 776 392)
-	(bus)
-)
-(connector
-	(text "pixelY[10..0]" (rect 634 392 693 409)(font "Intel Clear" ))
-	(pt 624 408)
-	(pt 776 408)
-	(bus)
-)
-(connector
-	(text "HART_SELECT" (rect 1224 392 1293 409)(font "Intel Clear" ))
-	(pt 1208 464)
-	(pt 1192 464)
-)
-(connector
-	(text "clk" (rect 634 344 648 361)(font "Intel Clear" ))
-	(pt 776 360)
-	(pt 624 360)
-)
-(connector
-	(pt 624 424)
-	(pt 776 424)
-	(bus)
-)
-(connector
-	(pt 776 440)
-	(pt 624 440)
-	(bus)
-)
-(connector
-	(pt 1192 528)
-	(pt 1240 528)
 )
 (connector
 	(pt 1000 360)
@@ -542,17 +524,9 @@ agreement for further details.
 	(pt 1304 368)
 )
 (connector
-	(pt 1208 464)
-	(pt 1208 384)
-)
-(connector
 	(text "clk" (rect 1242 288 1256 305)(font "Intel Clear" ))
 	(pt 1304 304)
 	(pt 1216 304)
-)
-(connector
-	(pt 1240 528)
-	(pt 1240 400)
 )
 (connector
 	(pt 1240 400)
@@ -566,18 +540,6 @@ agreement for further details.
 	(pt 1632 344)
 	(pt 1632 320)
 	(bus)
-)
-(connector
-	(pt 1296 552)
-	(pt 1200 552)
-)
-(connector
-	(pt 1296 552)
-	(pt 1296 416)
-)
-(connector
-	(pt 1296 416)
-	(pt 1304 416)
 )
 (connector
 	(pt 1624 376)
@@ -607,6 +569,18 @@ agreement for further details.
 	(bus)
 )
 (connector
+	(pt 1680 504)
+	(pt 1576 504)
+)
+(connector
+	(pt 1568 368)
+	(pt 1576 368)
+)
+(connector
+	(pt 1576 368)
+	(pt 1576 504)
+)
+(connector
 	(pt 1552 304)
 	(pt 1568 304)
 )
@@ -627,12 +601,133 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(pt 1568 504)
-	(pt 1680 504)
+	(text "HART_SELECT" (rect 1216 344 1285 361)(font "Intel Clear" ))
+	(pt 1208 416)
+	(pt 1184 416)
 )
 (connector
-	(pt 1568 368)
-	(pt 1568 504)
+	(pt 1208 384)
+	(pt 1208 416)
+)
+(connector
+	(pt 1240 440)
+	(pt 1208 440)
+)
+(connector
+	(pt 1240 400)
+	(pt 1240 440)
+)
+(connector
+	(pt 1304 416)
+	(pt 1256 416)
+)
+(connector
+	(pt 1200 472)
+	(pt 1256 472)
+)
+(connector
+	(pt 1256 416)
+	(pt 1256 472)
+)
+(connector
+	(pt 1304 432)
+	(pt 1264 432)
+)
+(connector
+	(pt 1264 432)
+	(pt 1264 504)
+)
+(connector
+	(pt 1264 504)
+	(pt 1200 504)
+)
+(connector
+	(pt 768 360)
+	(pt 768 272)
+)
+(connector
+	(pt 776 360)
+	(pt 768 360)
+)
+(connector
+	(text "clk" (rect 570 256 584 273)(font "Intel Clear" ))
+	(pt 768 272)
+	(pt 560 272)
+)
+(connector
+	(pt 760 376)
+	(pt 760 288)
+)
+(connector
+	(pt 776 376)
+	(pt 760 376)
+)
+(connector
+	(text "resetN" (rect 570 272 600 289)(font "Intel Clear" ))
+	(pt 760 288)
+	(pt 560 288)
+)
+(connector
+	(pt 752 392)
+	(pt 752 304)
+	(bus)
+)
+(connector
+	(pt 776 392)
+	(pt 752 392)
+	(bus)
+)
+(connector
+	(text "pixelX[10..0]" (rect 570 288 629 305)(font "Intel Clear" ))
+	(pt 752 304)
+	(pt 560 304)
+	(bus)
+)
+(connector
+	(pt 744 408)
+	(pt 744 320)
+	(bus)
+)
+(connector
+	(pt 776 408)
+	(pt 744 408)
+	(bus)
+)
+(connector
+	(text "pixelY[10..0]" (rect 570 304 629 321)(font "Intel Clear" ))
+	(pt 744 320)
+	(pt 560 320)
+	(bus)
+)
+(connector
+	(pt 736 424)
+	(pt 736 336)
+	(bus)
+)
+(connector
+	(pt 776 424)
+	(pt 736 424)
+	(bus)
+)
+(connector
+	(pt 736 336)
+	(pt 560 336)
+	(bus)
+)
+(connector
+	(pt 728 440)
+	(pt 728 352)
+	(bus)
+)
+(connector
+	(pt 776 440)
+	(pt 728 440)
+	(bus)
+)
+(connector
+	(pt 728 352)
+	(pt 560 352)
+	(bus)
 )
 (junction (pt 1568 304))
 (junction (pt 1568 320))
