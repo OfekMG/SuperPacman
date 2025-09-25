@@ -1,37 +1,47 @@
 module counter_module (
-
     input  logic        clk,
-    input  logic        resetN, 
-	 input  logic        increment,
+    input  logic        resetN,
+    input  logic        score,   // כניסה חיצונית (יתכן אסינכרונית)
 
-    output logic [3:0]  units    = INIT_ONES,
-    output logic [3:0]  tens     = INIT_TENS,
-    output logic [3:0]  hundreds = INIT_HUNDREDS
+    output logic [3:0]  units,
+    output logic [3:0]  tens,
+    output logic [3:0]  hundreds
 );
     parameter logic [3:0] INIT_ONES     = 4'd9;
     parameter logic [3:0] INIT_TENS     = 4'd9;
     parameter logic [3:0] INIT_HUNDREDS = 4'd9;
-	 
-    logic enable;
-    logic prev_zero;
+	
+	//identify rising edge
+    logic score_sync0, score_sync1;
+    logic score_rising;
 
+	// to calculate next value
     logic [3:0] o_next, t_next, h_next;
-    logic       next_zero;
 
     always_ff @(posedge clk or negedge resetN) begin
         if (!resetN) begin
-            // Asynchronous reset → load INIT values, clear prev_zero & pulse
-            units           <= INIT_ONES;
-            tens            <= INIT_TENS;
-            hundreds        <= INIT_HUNDREDS;
-        end
-        else begin
-            o_next = units;
+            units    <= INIT_ONES;
+            tens     <= INIT_TENS;
+            hundreds <= INIT_HUNDREDS;
+
+            score_sync0 <= 1'b0;
+            score_sync1 <= 1'b0;
+        end else begin
+            score_sync0 <= score;
+            score_sync1 <= score_sync0;
+
+				// finding edge
+            score_rising = score_sync1 && !score_sync0; // note: שים לב שסדר ההשמה כאן משתמש בבדיקת ההיסטוריה; אפשר גם לעשות בשני מצבים
+            // ניתן לשים prev_score ולחשב: score_rising = score_sync1 && !prev_score; prev_score <= score_sync1;
+
+
+				//default
+				o_next = units;
             t_next = tens;
             h_next = hundreds;
 
-            if (increment && enable) begin
-                // *** INCREMENT path ***
+            if (score_rising) begin
+                // INCREMENT path על עליית קצה של score
                 if (units == 4'd9) begin
                     o_next = 4'd0;
                     if (tens == 4'd9) begin
@@ -43,11 +53,10 @@ module counter_module (
                     end
                 end else begin
                     o_next = units + 4'd1;
-                    t_next = tens;
-                    h_next = hundreds;
                 end
             end
 
+            // עדכן רגיסטרים
             units    <= o_next;
             tens     <= t_next;
             hundreds <= h_next;
