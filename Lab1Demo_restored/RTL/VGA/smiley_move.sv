@@ -9,6 +9,7 @@ module smiley_move(
     input  logic toggle_x_key_left,
     input  logic collision_ghost_smiley,
     input  logic [2:0] HitEdgeCode,
+	 input  logic Super,
     output logic signed [10:0] topLeftX,
     output logic signed [10:0] topLeftY
 );
@@ -35,7 +36,7 @@ const logic [3:0] RIGHT  = 4'b0100;
 const logic [3:0] LEFT   = 4'b0010;
 const logic [3:0] BOTTOM = 4'b0001;
 
-enum logic [2:0] {IDLE_ST, MOVE_ST, START_OF_FRAME_ST, POSITION_CHANGE_ST, POSITION_LIMITS_ST, PAUSE_ST} SM_Motion;
+enum logic [2:0] {IDLE_ST, MOVE_ST, START_OF_FRAME_ST, POSITION_CHANGE_ST, POSITION_LIMITS_ST, PAUSE_ST, SUPER_MOVE_ST} SM_Motion;
 
 int Xspeed;
 int Yspeed;
@@ -76,13 +77,26 @@ always_ff @(posedge clk or negedge resetN) begin
                 if (toggle_x_key_left) begin Yspeed <= 0; Xspeed <= -60; end
 
                 if (collision) hit_reg[HitEdgeCode] <= 1'b1;
-
-                if (collision_ghost_smiley) begin
+					 if (Super) begin
+						SM_Motion <= SUPER_MOVE_ST;
+					 end else if (collision_ghost_smiley) begin
                     Xspeed <= 0;
                     Yspeed <= 0;
                     pause_counter <= 0;
                     SM_Motion <= PAUSE_ST;
                 end else if (startOfFrame) begin
+                    SM_Motion <= START_OF_FRAME_ST;
+                end
+            end
+				SUPER_MOVE_ST: begin
+                if (Y_direction_key) begin Xspeed <= 0; Yspeed <= 60; end
+                if (toggle_x_key) begin Yspeed <= 0; Xspeed <= 60; end
+                if (Y_direction_key_up) begin Xspeed <= 0; Yspeed <= -60; end
+                if (toggle_x_key_left) begin Yspeed <= 0; Xspeed <= -60; end
+
+                if (collision) hit_reg[HitEdgeCode] <= 1'b1;
+
+                else if (startOfFrame) begin
                     SM_Motion <= START_OF_FRAME_ST;
                 end
             end

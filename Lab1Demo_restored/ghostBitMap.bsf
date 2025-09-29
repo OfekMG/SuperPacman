@@ -60,6 +60,13 @@ agreement for further details.
 		(line (pt 0 96)(pt 16 96)(line_width 1))
 	)
 	(port
+		(pt 0 112)
+		(input)
+		(text "Super" (rect 0 0 23 12)(font "Arial" ))
+		(text "Super" (rect 21 107 44 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112)(line_width 1))
+	)
+	(port
 		(pt 240 32)
 		(output)
 		(text "drawingRequest" (rect 0 0 63 12)(font "Arial" ))

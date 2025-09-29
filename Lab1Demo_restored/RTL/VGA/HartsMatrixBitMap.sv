@@ -13,12 +13,16 @@ module HartsMatrixBitMap (
     input  logic        collision_Smiley_Hart, // used as "smiley is drawing / colliding at this pixel"
     input  logic        collision_ghost_Hart,
 	 input  logic        collision_smiley_Dot,
+	 input  logic        collision_smiley_Super,
 
     output logic        drawingRequest,    // output that the pixel should be displayed (full tile)
     output logic [7:0]  RGBout,           // rgb value from the bitmap (full tile)
     output logic        drawingRequestDot, // output that the pixel should be displayed as a dot (for index 2)
     output logic [7:0]  RGBoutDot,         // rgb value for the dot
-    output logic        score              // pulses 1 clock when a dot is eaten
+    output logic        score,              // pulses 1 clock when a dot is eaten
+	 output logic        drawingRequestSuper,
+	 output logic [7:0]  RGBoutSuper,
+	 output logic        Super
 );
 
 localparam logic [7:0] TRANSPARENT_ENCODING = 8'hFF; // RGB value representing transparent pixel
@@ -52,22 +56,23 @@ logic [3:0] MazeBitMapMask [0:MAZE_HEIGHT_Y-1][0:MAZE_WIDTH_X-1];
 
 // default maze (kept as you provided)
 logic [0:15][0:31][3:0] MazeDefaultBitMapMask = '{
-  '{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
-  '{1,2,2,2,1,2,2,2,2,1,2,2,2,2,1,2,2,1,1,2,2,2,2,1,2,2,2,2,2,2,2,1},
-  '{1,2,1,2,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1},
-  '{1,2,1,2,2,2,2,1,2,2,2,1,2,2,2,1,2,1,1,2,2,1,2,2,2,1,2,2,2,1,2,1},
-  '{1,2,1,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1},
-  '{1,2,2,2,1,2,2,2,2,2,2,2,1,2,2,2,2,1,2,2,2,2,2,2,1,2,2,2,2,2,2,1},
-  '{1,1,2,1,1,2,1,1,1,2,1,1,1,2,1,1,1,1,1,1,1,2,1,1,1,2,1,1,2,1,1,1},
-  '{1,2,2,2,2,2,2,2,1,2,2,2,2,2,2,2,2,1,2,2,2,2,2,2,2,2,2,2,2,2,2,1},
-  '{1,1,1,2,1,1,2,1,1,1,1,2,1,1,2,1,1,1,1,2,1,1,2,1,1,1,1,2,1,1,1,1},
-  '{1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1},
-  '{1,2,1,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1},
-  '{1,2,2,2,1,2,2,2,2,2,2,2,1,2,2,2,2,1,2,2,2,2,2,2,1,2,2,2,2,2,2,1},
-  '{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,2,1,1,2,1,1,1},
-  '{1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,2,2,2,2,2,2,2,2,2,2,2,2,2,1},
-  '{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
-  '{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
+  '{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1 ,1,1,1,1,1,1,1,1,1,1,1,1,1,1}, //second part is out of frame
+  '{1,2,2,2,1,2,2,2,0,1,2,2,2,2,1,3,2,1 ,1,2,2,2,2,1,2,2,2,2,2,2,2,1},
+  '{1,2,1,2,1,2,1,1,2,1,2,1,1,2,1,1,2,1 ,1,2,1,1,2,1,1,2,1,1,2,1,2,1},
+  '{1,2,1,2,2,2,2,1,2,2,2,1,2,2,2,1,2,1 ,1,2,2,1,2,2,2,1,2,2,2,1,2,1},
+  '{1,2,1,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1 ,1,2,1,1,2,1,1,2,1,1,2,1,2,1},
+  '{1,2,2,2,1,2,2,2,2,2,2,3,1,2,2,2,2,1 ,2,2,2,2,2,2,1,2,2,2,2,2,2,1},
+  '{1,1,2,1,1,2,1,1,1,2,1,1,1,2,1,1,1,1 ,1,1,1,2,1,1,1,2,1,1,2,1,1,1},
+  '{1,2,2,2,2,2,2,2,1,2,2,2,2,2,2,2,2,1 ,2,2,2,2,2,2,2,2,2,2,2,2,2,1},
+  '{1,1,1,2,1,1,2,1,1,1,1,2,1,1,2,1,1,1 ,1,2,1,1,2,1,1,1,1,2,1,1,1,1},
+  '{1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1 ,2,2,2,2,2,2,2,2,2,2,2,2,2,1},
+  '{1,2,1,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1 ,1,2,1,1,2,1,1,2,1,1,2,1,2,1},
+  '{1,2,2,3,1,2,2,2,2,2,2,2,1,2,2,2,3,1 ,2,2,2,2,2,2,1,2,2,2,2,2,2,1},
+  '{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1 ,1,1,1,2,1,1,1,2,1,1,2,1,1,1},
+    // not part of the map 
+  '{1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1 ,2,2,2,2,2,2,2,2,2,2,2,2,2,1},
+  '{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1 ,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+  '{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1 ,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
 };
 
 // object colors array: index mapping = maze_value - 1
@@ -77,7 +82,39 @@ logic [0:15][0:31][3:0] MazeDefaultBitMapMask = '{
 // index 3 : full tile color (8'h73)
 logic [3:0][0:(TILE_HEIGHT_Y-1)][0:(TILE_WIDTH_X-1)][7:0] object_colors = '{
     // index 0
-    '{ default: '{ default: 8'h73 } },
+    '{
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h91,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h24,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hda,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'hda,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'hb5,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'hfe,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h00,8'h00,8'h00,8'h00,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff}},
 	    // index 1
     '{ default: '{ default: 8'h73 } },
 
@@ -132,9 +169,12 @@ always_ff @(posedge clk or negedge resetN) begin
     if (!resetN) begin
         RGBout            <= TRANSPARENT_ENCODING;
         RGBoutDot         <= TRANSPARENT_ENCODING;
+		  RGBoutSuper            <= TRANSPARENT_ENCODING;
         drawingRequest    <= 1'b0;
         drawingRequestDot <= 1'b0;
+		  drawingRequestSuper <= 1'b0;
         score             <= 1'b0;
+		  Super				  <= 1'b0;	
         // reset maze
         for (int y = 0; y < MAZE_HEIGHT_Y; y++) begin
             for (int x = 0; x < MAZE_WIDTH_X; x++) begin
@@ -156,12 +196,22 @@ always_ff @(posedge clk or negedge resetN) begin
                     score <= 1'b1; // רק אם אכן נחסמה נקודה - נסמן נקודה נאכלת
                 end
             end
+			end
+        else if (collision_smiley_Super) begin
+				if ((offsetX_MSB < MAZE_WIDTH_X) && (offsetY_MSB < MAZE_HEIGHT_Y)) begin
+                if (MazeBitMapMask[offsetY_MSB][offsetX_MSB] == 4'h3) begin
+                    MazeBitMapMask[offsetY_MSB][offsetX_MSB] <= 4'h0; // מחק את הנקודה הספציפית
+                    RGBoutSuper <= TRANSPARENT_ENCODING;
+                     Super <= 1'b1; // רק אם אכן נחסמה נקודה - נסמן נקודה נאכלת
+                end
+            end
         end
-        else begin
+		  else begin
             if (InsideRectangle) begin
                 case (MazeBitMapMask[offsetY_MSB][offsetX_MSB])
                     4'h0: ; // transparent, do nothing
                     4'h2: RGBoutDot <= object_colors[1][offsetY_LSB][offsetX_LSB];
+						  4'h3: RGBoutSuper <= object_colors[3][offsetY_LSB][offsetX_LSB];
                     default: RGBout <= object_colors[MazeBitMapMask[offsetY_MSB][offsetX_MSB] - 1][offsetY_LSB][offsetX_LSB];
                 endcase
             end
@@ -169,6 +219,8 @@ always_ff @(posedge clk or negedge resetN) begin
 
         drawingRequest    <= (RGBout != TRANSPARENT_ENCODING);
         drawingRequestDot <= (RGBoutDot != TRANSPARENT_ENCODING);
+		  drawingRequestSuper <= (RGBoutSuper != TRANSPARENT_ENCODING);
+
     end
 end
 

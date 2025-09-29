@@ -88,6 +88,13 @@ agreement for further details.
 		(line (pt 0 160)(pt 16 160)(line_width 1))
 	)
 	(port
+		(pt 0 176)
+		(input)
+		(text "drawing_request_Super" (rect 0 0 94 12)(font "Arial" ))
+		(text "drawing_request_Super" (rect 21 171 115 183)(font "Arial" ))
+		(line (pt 0 176)(pt 16 176)(line_width 1))
+	)
+	(port
 		(pt 296 32)
 		(output)
 		(text "collision" (rect 0 0 28 12)(font "Arial" ))
@@ -128,6 +135,13 @@ agreement for further details.
 		(text "collision_smiley_Dot" (rect 0 0 80 12)(font "Arial" ))
 		(text "collision_smiley_Dot" (rect 195 107 275 119)(font "Arial" ))
 		(line (pt 296 112)(pt 280 112)(line_width 1))
+	)
+	(port
+		(pt 296 128)
+		(output)
+		(text "collision_smiley_Super" (rect 0 0 89 12)(font "Arial" ))
+		(text "collision_smiley_Super" (rect 186 123 275 135)(font "Arial" ))
+		(line (pt 296 128)(pt 280 128)(line_width 1))
 	)
 	(drawing
 		(rectangle (rect 16 16 280 192)(line_width 1))

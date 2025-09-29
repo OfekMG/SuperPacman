@@ -21,9 +21,9 @@ agreement for further details.
 */
 (header "symbol" (version "1.2"))
 (symbol
-	(rect 16 16 248 176)
+	(rect 16 16 296 208)
 	(text "Ghost_Block_T" (rect 5 0 93 19)(font "Intel Clear" (font_size 8)))
-	(text "inst" (rect 8 139 24 156)(font "Intel Clear" ))
+	(text "inst" (rect 8 171 24 188)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -67,18 +67,32 @@ agreement for further details.
 		(line (pt 0 112)(pt 16 112))
 	)
 	(port
-		(pt 232 32)
-		(output)
-		(text "smileyDR" (rect 0 0 56 19)(font "Intel Clear" (font_size 8)))
-		(text "smileyDR" (rect 155 27 211 46)(font "Intel Clear" (font_size 8)))
-		(line (pt 232 32)(pt 216 32))
+		(pt 0 128)
+		(input)
+		(text "Super" (rect 0 0 35 19)(font "Intel Clear" (font_size 8)))
+		(text "Super" (rect 21 123 56 142)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 128)(pt 16 128))
 	)
 	(port
-		(pt 232 48)
+		(pt 0 144)
+		(input)
+		(text "collision_ghost_smiley" (rect 0 0 132 19)(font "Intel Clear" (font_size 8)))
+		(text "collision_ghost_smiley" (rect 21 139 153 158)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 144)(pt 16 144))
+	)
+	(port
+		(pt 280 32)
+		(output)
+		(text "smileyDR" (rect 0 0 56 19)(font "Intel Clear" (font_size 8)))
+		(text "smileyDR" (rect 203 27 259 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 280 32)(pt 264 32))
+	)
+	(port
+		(pt 280 48)
 		(output)
 		(text "smileyRGB[7..0]" (rect 0 0 95 19)(font "Intel Clear" (font_size 8)))
-		(text "smileyRGB[7..0]" (rect 116 43 211 62)(font "Intel Clear" (font_size 8)))
-		(line (pt 232 48)(pt 216 48)(line_width 3))
+		(text "smileyRGB[7..0]" (rect 164 43 259 62)(font "Intel Clear" (font_size 8)))
+		(line (pt 280 48)(pt 264 48)(line_width 3))
 	)
 	(parameter
 		"initial_x"
@@ -101,7 +115,7 @@ agreement for further details.
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
-		(rectangle (rect 16 16 216 144))
+		(rectangle (rect 16 16 264 176))
 	)
-	(annotation_block (parameter)(rect 248 -64 348 16))
+	(annotation_block (parameter)(rect 296 -64 396 16))
 )

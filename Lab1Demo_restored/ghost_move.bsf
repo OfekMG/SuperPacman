@@ -21,9 +21,9 @@ agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 248 160)
+	(rect 16 16 264 192)
 	(text "ghost_move" (rect 5 0 55 12)(font "Arial" ))
-	(text "inst" (rect 8 128 20 140)(font "Arial" ))
+	(text "inst" (rect 8 160 20 172)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -67,18 +67,32 @@ agreement for further details.
 		(line (pt 0 112)(pt 16 112)(line_width 3))
 	)
 	(port
-		(pt 232 32)
-		(output)
-		(text "topLeftX[10..0]" (rect 0 0 57 12)(font "Arial" ))
-		(text "topLeftX[10..0]" (rect 154 27 211 39)(font "Arial" ))
-		(line (pt 232 32)(pt 216 32)(line_width 3))
+		(pt 0 128)
+		(input)
+		(text "collision_ghost_smiley" (rect 0 0 87 12)(font "Arial" ))
+		(text "collision_ghost_smiley" (rect 21 123 108 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128)(line_width 1))
 	)
 	(port
-		(pt 232 48)
+		(pt 0 144)
+		(input)
+		(text "Super" (rect 0 0 23 12)(font "Arial" ))
+		(text "Super" (rect 21 139 44 151)(font "Arial" ))
+		(line (pt 0 144)(pt 16 144)(line_width 1))
+	)
+	(port
+		(pt 248 32)
+		(output)
+		(text "topLeftX[10..0]" (rect 0 0 57 12)(font "Arial" ))
+		(text "topLeftX[10..0]" (rect 170 27 227 39)(font "Arial" ))
+		(line (pt 248 32)(pt 232 32)(line_width 3))
+	)
+	(port
+		(pt 248 48)
 		(output)
 		(text "topLeftY[10..0]" (rect 0 0 59 12)(font "Arial" ))
-		(text "topLeftY[10..0]" (rect 152 43 211 55)(font "Arial" ))
-		(line (pt 232 48)(pt 216 48)(line_width 3))
+		(text "topLeftY[10..0]" (rect 168 43 227 55)(font "Arial" ))
+		(line (pt 248 48)(pt 232 48)(line_width 3))
 	)
 	(parameter
 		"INITIAL_X"
@@ -90,8 +104,18 @@ agreement for further details.
 		"185"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"SPEED"
+		"60"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"PAUSE_DURATION_FRAMES"
+		"90"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
-		(rectangle (rect 16 16 216 128)(line_width 1))
+		(rectangle (rect 16 16 232 160)(line_width 1))
 	)
-	(annotation_block (parameter)(rect 248 -64 348 16))
+	(annotation_block (parameter)(rect 264 -64 364 16))
 )

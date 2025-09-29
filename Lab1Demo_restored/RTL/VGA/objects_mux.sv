@@ -38,9 +38,8 @@ module	objects_mux	(
 			 ////////////////////////
 		  // Dots
 					input    logic DotsDrawingRequest, 
-					input		logic	[7:0] DotsRGB,	
-							
-					
+					input		logic	[7:0] DotsRGB,
+	
 					// add the box here 
 					input		logic	BoxDrwaingRequest, // two set of inputs per unit
 					input		logic	[7:0] BoxRGB,
@@ -48,7 +47,13 @@ module	objects_mux	(
 		//
 		// ghost
 					input		logic	ghostDrawingRequest, // two set of inputs per unit
-					input		logic	[7:0] ghostRGB
+					input		logic	[7:0] ghostRGB,
+									 ////////////////////////
+		  // Superpacman
+					input    logic SuperDrawingRequest, 
+					input		logic	[7:0] SuperRGB		
+							
+					
 );
 
 always_ff@(posedge clk or negedge resetN)
@@ -67,6 +72,8 @@ begin
 			RGBOut <= BoxRGB;  //2nd priority 
 		else if (DotsDrawingRequest == 1'b1)
 				RGBOut <= DotsRGB;
+		else if (SuperDrawingRequest == 1'b1)
+				RGBOut <= SuperRGB;
 		else if (pointsDrawingRequest == 1'b1)
 			RGBOut <= pointsRGB;
 		else if (livesDrawingRequest == 1'b1)

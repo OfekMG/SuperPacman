@@ -5,9 +5,11 @@ module ghost_move (
     input  logic resetN,
     input  logic startOfFrame,      // short pulse every start of frame 30Hz
     input  logic collision,         // collision if ghost hits a wall (pulse)
-	 input  logic collision_ghost_smiley,
     input  logic [2:0] HitEdgeCode, // optional, could bias random direction (0..4)
     input  logic [1:0] rnd_dir,     // optional seed bits (used at reset)
+	 input  logic collision_ghost_smiley,
+	 input  logic Super,
+
     output logic signed [10:0] topLeftX,
     output logic signed [10:0] topLeftY
 );
@@ -30,7 +32,7 @@ module ghost_move (
     const int y_FRAME_BOTTOM = (479 - SafetyMargin - OBJECT_HIGHT_Y) * FIXED_POINT_MULTIPLIER; 
 
     // FSM states
-    enum logic [2:0] {IDLE_ST, MOVE_ST, START_OF_FRAME_ST, POSITION_CHANGE_ST, POSITION_LIMITS_ST,  PAUSE_ST} SM;
+    enum logic [2:0] {IDLE_ST, MOVE_ST, START_OF_FRAME_ST, POSITION_CHANGE_ST, POSITION_LIMITS_ST,  PAUSE_ST, SUPER_MOVE_ST} SM;
 
     int Xposition;
     int Yposition;
@@ -70,16 +72,24 @@ module ghost_move (
                 MOVE_ST: begin
                     if (collision) begin
                         hit_reg[HitEdgeCode] <= 1'b1;
-                    end
-						  if (collision_ghost_smiley) begin
-								Xspeed <= 0;
-								Yspeed <= 0;
-								pause_counter <= 0;
-								SM <= PAUSE_ST;
-                    end else if (startOfFrame)
+                    end else if (Super) begin
+								SM <= SUPER_MOVE_ST;
+							end else if (startOfFrame)
                         SM <= START_OF_FRAME_ST;
                 end
-					 
+					 SUPER_MOVE_ST: begin 
+						 if (collision) begin
+									hit_reg[HitEdgeCode] <= 1'b1;
+							  end
+							  if (collision_ghost_smiley) begin
+									Xspeed <= 0;
+									Yspeed <= 0;
+									pause_counter <= 0;
+									SM <= PAUSE_ST;
+							  end else if (startOfFrame)
+									SM <= START_OF_FRAME_ST;
+						 end
+						
 					  PAUSE_ST: begin
                 if (startOfFrame) begin
                     if (pause_counter < PAUSE_DURATION_FRAMES - 1)

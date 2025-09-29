@@ -12,6 +12,7 @@ module game_controller (
     input  logic drawing_request_hart,
     input  logic drawing_request_ghost,
 	 input  logic drawing_request_dot,
+	 input  logic drawing_request_Super,
 	 
 
     output logic collision,             // active in case of collision between two objects
@@ -19,7 +20,8 @@ module game_controller (
     output logic strike,					 // active in case of collision between smiley and ghost
     output logic collision_Smiley_Hart, // active in case of collision between Smiley and hart
     output logic collision_ghost_Hart,  // active in case of collision between Ghost and hart
-	 output logic collision_smiley_Dot	 // active in case of collision between smiley and Dot
+	 output logic collision_smiley_Dot,	 // active in case of collision between smiley and Dot
+ 	 output logic collision_smiley_Super // active in case of collision between smiley and Super
 );
 
 //----------------------------------------------
@@ -35,6 +37,7 @@ assign collision_smiley_number = (drawing_request_smiley && drawing_request_box)
 
 // collisions that always matter (smiley vs borders, smiley vs number, smiley vs hart, ghost vs hart, smiley vs ghost)
 assign collision_Smiley_Hart  = (drawing_request_smiley && drawing_request_hart || drawing_request_smiley && drawing_request_boarders);
+assign collision_smiley_Super = (drawing_request_Super && drawing_request_smiley);
 assign collision_ghost_Hart   = (drawing_request_ghost  && drawing_request_hart || drawing_request_ghost && drawing_request_boarders);
 assign strike = (drawing_request_ghost  && drawing_request_smiley);
 logic collision_before;
@@ -60,7 +63,7 @@ always_ff @(posedge clk or negedge resetN) begin
             flag <= 1'b0; // reset once per frame 
         // trigger pulse on first new collision in a frame
 				
-        if ((collision_smiley_number || collision_Smiley_Hart || collision_ghost_Hart || strike) && !flag) begin 
+        if ((collision_smiley_number || collision_Smiley_Hart || collision_ghost_Hart || strike || collision_smiley_Super) && !flag) begin 
             flag           <= 1'b1; 
             SingleHitPulse <= 1'b1; 
         end

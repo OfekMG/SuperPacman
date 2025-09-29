@@ -21,9 +21,9 @@ agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 264 224)
+	(rect 16 16 264 256)
 	(text "smiley_move" (rect 5 0 60 12)(font "Arial" ))
-	(text "inst" (rect 8 192 20 204)(font "Arial" ))
+	(text "inst" (rect 8 224 20 236)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -95,6 +95,13 @@ agreement for further details.
 		(line (pt 0 176)(pt 16 176)(line_width 3))
 	)
 	(port
+		(pt 0 192)
+		(input)
+		(text "Super" (rect 0 0 23 12)(font "Arial" ))
+		(text "Super" (rect 21 187 44 199)(font "Arial" ))
+		(line (pt 0 192)(pt 16 192)(line_width 1))
+	)
+	(port
 		(pt 248 32)
 		(output)
 		(text "topLeftX[10..0]" (rect 0 0 57 12)(font "Arial" ))
@@ -115,7 +122,7 @@ agreement for further details.
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"INITIAL_Y"
-		"185"
+		"160"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
@@ -129,12 +136,12 @@ agreement for further details.
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
-		"Y_ACCEL"
-		"0"
+		"PAUSE_DURATION_FRAMES"
+		"90"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
-		(rectangle (rect 16 16 232 192)(line_width 1))
+		(rectangle (rect 16 16 232 224)(line_width 1))
 	)
 	(annotation_block (parameter)(rect 264 -64 364 16))
 )

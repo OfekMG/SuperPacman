@@ -1,5 +1,5 @@
 Flow report for Lab1Demo
-Thu Sep 25 14:53:05 2025
+Mon Sep 29 16:27:39 2025
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -41,15 +41,15 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Thu Sep 25 14:52:57 2025       ;
+; Flow Status                     ; Successful - Mon Sep 29 16:27:30 2025       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; Lab1Demo                                    ;
 ; Top-level Entity Name           ; TOP_VGA_DEMO_KBD                            ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSXFC6D6F31C6                              ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 1,845 / 41,910 ( 4 % )                      ;
-; Total registers                 ; 1617                                        ;
+; Logic utilization (in ALMs)     ; 1,763 / 41,910 ( 4 % )                      ;
+; Total registers                 ; 1652                                        ;
 ; Total pins                      ; 62 / 499 ( 12 % )                           ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 2,458,240 / 5,662,720 ( 43 % )              ;
@@ -68,7 +68,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/25/2025 14:49:48 ;
+; Start date & time ; 09/29/2025 16:23:06 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Lab1Demo            ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ agreement for further details.
 +-------------------------------------+---------------------------------------------------------+---------------+------------------+------------------+
 ; Assignment Name                     ; Value                                                   ; Default Value ; Entity Name      ; Section Id       ;
 +-------------------------------------+---------------------------------------------------------+---------------+------------------+------------------+
-; COMPILER_SIGNATURE_ID               ; 10995770589192.175880098822808                          ; --            ; --               ; --               ;
+; COMPILER_SIGNATURE_ID               ; 10995770589192.175915218606828                          ; --            ; --               ; --               ;
 ; ENABLE_SIGNALTAP                    ; On                                                      ; --            ; --               ; --               ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                                      ; --            ; --               ; --               ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                                       ; --            ; --               ; --               ;
@@ -136,12 +136,11 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:23     ; 1.0                     ; 5041 MB             ; 00:00:38                           ;
-; Partition Merge           ; 00:00:00     ; 1.0                     ; 4790 MB             ; 00:00:01                           ;
-; Fitter                    ; 00:02:36     ; 1.2                     ; 7724 MB             ; 00:17:46                           ;
-; Assembler                 ; 00:00:06     ; 1.0                     ; 4897 MB             ; 00:00:06                           ;
-; TimeQuest Timing Analyzer ; 00:00:07     ; 3.4                     ; 5389 MB             ; 00:00:20                           ;
-; Total                     ; 00:03:12     ; --                      ; --                  ; 00:18:51                           ;
+; Analysis & Synthesis      ; 00:00:23     ; 1.0                     ; 5050 MB             ; 00:00:34                           ;
+; Fitter                    ; 00:03:44     ; 1.1                     ; 7636 MB             ; 00:23:33                           ;
+; Assembler                 ; 00:00:12     ; 1.0                     ; 4897 MB             ; 00:00:07                           ;
+; TimeQuest Timing Analyzer ; 00:00:08     ; 3.3                     ; 5393 MB             ; 00:00:19                           ;
+; Total                     ; 00:04:27     ; --                      ; --                  ; 00:24:33                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -151,7 +150,6 @@ agreement for further details.
 ; Module Name               ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +---------------------------+------------------+------------+------------+----------------+
 ; Analysis & Synthesis      ; DESKTOP-SPN16TS  ; Windows 10 ; 10.0       ; x86_64         ;
-; Partition Merge           ; DESKTOP-SPN16TS  ; Windows 10 ; 10.0       ; x86_64         ;
 ; Fitter                    ; DESKTOP-SPN16TS  ; Windows 10 ; 10.0       ; x86_64         ;
 ; Assembler                 ; DESKTOP-SPN16TS  ; Windows 10 ; 10.0       ; x86_64         ;
 ; TimeQuest Timing Analyzer ; DESKTOP-SPN16TS  ; Windows 10 ; 10.0       ; x86_64         ;
@@ -162,7 +160,6 @@ agreement for further details.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off Lab1Demo -c Lab1Demo
-quartus_cdb --read_settings_files=off --write_settings_files=off Lab1Demo -c Lab1Demo --merge=on
 quartus_fit --read_settings_files=off --write_settings_files=off Lab1Demo -c Lab1Demo
 quartus_asm --read_settings_files=off --write_settings_files=off Lab1Demo -c Lab1Demo
 quartus_sta Lab1Demo -c Lab1Demo
