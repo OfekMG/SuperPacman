@@ -125,7 +125,7 @@ always_ff @(posedge clk or negedge resetN) begin
         SM_LOOK     <= NORMAL_ST;
         RGBout      <= 8'h00;
         HitEdgeCode <= 3'h0;
-		  pause_counter <= 0;
+        pause_counter <= 0;
     end else begin
         // עדכון מצב לפי הקלט Super
         if (Super)

@@ -7,8 +7,8 @@ module ghost_move (
     input  logic collision,         // collision if ghost hits a wall (pulse)
     input  logic [2:0] HitEdgeCode, // optional, could bias random direction (0..4)
     input  logic [1:0] rnd_dir,     // optional seed bits (used at reset)
-	 input  logic collision_ghost_smiley,
-	 input  logic Super,
+    input  logic collision_ghost_smiley,
+    input  logic Super,
 
     output logic signed [10:0] topLeftX,
     output logic signed [10:0] topLeftY
@@ -18,8 +18,7 @@ module ghost_move (
     parameter int INITIAL_X = 280;
     parameter int INITIAL_Y = 185;
     parameter int SPEED     = 60;
-	 parameter int PAUSE_DURATION_FRAMES = 90; // 3 sec @ 30Hz
-
+    parameter int PAUSE_DURATION_FRAMES = 90; // 3 sec @ 30Hz
 
     const int FIXED_POINT_MULTIPLIER = 64;  
     const int OBJECT_WIDTH_X = 32;
@@ -32,18 +31,23 @@ module ghost_move (
     const int y_FRAME_BOTTOM = (479 - SafetyMargin - OBJECT_HIGHT_Y) * FIXED_POINT_MULTIPLIER; 
 
     // FSM states
-    enum logic [2:0] {IDLE_ST, MOVE_ST, START_OF_FRAME_ST, POSITION_CHANGE_ST, POSITION_LIMITS_ST,  PAUSE_ST, SUPER_MOVE_ST} SM;
+    enum logic [2:0] {
+        IDLE_ST,
+        MOVE_ST,
+        START_OF_FRAME_ST,
+        POSITION_CHANGE_ST,
+        POSITION_LIMITS_ST,
+        PAUSE_ST,
+        SUPER_MOVE_ST
+    } SM;
 
     int Xposition;
     int Yposition;
-
     int Xspeed;
     int Yspeed;
 
     logic [4:0] hit_reg;
-
-	 logic [6:0] pause_counter;
- 
+    logic [6:0] pause_counter;
     logic [6:0] lfsr;            
     logic [1:0] go_direction;   
 
@@ -57,13 +61,13 @@ module ghost_move (
             Xspeed    <= SPEED;
             Yspeed    <= 0;
             hit_reg   <= 5'b00000;
-				pause_counter <= 0;
+            pause_counter <= 0;
             lfsr      <= {rnd_dir, 5'b10101}; 
             go_direction <= {rnd_dir[1], rnd_dir[0]};
         end else begin
             case (SM)
                 IDLE_ST: begin
-                    Xposition <= INITIAL_X * FIXED_POINT_MULTIPLIER;
+                    Xposition <= INITIAL_X * FIXED_POINT_MULTIPLIER + 800;
                     Yposition <= INITIAL_Y * FIXED_POINT_MULTIPLIER;
                     if (startOfFrame)
                         SM <= MOVE_ST;
@@ -73,31 +77,46 @@ module ghost_move (
                     if (collision) begin
                         hit_reg[HitEdgeCode] <= 1'b1;
                     end else if (Super) begin
-								SM <= SUPER_MOVE_ST;
-							end else if (startOfFrame)
+                        SM <= SUPER_MOVE_ST;
+                    end else if (startOfFrame)
                         SM <= START_OF_FRAME_ST;
                 end
-					 SUPER_MOVE_ST: begin 
-						 if (collision) begin
-									hit_reg[HitEdgeCode] <= 1'b1;
-							  end
-							  if (collision_ghost_smiley) begin
-									Xspeed <= 0;
-									Yspeed <= 0;
-									pause_counter <= 0;
-									SM <= PAUSE_ST;
-							  end else if (startOfFrame)
-									SM <= START_OF_FRAME_ST;
-						 end
-						
-					  PAUSE_ST: begin
-                if (startOfFrame) begin
-                    if (pause_counter < PAUSE_DURATION_FRAMES - 1)
-                        pause_counter <= pause_counter + 1;
-                    else
-                        SM <= IDLE_ST;
+
+                SUPER_MOVE_ST: begin 
+                    if (collision) begin
+                        hit_reg[HitEdgeCode] <= 1'b1;
+                    end
+
+                    if (collision_ghost_smiley) begin
+                        Xspeed <= 0;
+                        Yspeed <= 0;
+                        pause_counter <= 0;
+                        SM <= PAUSE_ST;
+
+                    end else if (!Super) begin
+                        // Exit super mode when Super goes low
+                        SM <= MOVE_ST;
+
+                    end else if (startOfFrame) begin
+                        SM <= START_OF_FRAME_ST;
+                    end
                 end
-            end
+						
+                PAUSE_ST: begin
+                    if (startOfFrame) begin
+                        if (pause_counter < PAUSE_DURATION_FRAMES - 1)
+                            pause_counter <= pause_counter + 1;
+                        else begin
+                            // Respawn ghost after pause
+                            Xposition <= INITIAL_X * FIXED_POINT_MULTIPLIER + 800;
+                            Yposition <= INITIAL_Y * FIXED_POINT_MULTIPLIER;
+                            Xspeed    <= SPEED;
+                            Yspeed    <= 0;
+                            hit_reg   <= 5'b00000;
+                            SM        <= MOVE_ST;
+                        end
+                    end
+                end
                 
                 START_OF_FRAME_ST: begin
                     if (hit_reg != 5'b00000) begin
