@@ -94,7 +94,6 @@ module ghost_move (
                         SM <= PAUSE_ST;
 
                     end else if (!Super) begin
-                        // Exit super mode when Super goes low
                         SM <= MOVE_ST;
 
                     end else if (startOfFrame) begin
@@ -107,13 +106,13 @@ module ghost_move (
                         if (pause_counter < PAUSE_DURATION_FRAMES - 1)
                             pause_counter <= pause_counter + 1;
                         else begin
-                            // Respawn ghost after pause
                             Xposition <= INITIAL_X * FIXED_POINT_MULTIPLIER + 800;
                             Yposition <= INITIAL_Y * FIXED_POINT_MULTIPLIER;
                             Xspeed    <= SPEED;
                             Yspeed    <= 0;
                             hit_reg   <= 5'b00000;
                             SM        <= MOVE_ST;
+									 
                         end
                     end
                 end

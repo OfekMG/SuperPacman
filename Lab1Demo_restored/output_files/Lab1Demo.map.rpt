@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Lab1Demo
-Sat Oct 04 16:38:03 2025
+Sat Oct 04 19:04:32 2025
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -32,37 +32,38 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
  24. Parameter Settings for User Entity Instance: back_ground_draw:inst4
  25. Parameter Settings for User Entity Instance: CLK_31P5:inst7|CLK_31P5_0002:clk_31p5_inst|altera_pll:altera_pll_i
  26. Parameter Settings for User Entity Instance: Smiley_Block_T:inst1
- 27. Parameter Settings for User Entity Instance: Smiley_Block_T:inst1|square_object:inst6
- 28. Parameter Settings for User Entity Instance: Smiley_Block_T:inst1|smiley_move:inst
- 29. Parameter Settings for User Entity Instance: square_object:inst17
- 30. Parameter Settings for User Entity Instance: MyConstant:inst2
- 31. Parameter Settings for User Entity Instance: random:inst19
- 32. Parameter Settings for User Entity Instance: HART_DISPLAY:inst12|square_object:inst11
- 33. Parameter Settings for User Entity Instance: MyConstant:inst20
- 34. Parameter Settings for User Entity Instance: MyConstant:inst21
- 35. Parameter Settings for User Entity Instance: Ghost_Block_T:inst8|square_object:inst6
- 36. Parameter Settings for User Entity Instance: Ghost_Block_T:inst8|ghost_move:inst
- 37. Parameter Settings for User Entity Instance: Ghost_Block_T:inst8|random:inst3
- 38. Parameter Settings for User Entity Instance: lives_display:inst22|square_object:inst11
- 39. Parameter Settings for User Entity Instance: MyConstant:inst31
- 40. Parameter Settings for User Entity Instance: MyConstant:inst34
- 41. Parameter Settings for User Entity Instance: counter_Bitmap:inst33
- 42. Parameter Settings for User Entity Instance: square_object:inst30
- 43. Parameter Settings for User Entity Instance: MyConstant:inst35
- 44. Parameter Settings for User Entity Instance: counter_module:inst37
- 45. Parameter Settings for User Entity Instance: NumbersBitMap:inst15
- 46. Parameter Settings for User Entity Instance: LPM_ROM:inst5
- 47. Parameter Settings for User Entity Instance: AUDIO:inst18|sintable:inst1
- 48. Parameter Settings for User Entity Instance: AUDIO:inst18|addr_counter:inst9
- 49. Parameter Settings for User Entity Instance: melody_player_1:inst13|Mili_sec_counter:mili_sec_counter_inst
- 50. Port Connectivity Checks: "melody_player_1:inst13|Mili_sec_counter:mili_sec_counter_inst"
- 51. Port Connectivity Checks: "AUDIO:inst18|audio_codec_controller:inst|DualSerial2parallel:DualSerial2parallel_inst"
- 52. Port Connectivity Checks: "AUDIO:inst18|audio_codec_controller:inst|i2c:i2c_inst"
- 53. Port Connectivity Checks: "AUDIO:inst18|audio_codec_controller:inst|CLOCK_500:CLOCK_500_inst"
- 54. Post-Synthesis Netlist Statistics for Top Partition
- 55. Elapsed Time Per Partition
- 56. Analysis & Synthesis Messages
- 57. Analysis & Synthesis Suppressed Messages
+ 27. Parameter Settings for User Entity Instance: Smiley_Block_T:inst1|smileyBitMap:inst1
+ 28. Parameter Settings for User Entity Instance: Smiley_Block_T:inst1|square_object:inst6
+ 29. Parameter Settings for User Entity Instance: Smiley_Block_T:inst1|smiley_move:inst
+ 30. Parameter Settings for User Entity Instance: square_object:inst17
+ 31. Parameter Settings for User Entity Instance: MyConstant:inst2
+ 32. Parameter Settings for User Entity Instance: random:inst19
+ 33. Parameter Settings for User Entity Instance: HART_DISPLAY:inst12|square_object:inst11
+ 34. Parameter Settings for User Entity Instance: MyConstant:inst20
+ 35. Parameter Settings for User Entity Instance: MyConstant:inst21
+ 36. Parameter Settings for User Entity Instance: Ghost_Block_T:inst8|square_object:inst6
+ 37. Parameter Settings for User Entity Instance: Ghost_Block_T:inst8|ghost_move:inst
+ 38. Parameter Settings for User Entity Instance: Ghost_Block_T:inst8|random:inst3
+ 39. Parameter Settings for User Entity Instance: lives_display:inst22|square_object:inst11
+ 40. Parameter Settings for User Entity Instance: MyConstant:inst31
+ 41. Parameter Settings for User Entity Instance: MyConstant:inst34
+ 42. Parameter Settings for User Entity Instance: counter_Bitmap:inst33
+ 43. Parameter Settings for User Entity Instance: square_object:inst30
+ 44. Parameter Settings for User Entity Instance: MyConstant:inst35
+ 45. Parameter Settings for User Entity Instance: counter_module:inst37
+ 46. Parameter Settings for User Entity Instance: NumbersBitMap:inst15
+ 47. Parameter Settings for User Entity Instance: LPM_ROM:inst5
+ 48. Parameter Settings for User Entity Instance: AUDIO:inst18|sintable:inst1
+ 49. Parameter Settings for User Entity Instance: AUDIO:inst18|addr_counter:inst9
+ 50. Parameter Settings for User Entity Instance: melody_player_1:inst13|Mili_sec_counter:mili_sec_counter_inst
+ 51. Port Connectivity Checks: "melody_player_1:inst13|Mili_sec_counter:mili_sec_counter_inst"
+ 52. Port Connectivity Checks: "AUDIO:inst18|audio_codec_controller:inst|DualSerial2parallel:DualSerial2parallel_inst"
+ 53. Port Connectivity Checks: "AUDIO:inst18|audio_codec_controller:inst|i2c:i2c_inst"
+ 54. Port Connectivity Checks: "AUDIO:inst18|audio_codec_controller:inst|CLOCK_500:CLOCK_500_inst"
+ 55. Post-Synthesis Netlist Statistics for Top Partition
+ 56. Elapsed Time Per Partition
+ 57. Analysis & Synthesis Messages
+ 58. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -89,13 +90,13 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Oct 04 16:38:03 2025       ;
+; Analysis & Synthesis Status     ; Successful - Sat Oct 04 19:04:31 2025       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; Lab1Demo                                    ;
 ; Top-level Entity Name           ; TOP_VGA_DEMO_KBD                            ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 1112                                        ;
+; Total registers                 ; 1146                                        ;
 ; Total pins                      ; 62                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 2,457,600                                   ;
@@ -290,16 +291,16 @@ agreement for further details.
 +---------------------------------------------+-----------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                             ;
 +---------------------------------------------+-----------------------------------------------------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 1590                                                                              ;
+; Estimate of Logic utilization (ALMs needed) ; 1662                                                                              ;
 ;                                             ;                                                                                   ;
-; Combinational ALUT usage for logic          ; 2516                                                                              ;
+; Combinational ALUT usage for logic          ; 2565                                                                              ;
 ;     -- 7 input functions                    ; 122                                                                               ;
-;     -- 6 input functions                    ; 535                                                                               ;
-;     -- 5 input functions                    ; 307                                                                               ;
-;     -- 4 input functions                    ; 322                                                                               ;
-;     -- <=3 input functions                  ; 1230                                                                              ;
+;     -- 6 input functions                    ; 630                                                                               ;
+;     -- 5 input functions                    ; 399                                                                               ;
+;     -- 4 input functions                    ; 425                                                                               ;
+;     -- <=3 input functions                  ; 989                                                                               ;
 ;                                             ;                                                                                   ;
-; Dedicated logic registers                   ; 1112                                                                              ;
+; Dedicated logic registers                   ; 1146                                                                              ;
 ;                                             ;                                                                                   ;
 ; I/O pins                                    ; 62                                                                                ;
 ; Total MLAB memory bits                      ; 0                                                                                 ;
@@ -311,9 +312,9 @@ agreement for further details.
 ;     -- PLLs                                 ; 1                                                                                 ;
 ;                                             ;                                                                                   ;
 ; Maximum fan-out node                        ; CLK_31P5:inst7|CLK_31P5_0002:clk_31p5_inst|altera_pll:altera_pll_i|outclk_wire[0] ;
-; Maximum fan-out                             ; 1442                                                                              ;
-; Total fan-out                               ; 17681                                                                             ;
-; Average fan-out                             ; 4.35                                                                              ;
+; Maximum fan-out                             ; 1476                                                                              ;
+; Total fan-out                               ; 18468                                                                             ;
+; Average fan-out                             ; 4.45                                                                              ;
 +---------------------------------------------+-----------------------------------------------------------------------------------+
 
 
@@ -322,7 +323,7 @@ agreement for further details.
 +---------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------+------------------------+--------------+
 ; Compilation Hierarchy Node                              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                    ; Entity Name            ; Library Name ;
 +---------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------+------------------------+--------------+
-; |TOP_VGA_DEMO_KBD                                       ; 2516 (1)            ; 1112 (0)                  ; 2457600           ; 0          ; 62   ; 0            ; |TOP_VGA_DEMO_KBD                                                                                                      ; TOP_VGA_DEMO_KBD       ; work         ;
+; |TOP_VGA_DEMO_KBD                                       ; 2565 (1)            ; 1146 (0)                  ; 2457600           ; 0          ; 62   ; 0            ; |TOP_VGA_DEMO_KBD                                                                                                      ; TOP_VGA_DEMO_KBD       ; work         ;
 ;    |AUDIO:inst18|                                       ; 223 (0)             ; 142 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|AUDIO:inst18                                                                                         ; AUDIO                  ; work         ;
 ;       |ToneDecoder:inst4|                               ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|AUDIO:inst18|ToneDecoder:inst4                                                                       ; ToneDecoder            ; work         ;
 ;       |addr_counter:inst9|                              ; 10 (10)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|AUDIO:inst18|addr_counter:inst9                                                                      ; addr_counter           ; work         ;
@@ -340,12 +341,12 @@ agreement for further details.
 ;       |ghost_move:inst|                                 ; 254 (254)           ; 98 (98)                   ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|Ghost_Block_T:inst8|ghost_move:inst                                                                  ; ghost_move             ; work         ;
 ;       |random:inst3|                                    ; 4 (4)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|Ghost_Block_T:inst8|random:inst3                                                                     ; random                 ; work         ;
 ;       |square_object:inst6|                             ; 70 (70)             ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|Ghost_Block_T:inst8|square_object:inst6                                                              ; square_object          ; work         ;
-;    |HART_DISPLAY:inst12|                                ; 838 (0)             ; 542 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|HART_DISPLAY:inst12                                                                                  ; HART_DISPLAY           ; work         ;
-;       |HartsMatrixBitMap:inst6|                         ; 824 (824)           ; 522 (522)                 ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|HART_DISPLAY:inst12|HartsMatrixBitMap:inst6                                                          ; HartsMatrixBitMap      ; work         ;
+;    |HART_DISPLAY:inst12|                                ; 834 (0)             ; 542 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|HART_DISPLAY:inst12                                                                                  ; HART_DISPLAY           ; work         ;
+;       |HartsMatrixBitMap:inst6|                         ; 820 (820)           ; 522 (522)                 ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|HART_DISPLAY:inst12|HartsMatrixBitMap:inst6                                                          ; HartsMatrixBitMap      ; work         ;
 ;       |square_object:inst11|                            ; 14 (14)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|HART_DISPLAY:inst12|square_object:inst11                                                             ; square_object          ; work         ;
 ;    |SEG7:inst10|                                        ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|SEG7:inst10                                                                                          ; SEG7                   ; work         ;
-;    |Smiley_Block_T:inst1|                               ; 281 (0)             ; 98 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|Smiley_Block_T:inst1                                                                                 ; Smiley_Block_T         ; work         ;
-;       |smileyBitMap:inst1|                              ; 53 (53)             ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|Smiley_Block_T:inst1|smileyBitMap:inst1                                                              ; smileyBitMap           ; work         ;
+;    |Smiley_Block_T:inst1|                               ; 334 (0)             ; 132 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|Smiley_Block_T:inst1                                                                                 ; Smiley_Block_T         ; work         ;
+;       |smileyBitMap:inst1|                              ; 106 (106)           ; 39 (39)                   ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|Smiley_Block_T:inst1|smileyBitMap:inst1                                                              ; smileyBitMap           ; work         ;
 ;       |smiley_move:inst|                                ; 158 (158)           ; 84 (84)                   ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|Smiley_Block_T:inst1|smiley_move:inst                                                                ; smiley_move            ; work         ;
 ;       |square_object:inst6|                             ; 70 (70)             ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|Smiley_Block_T:inst1|square_object:inst6                                                             ; square_object          ; work         ;
 ;    |TOP_KBD:inst16|                                     ; 66 (0)              ; 61 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |TOP_VGA_DEMO_KBD|TOP_KBD:inst16                                                                                       ; TOP_KBD                ; work         ;
@@ -1259,6 +1260,7 @@ Encoding Type:  One-Hot
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[15][27][2]          ; Merged with HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[15][27][3] ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[15][27][1]          ; Merged with HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[15][27][3] ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[15][31][1]          ; Merged with HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[15][31][3] ;
+; Smiley_Block_T:inst1|smileyBitMap:inst1|RGBout[2..6]                           ; Merged with Smiley_Block_T:inst1|smileyBitMap:inst1|RGBout[7]                     ;
 ; Smiley_Block_T:inst1|smileyBitMap:inst1|RGBout[0]                              ; Merged with Smiley_Block_T:inst1|smileyBitMap:inst1|RGBout[1]                     ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[0][3][1]            ; Merged with HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[0][3][3]   ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[0][4][2]            ; Merged with HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[0][4][3]   ;
@@ -1688,7 +1690,6 @@ Encoding Type:  One-Hot
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[15][31][2]          ; Merged with HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[15][31][3] ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[15][30][2]          ; Merged with HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[15][30][3] ;
 ; back_ground_draw:inst4|BG_RGB[4,5]                                             ; Merged with back_ground_draw:inst4|BG_RGB[3]                                      ;
-; Smiley_Block_T:inst1|smileyBitMap:inst1|RGBout[3..7]                           ; Merged with Smiley_Block_T:inst1|smileyBitMap:inst1|RGBout[2]                     ;
 ; back_ground_draw:inst4|redBits[1,2]                                            ; Merged with back_ground_draw:inst4|redBits[0]                                     ;
 ; AUDIO:inst18|audio_codec_controller:inst|i2c:i2c_inst|SD[7,8,14,15]            ; Merged with AUDIO:inst18|audio_codec_controller:inst|i2c:i2c_inst|SD[13]          ;
 ; AUDIO:inst18|audio_codec_controller:inst|i2c:i2c_inst|SD[3,5]                  ; Merged with AUDIO:inst18|audio_codec_controller:inst|i2c:i2c_inst|SD[2]           ;
@@ -2273,12 +2274,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1112  ;
-; Number of registers using Synchronous Clear  ; 253   ;
+; Total registers                              ; 1146  ;
+; Number of registers using Synchronous Clear  ; 285   ;
 ; Number of registers using Synchronous Load   ; 60    ;
-; Number of registers using Asynchronous Clear ; 1072  ;
+; Number of registers using Asynchronous Clear ; 1106  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 280   ;
+; Number of registers using Clock Enable       ; 282   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -2301,9 +2302,9 @@ Encoding Type:  One-Hot
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|RGBout[3]                ; 4       ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|RGBoutSuper[5]           ; 3       ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[2][8][1]  ; 2       ;
-; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[2][25][1] ; 2       ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[2][1][1]  ; 2       ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[2][16][1] ; 2       ;
+; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[2][25][1] ; 2       ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[2][10][1] ; 2       ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[2][3][1]  ; 2       ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[2][19][1] ; 2       ;
@@ -2312,11 +2313,11 @@ Encoding Type:  One-Hot
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[2][28][1] ; 2       ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[2][22][1] ; 2       ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[2][30][1] ; 2       ;
-; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[1][16][1] ; 2       ;
-; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[1][24][1] ; 2       ;
-; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[1][26][1] ; 2       ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[1][2][1]  ; 2       ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[1][10][1] ; 2       ;
+; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[1][26][1] ; 2       ;
+; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[1][16][1] ; 2       ;
+; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[1][24][1] ; 2       ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[1][12][1] ; 2       ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[1][6][1]  ; 2       ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[1][28][1] ; 2       ;
@@ -2331,10 +2332,10 @@ Encoding Type:  One-Hot
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[1][19][1] ; 2       ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[1][5][1]  ; 2       ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[1][13][1] ; 2       ;
-; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[1][21][1] ; 2       ;
-; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[1][29][1] ; 2       ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[1][7][1]  ; 2       ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[1][15][1] ; 3       ;
+; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[1][21][1] ; 2       ;
+; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[1][29][1] ; 2       ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[3][4][1]  ; 2       ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[3][6][1]  ; 2       ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[3][20][1] ; 2       ;
@@ -2354,17 +2355,17 @@ Encoding Type:  One-Hot
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[4][19][1] ; 2       ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[4][22][1] ; 2       ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[4][8][1]  ; 2       ;
+; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[4][13][1] ; 2       ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[4][25][1] ; 2       ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[4][28][1] ; 2       ;
-; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[4][13][1] ; 2       ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[4][10][1] ; 2       ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[4][30][1] ; 2       ;
+; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[5][16][1] ; 2       ;
+; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[5][20][1] ; 2       ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[5][2][1]  ; 2       ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[5][6][1]  ; 2       ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[5][18][1] ; 2       ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[5][22][1] ; 2       ;
-; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[5][16][1] ; 2       ;
-; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[5][20][1] ; 2       ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[5][8][1]  ; 2       ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[5][14][1] ; 2       ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[5][10][1] ; 2       ;
@@ -2385,8 +2386,8 @@ Encoding Type:  One-Hot
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[5][29][1] ; 2       ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[5][25][1] ; 2       ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[5][27][1] ; 2       ;
-; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[6][5][1]  ; 2       ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[6][21][1] ; 2       ;
+; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[6][5][1]  ; 2       ;
 ; HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|MazeBitMapMask[6][13][1] ; 2       ;
 ; Total number of inverted registers = 542*                            ;         ;
 +----------------------------------------------------------------------+---------+
@@ -2399,36 +2400,36 @@ Encoding Type:  One-Hot
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------------------+
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |TOP_VGA_DEMO_KBD|TOP_KBD:inst16|keyPad_decoder:inst2|keyIsPressed[2]                                                             ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |TOP_VGA_DEMO_KBD|AUDIO:inst18|audio_codec_controller:inst|i2c:i2c_inst|SD_COUNTER[2]                                             ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |TOP_VGA_DEMO_KBD|AUDIO:inst18|audio_codec_controller:inst|DualSerial2parallel:DualSerial2parallel_inst|DACdata_fifo[14]          ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |TOP_VGA_DEMO_KBD|AUDIO:inst18|audio_codec_controller:inst|DualSerial2parallel:DualSerial2parallel_inst|serial_cnt[2]             ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 21 LEs               ; 7 LEs                  ; Yes        ; |TOP_VGA_DEMO_KBD|AUDIO:inst18|audio_codec_controller:inst|DualSerial2parallel:DualSerial2parallel_inst|DACdata_fifo[11]          ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |TOP_VGA_DEMO_KBD|Ghost_Block_T:inst8|ghost_move:inst|pause_counter[0]                                                            ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |TOP_VGA_DEMO_KBD|Smiley_Block_T:inst1|smiley_move:inst|pause_counter[3]                                                          ;
-; 6:1                ; 32 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; Yes        ; |TOP_VGA_DEMO_KBD|Smiley_Block_T:inst1|smiley_move:inst|Yposition[5]                                                              ;
-; 6:1                ; 32 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; Yes        ; |TOP_VGA_DEMO_KBD|Smiley_Block_T:inst1|smiley_move:inst|Xposition[4]                                                              ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |TOP_VGA_DEMO_KBD|AUDIO:inst18|audio_codec_controller:inst|i2c:i2c_inst|SD_COUNTER[3]                                             ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |TOP_VGA_DEMO_KBD|AUDIO:inst18|audio_codec_controller:inst|DualSerial2parallel:DualSerial2parallel_inst|DACdata_fifo[15]          ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |TOP_VGA_DEMO_KBD|AUDIO:inst18|audio_codec_controller:inst|DualSerial2parallel:DualSerial2parallel_inst|serial_cnt[16]            ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 21 LEs               ; 7 LEs                  ; Yes        ; |TOP_VGA_DEMO_KBD|AUDIO:inst18|audio_codec_controller:inst|DualSerial2parallel:DualSerial2parallel_inst|DACdata_fifo[6]           ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |TOP_VGA_DEMO_KBD|Ghost_Block_T:inst8|ghost_move:inst|pause_counter[4]                                                            ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |TOP_VGA_DEMO_KBD|Smiley_Block_T:inst1|smiley_move:inst|pause_counter[2]                                                          ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; Yes        ; |TOP_VGA_DEMO_KBD|Smiley_Block_T:inst1|smiley_move:inst|Yposition[6]                                                              ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; Yes        ; |TOP_VGA_DEMO_KBD|Smiley_Block_T:inst1|smiley_move:inst|Xposition[28]                                                             ;
 ; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |TOP_VGA_DEMO_KBD|melody_player_1:inst13|noteTimeCounter[8]                                                                       ;
-; 8:1                ; 30 bits   ; 150 LEs       ; 60 LEs               ; 90 LEs                 ; Yes        ; |TOP_VGA_DEMO_KBD|Ghost_Block_T:inst8|ghost_move:inst|Yposition[17]                                                               ;
-; 8:1                ; 29 bits   ; 145 LEs       ; 87 LEs               ; 58 LEs                 ; Yes        ; |TOP_VGA_DEMO_KBD|Ghost_Block_T:inst8|ghost_move:inst|Xposition[15]                                                               ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; Yes        ; |TOP_VGA_DEMO_KBD|melody_player_1:inst13|noteTimeCounter[1]                                                                       ;
-; 11:1               ; 4 bits    ; 28 LEs        ; 20 LEs               ; 8 LEs                  ; Yes        ; |TOP_VGA_DEMO_KBD|Smiley_Block_T:inst1|smiley_move:inst|Yspeed[3]                                                                 ;
+; 8:1                ; 30 bits   ; 150 LEs       ; 60 LEs               ; 90 LEs                 ; Yes        ; |TOP_VGA_DEMO_KBD|Ghost_Block_T:inst8|ghost_move:inst|Yposition[11]                                                               ;
+; 8:1                ; 29 bits   ; 145 LEs       ; 87 LEs               ; 58 LEs                 ; Yes        ; |TOP_VGA_DEMO_KBD|Ghost_Block_T:inst8|ghost_move:inst|Xposition[6]                                                                ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; Yes        ; |TOP_VGA_DEMO_KBD|melody_player_1:inst13|noteTimeCounter[0]                                                                       ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 20 LEs               ; 8 LEs                  ; Yes        ; |TOP_VGA_DEMO_KBD|Smiley_Block_T:inst1|smiley_move:inst|Yspeed[0]                                                                 ;
 ; 11:1               ; 4 bits    ; 28 LEs        ; 16 LEs               ; 12 LEs                 ; Yes        ; |TOP_VGA_DEMO_KBD|Smiley_Block_T:inst1|smiley_move:inst|Xspeed[3]                                                                 ;
 ; 21:1               ; 2 bits    ; 28 LEs        ; 24 LEs               ; 4 LEs                  ; Yes        ; |TOP_VGA_DEMO_KBD|Ghost_Block_T:inst8|ghostBitMap:inst7|HitEdgeCode[1]                                                            ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 24 LEs               ; 4 LEs                  ; Yes        ; |TOP_VGA_DEMO_KBD|Smiley_Block_T:inst1|smileyBitMap:inst1|HitEdgeCode[0]                                                          ;
-; 41:1               ; 5 bits    ; 135 LEs       ; 135 LEs              ; 0 LEs                  ; Yes        ; |TOP_VGA_DEMO_KBD|objects_mux:inst9|RGBOut[0]                                                                                     ;
-; 41:1               ; 3 bits    ; 81 LEs        ; 81 LEs               ; 0 LEs                  ; Yes        ; |TOP_VGA_DEMO_KBD|objects_mux:inst9|RGBOut[5]                                                                                     ;
-; 10:1               ; 3 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |TOP_VGA_DEMO_KBD|TOP_KBD:inst16|keyPad_decoder:inst2|key[2]                                                                      ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |TOP_VGA_DEMO_KBD|HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|RGBoutSuper[7]                                                      ;
-; 6:1                ; 6 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |TOP_VGA_DEMO_KBD|HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|RGBout[3]                                                           ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 24 LEs               ; 4 LEs                  ; Yes        ; |TOP_VGA_DEMO_KBD|Smiley_Block_T:inst1|smileyBitMap:inst1|HitEdgeCode[1]                                                          ;
+; 41:1               ; 5 bits    ; 135 LEs       ; 135 LEs              ; 0 LEs                  ; Yes        ; |TOP_VGA_DEMO_KBD|objects_mux:inst9|RGBOut[7]                                                                                     ;
+; 41:1               ; 3 bits    ; 81 LEs        ; 81 LEs               ; 0 LEs                  ; Yes        ; |TOP_VGA_DEMO_KBD|objects_mux:inst9|RGBOut[3]                                                                                     ;
+; 10:1               ; 3 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |TOP_VGA_DEMO_KBD|TOP_KBD:inst16|keyPad_decoder:inst2|key[3]                                                                      ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |TOP_VGA_DEMO_KBD|HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|RGBoutSuper[0]                                                      ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |TOP_VGA_DEMO_KBD|HART_DISPLAY:inst12|HartsMatrixBitMap:inst6|RGBout[6]                                                           ;
 ; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; Yes        ; |TOP_VGA_DEMO_KBD|Ghost_Block_T:inst8|ghost_move:inst|Yposition[13]                                                               ;
 ; 8:1                ; 3 bits    ; 15 LEs        ; 9 LEs                ; 6 LEs                  ; Yes        ; |TOP_VGA_DEMO_KBD|Ghost_Block_T:inst8|ghost_move:inst|Xposition[14]                                                               ;
 ; 8:1                ; 5 bits    ; 25 LEs        ; 10 LEs               ; 15 LEs                 ; Yes        ; |TOP_VGA_DEMO_KBD|melody_player_1:inst13|noteTimeCounter[2]                                                                       ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |TOP_VGA_DEMO_KBD|counter_Bitmap:inst33|Mux3                                                                                      ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |TOP_VGA_DEMO_KBD|lpm_rom:inst5|altrom:srom|altsyncram:rom_block|altsyncram_bj61:auto_generated|mux_jhb:mux2|l3_w5_n4_mux_dataout ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |TOP_VGA_DEMO_KBD|counter_Bitmap:inst33|Mux0                                                                                      ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |TOP_VGA_DEMO_KBD|lpm_rom:inst5|altrom:srom|altsyncram:rom_block|altsyncram_bj61:auto_generated|mux_jhb:mux2|l3_w2_n4_mux_dataout ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |TOP_VGA_DEMO_KBD|melody_player_1:inst13|Selector15                                                                               ;
 ; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; No         ; |TOP_VGA_DEMO_KBD|melody_player_1:inst13|Selector16                                                                               ;
 ; 8:1                ; 3 bits    ; 15 LEs        ; 12 LEs               ; 3 LEs                  ; No         ; |TOP_VGA_DEMO_KBD|Smiley_Block_T:inst1|smiley_move:inst|Selector135                                                               ;
-; 9:1                ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |TOP_VGA_DEMO_KBD|Ghost_Block_T:inst8|ghost_move:inst|Selector70                                                                  ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |TOP_VGA_DEMO_KBD|Ghost_Block_T:inst8|ghost_move:inst|Selector69                                                                  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -3051,6 +3052,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Smiley_Block_T:inst1|smileyBitMap:inst1 ;
++----------------+----------+----------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                     ;
++----------------+----------+----------------------------------------------------------+
+; CLOCK_FREQ_HZ  ; 50000000 ; Signed Integer                                           ;
++----------------+----------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +---------------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: Smiley_Block_T:inst1|square_object:inst6 ;
 +-----------------+-------+-------------------------------------------------------------+
@@ -3366,32 +3377,32 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 1060                        ;
+; arriav_ff             ; 1094                        ;
 ;     CLR               ; 654                         ;
-;     CLR SCLR          ; 145                         ;
+;     CLR SCLR          ; 177                         ;
 ;     ENA               ; 27                          ;
-;     ENA CLR           ; 65                          ;
+;     ENA CLR           ; 67                          ;
 ;     ENA CLR SCLR      ; 98                          ;
 ;     ENA CLR SLD       ; 60                          ;
 ;     plain             ; 11                          ;
 ; arriav_io_obuf        ; 8                           ;
-; arriav_lcell_comb     ; 2482                        ;
-;     arith             ; 432                         ;
+; arriav_lcell_comb     ; 2531                        ;
+;     arith             ; 464                         ;
 ;         0 data inputs ; 6                           ;
-;         1 data inputs ; 259                         ;
+;         1 data inputs ; 291                         ;
 ;         2 data inputs ; 125                         ;
 ;         4 data inputs ; 9                           ;
 ;         5 data inputs ; 33                          ;
 ;     extend            ; 122                         ;
 ;         7 data inputs ; 122                         ;
-;     normal            ; 1928                        ;
+;     normal            ; 1945                        ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 25                          ;
-;         2 data inputs ; 132                         ;
-;         3 data inputs ; 681                         ;
-;         4 data inputs ; 302                         ;
-;         5 data inputs ; 261                         ;
-;         6 data inputs ; 525                         ;
+;         2 data inputs ; 134                         ;
+;         3 data inputs ; 406                         ;
+;         4 data inputs ; 405                         ;
+;         5 data inputs ; 353                         ;
+;         6 data inputs ; 620                         ;
 ; blackbox              ; 1                           ;
 ;         BDINTF:inst   ; 1                           ;
 ; boundary_port         ; 62                          ;
@@ -3399,7 +3410,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; stratixv_ram_block    ; 304                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 9.00                        ;
-; Average LUT depth     ; 5.20                        ;
+; Average LUT depth     ; 5.15                        ;
 +-----------------------+-----------------------------+
 
 
@@ -3408,7 +3419,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:07     ;
+; Top            ; 00:00:09     ;
 +----------------+--------------+
 
 
@@ -3418,7 +3429,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Sat Oct 04 16:37:47 2025
+    Info: Processing started: Sat Oct 04 19:04:12 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab1Demo -c Lab1Demo
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/vga/ghostbitmap.sv
@@ -3442,7 +3453,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file rtl/vga
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/vga/smiley_block_t.bdf
     Info (12023): Found entity 1: Smiley_Block_T
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/vga/smileybitmap.sv
-    Info (12023): Found entity 1: smileyBitMap File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/smileyBitMap.sv Line: 5
+    Info (12023): Found entity 1: smileyBitMap File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/smileyBitMap.sv Line: 6
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/vga/square_object.sv
     Info (12023): Found entity 1: square_object File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/square_object.sv Line: 8
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/vga/back_ground_draw.sv
@@ -3598,9 +3609,12 @@ Warning (10230): Verilog HDL assignment warning at VGA_Controller.sv(74): trunca
 Info (12128): Elaborating entity "objects_mux" for hierarchy "objects_mux:inst9"
 Info (12128): Elaborating entity "Smiley_Block_T" for hierarchy "Smiley_Block_T:inst1"
 Info (12128): Elaborating entity "smileyBitMap" for hierarchy "Smiley_Block_T:inst1|smileyBitMap:inst1"
-Warning (10230): Verilog HDL assignment warning at smileyBitMap.sv(26): truncated value with size 5 to match size of target (4) File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/smileyBitMap.sv Line: 26
-Warning (10230): Verilog HDL assignment warning at smileyBitMap.sv(27): truncated value with size 5 to match size of target (4) File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/smileyBitMap.sv Line: 27
-Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "object_colors" into its bus
+Warning (10230): Verilog HDL assignment warning at smileyBitMap.sv(34): truncated value with size 5 to match size of target (4) File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/smileyBitMap.sv Line: 34
+Warning (10230): Verilog HDL assignment warning at smileyBitMap.sv(35): truncated value with size 5 to match size of target (4) File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/smileyBitMap.sv Line: 35
+Warning (10958): SystemVerilog warning at smileyBitMap.sv(200): unique or priority keyword makes case statement complete File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/smileyBitMap.sv Line: 200
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "object_colors0" into its bus
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "object_colors1" into its bus
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "object_colors2" into its bus
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "hit_colors" into its bus
 Info (12128): Elaborating entity "square_object" for hierarchy "Smiley_Block_T:inst1|square_object:inst6"
 Info (12128): Elaborating entity "smiley_move" for hierarchy "Smiley_Block_T:inst1|smiley_move:inst"
@@ -3640,9 +3654,9 @@ Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "object_colors_super" into its bus
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "hit_colors" into its bus
 Info (12128): Elaborating entity "ghost_move" for hierarchy "Ghost_Block_T:inst8|ghost_move:inst"
-Warning (10230): Verilog HDL assignment warning at ghost_move.sv(108): truncated value with size 32 to match size of target (7) File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/ghost_move.sv Line: 108
+Warning (10230): Verilog HDL assignment warning at ghost_move.sv(107): truncated value with size 32 to match size of target (7) File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/ghost_move.sv Line: 107
+Warning (10230): Verilog HDL assignment warning at ghost_move.sv(200): truncated value with size 32 to match size of target (11) File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/ghost_move.sv Line: 200
 Warning (10230): Verilog HDL assignment warning at ghost_move.sv(201): truncated value with size 32 to match size of target (11) File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/ghost_move.sv Line: 201
-Warning (10230): Verilog HDL assignment warning at ghost_move.sv(202): truncated value with size 32 to match size of target (11) File: D:/LAB1ULTI/Lab1Demo_restored/RTL/VGA/ghost_move.sv Line: 202
 Info (12128): Elaborating entity "random" for hierarchy "Ghost_Block_T:inst8|random:inst3"
 Warning (10230): Verilog HDL assignment warning at random.sv(22): truncated value with size 32 to match size of target (2) File: D:/LAB1ULTI/Lab1Demo_restored/RTL/KEYBOARDX/random.sv Line: 22
 Warning (10230): Verilog HDL assignment warning at random.sv(23): truncated value with size 32 to match size of target (2) File: D:/LAB1ULTI/Lab1Demo_restored/RTL/KEYBOARDX/random.sv Line: 23
@@ -3797,18 +3811,18 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 8 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "AUD_ADCDAT"
-Info (21057): Implemented 2983 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3032 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 48 output pins
     Info (21060): Implemented 8 bidirectional pins
-    Info (21061): Implemented 2616 logic cells
+    Info (21061): Implemented 2665 logic cells
     Info (21064): Implemented 304 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 110 warnings
-    Info: Peak virtual memory: 4947 megabytes
-    Info: Processing ended: Sat Oct 04 16:38:04 2025
-    Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:25
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 111 warnings
+    Info: Peak virtual memory: 4952 megabytes
+    Info: Processing ended: Sat Oct 04 19:04:32 2025
+    Info: Elapsed time: 00:00:20
+    Info: Total CPU time (on all processors): 00:00:26
 
 
 +------------------------------------------+
