@@ -21,9 +21,9 @@ agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 296 224)
+	(rect 16 16 296 256)
 	(text "HartsMatrixBitMap" (rect 5 0 79 12)(font "Arial" ))
-	(text "inst" (rect 8 192 20 204)(font "Arial" ))
+	(text "inst" (rect 8 224 20 236)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -95,6 +95,13 @@ agreement for further details.
 		(line (pt 0 176)(pt 16 176)(line_width 1))
 	)
 	(port
+		(pt 0 192)
+		(input)
+		(text "startOfFrame" (rect 0 0 55 12)(font "Arial" ))
+		(text "startOfFrame" (rect 21 187 76 199)(font "Arial" ))
+		(line (pt 0 192)(pt 16 192)(line_width 1))
+	)
+	(port
 		(pt 280 32)
 		(output)
 		(text "drawingRequest" (rect 0 0 63 12)(font "Arial" ))
@@ -150,7 +157,13 @@ agreement for further details.
 		(text "Super" (rect 236 139 259 151)(font "Arial" ))
 		(line (pt 280 144)(pt 264 144)(line_width 1))
 	)
+	(parameter
+		"PAUSE_DURATION_FRAMES"
+		"90"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
-		(rectangle (rect 16 16 264 192)(line_width 1))
+		(rectangle (rect 16 16 264 224)(line_width 1))
 	)
+	(annotation_block (parameter)(rect 296 -64 396 16))
 )

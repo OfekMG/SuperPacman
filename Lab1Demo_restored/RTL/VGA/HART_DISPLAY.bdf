@@ -184,7 +184,7 @@ agreement for further details.
 	(input)
 	(rect 984 528 1192 544)
 	(text "INPUT" (rect 165 0 193 10)(font "Arial" (font_size 6)))
-	(text "collision_smiley_Super" (rect 5 0 115 17)(font "Intel Clear" ))
+	(text "collision_smiley_Super" (rect 5 0 114 17)(font "Intel Clear" ))
 	(pt 208 8)
 	(drawing
 		(line (pt 124 12)(pt 149 12))
@@ -195,6 +195,22 @@ agreement for further details.
 		(line (pt 149 12)(pt 153 8))
 	)
 	(text "VCC" (rect 168 7 188 17)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect 936 544 1104 560)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "startOfFrame" (rect 5 0 73 12)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
 )
 (pin
 	(output)
@@ -419,9 +435,9 @@ agreement for further details.
 	(annotation_block (parameter)(rect 744 208 999 284))
 )
 (symbol
-	(rect 1360 256 1640 464)
+	(rect 1360 256 1640 496)
 	(text "HartsMatrixBitMap" (rect 5 0 94 12)(font "Arial" ))
-	(text "inst6" (rect 8 192 31 204)(font "Arial" ))
+	(text "inst6" (rect 8 224 31 236)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -493,6 +509,13 @@ agreement for further details.
 		(line (pt 0 176)(pt 16 176))
 	)
 	(port
+		(pt 0 192)
+		(input)
+		(text "startOfFrame" (rect 0 0 67 12)(font "Arial" ))
+		(text "startOfFrame" (rect 21 187 88 199)(font "Arial" ))
+		(line (pt 0 192)(pt 16 192))
+	)
+	(port
 		(pt 280 32)
 		(output)
 		(text "drawingRequest" (rect 0 0 77 12)(font "Arial" ))
@@ -548,9 +571,15 @@ agreement for further details.
 		(text "Super" (rect 236 139 259 151)(font "Arial" ))
 		(line (pt 280 144)(pt 264 144))
 	)
+	(parameter
+		"PAUSE_DURATION_FRAMES"
+		"90"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
-		(rectangle (rect 16 16 264 192))
+		(rectangle (rect 16 16 264 224))
 	)
+	(annotation_block (parameter)(rect 296 -24 560 16))
 )
 (connector
 	(pt 1000 360)
@@ -807,6 +836,18 @@ agreement for further details.
 (connector
 	(pt 1640 352)
 	(pt 1760 352)
+)
+(connector
+	(pt 1360 448)
+	(pt 1352 448)
+)
+(connector
+	(pt 1352 448)
+	(pt 1352 552)
+)
+(connector
+	(pt 1352 552)
+	(pt 1104 552)
 )
 (junction (pt 1640 336))
 (junction (pt 1640 352))
