@@ -121,7 +121,7 @@ VCCPD3A                      : AA10      : power  :                   : 3.3V    
 GND                          : AA11      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA12      :        :                   :         : 3A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA13      :        :                   :         : 3B        :                
-boardersDrawReq              : AA14      : output : 3.3-V LVTTL       :         : 3B        : N              
+BG_RGB[3]                    : AA14      : output : 3.3-V LVTTL       :         : 3B        : N              
 KEY[3]                       : AA15      : input  : 3.3-V LVTTL       :         : 3B        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA16      :        :                   :         : 4A        :                
 VCCIO4A                      : AA17      : power  :                   : 3.3V    : 4A        :                
@@ -263,9 +263,9 @@ GND                          : AF2       : gnd    :                   :         
 GND                          : AF3       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF4       :        :                   :         : 3A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF5       :        :                   :         : 3A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AF6       :        :                   :         : 3A        :                
+BG_RGB[0]                    : AF6       : output : 3.3-V LVTTL       :         : 3A        : N              
 VCCIO3A                      : AF7       : power  :                   : 3.3V    : 3A        :                
-BG_RGB[0]                    : AF8       : output : 3.3-V LVTTL       :         : 3A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF8       :        :                   :         : 3A        :                
 redLight                     : AF9       : output : 3.3-V LVTTL       :         : 3A        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF10      :        :                   :         : 3A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF11      :        :                   :         : 3B        :                
@@ -273,10 +273,10 @@ GND                          : AF12      : gnd    :                   :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF13      :        :                   :         : 3B        :                
 CLOCK_50                     : AF14      : input  : 3.3-V LVTTL       :         : 3B        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF15      :        :                   :         : 3B        :                
-BG_RGB[3]                    : AF16      : output : 3.3-V LVTTL       :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF16      :        :                   :         : 4A        :                
 GND                          : AF17      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF18      :        :                   :         : 4A        :                
-BG_RGB[5]                    : AF19      : output : 3.3-V LVTTL       :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF19      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF20      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF21      :        :                   :         : 4A        :                
 VCCIO4A                      : AF22      : power  :                   : 3.3V    : 4A        :                
@@ -302,7 +302,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AG11      :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG12      :        :                   :         : 3B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG13      :        :                   :         : 3B        :                
 GND                          : AG14      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AG15      :        :                   :         : 3B        :                
+boardersDrawReq              : AG15      : output : 3.3-V LVTTL       :         : 3B        : N              
 HEX0[3]                      : AG16      : output : 3.3-V LVTTL       :         : 4A        : Y              
 HEX0[2]                      : AG17      : output : 3.3-V LVTTL       :         : 4A        : Y              
 HEX0[5]                      : AG18      : output : 3.3-V LVTTL       :         : 4A        : Y              
@@ -901,7 +901,7 @@ GND                          : V12       : gnd    :                   :         
 VCC                          : V13       : power  :                   : 1.1V    :           :                
 GND                          : V14       : gnd    :                   :         :           :                
 VCC                          : V15       : power  :                   : 1.1V    :           :                
-BG_RGB[4]                    : V16       : output : 3.3-V LVTTL       :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : V16       :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : V17       :        :                   :         : 4A        :                
 HEX0[1]                      : V18       : output : 3.3-V LVTTL       :         : 4A        : Y              
 GND                          : V19       : gnd    :                   :         :           :                
@@ -930,7 +930,7 @@ GND                          : W11       : gnd    :                   :         
 VCC                          : W12       : power  :                   : 1.1V    :           :                
 GND                          : W13       : gnd    :                   :         :           :                
 VCC                          : W14       : power  :                   : 1.1V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : W15       :        :                   :         : 3B        :                
+BG_RGB[5]                    : W15       : output : 3.3-V LVTTL       :         : 3B        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : W16       :        :                   :         : 4A        :                
 HEX0[0]                      : W17       : output : 3.3-V LVTTL       :         : 4A        : Y              
 GND                          : W18       : gnd    :                   :         :           :                
@@ -961,7 +961,7 @@ GND                          : Y12       : gnd    :                   :         
 VCC                          : Y13       : power  :                   : 1.1V    :           :                
 GND                          : Y14       : gnd    :                   :         :           :                
 GND                          : Y15       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y16       :        :                   :         : 3B        :                
+BG_RGB[4]                    : Y16       : output : 3.3-V LVTTL       :         : 3B        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y17       :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y18       :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y19       :        :                   :         : 4A        :                

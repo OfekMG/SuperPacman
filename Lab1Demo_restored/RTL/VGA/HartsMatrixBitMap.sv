@@ -215,6 +215,7 @@ always_ff @(posedge clk or negedge resetN) begin
                     MazeBitMapMask[offsetY_MSB][offsetX_MSB] <= 4'h0; // מחק את הנקודה הספציפית
                     RGBoutSuper <= TRANSPARENT_ENCODING;
                      Super <= 1'b1; // רק אם אכן נחסמה נקודה - נסמן נקודה נאכלת
+							pause_counter <= 0;
                 end
             end
         end
