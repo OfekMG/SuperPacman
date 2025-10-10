@@ -109,6 +109,13 @@ agreement for further details.
 		(line (pt 0 208)(pt 16 208))
 	)
 	(port
+		(pt 0 224)
+		(input)
+		(text "strike" (rect 0 0 33 19)(font "Intel Clear" (font_size 8)))
+		(text "strike" (rect 21 219 54 238)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 224)(pt 16 224))
+	)
+	(port
 		(pt 312 32)
 		(output)
 		(text "HartDrawingRequest" (rect 0 0 122 19)(font "Intel Clear" (font_size 8)))

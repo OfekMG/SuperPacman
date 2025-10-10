@@ -182,7 +182,7 @@ agreement for further details.
 )
 (pin
 	(input)
-	(rect 984 528 1192 544)
+	(rect 984 512 1192 528)
 	(text "INPUT" (rect 165 0 193 10)(font "Arial" (font_size 6)))
 	(text "collision_smiley_Super" (rect 5 0 114 17)(font "Intel Clear" ))
 	(pt 208 8)
@@ -198,9 +198,25 @@ agreement for further details.
 )
 (pin
 	(input)
-	(rect 936 544 1104 560)
+	(rect 976 528 1144 544)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
 	(text "startOfFrame" (rect 5 0 73 12)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect 976 544 1144 560)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "strike" (rect 5 0 33 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -516,6 +532,13 @@ agreement for further details.
 		(line (pt 0 192)(pt 16 192))
 	)
 	(port
+		(pt 0 208)
+		(input)
+		(text "strike" (rect 0 0 27 12)(font "Arial" ))
+		(text "strike" (rect 21 203 48 215)(font "Arial" ))
+		(line (pt 0 208)(pt 16 208))
+	)
+	(port
 		(pt 280 32)
 		(output)
 		(text "drawingRequest" (rect 0 0 77 12)(font "Arial" ))
@@ -791,18 +814,6 @@ agreement for further details.
 	(pt 1736 408)
 )
 (connector
-	(pt 1192 536)
-	(pt 1336 536)
-)
-(connector
-	(pt 1336 536)
-	(pt 1336 432)
-)
-(connector
-	(pt 1336 432)
-	(pt 1360 432)
-)
-(connector
 	(pt 1640 304)
 	(pt 1688 304)
 	(bus)
@@ -810,6 +821,30 @@ agreement for further details.
 (connector
 	(pt 1640 320)
 	(pt 1704 320)
+)
+(connector
+	(pt 1360 432)
+	(pt 1280 432)
+)
+(connector
+	(pt 1192 520)
+	(pt 1280 520)
+)
+(connector
+	(pt 1280 432)
+	(pt 1280 520)
+)
+(connector
+	(pt 1360 448)
+	(pt 1296 448)
+)
+(connector
+	(pt 1296 448)
+	(pt 1296 536)
+)
+(connector
+	(pt 1144 536)
+	(pt 1296 536)
 )
 (connector
 	(pt 1608 288)
@@ -838,16 +873,16 @@ agreement for further details.
 	(pt 1760 352)
 )
 (connector
-	(pt 1360 448)
-	(pt 1352 448)
+	(pt 1360 464)
+	(pt 1312 464)
 )
 (connector
-	(pt 1352 448)
-	(pt 1352 552)
+	(pt 1312 464)
+	(pt 1312 552)
 )
 (connector
-	(pt 1352 552)
-	(pt 1104 552)
+	(pt 1312 552)
+	(pt 1144 552)
 )
 (junction (pt 1640 336))
 (junction (pt 1640 352))

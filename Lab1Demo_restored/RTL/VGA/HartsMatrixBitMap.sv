@@ -15,6 +15,7 @@ module HartsMatrixBitMap (
 	 input  logic        collision_smiley_Dot,
 	 input  logic        collision_smiley_Super,
 	 input  logic        startOfFrame,
+	 input  logic        strike,
 
     output logic        drawingRequest,    // output that the pixel should be displayed (full tile)
     output logic [7:0]  RGBout,           // rgb value from the bitmap (full tile)
@@ -46,7 +47,7 @@ logic [10:0] offsetY_MSB;
 logic [6:0] pause_counter;
 
 
-parameter int PAUSE_DURATION_FRAMES = 90; // 3 sec @ 30Hz
+parameter int PAUSE_DURATION_FRAMES = 300;// 3 sec @ 30Hz
 
 // Get the pixel's coordinates WITHIN a 32x32 tile (lower 5 bits)
 assign offsetX_LSB  = offsetX[(TILE_NUMBER_OF_X_BITS-1):0];
@@ -86,7 +87,7 @@ logic [0:15][0:31][3:0] MazeDefaultBitMapMask = '{
 // index 2 : full tile color (8'h73)
 // index 3 : full tile color (8'h73)
 logic [3:0][0:(TILE_HEIGHT_Y-1)][0:(TILE_WIDTH_X-1)][7:0] object_colors = '{
-    // index 0
+    // index 3
     '{
 	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
 	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
@@ -160,7 +161,7 @@ logic [3:0][0:(TILE_HEIGHT_Y-1)][0:(TILE_WIDTH_X-1)][7:0] object_colors = '{
 	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
 	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff}},
  
-    // index 3
+    // index 0
     '{ default: '{ default: 8'h73 } }
 };
 
@@ -193,7 +194,7 @@ always_ff @(posedge clk or negedge resetN) begin
         RGBoutDot <= TRANSPARENT_ENCODING;
         score     <= 1'b0;
         if (Super && startOfFrame) begin
-							 if (pause_counter < PAUSE_DURATION_FRAMES - 1)
+							 if (!strike && (pause_counter < PAUSE_DURATION_FRAMES - 1))
                       pause_counter <= pause_counter + 1;
                   else
                       Super = 1'b0;
