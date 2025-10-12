@@ -21,9 +21,9 @@ agreement for further details.
 */
 (header "symbol" (version "1.2"))
 (symbol
-	(rect 16 16 288 176)
+	(rect 16 16 288 208)
 	(text "lives_display" (rect 5 0 82 19)(font "Intel Clear" (font_size 8)))
-	(text "inst" (rect 8 139 24 156)(font "Intel Clear" ))
+	(text "inst" (rect 8 171 24 188)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -74,6 +74,13 @@ agreement for further details.
 		(line (pt 0 128)(pt 16 128)(line_width 3))
 	)
 	(port
+		(pt 0 144)
+		(input)
+		(text "Super" (rect 0 0 35 19)(font "Intel Clear" (font_size 8)))
+		(text "Super" (rect 21 139 56 158)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 144)(pt 16 144))
+	)
+	(port
 		(pt 272 32)
 		(output)
 		(text "LivesDrawingRequest" (rect 0 0 127 19)(font "Intel Clear" (font_size 8)))
@@ -94,28 +101,7 @@ agreement for further details.
 		(text "gameOver" (rect 190 59 251 78)(font "Intel Clear" (font_size 8)))
 		(line (pt 272 64)(pt 256 64))
 	)
-	(parameter
-		"initial_x"
-		"280"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"initial_y"
-		"185"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"initial_x_speed"
-		"60"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"initial_y_speed"
-		"20"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
-		(rectangle (rect 16 16 256 144))
+		(rectangle (rect 16 16 256 176))
 	)
-	(annotation_block (parameter)(rect 288 -64 388 16))
 )

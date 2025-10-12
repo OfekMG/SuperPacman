@@ -16,6 +16,7 @@ module HartsMatrixBitMap (
 	 input  logic        collision_smiley_Super,
 	 input  logic        startOfFrame,
 	 input  logic        strike,
+	 input  logic        collision_smiley_pickaxe,
 
     output logic        drawingRequest,    // output that the pixel should be displayed (full tile)
     output logic [7:0]  RGBout,           // rgb value from the bitmap (full tile)
@@ -199,7 +200,10 @@ always_ff @(posedge clk or negedge resetN) begin
                   else
                       Super = 1'b0;
               end
-         
+        if (collision_smiley_pickaxe) begin
+				
+			
+		  end
         
         if (collision_smiley_Dot) begin
              if ((offsetX_MSB < MAZE_WIDTH_X) && (offsetY_MSB < MAZE_HEIGHT_Y)) begin
