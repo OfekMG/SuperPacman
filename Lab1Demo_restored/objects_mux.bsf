@@ -21,9 +21,9 @@ agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 264 416)
+	(rect 16 16 272 448)
 	(text "objects_mux" (rect 5 0 55 12)(font "Arial" ))
-	(text "inst" (rect 8 384 20 396)(font "Arial" ))
+	(text "inst" (rect 8 416 20 428)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -172,13 +172,27 @@ agreement for further details.
 		(line (pt 0 352)(pt 16 352)(line_width 3))
 	)
 	(port
-		(pt 248 32)
+		(pt 0 368)
+		(input)
+		(text "pickaxeDrawingRequest" (rect 0 0 95 12)(font "Arial" ))
+		(text "pickaxeDrawingRequest" (rect 21 363 116 375)(font "Arial" ))
+		(line (pt 0 368)(pt 16 368)(line_width 1))
+	)
+	(port
+		(pt 0 384)
+		(input)
+		(text "pickaxeRGB[7..0]" (rect 0 0 70 12)(font "Arial" ))
+		(text "pickaxeRGB[7..0]" (rect 21 379 91 391)(font "Arial" ))
+		(line (pt 0 384)(pt 16 384)(line_width 3))
+	)
+	(port
+		(pt 256 32)
 		(output)
 		(text "RGBOut[7..0]" (rect 0 0 55 12)(font "Arial" ))
-		(text "RGBOut[7..0]" (rect 172 27 227 39)(font "Arial" ))
-		(line (pt 248 32)(pt 232 32)(line_width 3))
+		(text "RGBOut[7..0]" (rect 180 27 235 39)(font "Arial" ))
+		(line (pt 256 32)(pt 240 32)(line_width 3))
 	)
 	(drawing
-		(rectangle (rect 16 16 232 384)(line_width 1))
+		(rectangle (rect 16 16 240 416)(line_width 1))
 	)
 )

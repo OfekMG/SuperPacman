@@ -25,7 +25,11 @@ module HartsMatrixBitMap (
     output logic        score,              // pulses 1 clock when a dot is eaten
 	 output logic        drawingRequestSuper,
 	 output logic [7:0]  RGBoutSuper,
-	 output logic        Super
+	 output logic        Super,
+	 output logic 			drawingRequestPickaxe,
+	 output logic [7:0]  RGBoutpickaxe,
+	 output logic        pickaxe
+
 );
 
 localparam logic [7:0] TRANSPARENT_ENCODING = 8'hFF; // RGB value representing transparent pixel
@@ -49,6 +53,8 @@ logic [6:0] pause_counter;
 
 
 parameter int PAUSE_DURATION_FRAMES = 300;// 3 sec @ 30Hz
+parameter int PICKAXE_WALLS = 3;// 3 sec @ 30Hz
+
 
 // Get the pixel's coordinates WITHIN a 32x32 tile (lower 5 bits)
 assign offsetX_LSB  = offsetX[(TILE_NUMBER_OF_X_BITS-1):0];
@@ -72,7 +78,7 @@ logic [0:15][0:31][3:0] MazeDefaultBitMapMask = '{
   '{1,1,2,1,1,2,1,1,1,2,1,1,1,2,1,1,1,1 ,1,1,1,2,1,1,1,2,1,1,2,1,1,1},
   '{1,2,2,2,2,2,2,2,1,2,2,2,2,2,2,2,2,1 ,2,2,2,2,2,2,2,2,2,2,2,2,2,1},
   '{1,1,1,2,1,1,2,1,1,1,1,2,1,1,2,1,1,1 ,1,2,1,1,2,1,1,1,1,2,1,1,1,1},
-  '{1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1 ,2,2,2,2,2,2,2,2,2,2,2,2,2,1},
+  '{1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,4,1 ,2,2,2,2,2,2,2,2,2,2,2,2,2,1},
   '{1,2,1,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1 ,1,2,1,1,2,1,1,2,1,1,2,1,2,1},
   '{1,2,2,3,1,2,2,2,2,2,2,2,1,2,2,2,3,1 ,2,2,2,2,2,2,1,2,2,2,2,2,2,1},
   '{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1 ,1,1,1,2,1,1,1,2,1,1,2,1,1,1},
@@ -162,9 +168,43 @@ logic [3:0][0:(TILE_HEIGHT_Y-1)][0:(TILE_WIDTH_X-1)][7:0] object_colors = '{
 	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
 	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff}},
  
-    // index 0
-    '{ default: '{ default: 8'h73 } }
+	 //index 4
+	 '{
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h0c,8'h0c,8'h0c,8'h0c,8'h0c,8'h0c,8'h0c,8'h0c,8'h0c,8'h0c,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h0c,8'h0c,8'h0c,8'h0c,8'h0c,8'h0c,8'h0c,8'h0c,8'h0c,8'h0c,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hda,8'hba,8'h15,8'h15,8'h11,8'h11,8'h11,8'h11,8'h11,8'h11,8'h11,8'h11,8'hda,8'hba,8'hda,8'hda,8'hda,8'hda,8'hfa,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h0c,8'h0c,8'h3f,8'h3f,8'h3e,8'h3e,8'h3a,8'h3a,8'h3a,8'h3a,8'h3e,8'h3e,8'h0c,8'h0c,8'h24,8'h64,8'h6c,8'h8c,8'h8c,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h0c,8'h0c,8'h3f,8'h3f,8'h3e,8'h3e,8'h3a,8'h3a,8'h3a,8'h3a,8'h3e,8'h3e,8'h0c,8'h04,8'h24,8'h64,8'h6c,8'h8c,8'h90,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h0c,8'h0c,8'h04,8'h04,8'h04,8'h04,8'h04,8'h04,8'h3a,8'h3a,8'h3a,8'h3a,8'h95,8'hb0,8'h64,8'h20,8'h24,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h0c,8'h0c,8'h04,8'h04,8'h04,8'h04,8'h04,8'h04,8'h3a,8'h3a,8'h3a,8'h3a,8'h95,8'hb0,8'h64,8'h20,8'h24,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h64,8'h64,8'h3e,8'h3e,8'h3a,8'h3a,8'h11,8'h04,8'h24,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h64,8'h64,8'h3e,8'h3e,8'h3a,8'h3a,8'h11,8'h04,8'h24,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h8c,8'h8c,8'h8c,8'h8c,8'h04,8'h04,8'h35,8'h3a,8'h3a,8'h3a,8'h3a,8'h2c,8'h04,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h64,8'h64,8'h8c,8'h8c,8'h20,8'h20,8'h31,8'h3a,8'h3a,8'h3e,8'h3a,8'h04,8'h04,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h64,8'h64,8'h8c,8'h8c,8'h20,8'h20,8'h35,8'h3a,8'h3e,8'h3e,8'h3a,8'h04,8'h04,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h64,8'h64,8'hb0,8'hb0,8'h20,8'h20,8'hff,8'hff,8'h91,8'h04,8'h11,8'h3a,8'h3a,8'h04,8'h04,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h64,8'h64,8'hb0,8'hb0,8'h20,8'h20,8'hff,8'hff,8'h91,8'h04,8'h11,8'h3a,8'h3a,8'h04,8'h04,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h64,8'h64,8'h8c,8'h8c,8'h24,8'h20,8'hff,8'hff,8'hff,8'hff,8'h91,8'h04,8'h11,8'h3a,8'h3a,8'h04,8'h04,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h64,8'h64,8'h8c,8'h8c,8'h20,8'h20,8'hff,8'hff,8'hff,8'hff,8'h91,8'h04,8'h11,8'h3a,8'h3a,8'h04,8'h04,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h64,8'h64,8'hb0,8'hb0,8'h24,8'h20,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h91,8'h04,8'h11,8'h3e,8'h3a,8'h04,8'h04,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h64,8'h64,8'hb0,8'hb0,8'h24,8'h20,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h91,8'h04,8'h11,8'h3e,8'h3a,8'h04,8'h04,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h64,8'h64,8'hb0,8'hb0,8'h24,8'h20,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h71,8'h04,8'h11,8'h3e,8'h3a,8'h04,8'h04,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h64,8'h64,8'h8c,8'h8c,8'h20,8'h20,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h91,8'h04,8'h15,8'h3f,8'h3e,8'h04,8'h04,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h64,8'h64,8'h8c,8'h8c,8'h20,8'h20,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h91,8'h04,8'h15,8'h3f,8'h7e,8'h04,8'h04,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h64,8'h64,8'hb0,8'hb0,8'h20,8'h20,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h96,8'h04,8'h24,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h64,8'h64,8'hb0,8'hb0,8'h20,8'h20,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h96,8'h04,8'h24,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h64,8'h64,8'h8c,8'h8c,8'h20,8'h20,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h64,8'h64,8'h8c,8'h8c,8'h20,8'h20,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h6c,8'h6c,8'h6c,8'h6c,8'h6c,8'h6c,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'h64,8'h64,8'hb0,8'hb0,8'h20,8'h24,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'h64,8'h64,8'hb0,8'hb0,8'h24,8'h24,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'h20,8'h20,8'h20,8'h20,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'h20,8'h20,8'h20,8'h20,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff}}
 };
+
+
 
 
 logic dot_pixel_will_be_drawn;
@@ -177,6 +217,7 @@ always_ff @(posedge clk or negedge resetN) begin
         RGBout            <= TRANSPARENT_ENCODING;
         RGBoutDot         <= TRANSPARENT_ENCODING;
 		  RGBoutSuper            <= TRANSPARENT_ENCODING;
+		  RGBoutpickaxe            <= TRANSPARENT_ENCODING;
         drawingRequest    <= 1'b0;
         drawingRequestDot <= 1'b0;
 		  drawingRequestSuper <= 1'b0;
@@ -200,9 +241,21 @@ always_ff @(posedge clk or negedge resetN) begin
                   else
                       Super = 1'b0;
               end
+		  if (pickaxe) begin
+					 if (MazeBitMapMask[offsetY_MSB][offsetX_MSB] == 4'h1) begin
+                    MazeBitMapMask[offsetY_MSB][offsetX_MSB] <= 4'h0; // מחק את הנקודה הספציפית
+                    RGBout <= TRANSPARENT_ENCODING;
+                end
+				end 
+							
         if (collision_smiley_pickaxe) begin
-				
-			
+				if ((offsetX_MSB < MAZE_WIDTH_X) && (offsetY_MSB < MAZE_HEIGHT_Y)) begin
+                if (MazeBitMapMask[offsetY_MSB][offsetX_MSB] == 4'h4) begin
+                    MazeBitMapMask[offsetY_MSB][offsetX_MSB] <= 4'h0; // מחק את הנקודה הספציפית
+                    RGBoutDot <= TRANSPARENT_ENCODING;
+                    pickaxe <= 1'b1; // רק אם אכן נחסמה נקודה - נסמן נקודה נאכלת
+                end
+            end
 		  end
         
         if (collision_smiley_Dot) begin
@@ -238,6 +291,8 @@ always_ff @(posedge clk or negedge resetN) begin
         drawingRequest    <= (RGBout != TRANSPARENT_ENCODING);
         drawingRequestDot <= (RGBoutDot != TRANSPARENT_ENCODING);
 		  drawingRequestSuper <= (RGBoutSuper != TRANSPARENT_ENCODING);
+		  drawingRequestPickaxe <= (RGBoutpickaxe != TRANSPARENT_ENCODING);
+
 
     end
 end

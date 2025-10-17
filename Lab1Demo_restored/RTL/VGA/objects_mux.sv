@@ -39,7 +39,7 @@ module	objects_mux	(
 		  // Dots
 					input    logic DotsDrawingRequest, 
 					input		logic	[7:0] DotsRGB,
-	
+
 					// add the box here 
 					input		logic	BoxDrwaingRequest, // two set of inputs per unit
 					input		logic	[7:0] BoxRGB,
@@ -51,8 +51,12 @@ module	objects_mux	(
 									 ////////////////////////
 		  // Superpacman
 					input    logic SuperDrawingRequest, 
-					input		logic	[7:0] SuperRGB		
-							
+					input		logic	[7:0] SuperRGB,	
+			 ////////////////////////
+		  // Dots
+					input    logic pickaxeDrawingRequest, 
+					input		logic	[7:0] pickaxeRGB
+								
 					
 );
 
@@ -78,6 +82,9 @@ begin
 			RGBOut <= pointsRGB;
 		else if (livesDrawingRequest == 1'b1)
 				RGBOut <= livesRGB;
+		else if (pickaxeDrawingRequest == 1'b1)
+				RGBOut <= pickaxeRGB;
+
 
 
 	

@@ -6,6 +6,7 @@ module LivesMatrixBitMap (
     input  logic        InsideRectangle,            // pixel is in bar
     input  logic        strike,   // one-cycle hit
 	 input  logic        Super,
+	 input  logic        startOfFrame,
 
     output logic        drawingRequest,             // pixel must be drawn
     output logic [7:0]  RGBout,
@@ -27,6 +28,12 @@ module LivesMatrixBitMap (
     logic [TILE_NUMBER_OF_X_BITS-1:0] offsetX_LSB;
     logic [TILE_NUMBER_OF_Y_BITS-1:0] offsetY_LSB;
     logic [MAZE_NUMBER_OF__X_BITS-1:0] offsetX_MSB;
+
+	parameter int PAUSE_DURATION_FRAMES = 90; // 3 sec @ 30Hz
+
+	logic [6:0] pause_counter;
+	logic Wait;
+
 	
     assign offsetX_LSB = offsetX[TILE_NUMBER_OF_X_BITS-1:0];
     assign offsetY_LSB = offsetY[TILE_NUMBER_OF_Y_BITS-1:0];
@@ -167,7 +174,15 @@ module LivesMatrixBitMap (
 		end
 	
 		else if(Super) begin 
-		end 
+		end
+		else if (Wait) begin 
+				if (startOfFrame) begin
+                    if (pause_counter < PAUSE_DURATION_FRAMES - 1)
+                        pause_counter <= pause_counter + 1;
+                    else
+                        Wait <= 1'b0;
+                end
+			end 		 
 		else if (lives == 0) begin
 				gameOver <= 1'b1;
 				for (int i = 2'b00; i < MAZE_WIDTH_X; i++) begin
@@ -180,35 +195,34 @@ module LivesMatrixBitMap (
 				for (int i = 2'b00; i < MAZE_WIDTH_X; i++) begin
 					LivesBitMapMask[MAZE_WIDTH_X-1-i] <= (i < lives + 1 ) ? 1'b1 : 1'b0 ;
 				end
+			Wait <= 1'b1;
+		end
 		end
 /*		 case(SM_LIVES)
             THREE_LIVES_ST: begin
 					LivesBitMapMask <= 4'b1111;
 
                 if (strike_rise) begin
-						  lives <= lives - 1'b1;
                     SM_LIVES <= TWO_LIVES_ST;
 						  end
             end
 				TWO_LIVES_ST: begin
 					LivesBitMapMask <= 4'b0111;
 				if (strike_rise) begin
-						  lives <= lives - 1'b1;
                     SM_LIVES <= ONE_LIVES_ST;
 						  end
 				end
 				ONE_LIVES_ST: begin
 					LivesBitMapMask <= 4'b0011;
 				if (strike_rise) begin
-						  lives <= lives - 1'b1;
                     SM_LIVES <= ENDGAME_ST;
 						  end
 				end 
 				ENDGAME_ST:begin 
                     gameOver <= 1'b1;
 				end
-				endcase */
-			end
+				endcase 
+			end*/
 		
 always_ff@(posedge clk or negedge resetN)
 begin
