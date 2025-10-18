@@ -11,10 +11,7 @@ module melody_player_1
  input logic resetN ,
  input logic CLOCK_31p5 ,
  input logic startMelodyKey ,
- input logic [3:0] melodySelect ,
- input logic collision,
- input logic superi,
-	// selector of one melody  
+ input logic [3:0] melodySelect ,     // selector of one melody  
       // from Jukebox: silence signal
  
   output logic [3:0] tone,
@@ -54,7 +51,7 @@ module melody_player_1
   // Instances of Music options 
   //----------------------------------------------------------------------------------------------------------									  									  								 
 							 
-	JukeBox1  JukeBox1 (.melodySelect(melodySelect), .noteIndex(noteIndex) , .collision(collision) , .superi(superi) , .tone(tone), .note_length(note_length) , .silenceOutN(silenceN) ) ;
+	JukeBox1  JukeBox1 (.melodySelect(melodySelect), .noteIndex(noteIndex) , .tone(tone), .note_length(note_length) , .silenceOutN(silenceN) ) ;
 
   							 
 //----------------------------------------------------------------------------------------------------------								 					 	 
