@@ -33,13 +33,7 @@ module lives_counter_module (
 
             strike_sync0 <= 1'b0;
             strike_sync1 <= 1'b0;
-        end else if (Super) begin 
-		  end else if ( pause && startOfFrame) begin
-							 if ((pause_counter < PAUSE_DURATION_FRAMES - 1))
-                      pause_counter <= pause_counter + 1;
-                  else
-                      pause = 1'b0;
-              end else begin
+        end else begin
             strike_sync0 <= strike;
             strike_sync1 <= strike_sync0;
 
@@ -52,6 +46,14 @@ module lives_counter_module (
 				o_next = units;
             t_next = tens;
             h_next = hundreds;
+				
+				if (Super) begin 
+				end else if (pause && startOfFrame) begin
+							 if ((pause_counter < PAUSE_DURATION_FRAMES - 1))
+                      pause_counter <= pause_counter + 1;
+                  else
+                      pause = 1'b0;
+              end 
 
              if (strike_rising) begin
                 // *** DECREMENT path ***

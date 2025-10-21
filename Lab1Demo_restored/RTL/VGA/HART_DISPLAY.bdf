@@ -688,7 +688,7 @@ agreement for further details.
 	)
 	(parameter
 		"PAUSE_DURATION_FRAMES"
-		"150"
+		"300"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
@@ -699,7 +699,7 @@ agreement for further details.
 	(drawing
 		(rectangle (rect 16 16 272 256))
 	)
-	(annotation_block (parameter)(rect 296 -48 559 9))
+	(annotation_block (parameter)(rect 1344 88 1607 145))
 )
 (connector
 	(pt 1000 360)
