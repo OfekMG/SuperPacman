@@ -53,9 +53,12 @@ module	objects_mux	(
 					input    logic SuperDrawingRequest, 
 					input		logic	[7:0] SuperRGB,	
 			 ////////////////////////
-		  // Dots
+		  // pickaxe
 					input    logic pickaxeDrawingRequest, 
-					input		logic	[7:0] pickaxeRGB
+					input		logic	[7:0] pickaxeRGB,
+			// pickaxe_cntr
+					input    logic pickaxecntrDrawingRequest, 
+					input		logic	[7:0] pickaxecntrRGB
 								
 					
 );
@@ -84,6 +87,8 @@ begin
 				RGBOut <= livesRGB;
 		else if (pickaxeDrawingRequest == 1'b1)
 				RGBOut <= pickaxeRGB;
+		else if (pickaxecntrDrawingRequest == 1'b1)
+				RGBOut <= pickaxecntrRGB;
 
 
 

@@ -1,5 +1,5 @@
 Flow report for Lab1Demo
-Tue Oct 21 15:10:23 2025
+Tue Oct 21 19:47:25 2025
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -41,15 +41,15 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Tue Oct 21 15:10:13 2025       ;
+; Flow Status                     ; Successful - Tue Oct 21 19:47:16 2025       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; Lab1Demo                                    ;
 ; Top-level Entity Name           ; TOP_VGA_DEMO_KBD                            ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSXFC6D6F31C6                              ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 1,981 / 41,910 ( 5 % )                      ;
-; Total registers                 ; 2012                                        ;
+; Logic utilization (in ALMs)     ; 2,124 / 41,910 ( 5 % )                      ;
+; Total registers                 ; 2020                                        ;
 ; Total pins                      ; 62 / 499 ( 12 % )                           ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 2,460,672 / 5,662,720 ( 43 % )              ;
@@ -68,7 +68,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/21/2025 15:06:05 ;
+; Start date & time ; 10/21/2025 19:43:22 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Lab1Demo            ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ agreement for further details.
 +-------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------+------------------+------------------+
 ; Assignment Name                     ; Value                                                                                                            ; Default Value ; Entity Name      ; Section Id       ;
 +-------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------+------------------+------------------+
-; COMPILER_SIGNATURE_ID               ; 10995770589192.176104836438908                                                                                   ; --            ; --               ; --               ;
+; COMPILER_SIGNATURE_ID               ; 10995770589192.176106500219992                                                                                   ; --            ; --               ; --               ;
 ; ENABLE_SIGNALTAP                    ; On                                                                                                               ; --            ; --               ; --               ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                                                                                               ; --            ; --               ; --               ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                                                                                                ; --            ; --               ; --               ;
@@ -136,11 +136,11 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:27     ; 2.1                     ; 5091 MB             ; 00:01:00                           ;
-; Fitter                    ; 00:03:29     ; 1.2                     ; 7671 MB             ; 00:21:06                           ;
-; Assembler                 ; 00:00:08     ; 1.0                     ; 4904 MB             ; 00:00:07                           ;
-; TimeQuest Timing Analyzer ; 00:00:09     ; 3.1                     ; 5402 MB             ; 00:00:26                           ;
-; Total                     ; 00:04:13     ; --                      ; --                  ; 00:22:39                           ;
+; Analysis & Synthesis      ; 00:00:27     ; 2.4                     ; 5096 MB             ; 00:01:04                           ;
+; Fitter                    ; 00:03:15     ; 1.2                     ; 7657 MB             ; 00:20:46                           ;
+; Assembler                 ; 00:00:08     ; 1.0                     ; 4906 MB             ; 00:00:07                           ;
+; TimeQuest Timing Analyzer ; 00:00:09     ; 3.3                     ; 5403 MB             ; 00:00:24                           ;
+; Total                     ; 00:03:59     ; --                      ; --                  ; 00:22:21                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
