@@ -1,7 +1,8 @@
-module counter_module (
+ounter_module (
     input  logic        clk,
     input  logic        resetN,
-    input  logic        score,	 
+    input  logic        strike,	 
+	 input  logic        Super,
 
     output logic [3:0]  units,
     output logic [3:0]  tens,
@@ -12,8 +13,8 @@ module counter_module (
     parameter logic [3:0] INIT_HUNDREDS = 4'd0;
 	
 	//identify rising edge
-    logic score_sync0, score_sync1;
-    logic score_rising;
+    logic strike_sync0, strike_sync1;
+    logic strike_rising;
 
 	// to calculate next value
     logic [3:0] o_next, t_next, h_next;
@@ -24,14 +25,15 @@ module counter_module (
             tens     <= INIT_TENS;
             hundreds <= INIT_HUNDREDS;
 
-            score_sync0 <= 1'b0;
-            score_sync1 <= 1'b0;
-        end else begin
-            score_sync0 <= score;
-            score_sync1 <= score_sync0;
+            strike_sync0 <= 1'b0;
+            strike_sync1 <= 1'b0;
+        end else if (Super) begin 
+		  end else begin
+            strike_sync0 <= strike;
+            strike_sync1 <= strike_sync0;
 
 				// finding edge
-            score_rising = score_sync1 && !score_sync0; // note: שים לב שסדר ההשמה כאן משתמש בבדיקת ההיסטוריה; אפשר גם לעשות בשני מצבים
+            strike_rising = strike_sync1 && !strike_sync0; // note: שים לב שסדר ההשמה כאן משתמש בבדיקת ההיסטוריה; אפשר גם לעשות בשני מצבים
             // ניתן לשים prev_score ולחשב: score_rising = score_sync1 && !prev_score; prev_score <= score_sync1;
 
 
@@ -39,19 +41,20 @@ module counter_module (
 				o_next = units;
             t_next = tens;
             h_next = hundreds;
-				if (score_rising) begin
-             // *** INCREMENT path ***
-                if (units == 4'd9) begin
-                    o_next = 4'd0;
-                    if (tens == 4'd9) begin
-                        t_next = 4'd0;
-                        h_next = (hundreds == 4'd9) ? 4'd0 : (hundreds + 4'd1);
+
+             if (strike_rising) begin
+                // *** DECREMENT path ***
+                if (units == 4'd0) begin
+                    o_next = 4'd9;
+                    if (tens == 4'd0) begin
+                        t_next = 4'd9;
+                        h_next = (hundreds == 4'd0) ? 4'd9 : (hundreds - 4'd1);
                     end else begin
-                        t_next = tens + 4'd1;
+                        t_next = tens - 4'd1;
                         h_next = hundreds;
                     end
                 end else begin
-                    o_next = units + 4'd1;
+                    o_next = units - 4'd1;
                     t_next = tens;
                     h_next = hundreds;
                 end

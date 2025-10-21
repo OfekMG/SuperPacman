@@ -16,15 +16,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "BG_RGB[5]",
+					"name" : "OVGA[27]",
 					"strict" : false
 				},
 				{
-					"name" : "BG_RGB[4]",
+					"name" : "OVGA[25]",
 					"strict" : false
 				},
 				{
-					"name" : "BG_RGB[3]",
+					"name" : "OVGA[24]",
 					"strict" : false
 				},
 				{
@@ -56,15 +56,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "OVGA[27]",
+					"name" : "BG_RGB[5]",
 					"strict" : false
 				},
 				{
-					"name" : "OVGA[25]",
+					"name" : "BG_RGB[4]",
 					"strict" : false
 				},
 				{
-					"name" : "OVGA[24]",
+					"name" : "BG_RGB[3]",
 					"strict" : false
 				},
 				{

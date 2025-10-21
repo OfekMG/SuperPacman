@@ -21,9 +21,9 @@ agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 200 128)
-	(text "counter_module" (rect 5 0 68 12)(font "Arial" ))
-	(text "inst" (rect 8 96 20 108)(font "Arial" ))
+	(rect 16 16 232 160)
+	(text "lives_counter_module" (rect 5 0 92 12)(font "Arial" ))
+	(text "inst" (rect 8 128 20 140)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -41,30 +41,44 @@ agreement for further details.
 	(port
 		(pt 0 64)
 		(input)
-		(text "score" (rect 0 0 22 12)(font "Arial" ))
-		(text "score" (rect 21 59 43 71)(font "Arial" ))
+		(text "strike" (rect 0 0 21 12)(font "Arial" ))
+		(text "strike" (rect 21 59 42 71)(font "Arial" ))
 		(line (pt 0 64)(pt 16 64)(line_width 1))
 	)
 	(port
-		(pt 184 32)
+		(pt 0 80)
+		(input)
+		(text "Super" (rect 0 0 23 12)(font "Arial" ))
+		(text "Super" (rect 21 75 44 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 1))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "startOfFrame" (rect 0 0 55 12)(font "Arial" ))
+		(text "startOfFrame" (rect 21 91 76 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 1))
+	)
+	(port
+		(pt 216 32)
 		(output)
 		(text "units[3..0]" (rect 0 0 37 12)(font "Arial" ))
-		(text "units[3..0]" (rect 126 27 163 39)(font "Arial" ))
-		(line (pt 184 32)(pt 168 32)(line_width 3))
+		(text "units[3..0]" (rect 158 27 195 39)(font "Arial" ))
+		(line (pt 216 32)(pt 200 32)(line_width 3))
 	)
 	(port
-		(pt 184 48)
+		(pt 216 48)
 		(output)
 		(text "tens[3..0]" (rect 0 0 36 12)(font "Arial" ))
-		(text "tens[3..0]" (rect 127 43 163 55)(font "Arial" ))
-		(line (pt 184 48)(pt 168 48)(line_width 3))
+		(text "tens[3..0]" (rect 159 43 195 55)(font "Arial" ))
+		(line (pt 216 48)(pt 200 48)(line_width 3))
 	)
 	(port
-		(pt 184 64)
+		(pt 216 64)
 		(output)
 		(text "hundreds[3..0]" (rect 0 0 56 12)(font "Arial" ))
-		(text "hundreds[3..0]" (rect 107 59 163 71)(font "Arial" ))
-		(line (pt 184 64)(pt 168 64)(line_width 3))
+		(text "hundreds[3..0]" (rect 139 59 195 71)(font "Arial" ))
+		(line (pt 216 64)(pt 200 64)(line_width 3))
 	)
 	(parameter
 		"INIT_ONES"
@@ -81,8 +95,13 @@ agreement for further details.
 		"0000"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"PAUSE_DURATION_FRAMES"
+		"90"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
-		(rectangle (rect 16 16 168 96)(line_width 1))
+		(rectangle (rect 16 16 200 128)(line_width 1))
 	)
-	(annotation_block (parameter)(rect 200 -64 300 16))
+	(annotation_block (parameter)(rect 232 -64 332 16))
 )

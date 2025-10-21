@@ -1,2 +1,3 @@
-Warning (10268): Verilog HDL information at HartsMatrixBitMap.sv(215): always construct contains both blocking and non-blocking assignments File: D:/NEW/SuperPacman/Lab1Demo_restored/RTL/VGA/HartsMatrixBitMap.sv Line: 215
-Warning (10268): Verilog HDL information at counter_module.sv(21): always construct contains both blocking and non-blocking assignments File: D:/NEW/SuperPacman/Lab1Demo_restored/RTL/VGA/counter_module.sv Line: 21
+Warning (10268): Verilog HDL information at HartsMatrixBitMap.sv(216): always construct contains both blocking and non-blocking assignments File: C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/HartsMatrixBitMap.sv Line: 216
+Warning (10268): Verilog HDL information at counter_module.sv(21): always construct contains both blocking and non-blocking assignments File: C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/counter_module.sv Line: 21
+Warning (10268): Verilog HDL information at lives_counter_module.sv(28): always construct contains both blocking and non-blocking assignments File: C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/lives_counter_module.sv Line: 28

@@ -4,9 +4,10 @@ module LivesMatrixBitMap (
     input  logic [10:0] offsetX,  // offset from top-left position
     input  logic [10:0] offsetY,
     input  logic        InsideRectangle,            // pixel is in bar
-    input  logic        strike,   // one-cycle hit
+    input  logic        strike,
 	 input  logic        Super,
 	 input  logic        startOfFrame,
+	 input  logic [3:0]  lives,
 
     output logic        drawingRequest,             // pixel must be drawn
     output logic [7:0]  RGBout,
@@ -39,11 +40,6 @@ module LivesMatrixBitMap (
     assign offsetY_LSB = offsetY[TILE_NUMBER_OF_Y_BITS-1:0];
     assign offsetX_MSB = offsetX[TILE_NUMBER_OF_X_BITS+MAZE_NUMBER_OF__X_BITS-1:
                                  TILE_NUMBER_OF_X_BITS];
-	 logic [1:0] lives;
-	 logic [1:0] prev_lives;
-    logic       strike_d;    // delayed strike
-    logic       strike_rise; // detect rising edge
-	 
 	 //enum logic [2:0] {THREE_LIVES_ST, TWO_LIVES_ST, ONE_LIVES_ST, ENDGAME_ST} SM_LIVES;
 
 
@@ -156,7 +152,7 @@ module LivesMatrixBitMap (
     //  MazeBitMapMask CONTROLLER
     // ==============================================================
      // Rising edge detector
-    always_ff @(posedge clk or negedge resetN) begin
+  /*  always_ff @(posedge clk or negedge resetN) begin
         if (!resetN) begin
             strike_d    <= 1'b0;
             strike_rise <= 1'b0;
@@ -164,34 +160,37 @@ module LivesMatrixBitMap (
             strike_rise <= strike & ~strike_d;
             strike_d    <= strike;
         end
-    end
+    end*/
 
  always_ff @(posedge clk or negedge resetN) begin
 		if (!resetN) begin 
-			lives <= 2'b11;
+			//lives <= 2'b11;
 			gameOver <= 1'b0;
 			//SM_LIVES <= THREE_LIVES_ST;
 		end
 	
-		else if(Super) begin 
-		end
-		else if (Wait) begin 
+		/*else if (Wait) begin 
 				if (startOfFrame) begin
                     if (pause_counter < PAUSE_DURATION_FRAMES - 1)
                         pause_counter <= pause_counter + 1;
                     else
                         Wait <= 1'b0;
                 end
-			end 		 
-		else if (lives == 0) begin
-				gameOver <= 1'b1;
+			end*/ 		 
+		else 
+		//if (lives == 0) 
+		begin
 				for (int i = 2'b00; i < MAZE_WIDTH_X; i++) begin
-					LivesBitMapMask[MAZE_WIDTH_X-1-i] <= 0;
+					LivesBitMapMask[MAZE_WIDTH_X-1-i] <= ( i < lives );
 				end
+				if (lives == 0) begin
+								gameOver <= 1'b1;
+            end
 			end
+		end
 			
-			else if (strike_rise) begin
-				lives <= lives - 2'b01;
+			/*else if (strike) begin
+				//lives <= lives - 2'b01;
 				for (int i = 2'b00; i < MAZE_WIDTH_X; i++) begin
 					LivesBitMapMask[MAZE_WIDTH_X-1-i] <= (i < lives + 1 ) ? 1'b1 : 1'b0 ;
 				end

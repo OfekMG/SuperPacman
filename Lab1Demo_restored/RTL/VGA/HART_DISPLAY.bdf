@@ -232,7 +232,7 @@ agreement for further details.
 	(input)
 	(rect 944 576 1160 592)
 	(text "INPUT" (rect 173 0 201 10)(font "Arial" (font_size 6)))
-	(text "collision_smiley_pickaxe" (rect 5 0 127 12)(font "Arial" ))
+	(text "collision_smiley_pickaxe" (rect 5 0 126 12)(font "Arial" ))
 	(pt 216 8)
 	(drawing
 		(line (pt 132 12)(pt 157 12))
@@ -613,93 +613,93 @@ agreement for further details.
 		(pt 288 32)
 		(output)
 		(text "drawingRequest" (rect 0 0 77 12)(font "Arial" ))
-		(text "drawingRequest" (rect 202 27 267 39)(font "Arial" ))
+		(text "drawingRequest" (rect 202 27 279 39)(font "Arial" ))
 		(line (pt 288 32)(pt 272 32))
 	)
 	(port
 		(pt 288 48)
 		(output)
 		(text "RGBout[7..0]" (rect 0 0 64 12)(font "Arial" ))
-		(text "RGBout[7..0]" (rect 213 43 267 55)(font "Arial" ))
+		(text "RGBout[7..0]" (rect 213 43 277 55)(font "Arial" ))
 		(line (pt 288 48)(pt 272 48)(line_width 3))
 	)
 	(port
 		(pt 288 64)
 		(output)
 		(text "drawingRequestDot" (rect 0 0 95 12)(font "Arial" ))
-		(text "drawingRequestDot" (rect 187 59 267 71)(font "Arial" ))
+		(text "drawingRequestDot" (rect 187 59 282 71)(font "Arial" ))
 		(line (pt 288 64)(pt 272 64))
 	)
 	(port
 		(pt 288 80)
 		(output)
 		(text "RGBoutDot[7..0]" (rect 0 0 82 12)(font "Arial" ))
-		(text "RGBoutDot[7..0]" (rect 198 75 267 87)(font "Arial" ))
+		(text "RGBoutDot[7..0]" (rect 198 75 280 87)(font "Arial" ))
 		(line (pt 288 80)(pt 272 80)(line_width 3))
 	)
 	(port
 		(pt 288 96)
 		(output)
 		(text "score" (rect 0 0 27 12)(font "Arial" ))
-		(text "score" (rect 245 91 267 103)(font "Arial" ))
+		(text "score" (rect 245 91 272 103)(font "Arial" ))
 		(line (pt 288 96)(pt 272 96))
 	)
 	(port
 		(pt 288 112)
 		(output)
 		(text "drawingRequestSuper" (rect 0 0 106 12)(font "Arial" ))
-		(text "drawingRequestSuper" (rect 178 107 267 119)(font "Arial" ))
+		(text "drawingRequestSuper" (rect 178 107 284 119)(font "Arial" ))
 		(line (pt 288 112)(pt 272 112))
 	)
 	(port
 		(pt 288 128)
 		(output)
 		(text "RGBoutSuper[7..0]" (rect 0 0 93 12)(font "Arial" ))
-		(text "RGBoutSuper[7..0]" (rect 189 123 267 135)(font "Arial" ))
+		(text "RGBoutSuper[7..0]" (rect 189 123 282 135)(font "Arial" ))
 		(line (pt 288 128)(pt 272 128)(line_width 3))
 	)
 	(port
 		(pt 288 144)
 		(output)
 		(text "Super" (rect 0 0 28 12)(font "Arial" ))
-		(text "Super" (rect 244 139 267 151)(font "Arial" ))
+		(text "Super" (rect 244 139 272 151)(font "Arial" ))
 		(line (pt 288 144)(pt 272 144))
 	)
 	(port
 		(pt 288 160)
 		(output)
 		(text "drawingRequestPickaxe" (rect 0 0 116 12)(font "Arial" ))
-		(text "drawingRequestPickaxe" (rect 169 155 267 167)(font "Arial" ))
+		(text "drawingRequestPickaxe" (rect 169 155 285 167)(font "Arial" ))
 		(line (pt 288 160)(pt 272 160))
 	)
 	(port
 		(pt 288 176)
 		(output)
 		(text "RGBoutpickaxe[7..0]" (rect 0 0 102 12)(font "Arial" ))
-		(text "RGBoutpickaxe[7..0]" (rect 181 171 267 183)(font "Arial" ))
+		(text "RGBoutpickaxe[7..0]" (rect 181 171 283 183)(font "Arial" ))
 		(line (pt 288 176)(pt 272 176)(line_width 3))
 	)
 	(port
 		(pt 288 192)
 		(output)
 		(text "pickaxe" (rect 0 0 37 12)(font "Arial" ))
-		(text "pickaxe" (rect 236 187 267 199)(font "Arial" ))
+		(text "pickaxe" (rect 236 187 273 199)(font "Arial" ))
 		(line (pt 288 192)(pt 272 192))
 	)
 	(parameter
 		"PAUSE_DURATION_FRAMES"
-		"90"
+		"150"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"PICKAXE_WALLS"
-		"3"
+		"2"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
 		(rectangle (rect 16 16 272 256))
 	)
-	(annotation_block (parameter)(rect 296 -24 560 16))
+	(annotation_block (parameter)(rect 296 -48 559 9))
 )
 (connector
 	(pt 1000 360)

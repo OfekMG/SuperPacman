@@ -50,6 +50,7 @@ logic [10:0] offsetY_LSB;
 logic [10:0] offsetX_MSB;
 logic [10:0] offsetY_MSB;
 logic [6:0] pause_counter;
+logic [1:0] counter;
 
 
 parameter int PAUSE_DURATION_FRAMES = 300;// 3 sec @ 30Hz
@@ -70,14 +71,14 @@ logic [3:0] MazeBitMapMask [0:MAZE_HEIGHT_Y-1][0:MAZE_WIDTH_X-1];
 // default maze (kept as you provided)
 logic [0:15][0:31][3:0] MazeDefaultBitMapMask = '{
   '{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1 ,1,1,1,1,1,1,1,1,1,1,1,1,1,1}, //second part is out of frame
-  '{1,2,2,2,1,2,2,2,0,1,2,2,2,2,1,3,2,1 ,1,2,2,2,2,1,2,2,2,2,2,2,2,1},
+  '{1,2,2,2,1,4,2,2,0,1,2,2,2,2,1,3,2,1 ,1,2,2,2,2,1,2,2,2,2,2,2,2,1},
   '{1,2,1,2,1,2,1,1,2,1,2,1,1,2,1,1,2,1 ,1,2,1,1,2,1,1,2,1,1,2,1,2,1},
   '{1,2,1,2,2,2,2,1,2,2,2,1,2,2,2,1,2,1 ,1,2,2,1,2,2,2,1,2,2,2,1,2,1},
   '{1,2,1,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1 ,1,2,1,1,2,1,1,2,1,1,2,1,2,1},
   '{1,2,2,2,1,2,2,2,2,2,2,3,1,2,2,2,2,1 ,2,2,2,2,2,2,1,2,2,2,2,2,2,1},
   '{1,1,2,1,1,2,1,1,1,2,1,1,1,2,1,1,1,1 ,1,1,1,2,1,1,1,2,1,1,2,1,1,1},
   '{1,2,2,2,2,2,2,2,1,2,2,2,2,2,2,2,2,1 ,2,2,2,2,2,2,2,2,2,2,2,2,2,1},
-  '{1,1,1,2,1,1,2,1,1,1,1,2,1,1,2,1,1,1 ,1,2,1,1,2,1,1,1,1,2,1,1,1,1},
+  '{1,1,1,2,1,1,1,2,1,1,1,2,1,1,1,1,2,1 ,1,2,1,1,2,1,1,1,1,2,1,1,1,1},
   '{1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,4,1 ,2,2,2,2,2,2,2,2,2,2,2,2,2,1},
   '{1,2,1,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1 ,1,2,1,1,2,1,1,2,1,1,2,1,2,1},
   '{1,2,2,3,1,2,2,2,2,2,2,2,1,2,2,2,3,1 ,2,2,2,2,2,2,1,2,2,2,2,2,2,1},
@@ -221,8 +222,10 @@ always_ff @(posedge clk or negedge resetN) begin
         drawingRequest    <= 1'b0;
         drawingRequestDot <= 1'b0;
 		  drawingRequestSuper <= 1'b0;
+		  drawingRequestPickaxe <= 1'b0;
         score             <= 1'b0;
-		  Super				  <= 1'b0;	
+		  Super				  <= 1'b0;
+		  pickaxe           <= 1'b0;
         // reset maze
         for (int y = 0; y < MAZE_HEIGHT_Y; y++) begin
             for (int x = 0; x < MAZE_WIDTH_X; x++) begin
@@ -234,17 +237,23 @@ always_ff @(posedge clk or negedge resetN) begin
         // default outputs
         RGBout    <= TRANSPARENT_ENCODING;
         RGBoutDot <= TRANSPARENT_ENCODING;
+		  RGBoutSuper <= TRANSPARENT_ENCODING;
+		  RGBoutpickaxe <= TRANSPARENT_ENCODING;
         score     <= 1'b0;
         if (Super && startOfFrame) begin
 							 if (!strike && (pause_counter < PAUSE_DURATION_FRAMES - 1))
                       pause_counter <= pause_counter + 1;
                   else
                       Super = 1'b0;
-              end
-		  if (pickaxe) begin
+              end 
+		  if (pickaxe && collision_Smiley_Hart) begin
 					 if (MazeBitMapMask[offsetY_MSB][offsetX_MSB] == 4'h1) begin
                     MazeBitMapMask[offsetY_MSB][offsetX_MSB] <= 4'h0; // מחק את הנקודה הספציפית
                     RGBout <= TRANSPARENT_ENCODING;
+						  counter <= counter + 1;
+						  if (counter == 2) begin
+								pickaxe <= 0;
+							end
                 end
 				end 
 							
@@ -281,8 +290,11 @@ always_ff @(posedge clk or negedge resetN) begin
             if (InsideRectangle) begin
                 case (MazeBitMapMask[offsetY_MSB][offsetX_MSB])
                     4'h0: ; // transparent, do nothing
+						  4'h1: RGBout <= object_colors[2][offsetY_LSB][offsetX_LSB];
                     4'h2: RGBoutDot <= object_colors[1][offsetY_LSB][offsetX_LSB];
 						  4'h3: RGBoutSuper <= object_colors[3][offsetY_LSB][offsetX_LSB];
+ 						  4'h4: RGBoutpickaxe <= object_colors[0][offsetY_LSB][offsetX_LSB];
+						  
                     default: RGBout <= object_colors[MazeBitMapMask[offsetY_MSB][offsetX_MSB] - 1][offsetY_LSB][offsetX_LSB];
                 endcase
             end

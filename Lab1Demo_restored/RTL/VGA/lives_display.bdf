@@ -136,7 +136,7 @@ agreement for further details.
 	(input)
 	(rect 1848 912 2016 928)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "Super" (rect 5 0 34 12)(font "Arial" ))
+	(text "Super" (rect 5 0 33 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -152,7 +152,23 @@ agreement for further details.
 	(input)
 	(rect 1832 960 2000 976)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "startOfFrame" (rect 5 0 73 12)(font "Arial" ))
+	(text "startOfFrame" (rect 5 0 72 12)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect 1784 976 1952 992)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "lives[3..0]" (rect 5 0 55 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -307,9 +323,9 @@ agreement for further details.
 	(annotation_block (parameter)(rect 1600 640 1855 716))
 )
 (symbol
-	(rect 2080 712 2304 888)
+	(rect 2080 712 2304 920)
 	(text "LivesMatrixBitMap" (rect 5 0 94 12)(font "Arial" ))
-	(text "inst1" (rect 8 160 31 172)(font "Arial" ))
+	(text "inst1" (rect 8 192 31 204)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -367,6 +383,13 @@ agreement for further details.
 		(line (pt 0 144)(pt 16 144))
 	)
 	(port
+		(pt 0 160)
+		(input)
+		(text "lives[3..0]" (rect 0 0 49 12)(font "Arial" ))
+		(text "lives[3..0]" (rect 21 155 70 167)(font "Arial" ))
+		(line (pt 0 160)(pt 16 160)(line_width 3))
+	)
+	(port
 		(pt 224 32)
 		(output)
 		(text "drawingRequest" (rect 0 0 77 12)(font "Arial" ))
@@ -387,9 +410,15 @@ agreement for further details.
 		(text "gameOver" (rect 160 59 203 71)(font "Arial" ))
 		(line (pt 224 64)(pt 208 64))
 	)
+	(parameter
+		"PAUSE_DURATION_FRAMES"
+		"90"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
-		(rectangle (rect 16 16 208 160))
+		(rectangle (rect 16 16 208 192))
 	)
+	(annotation_block (parameter)(rect 240 -24 504 16))
 )
 (connector
 	(pt 1376 792)
@@ -583,6 +612,21 @@ agreement for further details.
 (connector
 	(pt 2048 968)
 	(pt 2000 968)
+)
+(connector
+	(pt 2080 872)
+	(pt 2064 872)
+	(bus)
+)
+(connector
+	(pt 2064 872)
+	(pt 2064 984)
+	(bus)
+)
+(connector
+	(pt 2064 984)
+	(pt 1952 984)
+	(bus)
 )
 (text "  " (rect 24 624 31 643)(font "Intel Clear" (font_size 8)))
 (text "   " (rect 144 664 154 683)(font "Intel Clear" (font_size 8)))
