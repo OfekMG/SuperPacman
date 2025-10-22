@@ -192,9 +192,16 @@ agreement for further details.
 		(text "pickaxe" (rect 238 187 267 199)(font "Arial" ))
 		(line (pt 288 192)(pt 272 192)(line_width 1))
 	)
+	(port
+		(pt 288 208)
+		(output)
+		(text "counter[1..0]" (rect 0 0 48 12)(font "Arial" ))
+		(text "counter[1..0]" (rect 219 203 267 215)(font "Arial" ))
+		(line (pt 288 208)(pt 272 208)(line_width 3))
+	)
 	(parameter
 		"PAUSE_DURATION_FRAMES"
-		"300"
+		"150"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter

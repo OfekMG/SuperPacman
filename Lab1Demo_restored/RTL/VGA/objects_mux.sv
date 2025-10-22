@@ -58,7 +58,16 @@ module	objects_mux	(
 					input		logic	[7:0] pickaxeRGB,
 			// pickaxe_cntr
 					input    logic pickaxecntrDrawingRequest, 
-					input		logic	[7:0] pickaxecntrRGB
+					input		logic	[7:0] pickaxecntrRGB,
+			// ghost2
+					input		logic	ghost2DrawingRequest, // two set of inputs per unit
+					input		logic	[7:0] ghost2RGB,
+		// ghost3
+					input		logic	ghost3DrawingRequest, // two set of inputs per unit
+					input		logic	[7:0] ghost3RGB,
+		// ghost4
+					input		logic	ghost4DrawingRequest, // two set of inputs per unit
+					input		logic	[7:0] ghost4RGB
 								
 					
 );
@@ -75,6 +84,12 @@ begin
 		else if(ghostDrawingRequest == 1'b1)
 			RGBOut <= ghostRGB;
 //--- add logic for box here ------------------------------------------------------		
+		else if(ghost2DrawingRequest == 1'b1)
+			RGBOut <= ghost2RGB;
+		else if(ghost3DrawingRequest == 1'b1)
+			RGBOut <= ghost3RGB;
+		else if(ghost4DrawingRequest == 1'b1)
+			RGBOut <= ghost4RGB;
 		else if (BoxDrwaingRequest == 1'b1 )   
 			RGBOut <= BoxRGB;  //2nd priority 
 		else if (DotsDrawingRequest == 1'b1)

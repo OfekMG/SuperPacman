@@ -14,6 +14,10 @@ module game_controller (
 	 input  logic drawing_request_dot,
 	 input  logic drawing_request_Super,
 	 input  logic drawing_request_pickaxe,
+	 input  logic drawing_request_ghost2,
+    input  logic drawing_request_ghost3,
+    input  logic drawing_request_ghost4,
+
 	 
 
     output logic collision,             // active in case of collision between two objects
@@ -23,7 +27,11 @@ module game_controller (
     output logic collision_ghost_Hart,  // active in case of collision between Ghost and hart
 	 output logic collision_smiley_Dot,	 // active in case of collision between smiley and Dot
  	 output logic collision_smiley_Super, // active in case of collision between smiley and Super
-	 output logic collision_smiley_pickaxe
+	 output logic collision_smiley_pickaxe,
+	 output logic collision_ghost2_Hart,  // active in case of collision between Ghost and hart
+    output logic collision_ghost3_Hart,  // active in case of collision between Ghost and hart
+    output logic collision_ghost4_Hart  // active in case of collision between Ghost and hart
+
 );
 
 //----------------------------------------------
@@ -41,7 +49,7 @@ assign collision_smiley_number = (drawing_request_smiley && drawing_request_box)
 assign collision_Smiley_Hart  = (drawing_request_smiley && drawing_request_hart || drawing_request_smiley && drawing_request_boarders);
 assign collision_smiley_Super = (drawing_request_Super && drawing_request_smiley);
 assign collision_ghost_Hart   = (drawing_request_ghost  && drawing_request_hart || drawing_request_ghost && drawing_request_boarders);
-assign strike = (drawing_request_ghost  && drawing_request_smiley);
+assign strike = ((drawing_request_ghost || drawing_request_ghost2 || drawing_request_ghost3 || drawing_request_ghost4)  && drawing_request_smiley);
 logic collision_before;
 assign collision_before = (drawing_request_smiley && drawing_request_boarders) 
                         || collision_smiley_number;
@@ -51,6 +59,9 @@ assign collision_smiley_pickaxe = (drawing_request_smiley && drawing_request_pic
 assign collision = collision_before 
                  || collision_Smiley_Hart 
                  || collision_ghost_Hart;
+assign collision_ghost2_Hart = (drawing_request_ghost2  && drawing_request_hart || drawing_request_ghost2 && drawing_request_boarders);
+assign collision_ghost3_Hart = (drawing_request_ghost3  && drawing_request_hart || drawing_request_ghost3 && drawing_request_boarders);
+assign collision_ghost4_Hart = (drawing_request_ghost4  && drawing_request_hart || drawing_request_ghost4 && drawing_request_boarders);
 
 //----------------------------------------------
 // Single-hit pulse logic

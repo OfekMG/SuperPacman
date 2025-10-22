@@ -4,6 +4,8 @@ module pickaxe_lives_counter_module (
     input  logic        collision_Smiley_Hart,	
 	 input  logic        collision_Smiley_pickaxe,
 	 input  logic        startOfFrame,
+	 input  logic        pickaxe,
+	 input  logic [1:0]  counter,
 
     output logic [3:0]  units
 );
@@ -39,12 +41,12 @@ module pickaxe_lives_counter_module (
 
 				if (collision_Smiley_pickaxe) begin
 				//default
-				o_next = units;
+				o_next = INIT_ONES;
 				end 
 
-             else if (strike_rising) begin
+             else if (strike_rising && pickaxe) begin
                 // *** DECREMENT path ***
-                    o_next = units - 4'd1;
+                    o_next = units - counter;
             end
 
             // עדכן רגיסטרים

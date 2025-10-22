@@ -16,18 +16,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "OVGA[27]",
-					"strict" : false
-				},
-				{
-					"name" : "OVGA[25]",
-					"strict" : false
-				},
-				{
-					"name" : "OVGA[24]",
-					"strict" : false
-				},
-				{
 					"name" : "HEX0[6]",
 					"strict" : false
 				},
@@ -161,6 +149,18 @@
 				},
 				{
 					"name" : "OVGA[0]",
+					"strict" : false
+				},
+				{
+					"name" : "OVGA[27]",
+					"strict" : false
+				},
+				{
+					"name" : "OVGA[25]",
+					"strict" : false
+				},
+				{
+					"name" : "OVGA[24]",
 					"strict" : false
 				},
 				{
