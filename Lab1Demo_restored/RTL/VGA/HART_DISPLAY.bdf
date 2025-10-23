@@ -531,7 +531,7 @@ agreement for further details.
 	(annotation_block (parameter)(rect 744 208 999 284))
 )
 (symbol
-	(rect 1360 256 1648 528)
+	(rect 1360 248 1648 520)
 	(text "HartsMatrixBitMap" (rect 5 0 94 12)(font "Arial" ))
 	(text "inst6" (rect 8 256 31 268)(font "Arial" ))
 	(port
@@ -629,84 +629,84 @@ agreement for further details.
 		(pt 288 32)
 		(output)
 		(text "drawingRequest" (rect 0 0 77 12)(font "Arial" ))
-		(text "drawingRequest" (rect 202 27 267 39)(font "Arial" ))
+		(text "drawingRequest" (rect 202 27 279 39)(font "Arial" ))
 		(line (pt 288 32)(pt 272 32))
 	)
 	(port
 		(pt 288 48)
 		(output)
 		(text "RGBout[7..0]" (rect 0 0 64 12)(font "Arial" ))
-		(text "RGBout[7..0]" (rect 213 43 267 55)(font "Arial" ))
+		(text "RGBout[7..0]" (rect 213 43 277 55)(font "Arial" ))
 		(line (pt 288 48)(pt 272 48)(line_width 3))
 	)
 	(port
 		(pt 288 64)
 		(output)
 		(text "drawingRequestDot" (rect 0 0 95 12)(font "Arial" ))
-		(text "drawingRequestDot" (rect 187 59 267 71)(font "Arial" ))
+		(text "drawingRequestDot" (rect 187 59 282 71)(font "Arial" ))
 		(line (pt 288 64)(pt 272 64))
 	)
 	(port
 		(pt 288 80)
 		(output)
 		(text "RGBoutDot[7..0]" (rect 0 0 82 12)(font "Arial" ))
-		(text "RGBoutDot[7..0]" (rect 198 75 267 87)(font "Arial" ))
+		(text "RGBoutDot[7..0]" (rect 198 75 280 87)(font "Arial" ))
 		(line (pt 288 80)(pt 272 80)(line_width 3))
 	)
 	(port
 		(pt 288 96)
 		(output)
 		(text "score" (rect 0 0 27 12)(font "Arial" ))
-		(text "score" (rect 245 91 267 103)(font "Arial" ))
+		(text "score" (rect 245 91 272 103)(font "Arial" ))
 		(line (pt 288 96)(pt 272 96))
 	)
 	(port
 		(pt 288 112)
 		(output)
 		(text "drawingRequestSuper" (rect 0 0 106 12)(font "Arial" ))
-		(text "drawingRequestSuper" (rect 178 107 267 119)(font "Arial" ))
+		(text "drawingRequestSuper" (rect 178 107 284 119)(font "Arial" ))
 		(line (pt 288 112)(pt 272 112))
 	)
 	(port
 		(pt 288 128)
 		(output)
 		(text "RGBoutSuper[7..0]" (rect 0 0 93 12)(font "Arial" ))
-		(text "RGBoutSuper[7..0]" (rect 189 123 267 135)(font "Arial" ))
+		(text "RGBoutSuper[7..0]" (rect 189 123 282 135)(font "Arial" ))
 		(line (pt 288 128)(pt 272 128)(line_width 3))
 	)
 	(port
 		(pt 288 144)
 		(output)
 		(text "Super" (rect 0 0 28 12)(font "Arial" ))
-		(text "Super" (rect 244 139 267 151)(font "Arial" ))
+		(text "Super" (rect 244 139 272 151)(font "Arial" ))
 		(line (pt 288 144)(pt 272 144))
 	)
 	(port
 		(pt 288 160)
 		(output)
 		(text "drawingRequestPickaxe" (rect 0 0 116 12)(font "Arial" ))
-		(text "drawingRequestPickaxe" (rect 169 155 267 167)(font "Arial" ))
+		(text "drawingRequestPickaxe" (rect 169 155 285 167)(font "Arial" ))
 		(line (pt 288 160)(pt 272 160))
 	)
 	(port
 		(pt 288 176)
 		(output)
 		(text "RGBoutpickaxe[7..0]" (rect 0 0 102 12)(font "Arial" ))
-		(text "RGBoutpickaxe[7..0]" (rect 181 171 267 183)(font "Arial" ))
+		(text "RGBoutpickaxe[7..0]" (rect 181 171 283 183)(font "Arial" ))
 		(line (pt 288 176)(pt 272 176)(line_width 3))
 	)
 	(port
 		(pt 288 192)
 		(output)
 		(text "pickaxe" (rect 0 0 37 12)(font "Arial" ))
-		(text "pickaxe" (rect 236 187 267 199)(font "Arial" ))
+		(text "pickaxe" (rect 236 187 273 199)(font "Arial" ))
 		(line (pt 288 192)(pt 272 192))
 	)
 	(port
 		(pt 288 208)
 		(output)
 		(text "counter[1..0]" (rect 0 0 62 12)(font "Arial" ))
-		(text "counter[1..0]" (rect 215 203 267 215)(font "Arial" ))
+		(text "counter[1..0]" (rect 215 203 277 215)(font "Arial" ))
 		(line (pt 288 208)(pt 272 208)(line_width 3))
 	)
 	(parameter
@@ -722,7 +722,7 @@ agreement for further details.
 	(drawing
 		(rectangle (rect 16 16 272 256))
 	)
-	(annotation_block (parameter)(rect 1344 88 1607 145))
+	(annotation_block (parameter)(rect 1344 80 1607 137))
 )
 (connector
 	(pt 1000 360)
@@ -844,226 +844,332 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(pt 1008 360)
-	(pt 1008 320)
-	(bus)
-)
-(connector
-	(pt 1016 376)
-	(pt 1016 336)
-	(bus)
-)
-(connector
-	(pt 1024 392)
-	(pt 1024 352)
-)
-(connector
-	(pt 1208 416)
-	(pt 1208 368)
-)
-(connector
-	(pt 1240 440)
-	(pt 1240 384)
-)
-(connector
-	(pt 1256 472)
-	(pt 1256 400)
-)
-(connector
-	(pt 1264 504)
-	(pt 1264 416)
-)
-(connector
-	(text "clk" (rect 1298 272 1312 289)(font "Intel Clear" ))
-	(pt 1272 288)
-	(pt 1360 288)
-)
-(connector
-	(text "resetN" (rect 1298 288 1328 305)(font "Intel Clear" ))
-	(pt 1272 304)
-	(pt 1360 304)
-)
-(connector
-	(text "BoxHartTopLeftX[10..0]" (rect 1072 304 1182 321)(font "Intel Clear" ))
-	(pt 1008 320)
-	(pt 1360 320)
-	(bus)
-)
-(connector
-	(text "BoxHartTopLeftY[10..0]" (rect 1072 320 1182 337)(font "Intel Clear" ))
-	(pt 1016 336)
-	(pt 1360 336)
-	(bus)
-)
-(connector
-	(text "boxHartDrawingRequest" (rect 1072 336 1186 353)(font "Intel Clear" ))
-	(pt 1024 352)
-	(pt 1360 352)
-)
-(connector
-	(pt 1208 368)
-	(pt 1360 368)
-)
-(connector
-	(pt 1240 384)
-	(pt 1360 384)
-)
-(connector
-	(pt 1256 400)
-	(pt 1360 400)
-)
-(connector
-	(pt 1264 416)
-	(pt 1360 416)
-)
-(connector
 	(pt 1736 400)
 	(pt 1736 408)
-)
-(connector
-	(pt 1360 432)
-	(pt 1280 432)
 )
 (connector
 	(pt 1192 520)
 	(pt 1280 520)
 )
 (connector
-	(pt 1280 432)
-	(pt 1280 520)
-)
-(connector
-	(pt 1360 448)
-	(pt 1296 448)
-)
-(connector
-	(pt 1296 448)
-	(pt 1296 536)
-)
-(connector
 	(pt 1144 536)
 	(pt 1296 536)
-)
-(connector
-	(pt 1360 464)
-	(pt 1312 464)
-)
-(connector
-	(pt 1312 464)
-	(pt 1312 552)
 )
 (connector
 	(pt 1312 552)
 	(pt 1144 552)
 )
 (connector
-	(pt 1360 480)
-	(pt 1328 480)
-)
-(connector
-	(pt 1328 480)
-	(pt 1328 584)
-)
-(connector
 	(pt 1328 584)
 	(pt 1160 584)
 )
 (connector
-	(pt 1648 416)
-	(pt 1720 416)
+	(pt 1008 360)
+	(pt 1008 312)
+	(bus)
 )
 (connector
-	(pt 1648 432)
-	(pt 1720 432)
+	(pt 1016 376)
+	(pt 1016 328)
 	(bus)
+)
+(connector
+	(pt 1024 392)
+	(pt 1024 344)
+)
+(connector
+	(pt 1208 416)
+	(pt 1208 360)
+)
+(connector
+	(pt 1240 440)
+	(pt 1240 376)
+)
+(connector
+	(pt 1256 472)
+	(pt 1256 392)
+)
+(connector
+	(pt 1264 504)
+	(pt 1264 408)
+)
+(connector
+	(text "clk" (rect 1298 264 1312 281)(font "Intel Clear" ))
+	(pt 1272 280)
+	(pt 1360 280)
+)
+(connector
+	(text "resetN" (rect 1298 280 1328 297)(font "Intel Clear" ))
+	(pt 1272 296)
+	(pt 1360 296)
+)
+(connector
+	(text "BoxHartTopLeftX[10..0]" (rect 1072 296 1182 313)(font "Intel Clear" ))
+	(pt 1008 312)
+	(pt 1360 312)
+	(bus)
+)
+(connector
+	(text "BoxHartTopLeftY[10..0]" (rect 1072 312 1182 329)(font "Intel Clear" ))
+	(pt 1016 328)
+	(pt 1360 328)
+	(bus)
+)
+(connector
+	(text "boxHartDrawingRequest" (rect 1072 328 1186 345)(font "Intel Clear" ))
+	(pt 1024 344)
+	(pt 1360 344)
+)
+(connector
+	(pt 1208 360)
+	(pt 1360 360)
+)
+(connector
+	(pt 1240 376)
+	(pt 1360 376)
+)
+(connector
+	(pt 1256 392)
+	(pt 1360 392)
+)
+(connector
+	(pt 1264 408)
+	(pt 1360 408)
+)
+(connector
+	(pt 1280 424)
+	(pt 1360 424)
+)
+(connector
+	(pt 1280 520)
+	(pt 1280 424)
+)
+(connector
+	(pt 1296 440)
+	(pt 1360 440)
+)
+(connector
+	(pt 1296 536)
+	(pt 1296 440)
+)
+(connector
+	(pt 1312 456)
+	(pt 1360 456)
+)
+(connector
+	(pt 1312 552)
+	(pt 1312 456)
+)
+(connector
+	(pt 1328 472)
+	(pt 1360 472)
+)
+(connector
+	(pt 1328 584)
+	(pt 1328 472)
+)
+(connector
+	(pt 1704 288)
+	(pt 1704 280)
+)
+(connector
+	(pt 1712 288)
+	(pt 1704 288)
+)
+(connector
+	(pt 1696 320)
+	(pt 1696 312)
+)
+(connector
+	(pt 1704 320)
+	(pt 1696 320)
+)
+(connector
+	(pt 1712 416)
+	(pt 1712 408)
+)
+(connector
+	(pt 1720 416)
+	(pt 1712 416)
+)
+(connector
+	(pt 1712 408)
+	(pt 1648 408)
+)
+(connector
+	(pt 1688 432)
+	(pt 1688 424)
+	(bus)
+)
+(connector
+	(pt 1720 432)
+	(pt 1688 432)
+	(bus)
+)
+(connector
+	(pt 1688 424)
+	(pt 1648 424)
+	(bus)
+)
+(connector
+	(pt 1680 448)
+	(pt 1680 440)
 )
 (connector
 	(pt 1720 448)
-	(pt 1648 448)
+	(pt 1680 448)
 )
 (connector
-	(pt 1608 288)
-	(pt 1648 288)
+	(pt 1680 440)
+	(pt 1648 440)
 )
 (connector
-	(pt 1648 288)
-	(pt 1712 288)
-)
-(connector
-	(pt 1640 304)
-	(pt 1648 304)
+	(pt 1672 304)
+	(pt 1672 296)
 	(bus)
 )
 (connector
-	(pt 1648 304)
 	(pt 1688 304)
+	(pt 1672 304)
 	(bus)
 )
 (connector
-	(pt 1640 320)
-	(pt 1648 320)
-)
-(connector
-	(pt 1648 320)
-	(pt 1704 320)
-)
-(connector
-	(pt 1624 336)
-	(pt 1648 336)
+	(pt 1720 336)
+	(pt 1720 328)
 	(bus)
 )
 (connector
-	(pt 1648 336)
 	(pt 1728 336)
+	(pt 1720 336)
 	(bus)
 )
 (connector
-	(pt 1624 352)
-	(pt 1648 352)
+	(pt 1752 352)
+	(pt 1752 344)
 )
 (connector
-	(pt 1648 352)
 	(pt 1760 352)
+	(pt 1752 352)
 )
 (connector
-	(pt 1640 368)
-	(pt 1648 368)
+	(pt 1664 368)
+	(pt 1664 360)
 )
 (connector
-	(pt 1648 368)
 	(pt 1728 368)
+	(pt 1664 368)
 )
 (connector
-	(pt 1640 384)
-	(pt 1648 384)
+	(pt 1656 384)
+	(pt 1656 376)
 	(bus)
 )
 (connector
-	(pt 1648 384)
 	(pt 1728 384)
+	(pt 1656 384)
 	(bus)
 )
 (connector
-	(pt 1640 400)
-	(pt 1648 400)
+	(pt 1728 400)
+	(pt 1728 392)
 )
 (connector
-	(pt 1648 400)
 	(pt 1736 400)
+	(pt 1728 400)
 )
 (connector
-	(pt 1648 464)
-	(pt 1720 464)
+	(pt 1656 464)
+	(pt 1656 456)
 	(bus)
+)
+(connector
+	(pt 1720 464)
+	(pt 1656 464)
+	(bus)
+)
+(connector
+	(pt 1656 456)
+	(pt 1648 456)
+	(bus)
+)
+(connector
+	(pt 1608 280)
+	(pt 1648 280)
+)
+(connector
+	(pt 1648 280)
+	(pt 1704 280)
+)
+(connector
+	(pt 1640 296)
+	(pt 1648 296)
+	(bus)
+)
+(connector
+	(pt 1648 296)
+	(pt 1672 296)
+	(bus)
+)
+(connector
+	(pt 1640 312)
+	(pt 1648 312)
+)
+(connector
+	(pt 1648 312)
+	(pt 1696 312)
+)
+(connector
+	(pt 1624 328)
+	(pt 1648 328)
+	(bus)
+)
+(connector
+	(pt 1648 328)
+	(pt 1720 328)
+	(bus)
+)
+(connector
+	(pt 1624 344)
+	(pt 1648 344)
+)
+(connector
+	(pt 1648 344)
+	(pt 1752 344)
+)
+(connector
+	(pt 1640 360)
+	(pt 1648 360)
+)
+(connector
+	(pt 1648 360)
+	(pt 1664 360)
+)
+(connector
+	(pt 1640 376)
+	(pt 1648 376)
+	(bus)
+)
+(connector
+	(pt 1648 376)
+	(pt 1656 376)
+	(bus)
+)
+(connector
+	(pt 1640 392)
+	(pt 1648 392)
+)
+(connector
+	(pt 1648 392)
+	(pt 1728 392)
 )
 (junction (pt 1736 400))
-(junction (pt 1648 368))
-(junction (pt 1648 384))
-(junction (pt 1648 400))
-(junction (pt 1648 304))
-(junction (pt 1648 320))
-(junction (pt 1648 288))
-(junction (pt 1648 336))
-(junction (pt 1648 352))
+(junction (pt 1648 280))
+(junction (pt 1648 296))
+(junction (pt 1648 312))
+(junction (pt 1648 328))
+(junction (pt 1648 344))
+(junction (pt 1648 360))
+(junction (pt 1648 376))
+(junction (pt 1648 392))
 (text "// (c) Technion IIT, Department of Electrical Engineering 2025" (rect 632 24 991 43)(font "Intel Clear" (font_size 8)))
 (rectangle (rect 336 184 1816 672)(color 0 0 0)(line_width 3))

@@ -1,6 +1,6 @@
 // (c) Technion IIT, Department of Electrical Engineering 2025
 
-module ghost4_move (
+module ghost3_move (
     input  logic clk,
     input  logic resetN,
     input  logic startOfFrame,      // short pulse every start of frame 30Hz
@@ -74,23 +74,15 @@ module ghost4_move (
                 end
 
                 MOVE_ST: begin
-							//normal = 1;
                     if (collision) begin
                         hit_reg[HitEdgeCode] <= 1'b1;
                     end else if (Super) begin
                         SM <= SUPER_MOVE_ST;
-                    end
-						  if (collision_ghost_smiley) begin
-                    Xspeed <= 0;
-                    Yspeed <= 0;
-                    pause_counter <= 0;
-                    SM <= PAUSE_ST;
-                end else if (startOfFrame)
+                    end else if (startOfFrame)
                         SM <= START_OF_FRAME_ST;
                 end
 
                 SUPER_MOVE_ST: begin 
-							//normal = 0;
                     if (collision) begin
                         hit_reg[HitEdgeCode] <= 1'b1;
                     end

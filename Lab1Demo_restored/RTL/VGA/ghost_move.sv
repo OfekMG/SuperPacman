@@ -78,7 +78,13 @@ module ghost_move (
                         hit_reg[HitEdgeCode] <= 1'b1;
                     end else if (Super) begin
                         SM <= SUPER_MOVE_ST;
-                    end else if (startOfFrame)
+                    end
+						  if (collision_ghost_smiley) begin
+                    Xspeed <= 0;
+                    Yspeed <= 0;
+                    pause_counter <= 0;
+                    SM <= PAUSE_ST;
+                end else if (startOfFrame)
                         SM <= START_OF_FRAME_ST;
                 end
 

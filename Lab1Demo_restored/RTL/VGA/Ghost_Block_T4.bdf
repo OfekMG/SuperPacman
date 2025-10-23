@@ -182,19 +182,19 @@ agreement for further details.
 )
 (pin
 	(input)
-	(rect 72 560 280 576)
-	(text "INPUT" (rect 165 0 193 10)(font "Arial" (font_size 6)))
-	(text "collision_ghost_smiley" (rect 5 0 115 12)(font "Arial" ))
-	(pt 208 8)
+	(rect 64 560 280 576)
+	(text "INPUT" (rect 173 0 201 10)(font "Arial" (font_size 6)))
+	(text "collision_ghost4_smiley" (rect 5 0 121 12)(font "Arial" ))
+	(pt 216 8)
 	(drawing
-		(line (pt 124 12)(pt 149 12))
-		(line (pt 124 4)(pt 149 4))
-		(line (pt 153 8)(pt 208 8))
-		(line (pt 124 12)(pt 124 4))
-		(line (pt 149 4)(pt 153 8))
-		(line (pt 149 12)(pt 153 8))
+		(line (pt 132 12)(pt 157 12))
+		(line (pt 132 4)(pt 157 4))
+		(line (pt 161 8)(pt 216 8))
+		(line (pt 132 12)(pt 132 4))
+		(line (pt 157 4)(pt 161 8))
+		(line (pt 157 12)(pt 161 8))
 	)
-	(text "VCC" (rect 168 7 188 17)(font "Arial" (font_size 6)))
+	(text "VCC" (rect 176 7 196 17)(font "Arial" (font_size 6)))
 )
 (pin
 	(output)
@@ -532,7 +532,7 @@ agreement for further details.
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"INITIAL_Y"
-		"225"
+		"300"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter

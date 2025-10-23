@@ -21,9 +21,9 @@ agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 320 288)
+	(rect 16 16 320 320)
 	(text "game_controller" (rect 5 0 68 12)(font "Arial" ))
-	(text "inst" (rect 8 256 20 268)(font "Arial" ))
+	(text "inst" (rect 8 288 20 300)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -199,7 +199,35 @@ agreement for further details.
 		(text "collision_ghost4_Hart" (rect 199 187 283 199)(font "Arial" ))
 		(line (pt 304 192)(pt 288 192)(line_width 1))
 	)
+	(port
+		(pt 304 208)
+		(output)
+		(text "collision_ghost_smiley" (rect 0 0 87 12)(font "Arial" ))
+		(text "collision_ghost_smiley" (rect 196 203 283 215)(font "Arial" ))
+		(line (pt 304 208)(pt 288 208)(line_width 1))
+	)
+	(port
+		(pt 304 224)
+		(output)
+		(text "collision_ghost2_smiley" (rect 0 0 92 12)(font "Arial" ))
+		(text "collision_ghost2_smiley" (rect 191 219 283 231)(font "Arial" ))
+		(line (pt 304 224)(pt 288 224)(line_width 1))
+	)
+	(port
+		(pt 304 240)
+		(output)
+		(text "collision_ghost3_smiley" (rect 0 0 92 12)(font "Arial" ))
+		(text "collision_ghost3_smiley" (rect 191 235 283 247)(font "Arial" ))
+		(line (pt 304 240)(pt 288 240)(line_width 1))
+	)
+	(port
+		(pt 304 256)
+		(output)
+		(text "collision_ghost4_smiley" (rect 0 0 93 12)(font "Arial" ))
+		(text "collision_ghost4_smiley" (rect 190 251 283 263)(font "Arial" ))
+		(line (pt 304 256)(pt 288 256)(line_width 1))
+	)
 	(drawing
-		(rectangle (rect 16 16 288 256)(line_width 1))
+		(rectangle (rect 16 16 288 288)(line_width 1))
 	)
 )

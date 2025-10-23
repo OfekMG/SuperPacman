@@ -21,7 +21,7 @@ agreement for further details.
 */
 (header "symbol" (version "1.2"))
 (symbol
-	(rect 16 16 296 208)
+	(rect 16 16 304 208)
 	(text "Ghost_Block_T4" (rect 5 0 101 19)(font "Intel Clear" (font_size 8)))
 	(text "inst" (rect 8 171 24 188)(font "Intel Clear" ))
 	(port
@@ -76,23 +76,23 @@ agreement for further details.
 	(port
 		(pt 0 144)
 		(input)
-		(text "collision_ghost_smiley" (rect 0 0 132 19)(font "Intel Clear" (font_size 8)))
-		(text "collision_ghost_smiley" (rect 21 139 153 158)(font "Intel Clear" (font_size 8)))
+		(text "collision_ghost4_smiley" (rect 0 0 140 19)(font "Intel Clear" (font_size 8)))
+		(text "collision_ghost4_smiley" (rect 21 139 161 158)(font "Intel Clear" (font_size 8)))
 		(line (pt 0 144)(pt 16 144))
 	)
 	(port
-		(pt 280 32)
+		(pt 288 32)
 		(output)
 		(text "ghost4DR" (rect 0 0 57 19)(font "Intel Clear" (font_size 8)))
-		(text "ghost4DR" (rect 202 27 259 46)(font "Intel Clear" (font_size 8)))
-		(line (pt 280 32)(pt 264 32))
+		(text "ghost4DR" (rect 210 27 267 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 288 32)(pt 272 32))
 	)
 	(port
-		(pt 280 48)
+		(pt 288 48)
 		(output)
 		(text "ghost4RGB[7..0]" (rect 0 0 96 19)(font "Intel Clear" (font_size 8)))
-		(text "ghost4RGB[7..0]" (rect 163 43 259 62)(font "Intel Clear" (font_size 8)))
-		(line (pt 280 48)(pt 264 48)(line_width 3))
+		(text "ghost4RGB[7..0]" (rect 171 43 267 62)(font "Intel Clear" (font_size 8)))
+		(line (pt 288 48)(pt 272 48)(line_width 3))
 	)
 	(parameter
 		"initial_x"
@@ -115,7 +115,7 @@ agreement for further details.
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
-		(rectangle (rect 16 16 264 176))
+		(rectangle (rect 16 16 272 176))
 	)
-	(annotation_block (parameter)(rect 296 -64 396 16))
+	(annotation_block (parameter)(rect 304 -64 404 16))
 )

@@ -30,7 +30,11 @@ module game_controller (
 	 output logic collision_smiley_pickaxe,
 	 output logic collision_ghost2_Hart,  // active in case of collision between Ghost and hart
     output logic collision_ghost3_Hart,  // active in case of collision between Ghost and hart
-    output logic collision_ghost4_Hart  // active in case of collision between Ghost and hart
+    output logic collision_ghost4_Hart,  // active in case of collision between Ghost and hart
+	 output logic collision_ghost_smiley,
+	 output logic collision_ghost2_smiley,
+	 output logic collision_ghost3_smiley,
+	 output logic collision_ghost4_smiley
 
 );
 
@@ -62,7 +66,10 @@ assign collision = collision_before
 assign collision_ghost2_Hart = (drawing_request_ghost2  && drawing_request_hart || drawing_request_ghost2 && drawing_request_boarders);
 assign collision_ghost3_Hart = (drawing_request_ghost3  && drawing_request_hart || drawing_request_ghost3 && drawing_request_boarders);
 assign collision_ghost4_Hart = (drawing_request_ghost4  && drawing_request_hart || drawing_request_ghost4 && drawing_request_boarders);
-
+assign collision_ghost_smiley = (drawing_request_ghost  && drawing_request_smiley);
+assign collision_ghost2_smiley = (drawing_request_ghost2  && drawing_request_smiley);
+assign collision_ghost3_smiley = (drawing_request_ghost3  && drawing_request_smiley);
+assign collision_ghost4_smiley = (drawing_request_ghost4  && drawing_request_smiley);
 //----------------------------------------------
 // Single-hit pulse logic
 //----------------------------------------------
