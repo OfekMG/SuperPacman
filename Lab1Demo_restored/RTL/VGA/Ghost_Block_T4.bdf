@@ -375,8 +375,85 @@ agreement for further details.
 	(annotation_block (parameter)(rect 936 528 1164 604))
 )
 (symbol
+	(rect 1264 344 1504 488)
+	(text "ghost4BitMap" (rect 5 0 71 12)(font "Arial" ))
+	(text "inst1" (rect 8 128 30 145)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 14 12)(font "Arial" ))
+		(text "clk" (rect 21 27 35 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "resetN" (rect 0 0 33 12)(font "Arial" ))
+		(text "resetN" (rect 21 43 54 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "offsetX[10..0]" (rect 0 0 68 12)(font "Arial" ))
+		(text "offsetX[10..0]" (rect 21 59 89 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "offsetY[10..0]" (rect 0 0 70 12)(font "Arial" ))
+		(text "offsetY[10..0]" (rect 21 75 91 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "InsideRectangle" (rect 0 0 79 12)(font "Arial" ))
+		(text "InsideRectangle" (rect 21 91 100 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "Super" (rect 0 0 28 12)(font "Arial" ))
+		(text "Super" (rect 21 107 49 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112))
+	)
+	(port
+		(pt 240 32)
+		(output)
+		(text "drawingRequest" (rect 0 0 77 12)(font "Arial" ))
+		(text "drawingRequest" (rect 154 27 231 39)(font "Arial" ))
+		(line (pt 240 32)(pt 224 32))
+	)
+	(port
+		(pt 240 48)
+		(output)
+		(text "RGBout[7..0]" (rect 0 0 64 12)(font "Arial" ))
+		(text "RGBout[7..0]" (rect 165 43 229 55)(font "Arial" ))
+		(line (pt 240 48)(pt 224 48)(line_width 3))
+	)
+	(port
+		(pt 240 64)
+		(output)
+		(text "HitEdgeCode[2..0]" (rect 0 0 90 12)(font "Arial" ))
+		(text "HitEdgeCode[2..0]" (rect 143 59 233 71)(font "Arial" ))
+		(line (pt 240 64)(pt 224 64)(line_width 3))
+	)
+	(parameter
+		"PAUSE_DURATION_FRAMES"
+		"90"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 224 128))
+	)
+	(annotation_block (parameter)(rect 1504 304 1768 344))
+)
+(symbol
 	(rect 536 440 784 616)
-	(text "ghost_move" (rect 5 0 66 12)(font "Arial" ))
+	(text "ghost4_move" (rect 5 0 72 12)(font "Arial" ))
 	(text "inst" (rect 8 160 25 172)(font "Arial" ))
 	(port
 		(pt 0 32)
@@ -455,7 +532,7 @@ agreement for further details.
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"INITIAL_Y"
-		"129"
+		"225"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
@@ -471,84 +548,7 @@ agreement for further details.
 	(drawing
 		(rectangle (rect 16 16 232 160))
 	)
-	(annotation_block (parameter)(rect 600 312 769 369))
-)
-(symbol
-	(rect 1264 344 1504 488)
-	(text "ghost4BitMap" (rect 5 0 71 12)(font "Arial" ))
-	(text "inst1" (rect 8 128 30 145)(font "Intel Clear" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "clk" (rect 0 0 14 12)(font "Arial" ))
-		(text "clk" (rect 21 27 35 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "resetN" (rect 0 0 33 12)(font "Arial" ))
-		(text "resetN" (rect 21 43 54 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "offsetX[10..0]" (rect 0 0 68 12)(font "Arial" ))
-		(text "offsetX[10..0]" (rect 21 59 89 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
-	)
-	(port
-		(pt 0 80)
-		(input)
-		(text "offsetY[10..0]" (rect 0 0 70 12)(font "Arial" ))
-		(text "offsetY[10..0]" (rect 21 75 91 87)(font "Arial" ))
-		(line (pt 0 80)(pt 16 80)(line_width 3))
-	)
-	(port
-		(pt 0 96)
-		(input)
-		(text "InsideRectangle" (rect 0 0 79 12)(font "Arial" ))
-		(text "InsideRectangle" (rect 21 91 100 103)(font "Arial" ))
-		(line (pt 0 96)(pt 16 96))
-	)
-	(port
-		(pt 0 112)
-		(input)
-		(text "Super" (rect 0 0 28 12)(font "Arial" ))
-		(text "Super" (rect 21 107 49 119)(font "Arial" ))
-		(line (pt 0 112)(pt 16 112))
-	)
-	(port
-		(pt 240 32)
-		(output)
-		(text "drawingRequest" (rect 0 0 77 12)(font "Arial" ))
-		(text "drawingRequest" (rect 154 27 231 39)(font "Arial" ))
-		(line (pt 240 32)(pt 224 32))
-	)
-	(port
-		(pt 240 48)
-		(output)
-		(text "RGBout[7..0]" (rect 0 0 64 12)(font "Arial" ))
-		(text "RGBout[7..0]" (rect 165 43 229 55)(font "Arial" ))
-		(line (pt 240 48)(pt 224 48)(line_width 3))
-	)
-	(port
-		(pt 240 64)
-		(output)
-		(text "HitEdgeCode[2..0]" (rect 0 0 90 12)(font "Arial" ))
-		(text "HitEdgeCode[2..0]" (rect 143 59 233 71)(font "Arial" ))
-		(line (pt 240 64)(pt 224 64)(line_width 3))
-	)
-	(parameter
-		"PAUSE_DURATION_FRAMES"
-		"90"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(drawing
-		(rectangle (rect 16 16 224 128))
-	)
-	(annotation_block (parameter)(rect 1504 304 1768 344))
+	(annotation_block (parameter)(rect 552 272 815 367))
 )
 (connector
 	(text "clk" (rect 880 392 894 409)(font "Intel Clear" ))
@@ -693,6 +693,45 @@ agreement for further details.
 	(bus)
 )
 (connector
+	(text "HitEdgeCode[2..0]" (rect 909 640 993 657)(font "Intel Clear" ))
+	(pt 1576 656)
+	(pt 504 656)
+	(bus)
+)
+(connector
+	(pt 272 584)
+	(pt 272 592)
+)
+(connector
+	(text "Super" (rect 1291 504 1318 521)(font "Intel Clear" ))
+	(pt 1232 520)
+	(pt 1392 520)
+)
+(connector
+	(text "Super" (rect 350 568 377 585)(font "Intel Clear" ))
+	(pt 536 584)
+	(pt 272 584)
+)
+(connector
+	(text "ghost4DR" (rect 1514 360 1560 377)(font "Intel Clear" ))
+	(pt 1504 376)
+	(pt 1600 376)
+)
+(connector
+	(text "ghost4RGB[7..0]" (rect 1513 376 1589 393)(font "Intel Clear" ))
+	(pt 1504 392)
+	(pt 1600 392)
+	(bus)
+)
+(connector
+	(pt 280 568)
+	(pt 536 568)
+)
+(connector
+	(pt 536 568)
+	(pt 544 568)
+)
+(connector
 	(pt 768 472)
 	(pt 784 472)
 	(bus)
@@ -714,48 +753,9 @@ agreement for further details.
 	(pt 936 488)
 	(bus)
 )
-(connector
-	(text "HitEdgeCode[2..0]" (rect 909 640 993 657)(font "Intel Clear" ))
-	(pt 1576 656)
-	(pt 504 656)
-	(bus)
-)
-(connector
-	(pt 272 584)
-	(pt 272 592)
-)
-(connector
-	(text "Super" (rect 1291 504 1318 521)(font "Intel Clear" ))
-	(pt 1232 520)
-	(pt 1392 520)
-)
-(connector
-	(text "Super" (rect 350 568 377 585)(font "Intel Clear" ))
-	(pt 536 584)
-	(pt 272 584)
-)
-(connector
-	(pt 280 568)
-	(pt 536 568)
-)
-(connector
-	(pt 536 568)
-	(pt 544 568)
-)
-(connector
-	(text "ghost4DR" (rect 1514 360 1560 377)(font "Intel Clear" ))
-	(pt 1504 376)
-	(pt 1600 376)
-)
-(connector
-	(text "ghost4RGB[7..0]" (rect 1513 376 1589 393)(font "Intel Clear" ))
-	(pt 1504 392)
-	(pt 1600 392)
-	(bus)
-)
+(junction (pt 536 568))
 (junction (pt 784 472))
 (junction (pt 784 488))
-(junction (pt 536 568))
 (text "  " (rect 24 624 31 643)(font "Intel Clear" (font_size 8)))
 (text "   " (rect 144 664 154 683)(font "Intel Clear" (font_size 8)))
 (text "            " (rect 504 608 546 627)(font "Intel Clear" (font_size 8)))

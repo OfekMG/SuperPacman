@@ -47,15 +47,14 @@ module lives_counter_module (
             t_next = tens;
             h_next = hundreds;
 				
-				if (Super) begin 
-				end else if (pause && startOfFrame) begin
+				if (pause && startOfFrame) begin
 							 if ((pause_counter < PAUSE_DURATION_FRAMES - 1))
                       pause_counter <= pause_counter + 1;
                   else
                       pause = 1'b0;
               end 
-
-             if (strike_rising) begin
+				if (Super) begin 
+				end else if (strike_rising) begin
                 // *** DECREMENT path ***
 					 pause <= 1;
                 if (units == 4'd0) begin

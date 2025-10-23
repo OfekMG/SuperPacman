@@ -41,12 +41,12 @@ module pickaxe_lives_counter_module (
 
 				if (collision_Smiley_pickaxe) begin
 				//default
-				o_next = INIT_ONES;
+				o_next = INIT_ONES + 1;
 				end 
 
              else if (strike_rising && pickaxe) begin
                 // *** DECREMENT path ***
-                    o_next = units - counter;
+                    o_next = INIT_ONES - counter;
             end
 
             // עדכן רגיסטרים
