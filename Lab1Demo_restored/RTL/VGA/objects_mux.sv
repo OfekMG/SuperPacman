@@ -67,7 +67,10 @@ module	objects_mux	(
 					input		logic	[7:0] ghost3RGB,
 		// ghost4
 					input		logic	ghost4DrawingRequest, // two set of inputs per unit
-					input		logic	[7:0] ghost4RGB
+					input		logic	[7:0] ghost4RGB,
+					
+		// gameover
+					input logic darken
 								
 					
 );
@@ -79,7 +82,13 @@ begin
 	end
 	
 	else begin
-		if (smileyDrawingRequest == 1'b1 )   
+		if (darken) begin
+            if (pointsDrawingRequest)
+                RGBOut <= pointsRGB;       // Show score even when darkened
+            else
+                RGBOut <= 8'h00;           // Everything else black
+        end
+		else if (smileyDrawingRequest == 1'b1 )   
 			RGBOut <= smileyRGB;  //first priority 
 		else if(ghostDrawingRequest == 1'b1)
 			RGBOut <= ghostRGB;

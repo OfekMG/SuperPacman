@@ -2,10 +2,11 @@ module counter_module (
     input  logic        clk,
     input  logic        resetN,
     input  logic        score,	 
-
+		
     output logic [3:0]  units,
     output logic [3:0]  tens,
-    output logic [3:0]  hundreds
+    output logic [3:0]  hundreds,
+	 output logic win
 );
     parameter logic [3:0] INIT_ONES     = 4'd3;
     parameter logic [3:0] INIT_TENS     = 4'd0;
@@ -14,7 +15,7 @@ module counter_module (
 	//identify rising edge
     logic score_sync0, score_sync1;
     logic score_rising;
-
+	
 	// to calculate next value
     logic [3:0] o_next, t_next, h_next;
 
@@ -63,5 +64,7 @@ module counter_module (
             hundreds <= h_next;
         end
     end
+	 assign win = (hundreds == 4'd1 && tens == 4'd0 && units == 4'd5);
+
 
 endmodule

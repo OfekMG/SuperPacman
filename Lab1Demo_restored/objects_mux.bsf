@@ -242,6 +242,13 @@ agreement for further details.
 		(line (pt 0 512)(pt 16 512)(line_width 3))
 	)
 	(port
+		(pt 0 528)
+		(input)
+		(text "darken" (rect 0 0 27 12)(font "Arial" ))
+		(text "darken" (rect 21 523 48 535)(font "Arial" ))
+		(line (pt 0 528)(pt 16 528)(line_width 1))
+	)
+	(port
 		(pt 264 32)
 		(output)
 		(text "RGBOut[7..0]" (rect 0 0 55 12)(font "Arial" ))

@@ -123,6 +123,13 @@ agreement for further details.
 		(line (pt 0 240)(pt 16 240))
 	)
 	(port
+		(pt 0 256)
+		(input)
+		(text "plus" (rect 0 0 24 19)(font "Intel Clear" (font_size 8)))
+		(text "plus" (rect 21 251 45 270)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 256)(pt 16 256))
+	)
+	(port
 		(pt 328 32)
 		(output)
 		(text "HartDrawingRequest" (rect 0 0 122 19)(font "Intel Clear" (font_size 8)))
