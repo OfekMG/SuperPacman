@@ -1,5 +1,5 @@
 Flow report for Lab1Demo
-Fri Oct 24 13:39:22 2025
+Sun Oct 26 19:00:00 2025
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -41,15 +41,15 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Fri Oct 24 13:39:11 2025       ;
+; Flow Status                     ; Successful - Sun Oct 26 18:59:48 2025       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; Lab1Demo                                    ;
 ; Top-level Entity Name           ; TOP_VGA_DEMO_KBD                            ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSXFC6D6F31C6                              ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 2,899 / 41,910 ( 7 % )                      ;
-; Total registers                 ; 2523                                        ;
+; Logic utilization (in ALMs)     ; 2,904 / 41,910 ( 7 % )                      ;
+; Total registers                 ; 2524                                        ;
 ; Total pins                      ; 62 / 499 ( 12 % )                           ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 2,460,672 / 5,662,720 ( 43 % )              ;
@@ -68,7 +68,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/24/2025 13:36:42 ;
+; Start date & time ; 10/26/2025 18:55:49 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Lab1Demo            ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ agreement for further details.
 +-------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------+------------------+------------------+
 ; Assignment Name                     ; Value                                                                                                            ; Default Value ; Entity Name      ; Section Id       ;
 +-------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------+------------------+------------------+
-; COMPILER_SIGNATURE_ID               ; 5311877198834.176130220205932                                                                                    ; --            ; --               ; --               ;
+; COMPILER_SIGNATURE_ID               ; 10995770589192.176149774927368                                                                                   ; --            ; --               ; --               ;
 ; ENABLE_SIGNALTAP                    ; On                                                                                                               ; --            ; --               ; --               ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                                                                                               ; --            ; --               ; --               ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                                                                                                ; --            ; --               ; --               ;
@@ -136,11 +136,11 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:35     ; 1.9                     ; 5071 MB             ; 00:00:55                           ;
-; Fitter                    ; 00:01:41     ; 1.2                     ; 7122 MB             ; 00:04:56                           ;
-; Assembler                 ; 00:00:08     ; 1.0                     ; 4906 MB             ; 00:00:07                           ;
-; TimeQuest Timing Analyzer ; 00:00:10     ; 2.4                     ; 5340 MB             ; 00:00:18                           ;
-; Total                     ; 00:02:34     ; --                      ; --                  ; 00:06:16                           ;
+; Analysis & Synthesis      ; 00:00:27     ; 2.1                     ; 5124 MB             ; 00:00:57                           ;
+; Fitter                    ; 00:03:19     ; 1.2                     ; 7693 MB             ; 00:21:21                           ;
+; Assembler                 ; 00:00:08     ; 1.0                     ; 4915 MB             ; 00:00:09                           ;
+; TimeQuest Timing Analyzer ; 00:00:11     ; 3.3                     ; 5420 MB             ; 00:00:29                           ;
+; Total                     ; 00:04:05     ; --                      ; --                  ; 00:22:56                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -149,10 +149,10 @@ agreement for further details.
 +---------------------------+------------------+------------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +---------------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis      ; DESKTOP-PD5E0CG  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter                    ; DESKTOP-PD5E0CG  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler                 ; DESKTOP-PD5E0CG  ; Windows 10 ; 10.0       ; x86_64         ;
-; TimeQuest Timing Analyzer ; DESKTOP-PD5E0CG  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis      ; DESKTOP-SPN16TS  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter                    ; DESKTOP-SPN16TS  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler                 ; DESKTOP-SPN16TS  ; Windows 10 ; 10.0       ; x86_64         ;
+; TimeQuest Timing Analyzer ; DESKTOP-SPN16TS  ; Windows 10 ; 10.0       ; x86_64         ;
 +---------------------------+------------------+------------+------------+----------------+
 
 

@@ -21,9 +21,9 @@ agreement for further details.
 */
 (header "symbol" (version "1.2"))
 (symbol
-	(rect 16 16 344 304)
+	(rect 16 16 344 336)
 	(text "HART_DISPLAY" (rect 5 0 99 19)(font "Intel Clear" (font_size 8)))
-	(text "inst" (rect 8 267 24 284)(font "Intel Clear" ))
+	(text "inst" (rect 8 299 24 316)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -130,6 +130,13 @@ agreement for further details.
 		(line (pt 0 256)(pt 16 256))
 	)
 	(port
+		(pt 0 272)
+		(input)
+		(text "pickaxe_key" (rect 0 0 73 19)(font "Intel Clear" (font_size 8)))
+		(text "pickaxe_key" (rect 21 267 94 286)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 272)(pt 16 272))
+	)
+	(port
 		(pt 328 32)
 		(output)
 		(text "HartDrawingRequest" (rect 0 0 122 19)(font "Intel Clear" (font_size 8)))
@@ -214,6 +221,6 @@ agreement for further details.
 		(line (pt 328 208)(pt 312 208)(line_width 3))
 	)
 	(drawing
-		(rectangle (rect 16 16 312 272))
+		(rectangle (rect 16 16 312 304))
 	)
 )

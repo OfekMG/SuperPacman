@@ -17,7 +17,8 @@ module HartsMatrixBitMap (
 	 input  logic        startOfFrame,
 	 input  logic        strike,
 	 input  logic        collision_smiley_pickaxe,
-	 input logic change,
+	 input  logic        change,
+	 input  logic        PICKAXE_KEY,
 
     output logic        drawingRequest,    // output that the pixel should be displayed (full tile)
     output logic [7:0]  RGBout,           // rgb value from the bitmap (full tile)
@@ -306,13 +307,15 @@ always_ff @(posedge clk or negedge resetN) begin
               end 
 		  if (pickaxe && collision_Smiley_Hart) begin
 					 if (MazeBitMapMask[offsetY_MSB][offsetX_MSB] == 4'h1) begin
+							if (PICKAXE_KEY) begin
                     MazeBitMapMask[offsetY_MSB][offsetX_MSB] <= 4'h0; // מחק את הנקודה הספציפית
                     RGBout <= TRANSPARENT_ENCODING;
 						  counter <= counter + 1;
 						  if (counter == 2) begin
 								pickaxe <= 0;
 							end
-                end
+						end 
+               end
 				end 
 							
         if (collision_smiley_pickaxe) begin

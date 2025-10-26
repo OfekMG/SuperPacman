@@ -246,9 +246,25 @@ agreement for further details.
 )
 (pin
 	(input)
-	(rect 1184 608 1352 624)
+	(rect 944 600 1112 616)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "plus" (rect 5 0 26 17)(font "Intel Clear" ))
+	(text "plus" (rect 5 0 25 17)(font "Intel Clear" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect 944 624 1112 640)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "pickaxe_key" (rect 5 0 68 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -547,9 +563,9 @@ agreement for further details.
 	(annotation_block (parameter)(rect 744 208 999 284))
 )
 (symbol
-	(rect 1360 248 1648 520)
+	(rect 1360 248 1648 552)
 	(text "HartsMatrixBitMap" (rect 5 0 94 12)(font "Arial" ))
-	(text "inst6" (rect 8 256 31 268)(font "Arial" ))
+	(text "inst6" (rect 8 288 31 300)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -649,6 +665,13 @@ agreement for further details.
 		(line (pt 0 240)(pt 16 240))
 	)
 	(port
+		(pt 0 256)
+		(input)
+		(text "PICKAXE_KEY" (rect 0 0 74 12)(font "Arial" ))
+		(text "PICKAXE_KEY" (rect 21 251 95 263)(font "Arial" ))
+		(line (pt 0 256)(pt 16 256))
+	)
+	(port
 		(pt 288 32)
 		(output)
 		(text "drawingRequest" (rect 0 0 77 12)(font "Arial" ))
@@ -743,7 +766,7 @@ agreement for further details.
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
-		(rectangle (rect 16 16 272 256))
+		(rectangle (rect 16 16 272 288))
 	)
 	(annotation_block (parameter)(rect 1344 80 1607 137))
 )
@@ -1116,6 +1139,11 @@ agreement for further details.
 	(bus)
 )
 (connector
+	(text "plus" (rect 1351 472 1371 489)(font "Intel Clear" ))
+	(pt 1360 488)
+	(pt 1344 488)
+)
+(connector
 	(pt 1608 280)
 	(pt 1648 280)
 )
@@ -1186,9 +1214,16 @@ agreement for further details.
 	(pt 1728 392)
 )
 (connector
-	(text "plus" (rect 1351 472 1371 489)(font "Intel Clear" ))
-	(pt 1360 488)
-	(pt 1344 488)
+	(pt 1360 504)
+	(pt 1344 504)
+)
+(connector
+	(pt 1344 504)
+	(pt 1344 632)
+)
+(connector
+	(pt 1344 632)
+	(pt 1112 632)
 )
 (junction (pt 1736 400))
 (junction (pt 1648 280))
@@ -1200,4 +1235,4 @@ agreement for further details.
 (junction (pt 1648 376))
 (junction (pt 1648 392))
 (text "// (c) Technion IIT, Department of Electrical Engineering 2025" (rect 632 24 991 43)(font "Intel Clear" (font_size 8)))
-(rectangle (rect 336 184 1816 672)(color 0 0 0)(line_width 3))
+(rectangle (rect 336 192 1816 680)(color 0 0 0)(line_width 3))
