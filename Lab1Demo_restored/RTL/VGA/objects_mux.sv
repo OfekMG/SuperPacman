@@ -70,7 +70,10 @@ module	objects_mux	(
 					input		logic	[7:0] ghost4RGB,
 					
 		// gameover
-					input logic darken
+					input logic darken,
+		// woodenwall
+					input		logic	woodenwallDrawingRequest, // two set of inputs per unit
+					input		logic	[7:0] woodenwallRGB
 								
 					
 );
@@ -93,6 +96,8 @@ begin
 		else if(ghostDrawingRequest == 1'b1)
 			RGBOut <= ghostRGB;
 //--- add logic for box here ------------------------------------------------------		
+		else if (woodenwallDrawingRequest == 1'b1)
+				RGBOut <= woodenwallRGB;
 		else if(ghost2DrawingRequest == 1'b1)
 			RGBOut <= ghost2RGB;
 		else if(ghost3DrawingRequest == 1'b1)

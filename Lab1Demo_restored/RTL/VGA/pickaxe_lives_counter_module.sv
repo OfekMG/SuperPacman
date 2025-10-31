@@ -6,6 +6,7 @@ module pickaxe_lives_counter_module (
 	 input  logic        startOfFrame,
 	 input  logic        pickaxe,
 	 input  logic [1:0]  counter,
+	 input  logic        PICKAXE_KEY,
 
     output logic [3:0]  units
 );
@@ -36,7 +37,6 @@ module pickaxe_lives_counter_module (
 
 				// finding edge
             strike_rising = strike_sync1 && !strike_sync0; // note: שים לב שסדר ההשמה כאן משתמש בבדיקת ההיסטוריה; אפשר גם לעשות בשני מצבים
-            // ניתן לשים prev_score ולחשב: score_rising = score_sync1 && !prev_score; prev_score <= score_sync1;
 
 
 				if (collision_Smiley_pickaxe) begin
@@ -44,7 +44,7 @@ module pickaxe_lives_counter_module (
 				o_next = INIT_ONES + 1;
 				end 
 
-             else if (strike_rising && pickaxe) begin
+             else if (PICKAXE_KEY && strike_rising && pickaxe) begin
                 // *** DECREMENT path ***
                     o_next = INIT_ONES - counter;
             end

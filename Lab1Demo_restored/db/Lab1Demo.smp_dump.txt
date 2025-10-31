@@ -49,17 +49,17 @@ SM_Motion.POSITION_LIMITS_ST 0 0 1 0 0 0 1
 SM_Motion.PAUSE_ST 0 1 0 0 0 0 1 
 SM_Motion.SUPER_MOVE_ST 1 0 0 0 0 0 1 
 
-State Machine - |TOP_VGA_DEMO_KBD|Ghost_Block_T4:inst27|ghost4BitMap:inst1|SM_LOOK
-Name SM_LOOK.SUPER_ST 
-SM_LOOK.NORMAL_ST 0 
-SM_LOOK.SUPER_ST 1 
-
 State Machine - |TOP_VGA_DEMO_KBD|Ghost_Block_T2:inst23|ghost2BitMap:inst1|SM_LOOK
 Name SM_LOOK.SUPER_ST 
 SM_LOOK.NORMAL_ST 0 
 SM_LOOK.SUPER_ST 1 
 
 State Machine - |TOP_VGA_DEMO_KBD|Ghost_Block_T:inst8|ghostBitMap:inst7|SM_LOOK
+Name SM_LOOK.SUPER_ST 
+SM_LOOK.NORMAL_ST 0 
+SM_LOOK.SUPER_ST 1 
+
+State Machine - |TOP_VGA_DEMO_KBD|Ghost_Block_T4:inst27|ghost4BitMap:inst1|SM_LOOK
 Name SM_LOOK.SUPER_ST 
 SM_LOOK.NORMAL_ST 0 
 SM_LOOK.SUPER_ST 1 

@@ -137,6 +137,13 @@ agreement for further details.
 		(line (pt 0 272)(pt 16 272))
 	)
 	(port
+		(pt 0 288)
+		(input)
+		(text "second_phase" (rect 0 0 83 19)(font "Intel Clear" (font_size 8)))
+		(text "second_phase" (rect 21 283 104 302)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 288)(pt 16 288))
+	)
+	(port
 		(pt 328 32)
 		(output)
 		(text "HartDrawingRequest" (rect 0 0 122 19)(font "Intel Clear" (font_size 8)))
@@ -219,6 +226,20 @@ agreement for further details.
 		(text "pickaxe_counter[1..0]" (rect 0 0 126 19)(font "Intel Clear" (font_size 8)))
 		(text "pickaxe_counter[1..0]" (rect 181 203 307 222)(font "Intel Clear" (font_size 8)))
 		(line (pt 328 208)(pt 312 208)(line_width 3))
+	)
+	(port
+		(pt 328 224)
+		(output)
+		(text "woodenwallDR" (rect 0 0 87 19)(font "Intel Clear" (font_size 8)))
+		(text "woodenwallDR" (rect 220 219 307 238)(font "Intel Clear" (font_size 8)))
+		(line (pt 328 224)(pt 312 224))
+	)
+	(port
+		(pt 328 240)
+		(output)
+		(text "woodenwallRGB[7..0]" (rect 0 0 126 19)(font "Intel Clear" (font_size 8)))
+		(text "woodenwallRGB[7..0]" (rect 181 235 307 254)(font "Intel Clear" (font_size 8)))
+		(line (pt 328 240)(pt 312 240)(line_width 3))
 	)
 	(drawing
 		(rectangle (rect 16 16 312 304))

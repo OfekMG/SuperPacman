@@ -6,7 +6,8 @@ module counter_module (
     output logic [3:0]  units,
     output logic [3:0]  tens,
     output logic [3:0]  hundreds,
-	 output logic win
+	 output logic win,
+	 output logic second_phase
 );
     parameter logic [3:0] INIT_ONES     = 4'd3;
     parameter logic [3:0] INIT_TENS     = 4'd0;
@@ -33,8 +34,10 @@ module counter_module (
 
 				// finding edge
             score_rising = score_sync1 && !score_sync0; // note: שים לב שסדר ההשמה כאן משתמש בבדיקת ההיסטוריה; אפשר גם לעשות בשני מצבים
-            // ניתן לשים prev_score ולחשב: score_rising = score_sync1 && !prev_score; prev_score <= score_sync1;
-
+				
+				if (tens == 5) begin
+					second_phase = 1'b1;
+				end
 
 				//default
 				o_next = units;

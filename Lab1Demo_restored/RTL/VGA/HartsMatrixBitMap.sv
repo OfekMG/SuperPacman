@@ -19,6 +19,7 @@ module HartsMatrixBitMap (
 	 input  logic        collision_smiley_pickaxe,
 	 input  logic        change,
 	 input  logic        PICKAXE_KEY,
+	 input  logic        second_phase,
 
     output logic        drawingRequest,    // output that the pixel should be displayed (full tile)
     output logic [7:0]  RGBout,           // rgb value from the bitmap (full tile)
@@ -31,7 +32,9 @@ module HartsMatrixBitMap (
 	 output logic 			drawingRequestPickaxe,
 	 output logic [7:0]  RGBoutpickaxe,
 	 output logic        pickaxe,
-	 output logic [1:0]  counter
+	 output logic [1:0]  counter,
+	 output logic        drawingRequestwoodenwall,
+	 output logic [7:0]  RGBoutwoodenwall           // rgb value from the bitmap (full tile)
 
 );
 
@@ -54,8 +57,8 @@ logic [10:0] offsetX_MSB;
 logic [10:0] offsetY_MSB;
 logic [10:0] pause_counter;
 
-parameter int PAUSE_DURATION_FRAMES = 150;// 3 sec @ 30Hz
-parameter int PICKAXE_WALLS = 3;// 3 sec @ 30Hz
+parameter int PAUSE_DURATION_FRAMES = 300;// 10 sec @ 30Hz
+parameter int PICKAXE_WALLS = 3;
 
 
 // Get the pixel's coordinates WITHIN a 32x32 tile (lower 5 bits)
@@ -114,7 +117,7 @@ logic [0:15][0:31][3:0] MazeDefaultBitMapMask2 = '{
 // index 1 : DOT pattern (transparent except central pixels = 8'h00)
 // index 2 : full tile color (8'h73)
 // index 3 : full tile color (8'h73)
-logic [3:0][0:(TILE_HEIGHT_Y-1)][0:(TILE_WIDTH_X-1)][7:0] object_colors = '{
+logic [4:0][0:(TILE_HEIGHT_Y-1)][0:(TILE_WIDTH_X-1)][7:0] object_colors = '{
     // index 3
     '{
 	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
@@ -254,7 +257,41 @@ logic [3:0][0:(TILE_HEIGHT_Y-1)][0:(TILE_WIDTH_X-1)][7:0] object_colors = '{
 	{8'hff,8'hff,8'hff,8'hff,8'h64,8'h64,8'hb0,8'hb0,8'h24,8'h24,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
 	{8'hff,8'hff,8'hff,8'hff,8'h20,8'h20,8'h20,8'h20,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
 	{8'hff,8'hff,8'hff,8'hff,8'h20,8'h20,8'h20,8'h20,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
-	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff}}
+	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff}},
+	{
+	{8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfa,8'hfa,8'hfa,8'hfe},
+	{8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfa,8'hfe,8'hfe,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfa,8'hfa},
+	{8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfa,8'hfa,8'hfe,8'hfa,8'hfa,8'hfa,8'hfe,8'hfe,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfe,8'hfe,8'hfe},
+	{8'hfa,8'hfa,8'hfa,8'hfe,8'hfe,8'hfe,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfe,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe},
+	{8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h64,8'h24,8'h64,8'h64,8'h64,8'h64,8'h64},
+	{8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hf9,8'hfa,8'hfa,8'hfa,8'hf5,8'hf9,8'hf5,8'hf9,8'hfa,8'hfa,8'hfa,8'hf9,8'hf9,8'hf9,8'hf5,8'hf9,8'hf5,8'hf5,8'hf9,8'hf9,8'hf9,8'hfa,8'hfa,8'hfa},
+	{8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hf9,8'hf5,8'hf5,8'hf5,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa},
+	{8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hf5,8'hf9,8'hf5,8'hfa,8'hfa,8'hfa,8'hf6,8'hf5,8'hf5,8'hfa,8'hf5,8'hfa,8'hfa,8'hf5,8'hf9,8'hfa,8'hf9,8'hf9,8'hfa,8'hfa},
+	{8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hf9,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfe,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfe,8'hfe,8'hfa,8'hfe,8'hfa,8'hfe,8'hfe,8'hfe,8'hfe,8'hfa,8'hfa,8'hfa,8'hfa},
+	{8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h64,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h64,8'h64,8'h24,8'h24,8'h64,8'h64,8'h64,8'h64},
+	{8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfe,8'hfe,8'hfa,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hf9,8'hf9,8'hf9,8'hf9},
+	{8'hf9,8'hfa,8'hfa,8'hfa,8'hfa,8'hf5,8'hf9,8'hf9,8'hf5,8'hfa,8'hf9,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hf9,8'hf5,8'hfa},
+	{8'hfa,8'hfe,8'hfe,8'hfa,8'hfa,8'hfe,8'hfe,8'hfe,8'hfe,8'hfa,8'hfe,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hf9,8'hf9,8'hf9,8'hf9,8'hfa,8'hfa,8'hfa,8'hfa},
+	{8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfe,8'hfe,8'hfe},
+	{8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24},
+	{8'hfe,8'hfa,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe},
+	{8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfe,8'hfa,8'hfa,8'hfa,8'hfa,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfe,8'hfa,8'hfa,8'hfe,8'hfa,8'hfa,8'hfa},
+	{8'hfe,8'hfe,8'hfa,8'hfe,8'hfe,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfe,8'hfe,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa},
+	{8'hfa,8'hfa,8'hfa,8'hfa,8'hfe,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfe,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe},
+	{8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h20,8'h20,8'h20,8'h24,8'h20,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24},
+	{8'hfe,8'hfe,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfa,8'hfa,8'hfa,8'hfa,8'hfe,8'hfa},
+	{8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfe,8'hfe,8'hfa,8'hfa,8'hfa,8'hfe,8'hfe,8'hfa,8'hfa,8'hf5,8'hf5,8'hf5,8'hf5,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa},
+	{8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfe,8'hfe,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hf5,8'hf5,8'hf5,8'hf9,8'hfa,8'hf9,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa},
+	{8'hfe,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfe,8'hfa,8'hfe,8'hfe,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfe,8'hfe},
+	{8'h20,8'h20,8'h20,8'h20,8'h20,8'h20,8'h20,8'h20,8'h20,8'h20,8'h20,8'h20,8'h24,8'h24,8'h24,8'h24,8'h20,8'h20,8'h20,8'h20,8'h20,8'h24,8'h20,8'h20,8'h20,8'h20,8'h20,8'h20,8'h20,8'h20,8'h20,8'h20},
+	{8'hf5,8'hf5,8'hf5,8'hf5,8'hf5,8'hf5,8'hf5,8'hf5,8'hf5,8'hf5,8'hf5,8'hf5,8'hf5,8'hf5,8'hf5,8'hf5,8'hf5,8'hf5,8'hf5,8'hd5,8'hd5,8'hd5,8'hf5,8'hd5,8'hf5,8'hf5,8'hd5,8'hf1,8'hf1,8'hf5,8'hf5,8'hf5},
+	{8'hf5,8'hf5,8'hd5,8'hf5,8'hf5,8'hf5,8'hf5,8'hf5,8'hfa,8'hf9,8'hf9,8'hf9,8'hf5,8'hf9,8'hfa,8'hf6,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hf9,8'hf9,8'hfa,8'hf9,8'hf5,8'hf5,8'hf5,8'hf9,8'hf5,8'hf5},
+	{8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hf9,8'hf9,8'hf5,8'hfa,8'hfa,8'hfa,8'hfa,8'hf5,8'hf5,8'hfa,8'hfa,8'hf9,8'hf5,8'hfa,8'hfa,8'hf5,8'hf5,8'hd1},
+	{8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfe,8'hfa,8'hfa,8'hfe,8'hfe,8'hfe,8'hfa,8'hfa,8'hfa,8'hfa,8'hfe,8'hfa,8'hfa,8'hfe,8'hfe,8'hfa},
+	{8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h24,8'h20,8'h24,8'h20,8'h20,8'h20,8'h20,8'h20,8'h20,8'h20,8'h24,8'h24,8'h20,8'h20,8'h24,8'h20,8'h24,8'h20,8'h24,8'h24,8'h24,8'h20,8'h24,8'h20,8'h24},
+	{8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfe,8'hfe,8'hfa,8'hfa},
+	{8'hf5,8'hf5,8'hf5,8'hf9,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfe,8'hfe,8'hfa,8'hfa}}
+
 };
 
 
@@ -271,6 +308,7 @@ always_ff @(posedge clk or negedge resetN) begin
         RGBoutDot         <= TRANSPARENT_ENCODING;
 		  RGBoutSuper            <= TRANSPARENT_ENCODING;
 		  RGBoutpickaxe            <= TRANSPARENT_ENCODING;
+		  RGBoutwoodenwall <= TRANSPARENT_ENCODING;
         drawingRequest    <= 1'b0;
         drawingRequestDot <= 1'b0;
 		  drawingRequestSuper <= 1'b0;
@@ -298,7 +336,19 @@ always_ff @(posedge clk or negedge resetN) begin
         RGBoutDot <= TRANSPARENT_ENCODING;
 		  RGBoutSuper <= TRANSPARENT_ENCODING;
 		  RGBoutpickaxe <= TRANSPARENT_ENCODING;
+		  RGBoutwoodenwall <= TRANSPARENT_ENCODING;
+
         score     <= 1'b0;
+		  if (second_phase) begin 
+			  for (int y = 0; y < MAZE_HEIGHT_Y; y++) begin
+					for (int x = 0; x < MAZE_WIDTH_X; x++) begin
+						if (MazeBitMapMask[y][x] == 4'h5) begin
+						 MazeBitMapMask[y][x] <= 4'h0;
+						 end
+					end
+			  end
+		 end
+			
         if (Super && startOfFrame) begin
 							 if (!strike && (pause_counter < PAUSE_DURATION_FRAMES - 1))
                       pause_counter <= pause_counter + 1;
@@ -355,6 +405,7 @@ always_ff @(posedge clk or negedge resetN) begin
                     4'h2: RGBoutDot <= object_colors[1][offsetY_LSB][offsetX_LSB];
 						  4'h3: RGBoutSuper <= object_colors[3][offsetY_LSB][offsetX_LSB];
  						  4'h4: RGBoutpickaxe <= object_colors[0][offsetY_LSB][offsetX_LSB];
+						  4'h5: RGBoutwoodenwall <= object_colors[4][offsetY_LSB][offsetX_LSB];
 						  
                     default: RGBout <= object_colors[MazeBitMapMask[offsetY_MSB][offsetX_MSB] - 1][offsetY_LSB][offsetX_LSB];
                 endcase
@@ -365,6 +416,7 @@ always_ff @(posedge clk or negedge resetN) begin
         drawingRequestDot <= (RGBoutDot != TRANSPARENT_ENCODING);
 		  drawingRequestSuper <= (RGBoutSuper != TRANSPARENT_ENCODING);
 		  drawingRequestPickaxe <= (RGBoutpickaxe != TRANSPARENT_ENCODING);
+		  drawingRequestwoodenwall <=  (RGBoutpickaxe != TRANSPARENT_ENCODING);
 
 
     end

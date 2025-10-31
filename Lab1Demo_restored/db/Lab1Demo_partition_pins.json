@@ -28,6 +28,42 @@
 					"strict" : false
 				},
 				{
+					"name" : "BG_RGB[5]",
+					"strict" : false
+				},
+				{
+					"name" : "BG_RGB[4]",
+					"strict" : false
+				},
+				{
+					"name" : "BG_RGB[3]",
+					"strict" : false
+				},
+				{
+					"name" : "OVGA[7]",
+					"strict" : false
+				},
+				{
+					"name" : "OVGA[4]",
+					"strict" : false
+				},
+				{
+					"name" : "OVGA[3]",
+					"strict" : false
+				},
+				{
+					"name" : "OVGA[2]",
+					"strict" : false
+				},
+				{
+					"name" : "OVGA[1]",
+					"strict" : false
+				},
+				{
+					"name" : "OVGA[0]",
+					"strict" : false
+				},
+				{
 					"name" : "HEX0[6]",
 					"strict" : false
 				},
@@ -92,14 +128,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "OVGA[14]",
-					"strict" : false
-				},
-				{
-					"name" : "OVGA[13]",
-					"strict" : false
-				},
-				{
 					"name" : "OVGA[12]",
 					"strict" : false
 				},
@@ -120,7 +148,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "OVGA[7]",
+					"name" : "OVGA[14]",
+					"strict" : false
+				},
+				{
+					"name" : "OVGA[13]",
 					"strict" : false
 				},
 				{
@@ -132,35 +164,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "OVGA[4]",
+					"name" : "AUDOUT[7]",
 					"strict" : false
 				},
 				{
-					"name" : "OVGA[3]",
-					"strict" : false
-				},
-				{
-					"name" : "OVGA[2]",
-					"strict" : false
-				},
-				{
-					"name" : "OVGA[1]",
-					"strict" : false
-				},
-				{
-					"name" : "OVGA[0]",
-					"strict" : false
-				},
-				{
-					"name" : "BG_RGB[5]",
-					"strict" : false
-				},
-				{
-					"name" : "BG_RGB[4]",
-					"strict" : false
-				},
-				{
-					"name" : "BG_RGB[3]",
+					"name" : "AUDOUT[6]",
 					"strict" : false
 				},
 				{
@@ -173,14 +181,6 @@
 				},
 				{
 					"name" : "AUDOUT[1]",
-					"strict" : false
-				},
-				{
-					"name" : "AUDOUT[7]",
-					"strict" : false
-				},
-				{
-					"name" : "AUDOUT[6]",
 					"strict" : false
 				},
 				{
