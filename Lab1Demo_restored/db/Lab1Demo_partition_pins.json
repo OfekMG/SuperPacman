@@ -40,6 +40,30 @@
 					"strict" : false
 				},
 				{
+					"name" : "OVGA[15]",
+					"strict" : false
+				},
+				{
+					"name" : "OVGA[12]",
+					"strict" : false
+				},
+				{
+					"name" : "OVGA[11]",
+					"strict" : false
+				},
+				{
+					"name" : "OVGA[10]",
+					"strict" : false
+				},
+				{
+					"name" : "OVGA[9]",
+					"strict" : false
+				},
+				{
+					"name" : "OVGA[8]",
+					"strict" : false
+				},
+				{
 					"name" : "OVGA[7]",
 					"strict" : false
 				},
@@ -121,30 +145,6 @@
 				},
 				{
 					"name" : "OVGA[16]",
-					"strict" : false
-				},
-				{
-					"name" : "OVGA[15]",
-					"strict" : false
-				},
-				{
-					"name" : "OVGA[12]",
-					"strict" : false
-				},
-				{
-					"name" : "OVGA[11]",
-					"strict" : false
-				},
-				{
-					"name" : "OVGA[10]",
-					"strict" : false
-				},
-				{
-					"name" : "OVGA[9]",
-					"strict" : false
-				},
-				{
-					"name" : "OVGA[8]",
 					"strict" : false
 				},
 				{
