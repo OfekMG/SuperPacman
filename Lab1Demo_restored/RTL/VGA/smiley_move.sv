@@ -128,7 +128,7 @@ always_ff @(posedge clk or negedge resetN) begin
 
             POSITION_LIMITS_ST: begin
                 if (Xposition < x_FRAME_LEFT) Xposition <= x_FRAME_LEFT;
-                if (Xposition > x_FRAME_RIGHT) Xposition <= x_FRAME_RIGHT;
+                if (Xposition > x_FRAME_RIGHT - 10) Xposition <= 90 * FIXED_POINT_MULTIPLIER;
                 if (Yposition < y_FRAME_TOP) Yposition <= y_FRAME_TOP;
                 if (Yposition > y_FRAME_BOTTOM) Yposition <= y_FRAME_BOTTOM;
                 SM_Motion <= MOVE_ST;
