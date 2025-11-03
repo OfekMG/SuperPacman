@@ -2,61 +2,56 @@ module lives_counter_module (
     input  logic        clk,
     input  logic        resetN,
     input  logic        strike,	 
-	 input  logic        Super,
-	 input  logic        startOfFrame,
+    input  logic        Super,
+    input  logic        startOfFrame,
 
     output logic [3:0]  units,
     output logic [3:0]  tens,
     output logic [3:0]  hundreds
 );
-    parameter logic [3:0] INIT_ONES     = 4'd3;
+    // Initial values
+    parameter logic [3:0] INIT_ONES     = 4'd4;
     parameter logic [3:0] INIT_TENS     = 4'd0;
     parameter logic [3:0] INIT_HUNDREDS = 4'd0;
-	 
-	 logic [6:0] pause_counter;
-	 parameter int PAUSE_DURATION_FRAMES = 90;// 3 sec @ 30Hz
 
-	
-	//identify rising edge
-    logic strike_sync0, strike_sync1;
-    logic strike_rising;
-	 logic pause;
+    // Parameters
+    parameter int FRAME_RATE_HZ = 60;
+    parameter int INVINCIBILITY_DURATION_FRAMES = 3 * FRAME_RATE_HZ; // 3 seconds
 
-	// to calculate next value
+    // Internal logic
+    logic invincible;
+    logic [8:0] invincibility_counter; // supports up to 512 frames
+
     logic [3:0] o_next, t_next, h_next;
 
     always_ff @(posedge clk or negedge resetN) begin
         if (!resetN) begin
-            units    <= INIT_ONES;
-            tens     <= INIT_TENS;
-            hundreds <= INIT_HUNDREDS;
-
-            strike_sync0 <= 1'b0;
-            strike_sync1 <= 1'b0;
+            units                <= INIT_ONES;
+            tens                 <= INIT_TENS;
+            hundreds             <= INIT_HUNDREDS;
+            invincible           <= 1'b0;
+            invincibility_counter <= 0;
         end else begin
-            strike_sync0 <= strike;
-            strike_sync1 <= strike_sync0;
-
-				// finding edge
-            strike_rising = strike_sync1 && !strike_sync0; // note: שים לב שסדר ההשמה כאן משתמש בבדיקת ההיסטוריה; אפשר גם לעשות בשני מצבים
-            // ניתן לשים prev_score ולחשב: score_rising = score_sync1 && !prev_score; prev_score <= score_sync1;
-
-
-				//default
-				o_next = units;
+            o_next = units;
             t_next = tens;
             h_next = hundreds;
-				
-				if (pause && startOfFrame) begin
-							 if ((pause_counter < PAUSE_DURATION_FRAMES - 1))
-                      pause_counter <= pause_counter + 1;
-                  else
-                      pause = 1'b0;
-              end 
-				if (Super) begin 
-				end else if (strike_rising) begin
-                // *** DECREMENT path ***
-					 pause <= 1;
+
+            // Handle invincibility timing
+            if (invincible && startOfFrame) begin
+                if (invincibility_counter < INVINCIBILITY_DURATION_FRAMES - 1)
+                    invincibility_counter <= invincibility_counter + 1;
+                else begin
+                    invincible <= 1'b0;
+                    invincibility_counter <= 0;
+                end
+            end
+
+            // Strike event: only trigger if not invincible and not Super
+            if (strike && !invincible && !Super) begin
+                invincible <= 1'b1;
+                invincibility_counter <= 0;
+
+                // Decrement logic
                 if (units == 4'd0) begin
                     o_next = 4'd9;
                     if (tens == 4'd0) begin
@@ -73,7 +68,6 @@ module lives_counter_module (
                 end
             end
 
-            // עדכן רגיסטרים
             units    <= o_next;
             tens     <= t_next;
             hundreds <= h_next;

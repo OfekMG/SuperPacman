@@ -76,13 +76,13 @@ logic [3:0] MazeBitMapMask [0:MAZE_HEIGHT_Y-1][0:MAZE_WIDTH_X-1];
 logic [0:15][0:31][3:0] MazeDefaultBitMapMask = '{
   '{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1 ,1,1,1,1,1,1,1,1,1,1,1,1,1,1}, //second part is out of frame
   '{1,2,2,2,1,4,2,2,0,1,2,2,2,2,2,2,2,1 ,1,2,2,2,2,1,2,2,2,2,2,2,2,1},
-  '{1,2,1,2,1,2,1,1,2,1,2,1,1,2,1,1,2,1 ,1,2,1,1,2,1,1,2,1,1,2,1,2,1},
+  '{1,2,1,2,1,2,1,1,2,1,2,1,1,5,1,1,2,1 ,1,2,1,1,2,1,1,2,1,1,2,1,2,1},
   '{1,2,1,2,2,2,2,1,2,2,2,1,2,2,2,1,3,1 ,1,2,2,1,2,2,2,1,2,2,2,1,2,1},
   '{1,2,1,1,1,2,1,1,1,1,2,1,1,2,1,1,1,1 ,1,2,1,1,2,1,1,2,1,1,2,1,2,1},
   '{1,2,2,2,2,2,2,2,2,2,2,3,1,2,2,2,2,1 ,2,2,2,2,2,2,1,2,2,2,2,2,2,1},
-  '{1,2,1,1,1,2,1,1,1,2,1,1,1,1,1,1,2,1 ,1,1,1,2,1,1,1,2,1,1,2,1,1,1},
+  '{1,2,1,1,1,2,1,1,1,2,1,1,1,1,1,1,5,1 ,1,1,1,2,1,1,1,2,1,1,2,1,1,1},
   '{1,2,2,2,2,2,2,2,1,2,2,2,2,2,2,2,2,1 ,2,2,2,2,2,2,2,2,2,2,2,2,2,1},
-  '{1,1,1,2,1,1,1,2,1,1,2,1,1,1,1,1,2,1 ,1,2,1,1,2,1,1,1,1,2,1,1,1,1},
+  '{1,1,1,2,1,1,1,5,1,1,2,1,1,1,1,1,2,1 ,1,2,1,1,2,1,1,1,1,2,1,1,1,1},
   '{1,2,2,2,2,2,2,2,2,2,2,1,4,2,2,2,2,1 ,2,2,2,2,2,2,2,2,2,2,2,2,2,1},
   '{1,2,1,1,1,2,1,1,2,1,2,1,1,2,1,1,2,1 ,1,2,1,1,2,1,1,2,1,1,2,1,2,1},
   '{1,2,2,3,1,2,2,2,2,2,2,2,2,2,2,2,2,1 ,2,2,2,2,2,2,1,2,2,2,2,2,2,1},
@@ -95,17 +95,17 @@ logic [0:15][0:31][3:0] MazeDefaultBitMapMask = '{
 
 logic [0:15][0:31][3:0] MazeDefaultBitMapMask2 = '{
         '{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1 ,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
-        '{1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1 ,2,2,2,2,2,2,2,2,2,2,2,2,2,1},
+        '{1,2,2,2,2,2,2,2,2,2,2,2,2,2,4,2,2,1 ,2,2,2,2,2,2,2,2,2,2,2,2,2,1},
         '{1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1 ,1,1,1,1,1,1,1,1,1,1,1,1,2,1},
         '{1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1 ,2,2,2,2,2,2,2,2,2,2,2,2,2,1},
         '{1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1 ,1,1,1,1,1,1,1,1,1,1,1,1,2,1},
+        '{1,2,2,2,2,4,2,2,2,2,2,2,2,2,2,2,2,1 ,2,2,2,2,2,2,2,2,2,2,2,2,2,1},
+        '{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1 ,1,1,1,1,1,1,1,1,1,1,1,1,2,1},
         '{1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1 ,2,2,2,2,2,2,2,2,2,2,2,2,2,1},
         '{1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1 ,1,1,1,1,1,1,1,1,1,1,1,1,2,1},
         '{1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1 ,2,2,2,2,2,2,2,2,2,2,2,2,2,1},
-        '{1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1 ,1,1,1,1,1,1,1,1,1,1,1,1,2,1},
-        '{1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1 ,2,2,2,2,2,2,2,2,2,2,2,2,2,1},
-        '{1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1 ,1,1,1,1,1,1,1,1,1,1,1,1,2,1},
-        '{1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1 ,2,2,2,2,2,2,2,2,2,2,2,2,2,1},
+        '{1,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1 ,1,1,1,1,1,1,1,1,1,1,1,1,2,1},
+        '{1,2,2,2,2,2,2,2,2,2,4,2,2,2,2,2,2,1 ,2,2,2,2,2,2,2,2,2,2,2,2,2,1},
         '{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1 ,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
         '{1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1 ,2,2,2,2,2,2,2,2,2,2,2,2,2,1},
         '{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1 ,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
@@ -118,8 +118,7 @@ logic [0:15][0:31][3:0] MazeDefaultBitMapMask2 = '{
 // index 2 : full tile color (8'h73)
 // index 3 : full tile color (8'h73)
 logic [4:0][0:(TILE_HEIGHT_Y-1)][0:(TILE_WIDTH_X-1)][7:0] object_colors = '{
-{
-	{8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfa,8'hfa,8'hfa,8'hfe},
+	'{{8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfa,8'hfa,8'hfa,8'hfe},
 	{8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfa,8'hfe,8'hfe,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfa,8'hfa},
 	{8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfa,8'hfa,8'hfe,8'hfa,8'hfa,8'hfa,8'hfe,8'hfe,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfe,8'hfe,8'hfe},
 	{8'hfa,8'hfa,8'hfa,8'hfe,8'hfe,8'hfe,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfe,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe},
@@ -152,42 +151,40 @@ logic [4:0][0:(TILE_HEIGHT_Y-1)][0:(TILE_WIDTH_X-1)][7:0] object_colors = '{
 	{8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfe,8'hfe,8'hfa,8'hfa},
 	{8'hf5,8'hf5,8'hf5,8'hf9,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfe,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfa,8'hfe,8'hfe,8'hfa,8'hfa}},
     // index 3
-    '{
-	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
-	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
-	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
-	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
-	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
-	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
-	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
-	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
-	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h91,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
-	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
-	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
-	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h24,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
-	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hda,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
-	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
-	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
-	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'hda,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
-	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'hb5,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
-	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'hfe,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
-	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
-	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
-	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
-	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
-	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
-	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
-	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'h00,8'h00,8'h00,8'h00,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
-	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
-	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
-	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
-	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
-	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
-	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff},
-	{8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff,8'hff}},
+    '{{8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00},
+	{8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00},
+	{8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00},
+	{8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00},
+	{8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h7c,8'h7c,8'h7c,8'h7c,8'h7c,8'h7c,8'h00,8'h00,8'h7c,8'h7c,8'h7c,8'h7c,8'h7c,8'h7c,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00},
+	{8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h7c,8'h7c,8'h7c,8'h7c,8'h7c,8'h7c,8'h00,8'h00,8'h7c,8'h7c,8'h7c,8'h7c,8'h7c,8'h7c,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00},
+	{8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'he0,8'he0,8'he0,8'he0,8'h7c,8'h7c,8'h7c,8'h7c,8'h7c,8'h7c,8'h7c,8'h7c,8'h7c,8'h7c,8'he0,8'he0,8'he0,8'he0,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00},
+	{8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'he0,8'he0,8'he0,8'he0,8'h7c,8'h7c,8'h7c,8'h7c,8'h7c,8'h7c,8'h7c,8'h7c,8'h7c,8'h7c,8'he0,8'he0,8'he0,8'he0,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00},
+	{8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'he0,8'he0,8'hff,8'hff,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'h7c,8'h7c,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'hff,8'hff,8'he0,8'he0,8'h00,8'h00,8'h00,8'h00},
+	{8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'he0,8'he0,8'hff,8'hff,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'h7c,8'h7c,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'hff,8'hff,8'he0,8'he0,8'h00,8'h00,8'h00,8'h00},
+	{8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'h00,8'h00,8'h00,8'h00},
+	{8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'h00,8'h00,8'h00,8'h00},
+	{8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'he0,8'he0,8'he0,8'he0,8'hff,8'hff,8'he0,8'he0,8'hff,8'hff,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'hff,8'hff,8'he0,8'he0,8'he0,8'he0,8'h00,8'h00,8'h00,8'h00},
+	{8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'he0,8'he0,8'he0,8'he0,8'hff,8'hff,8'he0,8'he0,8'hff,8'hff,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'hff,8'hff,8'he0,8'he0,8'he0,8'he0,8'h00,8'h00,8'h00,8'h00},
+	{8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'hff,8'hff,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'h00,8'h00,8'h00,8'h00},
+	{8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'hff,8'hff,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'h00,8'h00,8'h00,8'h00},
+	{8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'he0,8'he0,8'he0,8'he0,8'hff,8'hff,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'h00,8'h00,8'h00,8'h00},
+	{8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'he0,8'he0,8'he0,8'he0,8'hff,8'hff,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'h00,8'h00,8'h00,8'h00},
+	{8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'hff,8'hff,8'he0,8'he0,8'he0,8'he0,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00},
+	{8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'hff,8'hff,8'he0,8'he0,8'he0,8'he0,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00},
+	{8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'he0,8'he0,8'he0,8'he0,8'hff,8'hff,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00},
+	{8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'he0,8'he0,8'he0,8'he0,8'hff,8'hff,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00},
+	{8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'hff,8'hff,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00},
+	{8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'hff,8'hff,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00},
+	{8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00},
+	{8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'he0,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00},
+	{8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'he0,8'he0,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00},
+	{8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'he0,8'he0,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00},
+	{8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00},
+	{8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00},
+	{8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00},
+	{8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00,8'h00}},
 	    // index 1
-    '{
-	{8'h64,8'h6c,8'h64,8'h6c,8'h6c,8'h6d,8'h8d,8'h8d,8'h91,8'h8d,8'h8d,8'h8d,8'h8d,8'h8d,8'h8d,8'h6d,8'h64,8'h8d,8'h8d,8'h8d,8'h8d,8'h8d,8'h8d,8'h8d,8'h8d,8'h8d,8'h8d,8'h8d,8'h85,8'h8d,8'h64,8'h24},
+    '{{8'h64,8'h6c,8'h64,8'h6c,8'h6c,8'h6d,8'h8d,8'h8d,8'h91,8'h8d,8'h8d,8'h8d,8'h8d,8'h8d,8'h8d,8'h6d,8'h64,8'h8d,8'h8d,8'h8d,8'h8d,8'h8d,8'h8d,8'h8d,8'h8d,8'h8d,8'h8d,8'h8d,8'h85,8'h8d,8'h64,8'h24},
 	{8'had,8'hd1,8'hd1,8'hd1,8'hd1,8'hd1,8'hd1,8'hd1,8'hd1,8'hd1,8'hd1,8'hd1,8'hd1,8'hd1,8'hf1,8'hb1,8'had,8'hd1,8'hd1,8'hd1,8'hd1,8'hd1,8'hd1,8'hd1,8'hd1,8'hd1,8'hd1,8'hd1,8'hd1,8'hd1,8'hd1,8'h8d},
 	{8'had,8'hd1,8'hd1,8'hd1,8'hd1,8'hd1,8'hd1,8'hd1,8'hd1,8'hcd,8'hd1,8'hd1,8'hd1,8'hd1,8'hd1,8'hb1,8'hb1,8'hd1,8'hd1,8'hd1,8'hcd,8'hd1,8'hd1,8'hd1,8'hd1,8'hd1,8'hd1,8'hd1,8'hd1,8'hd1,8'hd1,8'h8d},
 	{8'h8d,8'hd1,8'hd1,8'hd1,8'hd1,8'hd1,8'hd1,8'hd1,8'hd1,8'hd1,8'hd1,8'hd1,8'hf1,8'hd1,8'hf1,8'hb1,8'hb1,8'hd1,8'hd1,8'hd1,8'hd1,8'had,8'hd1,8'hd1,8'hd1,8'hd1,8'hd1,8'hd1,8'hd1,8'hd1,8'hd1,8'h8d},
@@ -305,10 +302,10 @@ assign dot_pixel_will_be_drawn = (InsideRectangle &&
 
 always_ff @(posedge clk or negedge resetN) begin
     if (!resetN) begin
-        RGBout            <= TRANSPARENT_ENCODING;
-        RGBoutDot         <= TRANSPARENT_ENCODING;
-		  RGBoutSuper            <= TRANSPARENT_ENCODING;
-		  RGBoutpickaxe            <= TRANSPARENT_ENCODING;
+        RGBout           <= TRANSPARENT_ENCODING;
+        RGBoutDot        <= TRANSPARENT_ENCODING;
+		  RGBoutSuper      <= TRANSPARENT_ENCODING;
+		  RGBoutpickaxe    <= TRANSPARENT_ENCODING;
 		  RGBoutwoodenwall <= TRANSPARENT_ENCODING;
         drawingRequest    <= 1'b0;
         drawingRequestDot <= 1'b0;
@@ -417,7 +414,7 @@ always_ff @(posedge clk or negedge resetN) begin
         drawingRequestDot <= (RGBoutDot != TRANSPARENT_ENCODING);
 		  drawingRequestSuper <= (RGBoutSuper != TRANSPARENT_ENCODING);
 		  drawingRequestPickaxe <= (RGBoutpickaxe != TRANSPARENT_ENCODING);
-		  drawingRequestwoodenwall <=  (RGBoutpickaxe != TRANSPARENT_ENCODING);
+		  drawingRequestwoodenwall <=  (RGBoutwoodenwall != TRANSPARENT_ENCODING);
 
 
     end

@@ -9,7 +9,7 @@ module counter_module (
 	 output logic win,
 	 output logic second_phase
 );
-    parameter logic [3:0] INIT_ONES     = 4'd3;
+    parameter logic [3:0] INIT_ONES     = 4'd0;
     parameter logic [3:0] INIT_TENS     = 4'd0;
     parameter logic [3:0] INIT_HUNDREDS = 4'd0;
 	
@@ -25,6 +25,7 @@ module counter_module (
             units    <= INIT_ONES;
             tens     <= INIT_TENS;
             hundreds <= INIT_HUNDREDS;
+				second_phase <= 1'b0;
 
             score_sync0 <= 1'b0;
             score_sync1 <= 1'b0;

@@ -12,7 +12,8 @@ module counter_Bitmap (
     input  logic [3:0]  hundreds,
 
     output logic        drawingRequest,   // 1 → paint pixel
-    output logic [7:0]  RGBout
+    output logic [7:0]  RGBout,
+	 output logic gameover
 );
 
     parameter logic [7:0] digit_color = 8'hFF;
@@ -572,6 +573,7 @@ module counter_Bitmap (
     always_ff @(posedge clk or negedge resetN) begin
         if (!resetN) begin
             drawingRequest <= 1'b0;
+			if(ones==0) gameover <= 1'b1;
         end
         else begin
             drawingRequest <= 1'b0;                // default
