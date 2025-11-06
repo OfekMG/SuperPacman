@@ -1,0 +1,54 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/project/SuperPacman/Lab1Demo_restored/simulation/qsim
+vTOP_VGA_DEMO_KBD
+!s110 1762414569
+!i10b 1
+!s100 51Za6jWz_b4KfQPM:P:Y<1
+IAUXMNBz6cTP`XRDmzRDiM0
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1762414563
+8Lab1Demo.vo
+FLab1Demo.vo
+L0 32
+Z2 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z3 !s108 1762414569.000000
+!s107 Lab1Demo.vo|
+!s90 -work|work|Lab1Demo.vo|
+!i113 1
+Z4 o-work work
+Z5 tCvgOpt 0
+n@t@o@p_@v@g@a_@d@e@m@o_@k@b@d
+vTOP_VGA_DEMO_KBD_vlg_vec_tst
+!s110 1762414570
+!i10b 1
+!s100 jVHKz0dI1baddJI_NS]cT1
+ITog1nO9g[PcWBPGL2AmMS1
+R1
+R0
+w1762414561
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+L0 30
+R2
+r1
+!s85 0
+31
+R3
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R4
+R5
+n@t@o@p_@v@g@a_@d@e@m@o_@k@b@d_vlg_vec_tst

@@ -197,6 +197,38 @@ agreement for further details.
 	(text "VCC" (rect 176 7 196 17)(font "Arial" (font_size 6)))
 )
 (pin
+	(input)
+	(rect 208 592 376 608)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "strike" (rect 5 0 32 12)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect 24 608 200 624)
+	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
+	(text "second_phase" (rect 5 0 76 12)(font "Arial" ))
+	(pt 176 8)
+	(drawing
+		(line (pt 92 12)(pt 117 12))
+		(line (pt 92 4)(pt 117 4))
+		(line (pt 121 8)(pt 176 8))
+		(line (pt 92 12)(pt 92 4))
+		(line (pt 117 4)(pt 121 8))
+		(line (pt 117 12)(pt 121 8))
+	)
+	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
+)
+(pin
 	(output)
 	(rect 1600 368 1776 384)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
@@ -452,9 +484,9 @@ agreement for further details.
 	(annotation_block (parameter)(rect 1504 304 1768 344))
 )
 (symbol
-	(rect 536 440 784 616)
+	(rect 536 440 784 648)
 	(text "ghost4_move" (rect 5 0 72 12)(font "Arial" ))
-	(text "inst" (rect 8 160 25 172)(font "Arial" ))
+	(text "inst" (rect 8 192 25 204)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -512,6 +544,20 @@ agreement for further details.
 		(line (pt 0 144)(pt 16 144))
 	)
 	(port
+		(pt 0 160)
+		(input)
+		(text "strike" (rect 0 0 27 12)(font "Arial" ))
+		(text "strike" (rect 21 155 48 167)(font "Arial" ))
+		(line (pt 0 160)(pt 16 160))
+	)
+	(port
+		(pt 0 176)
+		(input)
+		(text "second_phase" (rect 0 0 70 12)(font "Arial" ))
+		(text "second_phase" (rect 21 171 91 183)(font "Arial" ))
+		(line (pt 0 176)(pt 16 176))
+	)
+	(port
 		(pt 248 32)
 		(output)
 		(text "topLeftX[10..0]" (rect 0 0 73 12)(font "Arial" ))
@@ -532,7 +578,7 @@ agreement for further details.
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"INITIAL_Y"
-		"300"
+		"325"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
@@ -546,9 +592,9 @@ agreement for further details.
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
-		(rectangle (rect 16 16 232 160))
+		(rectangle (rect 16 16 232 192))
 	)
-	(annotation_block (parameter)(rect 552 272 815 367))
+	(annotation_block (parameter)(rect 552 256 815 351))
 )
 (connector
 	(text "clk" (rect 880 392 894 409)(font "Intel Clear" ))
@@ -724,6 +770,10 @@ agreement for further details.
 	(bus)
 )
 (connector
+	(pt 376 600)
+	(pt 536 600)
+)
+(connector
 	(pt 280 568)
 	(pt 536 568)
 )
@@ -752,6 +802,10 @@ agreement for further details.
 	(pt 784 488)
 	(pt 936 488)
 	(bus)
+)
+(connector
+	(pt 536 616)
+	(pt 200 616)
 )
 (junction (pt 536 568))
 (junction (pt 784 472))

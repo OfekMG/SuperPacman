@@ -1,174 +1,95 @@
+Quartus Prime Archive log --	C:/project/SuperPacman/Lab1Demo.qarlog
 
+Archive:	C:/project/SuperPacman/Lab1Demo.qar
+Date:		Thu Nov 06 15:54:40 2025
+Quartus Prime		17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
-******* Archived project restoration attempt on Wed Sep 10 21:43:45 2025
-Source archive file:	D:/LAB1ULTI/Lab1Demo.qar
-Archive was extracted into	D:/LAB1ULTI/Lab1Demo_restored/
-		 - successfully.
+	=========== Files Selected: ===========
+C:/project/SuperPacman/Lab1Demo_restored/CLK_31P5.cmp
+C:/project/SuperPacman/Lab1Demo_restored/CLK_31P5.qip
+C:/project/SuperPacman/Lab1Demo_restored/CLK_31P5.sip
+C:/project/SuperPacman/Lab1Demo_restored/CLK_31P5.spd
+C:/project/SuperPacman/Lab1Demo_restored/CLK_31P5.v
+C:/project/SuperPacman/Lab1Demo_restored/CLK_31P5/CLK_31P5_0002.qip
+C:/project/SuperPacman/Lab1Demo_restored/CLK_31P5/CLK_31P5_0002.v
+C:/project/SuperPacman/Lab1Demo_restored/CLK_31P5_sim/CLK_31P5.vo
+C:/project/SuperPacman/Lab1Demo_restored/DE10_Standard_Audio.sdc
+C:/project/SuperPacman/Lab1Demo_restored/KBDINTF.qxp
+C:/project/SuperPacman/Lab1Demo_restored/Lab1Demo.qpf
+C:/project/SuperPacman/Lab1Demo_restored/Lab1Demo.qsf
+C:/project/SuperPacman/Lab1Demo_restored/Lab1Demo_assignment_defaults.qdf
+C:/project/SuperPacman/Lab1Demo_restored/RTL/AUDIO/AUDIO.bdf
+C:/project/SuperPacman/Lab1Demo_restored/RTL/AUDIO/JukeBox1.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/AUDIO/Mili_sec_counter.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/AUDIO/SinTable.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/AUDIO/ToneDecoder.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/AUDIO/addr_counter.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/DualSerial2parallel.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/audio_codec_controller.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/clock_500.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/AUDIO/audio_codec_controller/i2c.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/AUDIO/melody_player_1.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/AUDIO/prescaler.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/BG.mif
+C:/project/SuperPacman/Lab1Demo_restored/RTL/KEYBOARDX/TOP_KBD.bdf
+C:/project/SuperPacman/Lab1Demo_restored/RTL/KEYBOARDX/keyPad_decoder.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/KEYBOARDX/random.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/KEYBOARDX/simple_up_counter.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/Seg7/SEG7.SV
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/Ghost_Block_T.bdf
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/Ghost_Block_T2.bdf
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/Ghost_Block_T3.bdf
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/Ghost_Block_T4.bdf
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/HART_DISPLAY.bdf
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/HartsMatrixBitMap.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/LivesMatrixBitMap.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/MAZE_DISPLAY.bdf
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/MazeMatrixBitMap.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/MyConstant.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/NumbersBitMap.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/Pacman_Block_T.bdf
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/PointsBitMap.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/Smiley_Block_T.bdf
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/TOP_VGA_DEMO_KBD.bdf
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/VGA_Controller.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/back_ground_draw.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/counter_Bitmap.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/counter_module.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/game_controller.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/ghost2BitMap.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/ghost2_move.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/ghost3BitMap.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/ghost3_move.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/ghost4BitMap.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/ghost4_move.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/ghostBitMap.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/ghost_move.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/lives_counter_module.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/lives_display.bdf
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/objects_mux.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/pacmanBitMap.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/pacman_move.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/pickaxeMatrixBitMap.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/pickaxe_display.bdf
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/pickaxe_lives_counter_module.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/smileyBitMap.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/smiley_move.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/square_Hart_object.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/square_object.sv
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/valX.bsf
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/valX.qip
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/valX.v
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/valX_bb.v
+C:/project/SuperPacman/Lab1Demo_restored/RTL/VGA/valX_inst.v
+C:/project/SuperPacman/Lab1Demo_restored/Waveform.vwf
+C:/project/SuperPacman/Lab1Demo_restored/assignment_defaults.qdf
+C:/project/SuperPacman/Lab1Demo_restored/constraints/DE10_Standard_Audio.sdc
+C:/project/SuperPacman/Lab1Demo_restored/constraints/pin.tcl
+C:/project/SuperPacman/Lab1Demo_restored/db/stp1_auto_stripped.stp
+C:/project/SuperPacman/Lab1Demo_restored/output_files/Chain1.cdf
+C:/project/SuperPacman/Lab1Demo_restored/output_files/Chain2.cdf
+C:/project/SuperPacman/Lab1Demo_restored/stp1.stp
+	======= Total: 84 files to archive =======
 
-
-******* Archived project restoration attempt on Wed Sep 10 21:49:16 2025
-Source archive file:	C:/project/SuperPacman/Lab1Demo.qar
-Archive was extracted into	C:/project/SuperPacman/Lab1Demo_restored/
-		 - successfully.
-
-
-******* Archived project restoration attempt on Wed Sep 10 22:04:03 2025
-Source archive file:	D:/LAB1ULTI/Lab1Demo.qar
-Archive was extracted into	D:/LAB1ULTI/Lab1Demo_restored/
-		 - successfully.
-
-
-******* Archived project restoration attempt on Fri Sep 12 21:50:07 2025
-Source archive file:	D:/LAB1ULTI/Lab1Demo.qar
-Archive was extracted into	D:/LAB1ULTI/Lab1Demo_restored/
-		 - successfully.
-
-
-******* Archived project restoration attempt on Sun Sep 14 13:23:42 2025
-Source archive file:	C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo.qar
-Archive was extracted into	C:/Users/ofek.magoz/Desktop/sima/SuperPacman/Lab1Demo_restored/
-		 - successfully.
-
-
-******* Archived project restoration attempt on Mon Sep 15 14:09:14 2025
-Source archive file:	D:/LAB1ULTI/Lab1Demo.qar
-Archive was extracted into	D:/LAB1ULTI/Lab1Demo_restored/
-		 - successfully.
-
-
-******* Archived project restoration attempt on Tue Sep 16 13:03:31 2025
-Source archive file:	D:/LAB1ULTI/Lab1Demo.qar
-Archive was extracted into	D:/LAB1ULTI/Lab1Demo_restored/
-		 - successfully.
-
-
-******* Archived project restoration attempt on Thu Sep 18 10:50:49 2025
-Source archive file:	C:/project/SuperPacman/Lab1Demo.qar
-Archive was extracted into	C:/project/SuperPacman/Lab1Demo_restored/
-		 - successfully.
-
-
-******* Archived project restoration attempt on Thu Sep 18 11:37:15 2025
-Source archive file:	C:/project/SuperPacman/Lab1Demo.qar
-Archive was extracted into	C:/project/SuperPacman/Lab1Demo_restored/
-		 - successfully.
-
-
-******* Archived project restoration attempt on Fri Sep 19 18:08:57 2025
-Source archive file:	D:/LAB1ULTI/Lab1Demo.qar
-Archive was extracted into	D:/LAB1ULTI/Lab1Demo_restored/
-		 - successfully.
-
-
-******* Archived project restoration attempt on Sun Sep 21 12:18:34 2025
-Source archive file:	C:/project/SuperPacman/Lab1Demo.qar
-Archive was extracted into	C:/project/SuperPacman/Lab1Demo_restored/
-		 - successfully.
-
-
-******* Archived project restoration attempt on Sun Sep 28 14:13:53 2025
-Source archive file:	C:/project/SuperPacman/Lab1Demo.qar
-Archive was extracted into	C:/project/SuperPacman/Lab1Demo_restored/
-		 - successfully.
-
-
-******* Archived project restoration attempt on Thu Oct 09 23:27:43 2025
-Source archive file:	C:/project/SuperPacman/Lab1Demo.qar
-Archive was extracted into	C:/project/SuperPacman/Lab1Demo_restored/
-		 - successfully.
-
-
-******* Archived project restoration attempt on Fri Oct 10 13:57:29 2025
-Source archive file:	C:/project/SuperPacman/Lab1Demo.qar
-Archive was extracted into	C:/project/SuperPacman/Lab1Demo_restored/
-		 - successfully.
-
-
-******* Archived project restoration attempt on Sun Oct 12 10:16:42 2025
-Source archive file:	C:/project/SuperPacman/Lab1Demo.qar
-Archive was extracted into	C:/project/SuperPacman/Lab1Demo_restored/
-		 - successfully.
-
-
-******* Archived project restoration attempt on Sat Oct 18 14:01:13 2025
-Source archive file:	D:/NEW/SuperPacman/Lab1Demo.qar
-Archive was extracted into	D:/NEW/SuperPacman/Lab1Demo_restored/
-		 - successfully.
-
-
-******* Archived project restoration attempt on Sun Oct 19 11:33:34 2025
-Source archive file:	C:/project/SuperPacman/Lab1Demo.qar
-Archive was extracted into	C:/project/SuperPacman/Lab1Demo_restored/
-		 - successfully.
-
-
-******* Archived project restoration attempt on Tue Oct 21 12:33:55 2025
-Source archive file:	C:/project/SuperPacman/Lab1Demo.qar
-Archive was extracted into	C:/project/SuperPacman/Lab1Demo_restored/
-		 - successfully.
-
-
-******* Archived project restoration attempt on Tue Oct 21 12:34:51 2025
-Source archive file:	C:/project/SuperPacman/Lab1Demo.qar
-Archive was extracted into	C:/project/SuperPacman/Lab1Demo_restored/
-		 - successfully.
-
-
-******* Archived project restoration attempt on Tue Oct 21 14:50:30 2025
-Source archive file:	C:/project/SuperPacman/Lab1Demo.qar
-Archive was extracted into	C:/project/SuperPacman/Lab1Demo_restored/
-		 - successfully.
-
-
-******* Archived project restoration attempt on Tue Oct 21 18:50:11 2025
-Source archive file:	C:/project/SuperPacman/Lab1Demo.qar
-Archive was extracted into	C:/project/SuperPacman/Lab1Demo_restored/
-		 - successfully.
-
-
-******* Archived project restoration attempt on Wed Oct 22 20:31:30 2025
-Source archive file:	C:/project/SuperPacman/Lab1Demo.qar
-Archive was extracted into	C:/project/SuperPacman/Lab1Demo_restored/
-		 - successfully.
-
-
-******* Archived project restoration attempt on Thu Oct 23 12:04:20 2025
-Source archive file:	C:/project/SuperPacman/Lab1Demo.qar
-Archive was extracted into	C:/project/SuperPacman/Lab1Demo_restored/
-		 - successfully.
-
-
-******* Archived project restoration attempt on Fri Oct 24 09:38:42 2025
-Source archive file:	D:/LAB1ULTI/Lab1Demo.qar
-Archive was extracted into	D:/LAB1ULTI/Lab1Demo_restored/
-		 - successfully.
-
-
-******* Archived project restoration attempt on Sun Oct 26 18:50:03 2025
-Source archive file:	C:/project/SuperPacman/Lab1Demo.qar
-Archive was extracted into	C:/project/SuperPacman/Lab1Demo_restored/
-		 - successfully.
-
-
-******* Archived project restoration attempt on Sun Nov 02 20:07:09 2025
-Source archive file:	C:/project/SuperPacman/Lab1Demo.qar
-Archive was extracted into	C:/project/SuperPacman/Lab1Demo_restored/
-		 - successfully.
-
-
-******* Archived project restoration attempt on Sun Nov 02 20:07:39 2025
-Source archive file:	C:/project/SuperPacman/Lab1Demo.qar
-Archive was extracted into	C:/project/SuperPacman/Lab1Demo_restored/
-		 - successfully.
-
-
-******* Archived project restoration attempt on Sun Nov 02 21:37:42 2025
-Source archive file:	C:/project/SuperPacman/Lab1Demo.qar
-Archive was extracted into	C:/project/SuperPacman/Lab1Demo_restored/
-		 - successfully.
-
-
-******* Archived project restoration attempt on Tue Nov 04 01:18:27 2025
-Source archive file:	C:/project/SuperPacman/Lab1Demo.qar
-Archive was extracted into	C:/project/SuperPacman/Lab1Demo_restored/
-		 - successfully.
+	================ Status: ===============
+All files archived successfully.

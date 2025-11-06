@@ -68,7 +68,7 @@ module counter_module (
             hundreds <= h_next;
         end
     end
-	 assign win = (hundreds == 4'd1 && tens == 4'd0 && units == 4'd5);
+	 assign win = (hundreds == 4'd1 && tens == 4'd0 && units == 4'd2);
 
 
 endmodule

@@ -73,7 +73,8 @@ module	objects_mux	(
 					input logic darken,
 		// woodenwall
 					input		logic	woodenwallDrawingRequest, // two set of inputs per unit
-					input		logic	[7:0] woodenwallRGB
+					input		logic	[7:0] woodenwallRGB,
+					input    logic win
 								
 					
 );
@@ -91,11 +92,16 @@ begin
             else
                 RGBOut <= 8'h00;           // Everything else black
         end
+		 else if (win) begin
+            if (pointsDrawingRequest)
+                RGBOut <= pointsRGB;       // Show score even when darkened
+            else
+                RGBOut <= 8'hFF;           // Everything else black
+        end
 		else if (smileyDrawingRequest == 1'b1 )   
 			RGBOut <= smileyRGB;  //first priority 
 		else if(ghostDrawingRequest == 1'b1)
 			RGBOut <= ghostRGB;
-//--- add logic for box here ------------------------------------------------------		
 		else if (woodenwallDrawingRequest == 1'b1)
 				RGBOut <= woodenwallRGB;
 		else if(ghost2DrawingRequest == 1'b1)

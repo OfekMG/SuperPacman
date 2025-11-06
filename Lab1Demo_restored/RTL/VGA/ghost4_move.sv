@@ -9,6 +9,8 @@ module ghost4_move (
     input  logic [1:0] rnd_dir,     // optional seed bits (used at reset)
     input  logic collision_ghost_smiley,
     input  logic Super,
+	 input  logic strike,
+	 input  logic second_phase,
 
     output logic signed [10:0] topLeftX,
     output logic signed [10:0] topLeftY
@@ -19,6 +21,8 @@ module ghost4_move (
     parameter int INITIAL_Y = 185;
     parameter int SPEED     = 60;
     parameter int PAUSE_DURATION_FRAMES = 90; // 3 sec @ 30Hz
+	 
+	 int multiplier;
 
     const int FIXED_POINT_MULTIPLIER = 64;  
     const int OBJECT_WIDTH_X = 32;
@@ -65,6 +69,11 @@ module ghost4_move (
             lfsr      <= {rnd_dir, 5'b10101}; 
             go_direction <= {rnd_dir[1], rnd_dir[0]};
         end else begin
+		  if (second_phase) begin
+				multiplier = 1.5;
+		  end else begin
+		  multiplier = 1;
+		  end
             case (SM)
                 IDLE_ST: begin
                     Xposition <= INITIAL_X * FIXED_POINT_MULTIPLIER + 800;
@@ -85,7 +94,9 @@ module ghost4_move (
                     Yspeed <= 0;
                     pause_counter <= 0;
                     SM <= PAUSE_ST;
-                end else if (startOfFrame)
+                end else if (strike) 
+								SM <= IDLE_ST;
+					 if (startOfFrame)
                         SM <= START_OF_FRAME_ST;
                 end
 
@@ -188,8 +199,8 @@ module ghost4_move (
 
                 POSITION_CHANGE_ST: begin
                     // Normal movement update per frame
-                    Xposition <= Xposition + Xspeed;
-                    Yposition <= Yposition + Yspeed;
+                    Xposition <= Xposition + Xspeed*multiplier;
+                    Yposition <= Yposition + Yspeed*multiplier;
                     SM <= POSITION_LIMITS_ST;
                 end
 

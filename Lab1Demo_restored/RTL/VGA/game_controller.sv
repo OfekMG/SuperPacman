@@ -17,6 +17,7 @@ module game_controller (
 	 input  logic drawing_request_ghost2,
     input  logic drawing_request_ghost3,
     input  logic drawing_request_ghost4,
+	 input  logic drawing_request_woodenwall,
 
 	 
 
@@ -50,7 +51,7 @@ logic flag;
 assign collision_smiley_number = (drawing_request_smiley && drawing_request_box);
 
 // collisions that always matter (smiley vs borders, smiley vs number, smiley vs hart, ghost vs hart, smiley vs ghost)
-assign collision_Smiley_Hart  = (drawing_request_smiley && drawing_request_hart || drawing_request_smiley && drawing_request_boarders);
+assign collision_Smiley_Hart  = (drawing_request_smiley && drawing_request_hart || drawing_request_smiley && (drawing_request_woodenwall || drawing_request_boarders));
 assign collision_smiley_Super = (drawing_request_Super && drawing_request_smiley);
 assign collision_ghost_Hart   = (drawing_request_ghost  && drawing_request_hart || drawing_request_ghost && drawing_request_boarders);
 assign strike = ((drawing_request_ghost || drawing_request_ghost2 || drawing_request_ghost3 || drawing_request_ghost4)  && drawing_request_smiley);

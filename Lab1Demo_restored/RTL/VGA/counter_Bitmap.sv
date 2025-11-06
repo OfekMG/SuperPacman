@@ -6,14 +6,12 @@ module counter_Bitmap (
     input  logic [10:0] offsetY,          // 0-31
     input  logic        InsideRectangle,  // “this pixel is in the 48×32 box”
 
-
     input  logic [3:0]  ones,
     input  logic [3:0]  tens,
     input  logic [3:0]  hundreds,
 
     output logic        drawingRequest,   // 1 → paint pixel
-    output logic [7:0]  RGBout,
-	 output logic gameover
+    output logic [7:0]  RGBout
 );
 
     parameter logic [7:0] digit_color = 8'hFF;
@@ -573,9 +571,7 @@ module counter_Bitmap (
     always_ff @(posedge clk or negedge resetN) begin
         if (!resetN) begin
             drawingRequest <= 1'b0;
-			if(ones==0) gameover <= 1'b1;
-        end
-        else begin
+       end else begin
             drawingRequest <= 1'b0;                // default
 
             // guard against pixels outside the 48-pixel window

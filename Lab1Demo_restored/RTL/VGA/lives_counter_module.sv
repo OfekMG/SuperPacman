@@ -26,7 +26,7 @@ module lives_counter_module (
 
     always_ff @(posedge clk or negedge resetN) begin
         if (!resetN) begin
-            units                <= INIT_ONES;
+            units                <= INIT_ONES + 2;
             tens                 <= INIT_TENS;
             hundreds             <= INIT_HUNDREDS;
             invincible           <= 1'b0;

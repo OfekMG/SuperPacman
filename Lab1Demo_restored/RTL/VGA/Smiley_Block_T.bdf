@@ -518,8 +518,8 @@ agreement for further details.
 )
 (symbol
 	(rect 1336 344 1576 488)
-	(text "smileyBitMap" (rect 5 0 71 12)(font "Arial" ))
-	(text "inst1" (rect 8 128 31 140)(font "Arial" ))
+	(text "pacmanBitMap" (rect 5 0 76 12)(font "Arial" ))
+	(text "inst1" (rect 8 128 30 145)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -556,6 +556,13 @@ agreement for further details.
 		(line (pt 0 96)(pt 16 96))
 	)
 	(port
+		(pt 0 112)
+		(input)
+		(text "respawn" (rect 0 0 40 12)(font "Arial" ))
+		(text "respawn" (rect 21 107 61 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112))
+	)
+	(port
 		(pt 240 32)
 		(output)
 		(text "drawingRequest" (rect 0 0 77 12)(font "Arial" ))
@@ -584,7 +591,7 @@ agreement for further details.
 	(drawing
 		(rectangle (rect 16 16 224 128))
 	)
-	(annotation_block (parameter)(rect 1176 168 1416 208))
+	(annotation_block (parameter)(rect 1576 304 1816 344))
 )
 (connector
 	(text "clk" (rect 880 392 894 409)(font "Intel Clear" ))
